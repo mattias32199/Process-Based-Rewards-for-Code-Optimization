@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_57",
+    "type": "1",
+    "subtype": "1-6",
+    "entrypoint_scalar": "int_bits_to_float",
+    "entrypoint_simd": "int_bits_to_float_simd"
+}

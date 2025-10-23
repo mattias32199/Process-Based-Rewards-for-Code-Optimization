@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_41",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "squarediff",
+    "entrypoint_simd": "squarediff_simd"
+}

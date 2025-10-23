@@ -1,0 +1,6 @@
+tqdm
+fire
+numpy
+psutil
+futures
+tabulate

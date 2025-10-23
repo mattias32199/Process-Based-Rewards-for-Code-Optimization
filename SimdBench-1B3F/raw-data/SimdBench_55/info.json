@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_55",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "conditional_normalize",
+    "entrypoint_simd": "conditional_normalize_simd"
+}

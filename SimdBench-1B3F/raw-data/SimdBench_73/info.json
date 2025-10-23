@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_73",
+    "type": "2",
+    "subtype": "HumanEval/24",
+    "entrypoint_scalar": "largest_divisor",
+    "entrypoint_simd": "largest_divisor_simd"
+}

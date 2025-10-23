@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_43",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "tensor_three_valued_logic",
+    "entrypoint_simd": "tensor_three_valued_logic_simd"
+}

@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_0_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_0_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpdppsbuop.cpp:50:41: error: use of undeclared identifier '_mm256_mulhi_epi32'\n   50 |         __m256i tmp = _mm256_srli_epi32(_mm256_mulhi_epi32(sum, magic), 2);\n      |                                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_1_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp6rjhfdl7.cpp:50:42: error: use of undeclared identifier '_mm256_mulhi_epi32'\n   50 |         __m256i temp = _mm256_srli_epi32(_mm256_mulhi_epi32(sum, magic), 2);\n      |                                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_1_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpsasizpfx.cpp:50:40: error: use of undeclared identifier '_mm256_mulhi_epi32'\n   50 |         __m256i t1 = _mm256_srli_epi32(_mm256_mulhi_epi32(sum, div7), 2);\n      |                                        ^\n1 error generated.\n"}
+{"task_id": "SimdBench_1_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpo9jcyfjx.cpp:50:40: error: use of undeclared identifier '_mm256_mulhi_epi32'\n   50 |         __m256i t1 = _mm256_srli_epi32(_mm256_mulhi_epi32(sum, div7), 2);\n      |                                        ^\n1 error generated.\n"}
+{"task_id": "SimdBench_1_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp8xcc9e9g.cpp:50:42: error: use of undeclared identifier '_mm256_mulhi_epi32'\n   50 |         __m256i temp = _mm256_srli_epi32(_mm256_mulhi_epi32(sum, magic), 2);\n      |                                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_2_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_4_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_4_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_4_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_4_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_6_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpgeko0feu.cpp:36:15: error: always_inline function '_mm256_srai_epi64' requires target feature 'avx512vl', but would be inlined into function 'vector_vector_add_simd' that is compiled without support for 'avx512vl'\n   36 |         sum = _mm256_srai_epi64(sum, 1);\n      |               ^\n1 error generated.\n"}
+{"task_id": "SimdBench_10_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp9wdnl3b8.cpp:36:26: error: always_inline function '_mm256_srai_epi64' requires target feature 'avx512vl', but would be inlined into function 'vector_vector_add_simd' that is compiled without support for 'avx512vl'\n   36 |         __m256i result = _mm256_srai_epi64(sum, 1);\n      |                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_10_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpa7ringz9.cpp:36:26: error: always_inline function '_mm256_srai_epi64' requires target feature 'avx512vl', but would be inlined into function 'vector_vector_add_simd' that is compiled without support for 'avx512vl'\n   36 |         __m256i result = _mm256_srai_epi64(sum, 1);\n      |                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_10_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpqmzrp1ti.cpp:36:15: error: always_inline function '_mm256_srai_epi64' requires target feature 'avx512vl', but would be inlined into function 'vector_vector_add_simd' that is compiled without support for 'avx512vl'\n   36 |         sum = _mm256_srai_epi64(sum, 1);\n      |               ^\n1 error generated.\n"}
+{"task_id": "SimdBench_10_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp3roz4onn.cpp:36:26: error: always_inline function '_mm256_srai_epi64' requires target feature 'avx512vl', but would be inlined into function 'vector_vector_add_simd' that is compiled without support for 'avx512vl'\n   36 |         __m256i result = _mm256_srai_epi64(sum, 1);\n      |                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_11_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_13_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_13_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_13_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_13_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_15_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_15_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_15_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_15_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_16_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpz_rni5pa.cpp:42:48: error: use of undeclared identifier '_mm256_srli_epi8'\n   42 |         __m256i high_nibble = _mm256_and_si256(_mm256_srli_epi8(input, 4), mask1);\n      |                                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_16_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpus47qaxc.cpp:42:33: error: use of undeclared identifier '_mm256_srli_epi8'\n   42 |         x = _mm256_sub_epi8(x, (_mm256_srli_epi8(x, 1) & mask1));\n      |                                 ^\n[REDACTED]/tmpus47qaxc.cpp:43:14: error: use of undeclared identifier '_mm256_srli_epi8'\n   43 |         x = (_mm256_srli_epi8(x, 2) & mask2) + (x & mask2);\n      |              ^\n[REDACTED]/tmpus47qaxc.cpp:44:18: error: use of undeclared identifier '_mm256_srli_epi8'\n   44 |         x = (x + _mm256_srli_epi8(x, 4)) & mask3;\n      |                  ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_16_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpj8n1rvcl.cpp:42:48: error: use of undeclared identifier '_mm256_srli_epi8'\n   42 |         __m256i high_nibble = _mm256_and_si256(_mm256_srli_epi8(input, 4), mask1);\n      |                                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_16_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_17_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpaboohzem.cpp:64:27: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'range_matrix_mul_simd' that is compiled without support for 'fma'\n   64 |                     sum = _mm256_fmadd_pd(a, b, sum);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_18_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpiwfq40tk.cpp:65:23: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'range_matrix_mul_simd' that is compiled without support for 'fma'\n   65 |                 sum = _mm256_fmadd_pd(a, b, sum);\n      |                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_18_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_18_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_18_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_19_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_22_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmppualm5xd.cpp:43:27: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_mul_round_int_simd' that is compiled without support for 'fma'\n   43 |                     sum = _mm256_fmadd_pd(a, b, sum);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_24_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpy6mq45io.cpp:43:27: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_mul_round_int_simd' that is compiled without support for 'fma'\n   43 |                     sum = _mm256_fmadd_pd(a, b0, sum);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_24_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp9mj4i_w3.cpp:45:27: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_mul_round_int_simd' that is compiled without support for 'fma'\n   45 |                     sum = _mm256_fmadd_pd(a, b, sum);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_24_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmprw5oela7.cpp:43:27: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_mul_round_int_simd' that is compiled without support for 'fma'\n   43 |                     sum = _mm256_fmadd_pd(a, b, sum);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_25_AVX", "passed": false, "result": "runtime failed: malloc(): corrupted top size\n"}
+{"task_id": "SimdBench_25_AVX", "passed": false, "result": "runtime failed: malloc(): corrupted top size\n"}
+{"task_id": "SimdBench_25_AVX", "passed": false, "result": "runtime failed: double free or corruption (!prev)\n"}
+{"task_id": "SimdBench_25_AVX", "passed": false, "result": "runtime failed: malloc(): corrupted top size\n"}
+{"task_id": "SimdBench_25_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_26_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_29_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_30_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_30_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_30_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_30_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp86ck2r11.cpp:32:24: error: use of undeclared identifier '_mm256_div_epi16'; did you mean '_mm256_min_epi16'?\n   32 |         __m256i vdiv = _mm256_div_epi16(vsrc, vbase); // Divide by base\n      |                        ^~~~~~~~~~~~~~~~\n      |                        _mm256_min_epi16\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1233:1: note: '_mm256_min_epi16' declared here\n 1233 | _mm256_min_epi16(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_31_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmptj81tz1c.cpp:32:24: error: use of undeclared identifier '_mm256_div_epi16'; did you mean '_mm256_min_epi16'?\n   32 |         __m256i vdiv = _mm256_div_epi16(vsrc, vbase);\n      |                        ^~~~~~~~~~~~~~~~\n      |                        _mm256_min_epi16\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1233:1: note: '_mm256_min_epi16' declared here\n 1233 | _mm256_min_epi16(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_31_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp_m6hsjvc.cpp:34:24: error: use of undeclared identifier '_mm256_div_epi16'; did you mean '_mm256_min_epi16'?\n   34 |         __m256i vdiv = _mm256_div_epi16(vsrc, vbase);\n      |                        ^~~~~~~~~~~~~~~~\n      |                        _mm256_min_epi16\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1233:1: note: '_mm256_min_epi16' declared here\n 1233 | _mm256_min_epi16(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_31_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpk9qz34to.cpp:34:24: error: use of undeclared identifier '_mm256_div_epi16'; did you mean '_mm256_min_epi16'?\n   34 |         __m256i vdiv = _mm256_div_epi16(vsrc, vbase);\n      |                        ^~~~~~~~~~~~~~~~\n      |                        _mm256_min_epi16\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1233:1: note: '_mm256_min_epi16' declared here\n 1233 | _mm256_min_epi16(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_31_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp47luol7w.cpp:32:24: error: use of undeclared identifier '_mm256_div_epi16'; did you mean '_mm256_min_epi16'?\n   32 |         __m256i vdiv = _mm256_div_epi16(vsrc, vbase);\n      |                        ^~~~~~~~~~~~~~~~\n      |                        _mm256_min_epi16\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1233:1: note: '_mm256_min_epi16' declared here\n 1233 | _mm256_min_epi16(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_32_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpr_ad2d49.cpp:33:25: error: always_inline function '_mm256_abs_epi64' requires target feature 'avx512vl', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'avx512vl'\n   33 |         __m256i abs_y = _mm256_abs_epi64(vy);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpsxfisf69.cpp:33:25: error: always_inline function '_mm256_abs_epi64' requires target feature 'avx512vl', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'avx512vl'\n   33 |         __m256i abs_y = _mm256_abs_epi64(vy);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpz9uj32lh.cpp:33:25: error: always_inline function '_mm256_abs_epi64' requires target feature 'avx512vl', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'avx512vl'\n   33 |         __m256i abs_y = _mm256_abs_epi64(y_vec);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpzq_61p1f.cpp:33:25: error: always_inline function '_mm256_abs_epi64' requires target feature 'avx512vl', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'avx512vl'\n   33 |         __m256i abs_y = _mm256_abs_epi64(vy);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpo8p8_zab.cpp:33:25: error: always_inline function '_mm256_abs_epi64' requires target feature 'avx512vl', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'avx512vl'\n   33 |         __m256i abs_y = _mm256_abs_epi64(vy);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmps4h9p_67.cpp:26:27: warning: absolute value function 'fabsf' given an argument of type 'double' but has parameter of type 'float' which may cause truncation of value [-Wabsolute-value]\n   26 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^\n[REDACTED]/tmps4h9p_67.cpp:26:27: note: use function 'std::abs' instead\n   26 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^~~~~\n      |                           std::abs\n[REDACTED]/tmps4h9p_67.cpp:60:32: error: use of undeclared identifier '_mm256_abs_pd'; did you mean '_mm256_abs_ph'?\n   60 |             __m256d abs_diff = _mm256_abs_pd(diff);\n      |                                ^~~~~~~~~~~~~\n      |                                _mm256_abs_ph\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlfp16intrin.h:318:49: note: '_mm256_abs_ph' declared here\n  318 | static __inline__ __m256h __DEFAULT_FN_ATTRS256 _mm256_abs_ph(__m256h __A) {\n      |                                                 ^\n1 warning and 1 error generated.\n"}
+{"task_id": "SimdBench_38_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpjk7t8w8p.cpp:40:19: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_row_norm_compare_simd' that is compiled without support for 'fma'\n   40 |             sum = _mm256_fmadd_pd(vec, vec, sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_39_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpt50wl3if.cpp:40:19: error: always_inline function '_mm256_fmadd_pd' requires target feature 'fma', but would be inlined into function 'matrix_row_norm_compare_simd' that is compiled without support for 'fma'\n   40 |             sum = _mm256_fmadd_pd(vec, vec, sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_39_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_40_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_42_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpn2gm6i10.cpp:49:21: error: argument to '__builtin_ia32_blendps256' must be a constant integer\n   49 |             mask1 = _mm256_blend_ps(mask1, _mm256_castsi256_ps(_mm256_set1_epi32(mask_val1)), 1 << j);\n      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1372:12: note: expanded from macro '_mm256_blend_ps'\n 1372 |   ((__m256)__builtin_ia32_blendps256((__v8sf)(__m256)(V1), \\\n      |            ^\n 1373 |                                      (__v8sf)(__m256)(V2), (int)(M)))\n      |                                                            ~~~~~~~~\n[REDACTED]/tmpn2gm6i10.cpp:50:21: error: argument to '__builtin_ia32_blendps256' must be a constant integer\n   50 |             mask2 = _mm256_blend_ps(mask2, _mm256_castsi256_ps(_mm256_set1_epi32(mask_val2)), 1 << j);\n      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1372:12: note: expanded from macro '_mm256_blend_ps'\n 1372 |   ((__m256)__builtin_ia32_blendps256((__v8sf)(__m256)(V1), \\\n      |            ^\n 1373 |                                      (__v8sf)(__m256)(V2), (int)(M)))\n      |                                                            ~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_45_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_46_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_46_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_46_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_46_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_47_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpmi1ks2l8.cpp:38:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   38 |         __m256i quotient = _mm256_div_epi32(a, three);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_47_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp2s7b9vzj.cpp:41:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   41 |         __m256i quotient = _mm256_div_epi32(a, three);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_47_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpjvfo5oc7.cpp:38:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   38 |         __m256i quotient = _mm256_div_epi32(a, three);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_47_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpb5w6dbs6.cpp:38:29: error: use of undeclared identifier '_mm256_rem_epi32'\n   38 |         __m256i remainder = _mm256_rem_epi32(a, three);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_47_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpuegp4scw.cpp:41:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   41 |         __m256i quotient = _mm256_div_epi32(a, three);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_48_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmps2lem4rv.cpp:54:26: error: argument to '__builtin_ia32_vec_ext_v4si' must be a constant integer\n   54 |             out[i + j] = _mm_extract_epi32(result_low, j);\n      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:1055:9: note: expanded from macro '_mm_extract_epi32'\n 1055 |   ((int)__builtin_ia32_vec_ext_v4si((__v4si)(__m128i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n[REDACTED]/tmps2lem4rv.cpp:55:30: error: argument to '__builtin_ia32_vec_ext_v4si' must be a constant integer\n   55 |             out[i + j + 4] = _mm_extract_epi32(result_high, j);\n      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:1055:9: note: expanded from macro '_mm_extract_epi32'\n 1055 |   ((int)__builtin_ia32_vec_ext_v4si((__v4si)(__m128i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_50_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_58_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_58_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_58_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_58_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpv1gprjd_.cpp:46:21: error: use of undeclared identifier '_mm256_reduce_add_pd'; did you mean '_mm256_reduce_add_ph'?\n   46 |     double result = _mm256_reduce_add_pd(sum);\n      |                     ^~~~~~~~~~~~~~~~~~~~\n      |                     _mm256_reduce_add_ph\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlfp16intrin.h:2013:1: note: '_mm256_reduce_add_ph' declared here\n 2013 | _mm256_reduce_add_ph(__m256h __W) {\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_60_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_61_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_61_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_62_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_68_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_68_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_68_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_68_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_68_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_69_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpj5vdqckl.cpp:49:23: error: argument to '__builtin_ia32_vec_set_v8si' must be a constant integer\n   49 |             lengths = _mm256_insert_epi32(lengths, str_len, j);\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:2083:13: note: expanded from macro '_mm256_insert_epi32'\n 2083 |   ((__m256i)__builtin_ia32_vec_set_v8si((__v8si)(__m256i)(X), \\\n      |             ^\n 2084 |                                         (int)(I), (int)(N)))\n      |                                                   ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_69_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_69_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_69_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp3hh4u1oi.cpp:43:14: error: use of undeclared identifier '_mm256_rem_epi64'\n   43 |         vb = _mm256_rem_epi64(temp, vb);\n      |              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpi9feu28i.cpp:43:14: error: use of undeclared identifier '_mm256_rem_epi64'\n   43 |         vb = _mm256_rem_epi64(temp, vb);\n      |              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpysur4t7q.cpp:43:14: error: use of undeclared identifier '_mm256_rem_epi64'\n   43 |         vb = _mm256_rem_epi64(va, vb);\n      |              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpfjiodinr.cpp:43:14: error: use of undeclared identifier '_mm256_rem_epi64'\n   43 |         vb = _mm256_rem_epi64(temp, vb);\n      |              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp6bst392y.cpp:43:54: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   43 |         vb = _mm256_sub_epi64(temp, _mm256_mul_epi32(_mm256_div_epi64(temp, vb), vb));\n      |                                                      ^~~~~~~~~~~~~~~~\n      |                                                      _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_71_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_71_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmppkav4ixh.cpp:40:31: error: use of undeclared identifier '_mm256_abs_ps'; did you mean '_mm256_abs_ph'?\n   40 |             __m256 abs_diff = _mm256_abs_ps(diff);\n      |                               ^~~~~~~~~~~~~\n      |                               _mm256_abs_ph\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlfp16intrin.h:318:49: note: '_mm256_abs_ph' declared here\n  318 | static __inline__ __m256h __DEFAULT_FN_ATTRS256 _mm256_abs_ph(__m256h __A) {\n      |                                                 ^\n1 error generated.\n"}
+{"task_id": "SimdBench_71_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpgszl7nvy.cpp:40:31: error: use of undeclared identifier '_mm256_abs_ps'; did you mean '_mm256_abs_ph'?\n   40 |             __m256 abs_diff = _mm256_abs_ps(diff);\n      |                               ^~~~~~~~~~~~~\n      |                               _mm256_abs_ph\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlfp16intrin.h:318:49: note: '_mm256_abs_ph' declared here\n  318 | static __inline__ __m256h __DEFAULT_FN_ATTRS256 _mm256_abs_ph(__m256h __A) {\n      |                                                 ^\n1 error generated.\n"}
+{"task_id": "SimdBench_71_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpm3jlmzfo.cpp:30:23: error: use of undeclared identifier '_mm256_rem_epi64'\n   30 |         __m256i rem = _mm256_rem_epi64(n_vec, divisors);\n      |                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_73_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp652wmmd4.cpp:32:29: error: use of undeclared identifier '_mm256_rem_epi64'\n   32 |         __m256i remainder = _mm256_rem_epi64(n_vec, divisors);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_73_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpn1_wqs8e.cpp:32:29: error: use of undeclared identifier '_mm256_rem_epi64'\n   32 |         __m256i remainder = _mm256_rem_epi64(n_vec, divisors);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_73_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp7aoj3qgy.cpp:30:30: error: use of undeclared identifier '_mm256_rem_epi64'\n   30 |         __m256i remainders = _mm256_rem_epi64(n_vec, divisors);\n      |                              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_73_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmptn9kvcxv.cpp:33:29: error: use of undeclared identifier '_mm256_rem_epi64'\n   33 |         __m256i remainder = _mm256_rem_epi64(n_vec, divisors);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp6_01a1_r.cpp:51:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   51 |         __m256i quotient = _mm256_div_epi32(num, divisor);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpcblvsn33.cpp:51:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   51 |         __m256i quotient = _mm256_div_epi32(num, divisor);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmprn_sp1zv.cpp:51:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   51 |         __m256i quotient = _mm256_div_epi32(num, divisor);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpq5e23rh2.cpp:49:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   49 |         __m256i quotient = _mm256_div_epi32(num, divisor);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpabtm6jma.cpp:57:28: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   57 |         __m256i quotient = _mm256_div_epi32(num, current);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n[REDACTED]/tmpabtm6jma.cpp:65:34: error: member reference base type '__m256i' (vector of 4 'long long' values) is not a structure or union\n   65 |             int divisor = current.m256i_i32[_tzcnt_u32(mask)];\n      |                           ~~~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_75_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpgehypo0f.cpp:38:30: error: use of undeclared identifier '_mm256_rem_epi64'\n   38 |         __m256i remainders = _mm256_rem_epi64(current, values);\n      |                              ^\n[REDACTED]/tmpgehypo0f.cpp:47:22: error: use of undeclared identifier '_mm256_rem_epi64'\n   47 |         remainders = _mm256_rem_epi64(current, values);\n      |                      ^\n[REDACTED]/tmpgehypo0f.cpp:55:22: error: use of undeclared identifier '_mm256_rem_epi64'\n   55 |         remainders = _mm256_rem_epi64(current, values);\n      |                      ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_76_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmph0bgvwlq.cpp:40:27: error: argument to '__builtin_ia32_vec_ext_v4di' must be a constant integer\n   40 |             int64_t div = _mm256_extract_epi64(current, i);\n      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:2057:15: note: expanded from macro '_mm256_extract_epi64'\n 2057 |   ((long long)__builtin_ia32_vec_ext_v4di((__v4di)(__m256i)(X), (int)(N)))\n      |               ^                                                 ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_76_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpoucql7p5.cpp:41:22: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   41 |         quotients1 = _mm256_div_epi64(quotients1, _mm256_add_epi64(current, divisors1));\n      |                      ^~~~~~~~~~~~~~~~\n      |                      _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n[REDACTED]/tmpoucql7p5.cpp:42:22: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   42 |         quotients2 = _mm256_div_epi64(quotients2, _mm256_add_epi64(current, divisors2));\n      |                      ^~~~~~~~~~~~~~~~\n      |                      _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_76_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpuncdeqog.cpp:40:28: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   40 |         __m256i quotient = _mm256_div_epi64(current, test);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n[REDACTED]/tmpuncdeqog.cpp:51:20: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   51 |         quotient = _mm256_div_epi64(current, test); \n      |                    ^~~~~~~~~~~~~~~~\n      |                    _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_76_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpl_v65j33.cpp:39:29: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   39 |         __m256i quotient1 = _mm256_div_epi64(num, _mm256_add_epi64(i, divisors1));\n      |                             ^~~~~~~~~~~~~~~~\n      |                             _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n[REDACTED]/tmpl_v65j33.cpp:40:29: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   40 |         __m256i quotient2 = _mm256_div_epi64(num, _mm256_add_epi64(i, divisors2));\n      |                             ^~~~~~~~~~~~~~~~\n      |                             _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_77_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_77_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_77_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_77_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_79_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpiw2d5nao.cpp:44:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i mod11 = _mm256_rem_epi32(nums, div11);\n      |                         ^\n[REDACTED]/tmpiw2d5nao.cpp:45:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   45 |         __m256i mod13 = _mm256_rem_epi32(nums, div13);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_80_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmphddawbvv.cpp:44:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i mod11 = _mm256_rem_epi32(nums, div11);\n      |                         ^\n[REDACTED]/tmphddawbvv.cpp:45:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   45 |         __m256i mod13 = _mm256_rem_epi32(nums, div13);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_80_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp31i0ktkc.cpp:44:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i mod11 = _mm256_rem_epi32(nums, div11);\n      |                         ^\n[REDACTED]/tmp31i0ktkc.cpp:45:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   45 |         __m256i mod13 = _mm256_rem_epi32(nums, div13);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_80_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpjjjqdovg.cpp:43:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   43 |         __m256i mod11 = _mm256_rem_epi32(nums, vec_11);\n      |                         ^\n[REDACTED]/tmpjjjqdovg.cpp:44:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i mod13 = _mm256_rem_epi32(nums, vec_13);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_80_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp5mblr95p.cpp:42:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   42 |         __m256i mod11 = _mm256_rem_epi32(nums, vec_11);\n      |                         ^\n[REDACTED]/tmp5mblr95p.cpp:43:25: error: use of undeclared identifier '_mm256_rem_epi32'\n   43 |         __m256i mod13 = _mm256_rem_epi32(nums, vec_13);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_81_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_81_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_81_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_81_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_81_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_82_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_82_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_82_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_82_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_83_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_84_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_84_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_84_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpg5kp5pc0.cpp:48:89: error: expected ')'\n   48 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |                                                                                         ^\n[REDACTED]/tmpg5kp5pc0.cpp:48:11: note: to match this '('\n   48 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_85_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpw6fz20ge.cpp:47:89: error: expected ')'\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |                                                                                         ^\n[REDACTED]/tmpw6fz20ge.cpp:47:11: note: to match this '('\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |           ^\n[REDACTED]/tmpw6fz20ge.cpp:59:9: error: use of undeclared identifier 'result'\n   59 |         result += digits[i];\n      |         ^\n[REDACTED]/tmpw6fz20ge.cpp:62:12: error: use of undeclared identifier 'result'\n   62 |     return result;\n      |            ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_85_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpky85pb4v.cpp:47:89: error: expected ')'\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |                                                                                         ^\n[REDACTED]/tmpky85pb4v.cpp:47:11: note: to match this '('\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |           ^\n[REDACTED]/tmpky85pb4v.cpp:60:9: error: use of undeclared identifier 'result'\n   60 |         result += digits[i];\n      |         ^\n[REDACTED]/tmpky85pb4v.cpp:63:12: error: use of undeclared identifier 'result'\n   63 |     return result;\n      |            ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_85_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpexz41d9d.cpp:47:89: error: expected ')'\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |                                                                                         ^\n[REDACTED]/tmpexz41d9d.cpp:47:11: note: to match this '('\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |           ^\n[REDACTED]/tmpexz41d9d.cpp:60:9: error: use of undeclared identifier 'result'\n   60 |         result += digits[i];\n      |         ^\n[REDACTED]/tmpexz41d9d.cpp:63:12: error: use of undeclared identifier 'result'\n   63 |     return result;\n      |            ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_85_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpna9fvcbd.cpp:47:89: error: expected ')'\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |                                                                                         ^\n[REDACTED]/tmpna9fvcbd.cpp:47:11: note: to match this '('\n   47 |     while (_mm256_movemask_pd(_mm256_castsi256_pd(_mm256_cmpgt_epi64(vec_x, vec_zero))) {\n      |           ^\n[REDACTED]/tmpna9fvcbd.cpp:60:9: error: use of undeclared identifier 'result'\n   60 |         result += digits[i];\n      |         ^\n[REDACTED]/tmpna9fvcbd.cpp:63:12: error: use of undeclared identifier 'result'\n   63 |     return result;\n      |            ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_86_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_89_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_89_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpk52qc0p0.cpp:44:28: error: use of undeclared identifier '_mm256_loadu_si8'; did you mean '_mm256_loadu_epi8'?\n   44 |             __m256i data = _mm256_loadu_si8(brackets.c_str() + i);\n      |                            ^~~~~~~~~~~~~~~~\n      |                            _mm256_loadu_epi8\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlbwintrin.h:2373:1: note: '_mm256_loadu_epi8' declared here\n 2373 | _mm256_loadu_epi8 (void const *__P)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_89_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_90_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_90_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_91_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_93_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_93_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_93_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_93_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_94_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95_AVX", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_95_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95_AVX", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_95_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpefwz8aya.cpp:46:18: error: argument to '__builtin_ia32_vec_ext_v8si' must be a constant integer\n   46 |             freq[_mm256_extract_epi32(vec, j)]++;\n      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1988:9: note: expanded from macro '_mm256_extract_epi32'\n 1988 |   ((int)__builtin_ia32_vec_ext_v8si((__v8si)(__m256i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n[REDACTED]/tmpefwz8aya.cpp:66:13: error: use of undeclared identifier '_mm256_cmpge_epi32'; did you mean '_mm256_cmpgt_epi32'?\n   66 |             _mm256_cmpge_epi32(freqs, indices));\n      |             ^~~~~~~~~~~~~~~~~~\n      |             _mm256_cmpgt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:786:1: note: '_mm256_cmpgt_epi32' declared here\n  786 | _mm256_cmpgt_epi32(__m256i __a, __m256i __b)\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_96_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_96_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpz7_03jfh.cpp:83:27: error: use of undeclared identifier 'remaining'\n   83 |         if((mask & ((1 << remaining) - 1)) != ((1 << remaining) - 1)) {\n      |                           ^\n[REDACTED]/tmpz7_03jfh.cpp:83:54: error: use of undeclared identifier 'remaining'\n   83 |         if((mask & ((1 << remaining) - 1)) != ((1 << remaining) - 1)) {\n      |                                                      ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_96_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpg8x9ahvy.cpp:81:30: error: use of undeclared identifier 'min'; did you mean 'fmin'?\n   81 |         int required = (1 << min(8, half-i)) - 1;\n      |                              ^~~\n      |                              fmin\n/usr/include/x86_64-linux-gnu/bits/mathcalls.h:336:14: note: 'fmin' declared here\n  336 | __MATHCALLX (fmin,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));\n      |              ^\n[REDACTED]/tmpg8x9ahvy.cpp:81:27: error: invalid operands to binary expression ('int' and 'double')\n   81 |         int required = (1 << min(8, half-i)) - 1;\n      |                         ~ ^  ~~~~~~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_97_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_97_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_98_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_98_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_98_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp2ox6r7ry.cpp:51:23: error: use of undeclared identifier '_mm256_div_epi64'; did you mean '_mm256_min_epi64'?\n   51 |         __m256i div = _mm256_div_epi64(next, vec_n);\n      |                       ^~~~~~~~~~~~~~~~\n      |                       _mm256_min_epi64\n/usr/lib/llvm-18/lib/clang/18/include/avx512vlintrin.h:3213:1: note: '_mm256_min_epi64' declared here\n 3213 | _mm256_min_epi64 (__m256i __A, __m256i __B) {\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_99_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpee6bxb48.cpp:50:23: error: use of undeclared identifier '_mm256_div_epu32'; did you mean '_mm256_min_epu32'?\n   50 |         __m256i div = _mm256_div_epu32(next, vec_n);\n      |                       ^~~~~~~~~~~~~~~~\n      |                       _mm256_min_epu32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1309:1: note: '_mm256_min_epu32' declared here\n 1309 | _mm256_min_epu32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_100_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_100_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_100_AVX", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_100_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp3xwserrq.cpp:40:29: error: use of undeclared identifier '_mm256_rem_epi32'\n   40 |         __m256i remainder = _mm256_rem_epi32(len_vec, divisors);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_102_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpdma7yyat.cpp:46:27: error: use of undeclared identifier '_mm256_rem_epi32'\n   46 |         __m256i vec_rem = _mm256_rem_epi32(vec_len, vec_divisors);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_102_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp0ydqbu94.cpp:40:23: error: use of undeclared identifier '_mm256_rem_epi32'\n   40 |         __m256i rem = _mm256_rem_epi32(lens, nums);\n      |                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_102_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmppdccteok.cpp:46:29: error: use of undeclared identifier '_mm256_rem_epi32'\n   46 |         __m256i remainder = _mm256_rem_epi32(len_vec, divisors);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_102_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpb46k0ore.cpp:47:27: error: use of undeclared identifier '_mm256_rem_epi32'\n   47 |         __m256i vec_rem = _mm256_rem_epi32(vec_len, vec_divisors);\n      |                           ^\n1 error generated.\n"}
+{"task_id": "SimdBench_103_AVX", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_103_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpigakopsl.cpp:42:22: error: argument to '__builtin_ia32_vec_set_v8si' must be a constant integer\n   42 |             digits = _mm256_insert_epi32(digits, digit, i);\n      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:2083:13: note: expanded from macro '_mm256_insert_epi32'\n 2083 |   ((__m256i)__builtin_ia32_vec_set_v8si((__v8si)(__m256i)(X), \\\n      |             ^\n 2084 |                                         (int)(I), (int)(N)))\n      |                                                   ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_103_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_103_AVX", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_103_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_105_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_105_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_105_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_105_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpsyjf1jpq.cpp:62:31: error: argument to '__builtin_ia32_palignr256' must be a constant integer\n   62 |             __m256i shifted = _mm256_alignr_epi8(\n      |                               ^~~~~~~~~~~~~~~~~~~\n   63 |                 _mm256_permute2x128_si256(vowels, vowels, 0x01),\n      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   64 |                 vowels,\n      |                 ~~~~~~~\n   65 |                 shift);\n      |                 ~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:439:13: note: expanded from macro '_mm256_alignr_epi8'\n  439 |   ((__m256i)__builtin_ia32_palignr256((__v32qi)(__m256i)(a), \\\n      |             ^\n  440 |                                       (__v32qi)(__m256i)(b), (n)))\n      |                                                              ~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_107_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmplpq9zwoy.cpp:69:38: error: use of undeclared identifier '_mm256_rem_epi32'\n   69 |                 __m256i remainders = _mm256_rem_epi32(indices, divisible);\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_108_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpxek78un4.cpp:69:38: error: use of undeclared identifier '_mm256_rem_epi32'\n   69 |                 __m256i remainders = _mm256_rem_epi32(indices, divisible);\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_108_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmplqchy9q7.cpp:70:33: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   70 |             __m256i divResult = _mm256_div_epi32(numVec, primeVec);\n      |                                 ^~~~~~~~~~~~~~~~\n      |                                 _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_108_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpwj6hqojl.cpp:69:38: error: use of undeclared identifier '_mm256_rem_epi32'\n   69 |                 __m256i remainders = _mm256_rem_epi32(indices, divisible);\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_108_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpac3z1dig.cpp:70:34: error: use of undeclared identifier '_mm256_rem_epi32'\n   70 |             __m256i remainders = _mm256_rem_epi32(indices, divisible);\n      |                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_109_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_109_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_109_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_109_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_110_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_110_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_110_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp8mclin5o.cpp:62:20: error: use of undeclared identifier '_mm256_rem_epi32'\n   62 |             fact = _mm256_rem_epi32(fact, mod);\n      |                    ^\n1 error generated.\n"}
+{"task_id": "SimdBench_112_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpx517pgoi.cpp:66:19: error: use of undeclared identifier '_mm256_rem_epi32'\n   66 |             tmp = _mm256_rem_epi32(tmp, mod);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_112_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp4t3nsle_.cpp:61:20: error: use of undeclared identifier '_mm256_rem_epi32'\n   61 |             fact = _mm256_rem_epi32(fact, mod);\n      |                    ^\n1 error generated.\n"}
+{"task_id": "SimdBench_112_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpulg5dqom.cpp:66:21: error: use of undeclared identifier '_mm256_rem_epi32'\n   66 |             facts = _mm256_rem_epi32(facts, mod);\n      |                     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_112_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpl2nbvtjj.cpp:61:20: error: use of undeclared identifier '_mm256_rem_epi32'\n   61 |             fact = _mm256_rem_epi32(fact, mod);\n      |                    ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_113_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpoy1q484s.cpp:62:35: error: argument to '__builtin_ia32_vec_set_v8si' must be a constant integer\n   62 |                 palindrome_mask = _mm256_insert_epi32(palindrome_mask, 1, j);\n      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:2083:13: note: expanded from macro '_mm256_insert_epi32'\n 2083 |   ((__m256i)__builtin_ia32_vec_set_v8si((__v8si)(__m256i)(X), \\\n      |             ^\n 2084 |                                         (int)(I), (int)(N)))\n      |                                                   ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_113_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_113_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpsgaobdou.cpp:53:32: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   53 |             __m256i quotient = _mm256_div_epi32(nums, _mm256_set1_epi32(10));\n      |                                ^~~~~~~~~~~~~~~~\n      |                                _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_114_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpn092xmea.cpp:55:27: error: use of undeclared identifier '_mm256_rem_epi32'\n   55 |             __m256i rem = _mm256_rem_epi32(nums, div10);\n      |                           ^\n[REDACTED]/tmpn092xmea.cpp:61:20: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   61 |             nums = _mm256_div_epi32(nums, div10);\n      |                    ^~~~~~~~~~~~~~~~\n      |                    _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_114_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp6jmsbggl.cpp:54:34: error: use of undeclared identifier '_mm256_rem_epi32'\n   54 |             __m256i remainders = _mm256_rem_epi32(abs_nums, _mm256_set1_epi32(10));\n      |                                  ^\n[REDACTED]/tmp6jmsbggl.cpp:63:20: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   63 |             nums = _mm256_div_epi32(nums, _mm256_set1_epi32(10));\n      |                    ^~~~~~~~~~~~~~~~\n      |                    _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n[REDACTED]/tmp6jmsbggl.cpp:68:38: error: use of undeclared identifier '_mm256_cmplt_epi32'; did you mean '_mm256_cmpgt_epi32'?\n   68 |         mask = _mm256_or_si256(mask, _mm256_cmplt_epi32(result, zeros));\n      |                                      ^~~~~~~~~~~~~~~~~~\n      |                                      _mm256_cmpgt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:786:1: note: '_mm256_cmpgt_epi32' declared here\n  786 | _mm256_cmpgt_epi32(__m256i __a, __m256i __b)\n      | ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_114_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpd8uz3jbd.cpp:55:27: error: use of undeclared identifier '_mm256_rem_epi32'\n   55 |             __m256i rem = _mm256_rem_epi32(nums, div10);\n      |                           ^\n[REDACTED]/tmpd8uz3jbd.cpp:61:20: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   61 |             nums = _mm256_div_epi32(nums, div10);\n      |                    ^~~~~~~~~~~~~~~~\n      |                    _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_114_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp8ja0ep28.cpp:56:33: error: use of undeclared identifier '_mm256_rem_epi32'\n   56 |             __m256i remainder = _mm256_rem_epi32(vec, _mm256_set1_epi32(10));\n      |                                 ^\n[REDACTED]/tmp8ja0ep28.cpp:60:19: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   60 |             vec = _mm256_div_epi32(vec, _mm256_set1_epi32(10));\n      |                   ^~~~~~~~~~~~~~~~\n      |                   _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_115_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_116_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_116_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_116_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_116_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_117_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_117_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_117_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_118_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpdq3w_a5x.cpp:48:19: error: always_inline function '_mm256_min_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   48 |         min_sum = _mm256_min_epi64(min_sum, curr_sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_118_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmph96wosc7.cpp:47:19: error: always_inline function '_mm256_min_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   47 |         min_sum = _mm256_min_epi64(min_sum, curr_sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_118_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpjck8z3om.cpp:48:19: error: always_inline function '_mm256_min_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   48 |         min_sum = _mm256_min_epi64(min_sum, curr_sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_118_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp880pa7sm.cpp:49:19: error: always_inline function '_mm256_min_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   49 |         min_sum = _mm256_min_epi64(min_sum, curr_sum);\n      |                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_118_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpy6zqj80s.cpp:48:19: error: always_inline function '_mm256_min_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   48 |         min_sum = _mm256_min_epi64(min_sum, curr);\n      |                   ^\n[REDACTED]/tmpy6zqj80s.cpp:51:16: error: always_inline function '_mm256_max_epi64' requires target feature 'avx512vl', but would be inlined into function 'minSubArraySum_simd' that is compiled without support for 'avx512vl'\n   51 |         curr = _mm256_max_epi64(curr, zero);\n      |                ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_119_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_123_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpceu6kqig.cpp:64:16: error: argument to '__builtin_ia32_vec_ext_v8si' must be a constant integer\n   64 |         sum += _mm256_extract_epi32(sum_vec, i);\n      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1988:9: note: expanded from macro '_mm256_extract_epi32'\n 1988 |   ((int)__builtin_ia32_vec_ext_v8si((__v8si)(__m256i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n[REDACTED]/tmpceu6kqig.cpp:65:17: error: argument to '__builtin_ia32_vec_ext_v8si' must be a constant integer\n   65 |         sign *= _mm256_extract_epi32(sign_prod, i);\n      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1988:9: note: expanded from macro '_mm256_extract_epi32'\n 1988 |   ((int)__builtin_ia32_vec_ext_v8si((__v8si)(__m256i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_123_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp5eajaf21.cpp:102:10: error: no member named 'function' in namespace 'std'\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |     ~~~~~^\n[REDACTED]/tmp5eajaf21.cpp:102:27: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                        ~~~^\n[REDACTED]/tmp5eajaf21.cpp:102:31: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                            ~~~^\n[REDACTED]/tmp5eajaf21.cpp:102:35: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                ~~~^\n[REDACTED]/tmp5eajaf21.cpp:102:52: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                    ~~~~~~~~~~~~~~~~^\n[REDACTED]/tmp5eajaf21.cpp:102:53: error: expected expression\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                                     ^\n[REDACTED]/tmp5eajaf21.cpp:102:56: error: use of undeclared identifier 'dfs'\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                                        ^\n[REDACTED]/tmp5eajaf21.cpp:117:17: error: use of undeclared identifier 'dfs'\n  117 |                 dfs(nx, ny, len+1, path);\n      |                 ^\n[REDACTED]/tmp5eajaf21.cpp:125:13: error: use of undeclared identifier 'dfs'\n  125 |             dfs(i, j, 0, path);\n      |             ^\n9 errors generated.\n"}
+{"task_id": "SimdBench_124_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp_bbn98oi.cpp:102:10: error: no member named 'function' in namespace 'std'\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |     ~~~~~^\n[REDACTED]/tmp_bbn98oi.cpp:102:27: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                        ~~~^\n[REDACTED]/tmp_bbn98oi.cpp:102:31: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                            ~~~^\n[REDACTED]/tmp_bbn98oi.cpp:102:35: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                                ~~~^\n[REDACTED]/tmp_bbn98oi.cpp:102:52: error: expected '(' for function-style cast or type construction\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                                    ~~~~~~~~~~~~~~~~^\n[REDACTED]/tmp_bbn98oi.cpp:102:53: error: expected expression\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                                                     ^\n[REDACTED]/tmp_bbn98oi.cpp:102:56: error: use of undeclared identifier 'dfs'; did you mean 'ffs'?\n  102 |     std::function<void(int,int,int,std::vector<int>&)> dfs;\n      |                                                        ^~~\n      |                                                        ffs\n/usr/include/strings.h:104:12: note: 'ffs' declared here\n  104 | extern int ffs (int __i) __THROW __attribute_const__;\n      |            ^\n[REDACTED]/tmp_bbn98oi.cpp:104:5: error: use of undeclared identifier 'dfs'\n  104 |     dfs = [&](int x, int y, int len, std::vector<int>& path) {\n      |     ^\n[REDACTED]/tmp_bbn98oi.cpp:119:17: error: use of undeclared identifier 'dfs'\n  119 |                 dfs(nx, ny, len + 1, path);\n      |                 ^\n[REDACTED]/tmp_bbn98oi.cpp:127:13: error: use of undeclared identifier 'dfs'\n  127 |             dfs(i, j, 0, path);\n      |             ^\n10 errors generated.\n"}
+{"task_id": "SimdBench_124_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpgxc880y9.cpp:100:10: error: no member named 'function' in namespace 'std'\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |     ~~~~~^\n[REDACTED]/tmpgxc880y9.cpp:100:27: error: expected '(' for function-style cast or type construction\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                        ~~~^\n[REDACTED]/tmpgxc880y9.cpp:100:31: error: expected '(' for function-style cast or type construction\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                            ~~~^\n[REDACTED]/tmpgxc880y9.cpp:100:35: error: expected '(' for function-style cast or type construction\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                ~~~^\n[REDACTED]/tmpgxc880y9.cpp:100:52: error: expected '(' for function-style cast or type construction\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                    ~~~~~~~~~~~~~~~~^\n[REDACTED]/tmpgxc880y9.cpp:100:53: error: expected expression\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                                     ^\n[REDACTED]/tmpgxc880y9.cpp:100:56: error: use of undeclared identifier 'dfs'\n  100 |     std::function<void(int,int,int,std::vector<int>&)> dfs = \n      |                                                        ^\n[REDACTED]/tmpgxc880y9.cpp:115:17: error: use of undeclared identifier 'dfs'\n  115 |                 dfs(nx, ny, len + 1, path);\n      |                 ^\n[REDACTED]/tmpgxc880y9.cpp:123:13: error: use of undeclared identifier 'dfs'\n  123 |             dfs(i, j, 1, path);\n      |             ^\n9 errors generated.\n"}
+{"task_id": "SimdBench_125_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_126_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_AVX", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpr8i650dq.cpp:43:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   43 |         __m256i is_mult3 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod3), _mm256_setzero_si256());\n      |                                               ^\n[REDACTED]/tmpr8i650dq.cpp:44:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i is_mult4 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod4), _mm256_setzero_si256());\n      |                                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpmj29gas5.cpp:48:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   48 |         __m256i is_mult3 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod3), _mm256_setzero_si256());\n      |                                               ^\n[REDACTED]/tmpmj29gas5.cpp:49:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   49 |         __m256i is_mult4 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod4), _mm256_setzero_si256());\n      |                                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpskc7qyag.cpp:43:24: error: use of undeclared identifier '_mm256_rem_epi32'\n   43 |         __m256i mod3 = _mm256_rem_epi32(idx, div3);\n      |                        ^\n[REDACTED]/tmpskc7qyag.cpp:44:24: error: use of undeclared identifier '_mm256_rem_epi32'\n   44 |         __m256i mod4 = _mm256_rem_epi32(idx, div4);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpj5avl3tm.cpp:42:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   42 |         __m256i is_mult3 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod3), _mm256_setzero_si256());\n      |                                               ^\n[REDACTED]/tmpj5avl3tm.cpp:43:47: error: use of undeclared identifier '_mm256_rem_epi32'\n   43 |         __m256i is_mult4 = _mm256_cmpeq_epi32(_mm256_rem_epi32(idx, mod4), _mm256_setzero_si256());\n      |                                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_131_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_131_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_131_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp3dhhblk7.cpp:56:34: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   56 |             __m256i div_result = _mm256_div_epi32(temp, ten_div);\n      |                                  ^~~~~~~~~~~~~~~~\n      |                                  _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_131_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_131_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmphbu_ileq.cpp:94:37: error: use of undeclared identifier '_mm256_rem_epi64'\n   94 |                 __m256i remainder = _mm256_rem_epi64(sum, div3);\n      |                                     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_132_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpedapnxet.cpp:93:37: error: use of undeclared identifier '_mm256_rem_epi64'\n   93 |                 __m256i remainder = _mm256_rem_epi64(sum, div3);\n      |                                     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_132_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp9xcmfwak.cpp:92:38: error: argument to '__builtin_ia32_vec_ext_v4di' must be a constant integer\n   92 |                     uint64_t total = _mm256_extract_epi64(sum, l);\n      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:2057:15: note: expanded from macro '_mm256_extract_epi64'\n 2057 |   ((long long)__builtin_ia32_vec_ext_v4di((__v4di)(__m256i)(X), (int)(N)))\n      |               ^                                                 ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_132_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp1qhnu3uf.cpp:73:27: error: use of undeclared identifier '_mm256_mul_epi64'\n   73 |         __m256i squares = _mm256_mul_epi64(idx, idx);\n      |                           ^\n[REDACTED]/tmp1qhnu3uf.cpp:93:31: error: use of undeclared identifier '_mm256_rem_epi64'\n   93 |                 __m256i rem = _mm256_rem_epi64(sum, div3);\n      |                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_132_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_133_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp3yqm5mu6.cpp:39:30: error: use of undeclared identifier '_mm256_rem_epi32'\n   39 |         __m256i remainders = _mm256_rem_epi32(vn, divisors);\n      |                              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_133_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpgirqlo3t.cpp:40:23: error: use of undeclared identifier '_mm256_rem_epi32'\n   40 |         __m256i rem = _mm256_rem_epi32(vn, divs);\n      |                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_133_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpd67vb45d.cpp:39:29: error: use of undeclared identifier '_mm256_div_epi32'; did you mean '_mm256_min_epi32'?\n   39 |         __m256i quotients = _mm256_div_epi32(num, divisors);\n      |                             ^~~~~~~~~~~~~~~~\n      |                             _mm256_min_epi32\n/usr/lib/llvm-18/lib/clang/18/include/avx2intrin.h:1252:1: note: '_mm256_min_epi32' declared here\n 1252 | _mm256_min_epi32(__m256i __a, __m256i __b)\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_133_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmp0qlvgr0j.cpp:36:23: error: use of undeclared identifier '_mm256_rem_epi32'\n   36 |         __m256i rem = _mm256_rem_epi32(num, divisors);\n      |                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_133_AVX", "passed": false, "result": "compilation failed: [REDACTED]/tmpe5f1joak.cpp:38:24: error: use of undeclared identifier '_mm256_rem_epi32'\n   38 |         __m256i mod1 = _mm256_rem_epi32(n_vec, i_vec);\n      |                        ^\n[REDACTED]/tmpe5f1joak.cpp:39:24: error: use of undeclared identifier '_mm256_rem_epi32'\n   39 |         __m256i mod2 = _mm256_rem_epi32(n_vec, _mm256_add_epi32(i_vec, _mm256_set1_epi32(2)));\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_134_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_AVX", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_134_AVX", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_135_AVX", "passed": false, "result": "runtime failed: Fatal glibc error: malloc.c:2599 (sysmalloc): assertion failed: (old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)\n"}
+{"task_id": "SimdBench_135_AVX", "passed": false, "result": "runtime failed: Fatal glibc error: malloc.c:2599 (sysmalloc): assertion failed: (old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)\n"}
+{"task_id": "SimdBench_135_AVX", "passed": false, "result": "runtime failed: Fatal glibc error: malloc.c:2599 (sysmalloc): assertion failed: (old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)\n"}
+{"task_id": "SimdBench_135_AVX", "passed": false, "result": "runtime failed: Fatal glibc error: malloc.c:2599 (sysmalloc): assertion failed: (old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)\n"}
+{"task_id": "SimdBench_135_AVX", "passed": false, "result": "runtime failed: Fatal glibc error: malloc.c:2599 (sysmalloc): assertion failed: (old_top == initial_top (av) && old_size == 0) || ((unsigned long) (old_size) >= MINSIZE && prev_inuse (old_top) && ((unsigned long) old_end & (pagesize - 1)) == 0)\n"}

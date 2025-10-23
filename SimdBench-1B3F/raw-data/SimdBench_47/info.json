@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_47",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "matrix_conditional_abs",
+    "entrypoint_simd": "matrix_conditional_abs_simd"
+}

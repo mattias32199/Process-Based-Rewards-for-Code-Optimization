@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_116",
+    "type": "2",
+    "subtype": "HumanEval/110",
+    "entrypoint_scalar": "myexchange",
+    "entrypoint_simd": "myexchange_simd"
+}

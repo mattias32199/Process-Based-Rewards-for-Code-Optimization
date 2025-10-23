@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpwirwzxga.cpp:41:28: error: '__builtin_ia32_roundpd' needs target feature sse4.1\n   41 |             __m128d tmp1 = _mm_floor_pd(scaled_div8);\n      |                            ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:157:25: note: expanded from macro '_mm_floor_pd'\n  157 | #define _mm_floor_pd(X) _mm_round_pd((X), _MM_FROUND_FLOOR)\n      |                         ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:315:13: note: expanded from macro '_mm_round_pd'\n  315 |   ((__m128d)__builtin_ia32_roundpd((__v2df)(__m128d)(X), (M)))\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_1_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmptyr11tk4.cpp:39:27: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   39 |             __m128i v_x = _mm_mullo_epi32(v_src, v_scale);\n      |                           ^\n[REDACTED]/tmptyr11tk4.cpp:42:33: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   42 |             __m128i v_product = _mm_mullo_epi32(v_tmp1, v_tmp2);\n      |                                 ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_1_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpq8cedz_x.cpp:37:25: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   37 |             __m128i x = _mm_mullo_epi32(data, scale_vec);\n      |                         ^\n[REDACTED]/tmpq8cedz_x.cpp:40:31: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   40 |             __m128i product = _mm_mullo_epi32(tmp1, tmp2);\n      |                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_1_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpqfteglru.cpp:36:21: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   36 |         __m128i v = _mm_mullo_epi32(v_src, v_scale);\n      |                     ^\n[REDACTED]/tmpqfteglru.cpp:39:27: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   39 |         __m128i product = _mm_mullo_epi32(tmp1, tmp2);\n      |                           ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_1_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpmx93x2rg.cpp:37:34: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   37 |             __m128i mul_scaled = _mm_mullo_epi32(vec, scale_vec);\n      |                                  ^\n[REDACTED]/tmpmx93x2rg.cpp:40:31: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'load_modify_store_simd' that is compiled without support for 'sse4.1'\n   40 |             __m128i product = _mm_mullo_epi32(tmp1, tmp2);\n      |                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_2_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpcpxxerrj.cpp:46:28: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'range_reverse_simd' that is compiled without support for 'ssse3'\n   46 |         __m128i rev_left = _mm_shuffle_epi8(left_vec, mask);\n      |                            ^\n[REDACTED]/tmpcpxxerrj.cpp:47:29: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'range_reverse_simd' that is compiled without support for 'ssse3'\n   47 |         __m128i rev_right = _mm_shuffle_epi8(right_vec, mask);\n      |                             ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_4_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_4_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_8_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_8_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_10_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpi315l2v3.cpp:44:19: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'vector_even_min_simd' that is compiled without support for 'sse4.1'\n   44 |         min_vec = _mm_min_epi32(min_vec, even);\n      |                   ^\n[REDACTED]/tmpi315l2v3.cpp:48:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'vector_even_min_simd' that is compiled without support for 'sse4.1'\n   48 |     __m128i min_temp = _mm_min_epi32(min_vec, shuf);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_11_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpblv6oskz.cpp:52:19: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'vector_even_min_simd' that is compiled without support for 'sse4.1'\n   52 |         min_vec = _mm_min_epi32(min_vec, candidate);\n      |                   ^\n[REDACTED]/tmpblv6oskz.cpp:56:18: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'vector_even_min_simd' that is compiled without support for 'sse4.1'\n   56 |     __m128i v2 = _mm_min_epi32(min_vec, v1);\n      |                  ^\n[REDACTED]/tmpblv6oskz.cpp:58:18: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'vector_even_min_simd' that is compiled without support for 'sse4.1'\n   58 |     __m128i v4 = _mm_min_epi32(v2, v3);\n      |                  ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_11_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_12_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_12_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_12_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_13_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_14_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp76m17f33.cpp:43:30: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'population_count_simd' that is compiled without support for 'ssse3'\n   43 |             __m128i pop_lo = _mm_shuffle_epi8(lookup, lo_nib);\n      |                              ^\n[REDACTED]/tmp76m17f33.cpp:44:30: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'population_count_simd' that is compiled without support for 'ssse3'\n   44 |             __m128i pop_hi = _mm_shuffle_epi8(lookup, hi_nib);\n      |                              ^\n[REDACTED]/tmp76m17f33.cpp:46:29: error: always_inline function '_mm_maddubs_epi16' requires target feature 'ssse3', but would be inlined into function 'population_count_simd' that is compiled without support for 'ssse3'\n   46 |             __m128i sum16 = _mm_maddubs_epi16(pop_per_byte, _mm_set1_epi8(1));\n      |                             ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_16_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_18_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp4e1278zt.cpp:45:86: error: expected ')'\n   45 |         dst[i] = static_cast<float>(static_cast<int>(sum + (sum >= 0 ? 0.5f : -0.5f));\n      |                                                                                      ^\n[REDACTED]/tmp4e1278zt.cpp:45:36: note: to match this '('\n   45 |         dst[i] = static_cast<float>(static_cast<int>(sum + (sum >= 0 ? 0.5f : -0.5f));\n      |                                    ^\n1 error generated.\n"}
+{"task_id": "SimdBench_20_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp26rqm09l.cpp:68:65: error: expected ')'\n   68 |         if ((i % 2 == 0) && (fabsf(src1[i] - src2[i]) <= 50.0f) {\n      |                                                                 ^\n[REDACTED]/tmp26rqm09l.cpp:68:12: note: to match this '('\n   68 |         if ((i % 2 == 0) && (fabsf(src1[i] - src2[i]) <= 50.0f) {\n      |            ^\n[REDACTED]/tmp26rqm09l.cpp:74:5: error: expected statement\n   74 |     }\n      |     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_21_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_24_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_24_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_24_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_26_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmprgel6unr.cpp:54:42: error: expected ')'\n   54 |             dst[i] = (float)((int32_t)val;\n      |                                          ^\n[REDACTED]/tmprgel6unr.cpp:54:29: note: to match this '('\n   54 |             dst[i] = (float)((int32_t)val;\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_27_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpo25qfc6d.cpp:36:21: error: always_inline function '_mm256_loadu_pd' requires target feature 'avx', but would be inlined into function 'matrix_hadamard_product_simd' that is compiled without support for 'avx'\n   36 |         __m256d a = _mm256_loadu_pd(mat1 + i);\n      |                     ^\n[REDACTED]/tmpo25qfc6d.cpp:36:21: error: AVX vector return of type '__m256d' (vector of 4 'double' values) without 'avx' enabled changes the ABI\n[REDACTED]/tmpo25qfc6d.cpp:37:21: error: always_inline function '_mm256_loadu_pd' requires target feature 'avx', but would be inlined into function 'matrix_hadamard_product_simd' that is compiled without support for 'avx'\n   37 |         __m256d b = _mm256_loadu_pd(mat2 + i);\n      |                     ^\n[REDACTED]/tmpo25qfc6d.cpp:37:21: error: AVX vector return of type '__m256d' (vector of 4 'double' values) without 'avx' enabled changes the ABI\n[REDACTED]/tmpo25qfc6d.cpp:38:21: error: always_inline function '_mm256_mul_pd' requires target feature 'avx', but would be inlined into function 'matrix_hadamard_product_simd' that is compiled without support for 'avx'\n   38 |         __m256d c = _mm256_mul_pd(a, b);\n      |                     ^\n[REDACTED]/tmpo25qfc6d.cpp:38:21: error: AVX vector argument of type '__m256d' (vector of 4 'double' values) without 'avx' enabled changes the ABI\n[REDACTED]/tmpo25qfc6d.cpp:39:9: error: always_inline function '_mm256_storeu_pd' requires target feature 'avx', but would be inlined into function 'matrix_hadamard_product_simd' that is compiled without support for 'avx'\n   39 |         _mm256_storeu_pd(dst + i, c);\n      |         ^\n[REDACTED]/tmpo25qfc6d.cpp:39:9: error: AVX vector argument of type '__m256d' (vector of 4 'double' values) without 'avx' enabled changes the ABI\n8 errors generated.\n"}
+{"task_id": "SimdBench_27_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_29_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp673fyljn.cpp:55:27: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   55 |                     cmp = _mm_cmple_epi32(v0, v1);\n      |                           ^~~~~~~~~~~~~~~\n      |                           _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n[REDACTED]/tmp673fyljn.cpp:57:27: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   57 |                     cmp = _mm_cmple_epi32(v1, v0);\n      |                           ^~~~~~~~~~~~~~~\n      |                           _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_30_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmph6kd_mh8.cpp:41:29: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'nearest_multiple_simd' that is compiled without support for 'sse4.1'\n   41 |             __m128i v_low = _mm_cvtepi16_epi32(v);\n      |                             ^\n[REDACTED]/tmph6kd_mh8.cpp:42:30: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'nearest_multiple_simd' that is compiled without support for 'sse4.1'\n   42 |             __m128i v_high = _mm_cvtepi16_epi32(_mm_srli_si128(v, 8));\n      |                              ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_31_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp8stgywkk.cpp:45:28: error: argument to '__builtin_ia32_vec_ext_v8hi' must be a constant integer\n   45 |             int16_t elem = _mm_extract_epi16(v_adjusted, j);\n      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:4161:25: note: expanded from macro '_mm_extract_epi16'\n 4161 |   ((int)(unsigned short)__builtin_ia32_vec_ext_v8hi((__v8hi)(__m128i)(a),      \\\n      |                         ^\n 4162 |                                                     (int)(imm)))\n      |                                                     ~~~~~~~~~~\n[REDACTED]/tmp8stgywkk.cpp:47:24: error: argument to '__builtin_ia32_vec_set_v8hi' must be a constant integer\n   47 |             quotient = _mm_insert_epi16(quotient, q, j);\n      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:4189:13: note: expanded from macro '_mm_insert_epi16'\n 4189 |   ((__m128i)__builtin_ia32_vec_set_v8hi((__v8hi)(__m128i)(a), (int)(b),        \\\n      |             ^\n 4190 |                                         (int)(imm)))\n      |                                         ~~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_31_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpylp51p1j.cpp:47:30: error: always_inline function '_mm_mul_epi32' requires target feature 'sse4.1', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'sse4.1'\n   47 |             __m128i cross1 = _mm_mul_epi32(a_lo, x_hi);\n      |                              ^\n[REDACTED]/tmpylp51p1j.cpp:48:30: error: always_inline function '_mm_mul_epi32' requires target feature 'sse4.1', but would be inlined into function 'axm_abs_simd' that is compiled without support for 'sse4.1'\n   48 |             __m128i cross2 = _mm_mul_epi32(a_hi, x_lo);\n      |                              ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_35_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp8g92nqah.cpp:51:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   51 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmp8g92nqah.cpp:23:3: note: previous definition is here\n   23 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpm_4ucugx.cpp:51:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   51 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmpm_4ucugx.cpp:23:3: note: previous definition is here\n   23 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpcausxzu0.cpp:51:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   51 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmpcausxzu0.cpp:23:3: note: previous definition is here\n   23 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp4eatl7_h.cpp:51:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   51 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmp4eatl7_h.cpp:23:3: note: previous definition is here\n   23 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpw2vn158n.cpp:51:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   51 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmpw2vn158n.cpp:23:3: note: previous definition is here\n   23 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_36_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmphlr34oyw.cpp:27:27: warning: absolute value function 'fabsf' given an argument of type 'double' but has parameter of type 'float' which may cause truncation of value [-Wabsolute-value]\n   27 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^\n[REDACTED]/tmphlr34oyw.cpp:27:27: note: use function 'std::abs' instead\n   27 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^~~~~\n      |                           std::abs\n[REDACTED]/tmphlr34oyw.cpp:53:27: error: '__builtin_ia32_cmppd' needs target feature avx\n   53 |             __m128d cmp = _mm_cmp_pd(abs_diff, tol_vec, _CMP_LE_OS);\n      |                           ^\n/usr/lib/llvm-18/lib/clang/18/include/avxintrin.h:1667:13: note: expanded from macro '_mm_cmp_pd'\n 1667 |   ((__m128d)__builtin_ia32_cmppd((__v2df)(__m128d)(a), \\\n      |             ^\n1 warning and 1 error generated.\n"}
+{"task_id": "SimdBench_38_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpcf9gioqm.cpp:27:27: warning: absolute value function 'fabsf' given an argument of type 'double' but has parameter of type 'float' which may cause truncation of value [-Wabsolute-value]\n   27 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^\n[REDACTED]/tmpcf9gioqm.cpp:27:27: note: use function 'std::abs' instead\n   27 |             double diff = fabsf(vec[i * block_size + j] - vec[j]);\n      |                           ^~~~~\n      |                           std::abs\n[REDACTED]/tmpcf9gioqm.cpp:60:38: error: expected ')'\n   60 |             if (_mm_movemask_pd(cmp) {\n      |                                      ^\n[REDACTED]/tmpcf9gioqm.cpp:60:16: note: to match this '('\n   60 |             if (_mm_movemask_pd(cmp) {\n      |                ^\n[REDACTED]/tmpcf9gioqm.cpp:63:9: error: expected statement\n   63 |         }\n      |         ^\n1 warning and 2 errors generated.\n"}
+{"task_id": "SimdBench_39_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_40_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpiqcith_z.cpp:43:24: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'squarediff_simd' that is compiled without support for 'sse4.1'\n   43 |         __m128i a_lo = _mm_cvtepi8_epi16(a);\n      |                        ^\n[REDACTED]/tmpiqcith_z.cpp:44:24: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'squarediff_simd' that is compiled without support for 'sse4.1'\n   44 |         __m128i a_hi = _mm_cvtepi8_epi16(_mm_srli_si128(a, 8));\n      |                        ^\n[REDACTED]/tmpiqcith_z.cpp:45:24: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'squarediff_simd' that is compiled without support for 'sse4.1'\n   45 |         __m128i b_lo = _mm_cvtepi8_epi16(b);\n      |                        ^\n[REDACTED]/tmpiqcith_z.cpp:46:24: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'squarediff_simd' that is compiled without support for 'sse4.1'\n   46 |         __m128i b_hi = _mm_cvtepi8_epi16(_mm_srli_si128(b, 8));\n      |                        ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_41_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpnao0e_wa.cpp:51:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   51 |         vA2_total = _mm_hadd_epi32(vA2_total, vA2_total);\n      |                     ^\n[REDACTED]/tmpnao0e_wa.cpp:52:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   52 |         vA2_total = _mm_hadd_epi32(vA2_total, vA2_total);\n      |                     ^\n[REDACTED]/tmpnao0e_wa.cpp:58:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   58 |         vB2_total = _mm_hadd_epi32(vB2_total, vB2_total);\n      |                     ^\n[REDACTED]/tmpnao0e_wa.cpp:59:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   59 |         vB2_total = _mm_hadd_epi32(vB2_total, vB2_total);\n      |                     ^\n[REDACTED]/tmpnao0e_wa.cpp:65:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   65 |         vAB_total = _mm_hadd_epi32(vAB_total, vAB_total);\n      |                     ^\n[REDACTED]/tmpnao0e_wa.cpp:66:21: error: always_inline function '_mm_hadd_epi32' requires target feature 'ssse3', but would be inlined into function 'squarediff_simd' that is compiled without support for 'ssse3'\n   66 |         vAB_total = _mm_hadd_epi32(vAB_total, vAB_total);\n      |                     ^\n6 errors generated.\n"}
+{"task_id": "SimdBench_41_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_42_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_42_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_47_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_47_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpnkgdz4pv.cpp:59:31: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'matrix_conditional_abs_simd' that is compiled without support for 'sse4.1'\n   59 |             __m128i product = _mm_mullo_epi32(small, magic);\n      |                               ^\n[REDACTED]/tmpnkgdz4pv.cpp:61:33: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'matrix_conditional_abs_simd' that is compiled without support for 'sse4.1'\n   61 |             __m128i q_times_3 = _mm_mullo_epi32(q, _mm_set1_epi32(3));\n      |                                 ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_48_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp9iic1iwy.cpp:24:17: warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]\n   24 |         if (val & 0xf == 0xf) {\n      |                 ^~~~~~~~~~~~\n[REDACTED]/tmp9iic1iwy.cpp:24:17: note: place parentheses around the '==' expression to silence this warning\n   24 |         if (val & 0xf == 0xf) {\n      |                 ^           \n      |                   (         )\n[REDACTED]/tmp9iic1iwy.cpp:24:17: note: place parentheses around the & expression to evaluate it first\n   24 |         if (val & 0xf == 0xf) {\n      |                 ^\n      |             (        )\n[REDACTED]/tmp9iic1iwy.cpp:401:17: error: unknown type name '__m128\u6781'\n  401 |                 __m128\u6781 result = _mm_or_si128(_mm_and_si128(cond_mask, rotated), _mm_andnot_si128(cond_mask, negated));\n      |                 ^\n[REDACTED]/tmp9iic1iwy.cpp:408:32: error: use of undeclared identifier '_\u6781'\n  408 |                 __m128i low4 = _\u6781 and_si128(src_vec, maskF);\n      |                                ^\n[REDACTED]/tmp9iic1iwy.cpp:408:36: error: expected ';' at end of declaration\n  408 |                 __m128i low4 = _\u6781 and_si128(src_vec, maskF);\n      |                                   ^\n      |                                   ;\n1 warning and 3 errors generated.\n"}
+{"task_id": "SimdBench_48_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_49_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_49_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_49_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_49_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpbqxoywiu.cpp:51:9: error: use of undeclared identifier '_mm_storeu_sd'\n   51 |         _mm_storeu_sd((double*)(B + i), _mm_castps_pd(f));\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_54_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp6wpvkx5v.cpp:53:25: error: always_inline function '_mm_blendv_ps' requires target feature 'sse4.1', but would be inlined into function 'conditional_normalize_simd' that is compiled without support for 'sse4.1'\n   53 |         __m128 result = _mm_blendv_ps(a_vec, normalized, mask_float);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_55_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpzk82_etb.cpp:57:25: error: always_inline function '_mm_blendv_ps' requires target feature 'sse4.1', but would be inlined into function 'conditional_normalize_simd' that is compiled without support for 'sse4.1'\n   57 |         __m128 result = _mm_blendv_ps(a_val, normalized, mask_float);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_55_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpa2_wsclb.cpp:58:25: error: always_inline function '_mm_blendv_ps' requires target feature 'sse4.1', but would be inlined into function 'conditional_normalize_simd' that is compiled without support for 'sse4.1'\n   58 |         __m128 result = _mm_blendv_ps(a_val, norm, mask_float);\n      |                         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_55_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_56_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_58_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_58_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_58_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_59_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_60_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_60_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_61_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_61_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_61_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpqh67hx4n.cpp:68:31: error: always_inline function '_mm_hadd_pd' requires target feature 'sse3', but would be inlined into function 'simple_conv2d_simd' that is compiled without support for 'sse3'\n   68 |             __m128d sum_vec = _mm_hadd_pd(acc_total, acc_total);\n      |                               ^\n1 error generated.\n"}
+{"task_id": "SimdBench_62_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_62_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_62_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpo7ff0p_5.cpp:54:15: error: always_inline function '_mm_hadd_pd' requires target feature 'sse3', but would be inlined into function 'mean_absolute_deviation_simd' that is compiled without support for 'sse3'\n   54 |     sum_vec = _mm_hadd_pd(sum_vec, sum_vec);\n      |               ^\n[REDACTED]/tmpo7ff0p_5.cpp:79:19: error: always_inline function '_mm_hadd_pd' requires target feature 'sse3', but would be inlined into function 'mean_absolute_deviation_simd' that is compiled without support for 'sse3'\n   79 |     abs_sum_vec = _mm_hadd_pd(abs_sum_vec, abs_sum_vec);\n      |                   ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_64_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_64_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_66_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp41o7551f.cpp:49:30: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   49 |             __m128i data32 = _mm_cvtepi16_epi32(data);\n      |                              ^\n[REDACTED]/tmp41o7551f.cpp:52:30: error: always_inline function '_mm_mul_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   52 |             __m128i prod64 = _mm_mul_epi32(data32, shuffled);\n      |                              ^\n[REDACTED]/tmp41o7551f.cpp:57:29: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   57 |             __m128i low64 = _mm_cvtepi32_epi64(data32);\n      |                             ^\n[REDACTED]/tmp41o7551f.cpp:58:30: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   58 |             __m128i high64 = _mm_cvtepi32_epi64(_mm_srli_si128(data32, 8));\n      |                              ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_66_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpul1j4ha_.cpp:49:23: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   49 |         __m128i low = _mm_cvtepi16_epi32(v);\n      |                       ^\n[REDACTED]/tmpul1j4ha_.cpp:50:24: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   50 |         __m128i high = _mm_cvtepi16_epi32(_mm_srli_si128(v, 8));\n      |                        ^\n[REDACTED]/tmpul1j4ha_.cpp:52:24: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   52 |         __m128i low0 = _mm_cvtepi32_epi64(low);\n      |                        ^\n[REDACTED]/tmpul1j4ha_.cpp:53:24: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   53 |         __m128i low1 = _mm_cvtepi32_epi64(_mm_srli_si128(low, 8));\n      |                        ^\n[REDACTED]/tmpul1j4ha_.cpp:54:25: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   54 |         __m128i high0 = _mm_cvtepi32_epi64(high);\n      |                         ^\n[REDACTED]/tmpul1j4ha_.cpp:55:25: error: always_inline function '_mm_cvtepi32_epi64' requires target feature 'sse4.1', but would be inlined into function 'sum_product_simd' that is compiled without support for 'sse4.1'\n   55 |         __m128i high1 = _mm_cvtepi32_epi64(_mm_srli_si128(high, 8));\n      |                         ^\n6 errors generated.\n"}
+{"task_id": "SimdBench_66_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp1w1mt_nr.cpp:65:25: error: argument to '__builtin_ia32_vec_ext_v8hi' must be a constant integer\n   65 |             int16_t x = _mm_extract_epi16(v, j);\n      |                         ^~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:4161:25: note: expanded from macro '_mm_extract_epi16'\n 4161 |   ((int)(unsigned short)__builtin_ia32_vec_ext_v8hi((__v8hi)(__m128i)(a),      \\\n      |                         ^\n 4162 |                                                     (int)(imm)))\n      |                                                     ~~~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_66_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpvc1_9ugy.cpp:53:30: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   53 |         __m128i candidate0 = _mm_max_epi32(v0, v_prev);\n      |                              ^\n[REDACTED]/tmpvc1_9ugy.cpp:56:30: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   56 |         __m128i candidate1 = _mm_max_epi32(v0, candidate0_0);\n      |                              ^\n[REDACTED]/tmpvc1_9ugy.cpp:59:30: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   59 |         __m128i candidate2 = _mm_max_epi32(v0, candidate1_1);\n      |                              ^\n[REDACTED]/tmpvc1_9ugy.cpp:62:30: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   62 |         __m128i candidate3 = _mm_max_epi32(v0, candidate2_2);\n      |                              ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_67_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpco6urpp0.cpp:57:16: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   57 |         scan = _mm_max_epi32(scan, shifted);\n      |                ^\n[REDACTED]/tmpco6urpp0.cpp:59:16: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   59 |         scan = _mm_max_epi32(scan, shifted);\n      |                ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_67_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpc83d4qxl.cpp:51:22: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   51 |         __m128i v2 = _mm_max_epi32(v, v1);\n      |                      ^\n[REDACTED]/tmpc83d4qxl.cpp:53:22: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   53 |         __m128i v4 = _mm_max_epi32(v2, v3);\n      |                      ^\n[REDACTED]/tmpc83d4qxl.cpp:55:22: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'rolling_max_simd' that is compiled without support for 'sse4.1'\n   55 |         __m128i v5 = _mm_max_epi32(v4, v_prev);\n      |                      ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_67_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpd0q3sobs.cpp:52:22: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'longest_simd' that is compiled without support for 'sse4.1'\n   52 |         __m128i v2 = _mm_max_epi32(chunk, v1);\n      |                      ^\n[REDACTED]/tmpd0q3sobs.cpp:54:22: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'longest_simd' that is compiled without support for 'sse4.1'\n   54 |         __m128i v4 = _mm_max_epi32(v2, v3);\n      |                      ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_69_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp3c59ttl9.cpp:39:17: error: use of undeclared identifier '_mm_setr_epi64x'\n   39 |     __m128i v = _mm_setr_epi64x(a, b);\n      |                 ^\n[REDACTED]/tmp3c59ttl9.cpp:40:24: error: use of undeclared identifier '_mm_setr_epi64x'\n   40 |     __m128i mask_low = _mm_setr_epi64x(~0ULL, 0);\n      |                        ^\n[REDACTED]/tmp3c59ttl9.cpp:41:25: error: use of undeclared identifier '_mm_setr_epi64x'\n   41 |     __m128i mask_high = _mm_setr_epi64x(0, ~0ULL);\n      |                         ^\n[REDACTED]/tmp3c59ttl9.cpp:78:17: error: use of undeclared identifier '_mm_setr_epi64x'\n   78 |             v = _mm_setr_epi64x(b_val, a_val);\n      |                 ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_70_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_71_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_71_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_71_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_72_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_72_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_72_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpzniikyw6.cpp:42:23: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   42 |         __m128i cmp = _mm_cmple_epi32(div_vec, limit_vec);\n      |                       ^~~~~~~~~~~~~~~\n      |                       _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_76_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpfrxn70ai.cpp:67:89: error: expected ')'\n   67 |         int q1 = _mm_cvtsi128_si32(_mm_shuffle_epi32(v_quot01_int, _MM_SHUFFLE(1,1,1,1));\n      |                                                                                         ^\n[REDACTED]/tmpfrxn70ai.cpp:67:35: note: to match this '('\n   67 |         int q1 = _mm_cvtsi128_si32(_mm_shuffle_epi32(v_quot01_int, _MM_SHUFFLE(1,1,1,1));\n      |                                   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_76_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpgjopvw30.cpp:38:24: error: use of undeclared identifier '_mm_setr_epi64x'\n   38 |         __m128i divs = _mm_setr_epi64x(base, base + 2);\n      |                        ^\n1 error generated.\n"}
+{"task_id": "SimdBench_76_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_77_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_80_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmphv3op4h0.cpp:43:23: error: argument to '__builtin_ia32_vec_ext_v4si' must be a constant integer\n   43 |             int num = _mm_extract_epi32(v, j);\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:1055:9: note: expanded from macro '_mm_extract_epi32'\n 1055 |   ((int)__builtin_ia32_vec_ext_v4si((__v4si)(__m128i)(X), (int)(N)))\n      |         ^                                                 ~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_80_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpa9lu1b_6.cpp:48:24: error: argument to '__builtin_ia32_vec_set_v4si' must be a constant integer\n   48 |                 mask = _mm_insert_epi32(mask, -1, j);\n      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:955:13: note: expanded from macro '_mm_insert_epi32'\n  955 |   ((__m128i)__builtin_ia32_vec_set_v4si((__v4si)(__m128i)(X), (int)(I),        \\\n      |             ^\n  956 |                                         (int)(N)))\n      |                                         ~~~~~~~~\n[REDACTED]/tmpa9lu1b_6.cpp:51:37: error: expected ')'\n   51 |         if (_mm_movemask_epi8(mask) {\n      |                                     ^\n[REDACTED]/tmpa9lu1b_6.cpp:51:12: note: to match this '('\n   51 |         if (_mm_movemask_epi8(mask) {\n      |            ^\n[REDACTED]/tmpa9lu1b_6.cpp:73:5: error: expected statement\n   73 |     }\n      |     ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_80_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_82_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_83_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_85_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpg8f4q438.cpp:44:34: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'is_palindrome_simd' that is compiled without support for 'ssse3'\n   44 |         __m128i reversed_right = _mm_shuffle_epi8(right, reverse_mask);\n      |                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_86_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp5mtyce93.cpp:53:38: error: always_inline function '_mm_shuffle_epi8' requires target feature 'ssse3', but would be inlined into function 'is_palindrome_simd' that is compiled without support for 'ssse3'\n   53 |             __m128i reversed_right = _mm_shuffle_epi8(right_chunk, reverse_mask);\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_86_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_89_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpwo91tmdn.cpp:55:24: error: always_inline function '_mm_cvtepi8_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   55 |         __m128i v4_0 = _mm_cvtepi8_epi32(v4);\n      |                        ^\n[REDACTED]/tmpwo91tmdn.cpp:56:24: error: always_inline function '_mm_cvtepi8_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   56 |         __m128i v4_1 = _mm_cvtepi8_epi32(_mm_srli_si128(v4, 4));\n      |                        ^\n[REDACTED]/tmpwo91tmdn.cpp:57:24: error: always_inline function '_mm_cvtepi8_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   57 |         __m128i v4_2 = _mm_cvtepi8_epi32(_mm_srli_si128(v4, 8));\n      |                        ^\n[REDACTED]/tmpwo91tmdn.cpp:58:24: error: always_inline function '_mm_cvtepi8_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   58 |         __m128i v4_3 = _mm_cvtepi8_epi32(_mm_srli_si128(v4, 12));\n      |                        ^\n[REDACTED]/tmpwo91tmdn.cpp:66:25: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   66 |         __m128i min01 = _mm_min_epi32(running0, running1);\n      |                         ^\n[REDACTED]/tmpwo91tmdn.cpp:67:25: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   67 |         __m128i min23 = _mm_min_epi32(running2, running3);\n      |                         ^\n[REDACTED]/tmpwo91tmdn.cpp:68:27: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   68 |         __m128i min0123 = _mm_min_epi32(min01, min23);\n      |                           ^\n[REDACTED]/tmpwo91tmdn.cpp:70:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   70 |         __m128i min1 = _mm_min_epi32(min0123, min_shifted);\n      |                        ^\n[REDACTED]/tmpwo91tmdn.cpp:72:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   72 |         __m128i min2 = _mm_min_epi32(min1, min_shifted);\n      |                        ^\n9 errors generated.\n"}
+{"task_id": "SimdBench_89_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp343xu2p1.cpp:71:23: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   71 |             min_vec = _mm_min_epi32(min_vec, g);\n      |                       ^\n[REDACTED]/tmp343xu2p1.cpp:75:19: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   75 |         min_vec = _mm_min_epi32(min_vec, min1);\n      |                   ^\n[REDACTED]/tmp343xu2p1.cpp:77:19: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   77 |         min_vec = _mm_min_epi32(min_vec, min1);\n      |                   ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_89_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_90_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmphu8m4djy.cpp:60:30: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   60 |         __m128i step16_low = _mm_cvtepi8_epi16(step8);\n      |                              ^\n[REDACTED]/tmphu8m4djy.cpp:61:31: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   61 |         __m128i step16_high = _mm_cvtepi8_epi16(_mm_srli_si128(step8, 8));\n      |                               ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_90_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpcigsugzp.cpp:55:23: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   55 |         __m128i low = _mm_cvtepi8_epi16(change);\n      |                       ^\n[REDACTED]/tmpcigsugzp.cpp:56:24: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   56 |         __m128i high = _mm_cvtepi8_epi16(_mm_srli_si128(change, 8));\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_90_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpt1uxbqkb.cpp:60:25: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   60 |         __m128i v_low = _mm_cvtepi8_epi16(values);\n      |                         ^\n[REDACTED]/tmpt1uxbqkb.cpp:61:26: error: always_inline function '_mm_cvtepi8_epi16' requires target feature 'sse4.1', but would be inlined into function 'correct_bracketing_simd' that is compiled without support for 'sse4.1'\n   61 |         __m128i v_high = _mm_cvtepi8_epi16(_mm_srli_si128(values, 8));\n      |                          ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_91_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmprhcajf3z.cpp:57:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'pluck_simd' that is compiled without support for 'sse4.1'\n   57 |         __m128i min1 = _mm_min_epi32(min_temp, shuf1);\n      |                        ^\n[REDACTED]/tmprhcajf3z.cpp:59:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'pluck_simd' that is compiled without support for 'sse4.1'\n   59 |         __m128i min2 = _mm_min_epi32(min1, shuf2);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_94_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp36qt3w3f.cpp:60:32: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'pluck_simd' that is compiled without support for 'sse4.1'\n   60 |         __m128i min_vertical = _mm_min_epi32(candidate, _mm_shuffle_epi32(candidate, _MM_SHUFFLE(2, 3, 0, 1)));\n      |                                ^\n[REDACTED]/tmp36qt3w3f.cpp:61:29: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'pluck_simd' that is compiled without support for 'sse4.1'\n   61 |         __m128i min_final = _mm_min_epi32(min_vertical, _mm_shuffle_epi32(min_vertical, _MM_SHUFFLE(1, 0, 3, 2)));\n      |                             ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_95_SSE", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_95_SSE", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_95_SSE", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_95_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpd709tlmg.cpp:59:23: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   59 |         __m128i cmp = _mm_cmple_epi32(cand, freq_vec);\n      |                       ^~~~~~~~~~~~~~~\n      |                       _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_95_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_96_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_96_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_96_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_97_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_98_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_SSE", "passed": false, "result": "no intrinsic in code"}
+{"task_id": "SimdBench_99_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp8q65jnr_.cpp:63:18: error: always_inline function '_mm_popcnt_u32' requires target feature 'popcnt', but would be inlined into function 'hex_key_simd' that is compiled without support for 'popcnt'\n   63 |         count += _mm_popcnt_u32(mask);\n      |                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_101_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_104_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_106_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpmmi5hkzm.cpp:72:48: error: expected expression\n   72 |                 __m128i thresh = _mm_set1_epi8(static<char>(chunk_size));\n      |                                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_107_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_108_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp1b2i4mwa.cpp:55:28: error: no matching function for call to '_mm_or_si128'\n   55 |         __m128i anyVowel = _mm_or_si128(_mm_or_si128(_mm_or_si128(eqA, eqE), \n      |                            ^~~~~~~~~~~~\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:2646:46: note: candidate function not viable: requires 2 arguments, but 1 was provided\n 2646 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_or_si128(__m128i __a,\n      |                                              ^            ~~~~~~~~~~~~\n 2647 |                                                           __m128i __b) {\n      |                                                           ~~~~~~~~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_109_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpq7_06ti6.cpp:55:118: error: expected ')'\n   55 |         __m128i vowels = _mm_or_si128(_mm_or_si128(_mm_or_si128(_mm_or_si128(eqA, eqE), _mm_or_si128(eqI, eqO)), eqU);\n      |                                                                                                                      ^\n[REDACTED]/tmpq7_06ti6.cpp:55:38: note: to match this '('\n   55 |         __m128i vowels = _mm_or_si128(_mm_or_si128(_mm_or_si128(_mm_or_si128(eqA, eqE), _mm_or_si128(eqI, eqO)), eqU);\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_109_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpv1_25t43.cpp:61:24: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'func_simd' that is compiled without support for 'sse4.1'\n   61 |         __m128i prod = _mm_mullo_epi32(ivals, ivals_plus1);\n      |                        ^\n[REDACTED]/tmpv1_25t43.cpp:85:25: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'func_simd' that is compiled without support for 'sse4.1'\n   85 |             __m128i P = _mm_mullo_epi32(first, second);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_112_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpfo49l1qj.cpp:82:73: error: expected ')'\n   82 |         current_fact = (current_fact * (2LL * k - 1) * (2LL * k) % 10000;\n      |                                                                         ^\n[REDACTED]/tmpfo49l1qj.cpp:82:24: note: to match this '('\n   82 |         current_fact = (current_fact * (2LL * k - 1) * (2LL * k) % 10000;\n      |                        ^\n1 error generated.\n"}
+{"task_id": "SimdBench_112_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpp9jjgg17.cpp:63:25: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'func_simd' that is compiled without support for 'sse4.1'\n   63 |         __m128i term1 = _mm_mullo_epi32(base_shifted, base_plus_one);\n      |                         ^\n[REDACTED]/tmpp9jjgg17.cpp:64:25: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'func_simd' that is compiled without support for 'sse4.1'\n   64 |         __m128i term2 = _mm_mullo_epi32(base, base_plus_one_shifted);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_112_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp3m_1n0r7.cpp:73:34: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'func_simd' that is compiled without support for 'sse4.1'\n   73 |                 __m128i v_term = _mm_mullo_epi32(v_i, v_i_minus);\n      |                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp5pqmof62.cpp:77:110: error: expected ')'\n   77 |         __m128i cond4 = _mm_and_si128(_mm_and_si128(_mm_cmpeq_epi32(v_d0, v_d3), _mm_cmpeq_epi32(v_d1, v_d2));\n      |                                                                                                              ^\n[REDACTED]/tmp5pqmof62.cpp:77:38: note: to match this '('\n   77 |         __m128i cond4 = _mm_and_si128(_mm_and_si128(_mm_cmpeq_epi32(v_d0, v_d3), _mm_cmpeq_epi32(v_d1, v_d2));\n      |                                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpl0llmdtf.cpp:44:30: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   44 |         __m128i valid_mask = _mm_cmple_epi32(v, n_vec);\n      |                              ^~~~~~~~~~~~~~~\n      |                              _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n[REDACTED]/tmpl0llmdtf.cpp:67:31: error: use of undeclared identifier '_mm_cmpge_epi32'; did you mean '_mm_cmpgt_epi32'?\n   67 |         __m128i mask_ge1000 = _mm_cmpge_epi32(v, _mm_set1_epi32(1000));\n      |                               ^~~~~~~~~~~~~~~\n      |                               _mm_cmpgt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3120:46: note: '_mm_cmpgt_epi32' declared here\n 3120 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmpgt_epi32(__m128i __a,\n      |                                              ^\n[REDACTED]/tmpl0llmdtf.cpp:68:30: error: use of undeclared identifier '_mm_cmpge_epi32'; did you mean '_mm_cmpgt_epi32'?\n   68 |         __m128i mask_ge100 = _mm_cmpge_epi32(v, _mm_set1_epi32(100));\n      |                              ^~~~~~~~~~~~~~~\n      |                              _mm_cmpgt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3120:46: note: '_mm_cmpgt_epi32' declared here\n 3120 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmpgt_epi32(__m128i __a,\n      |                                              ^\n[REDACTED]/tmpl0llmdtf.cpp:69:29: error: use of undeclared identifier '_mm_cmpge_epi32'; did you mean '_mm_cmpgt_epi32'?\n   69 |         __m128i mask_ge10 = _mm_cmpge_epi32(v, _mm_set1_epi32(10));\n      |                             ^~~~~~~~~~~~~~~\n      |                             _mm_cmpgt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3120:46: note: '_mm_cmpgt_epi32' declared here\n 3120 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmpgt_epi32(__m128i __a,\n      |                                              ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_113_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_SSE", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_118_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_120_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmprf_piqq8.cpp:45:95: error: expected ')'\n   45 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 0));\n      |                                                                                               ^\n[REDACTED]/tmprf_piqq8.cpp:45:42: note: to match this '('\n   45 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 0));\n      |                                          ^\n[REDACTED]/tmprf_piqq8.cpp:46:95: error: expected ')'\n   46 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 2));\n      |                                                                                               ^\n[REDACTED]/tmprf_piqq8.cpp:46:42: note: to match this '('\n   46 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 2));\n      |                                          ^\n[REDACTED]/tmprf_piqq8.cpp:47:95: error: expected ')'\n   47 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 4));\n      |                                                                                               ^\n[REDACTED]/tmprf_piqq8.cpp:47:42: note: to match this '('\n   47 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 4));\n      |                                          ^\n[REDACTED]/tmprf_piqq8.cpp:48:95: error: expected ')'\n   48 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 6));\n      |                                                                                               ^\n[REDACTED]/tmprf_piqq8.cpp:48:42: note: to match this '('\n   48 |             total += static_cast<int64_t>(static_cast<int16_t>(_mm_extract_epi16(selected, 6));\n      |                                          ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_120_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmprju7d9bg.cpp:49:28: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'solution_simd' that is compiled without support for 'sse4.1'\n   49 |         __m128i low_part = _mm_cvtepi16_epi32(selected);\n      |                            ^\n[REDACTED]/tmprju7d9bg.cpp:50:29: error: always_inline function '_mm_cvtepi16_epi32' requires target feature 'sse4.1', but would be inlined into function 'solution_simd' that is compiled without support for 'sse4.1'\n   50 |         __m128i high_part = _mm_cvtepi16_epi32(_mm_srli_si128(selected, 8));\n      |                             ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_120_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpwxnha1t1.cpp:44:27: error: use of undeclared identifier '_mm_cmple_epi32'; did you mean '_mm_cmplt_epi32'?\n   44 |             __m128i cmp = _mm_cmple_epi32(current, next);\n      |                           ^~~~~~~~~~~~~~~\n      |                           _mm_cmplt_epi32\n/usr/lib/llvm-18/lib/clang/18/include/emmintrin.h:3180:46: note: '_mm_cmplt_epi32' declared here\n 3180 | static __inline__ __m128i __DEFAULT_FN_ATTRS _mm_cmplt_epi32(__m128i __a,\n      |                                              ^\n1 error generated.\n"}
+{"task_id": "SimdBench_122_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_123_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_123_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpo6qcyxvu.cpp:104:22: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  104 |         __m128i m0 = _mm_min_epi32(v0, v1);\n      |                      ^\n[REDACTED]/tmpo6qcyxvu.cpp:106:22: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  106 |         __m128i m2 = _mm_min_epi32(m0, m1);\n      |                      ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_124_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpscwuebs5.cpp:124:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  124 |         __m128i min1 = _mm_min_epi32(v, v_swapped1);\n      |                        ^\n[REDACTED]/tmpscwuebs5.cpp:126:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  126 |         __m128i min2 = _mm_min_epi32(min1, min1_swapped);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_124_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp8kfrlzz2.cpp:108:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  108 |         __m128i min1 = _mm_min_epi32(v, v_perm1);\n      |                        ^\n[REDACTED]/tmp8kfrlzz2.cpp:110:24: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'minPath_simd' that is compiled without support for 'sse4.1'\n  110 |         __m128i min2 = _mm_min_epi32(min1, min1_perm);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_124_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_126_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp64kncqmg.cpp:41:26: error: '__builtin_ia32_roundps' needs target feature sse4.1\n   41 |         __m128 rounded = _mm_ceil_ps(data);\n      |                          ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:56:24: note: expanded from macro '_mm_ceil_ps'\n   56 | #define _mm_ceil_ps(X) _mm_round_ps((X), _MM_FROUND_CEIL)\n      |                        ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:240:12: note: expanded from macro '_mm_round_ps'\n  240 |   ((__m128)__builtin_ia32_roundps((__v4sf)(__m128)(X), (M)))\n      |            ^\n[REDACTED]/tmp64kncqmg.cpp:57:26: error: '__builtin_ia32_roundps' needs target feature sse4.1\n   57 |         __m128 rounded = _mm_ceil_ps(data);\n      |                          ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:56:24: note: expanded from macro '_mm_ceil_ps'\n   56 | #define _mm_ceil_ps(X) _mm_round_ps((X), _MM_FROUND_CEIL)\n      |                        ^\n/usr/lib/llvm-18/lib/clang/18/include/smmintrin.h:240:12: note: expanded from macro '_mm_round_ps'\n  240 |   ((__m128)__builtin_ia32_roundps((__v4sf)(__m128)(X), (M)))\n      |            ^\n[REDACTED]/tmp64kncqmg.cpp:67:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   67 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:67:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   67 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:68:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   68 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:68:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   68 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:69:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   69 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:69:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   69 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:70:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   70 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:70:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   70 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:71:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   71 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:71:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   71 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:72:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   72 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:72:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   72 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:73:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   73 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:73:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   73 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:74:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   74 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:74:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   74 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:75:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   75 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:75:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   75 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:76:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   76 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:76:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   76 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:77:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   77 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:77:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   77 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmp64kncqmg.cpp:78:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   78 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^\n[REDACTED]/tmp64kncqmg.cpp:78:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   78 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^~~~\n12 warnings and 2 errors generated.\n"}
+{"task_id": "SimdBench_126_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpcpiq_jpa.cpp:62:21: error: always_inline function '_mm_max_epi32' requires target feature 'sse4.1', but would be inlined into function 'largest_smallest_integers_simd' that is compiled without support for 'sse4.1'\n   62 |         v_max_neg = _mm_max_epi32(v_max_neg, v_neg);\n      |                     ^\n[REDACTED]/tmpcpiq_jpa.cpp:68:21: error: always_inline function '_mm_min_epi32' requires target feature 'sse4.1', but would be inlined into function 'largest_smallest_integers_simd' that is compiled without support for 'sse4.1'\n   68 |         v_min_pos = _mm_min_epi32(v_min_pos, v_pos);\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_128_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_129_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpkgfjpy_z.cpp:60:26: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   60 |         __m128i square = _mm_mullo_epi32(data, data);\n      |                          ^\n[REDACTED]/tmpkgfjpy_z.cpp:61:24: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   61 |         __m128i cube = _mm_mullo_epi32(square, data);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpgersbyax.cpp:56:27: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   56 |         __m128i squared = _mm_mullo_epi32(data, data);\n      |                           ^\n[REDACTED]/tmpgersbyax.cpp:57:25: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   57 |         __m128i cubed = _mm_mullo_epi32(squared, data);\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp_9rq8ye6.cpp:58:26: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   58 |         __m128i square = _mm_mullo_epi32(data, data);\n      |                          ^\n[REDACTED]/tmp_9rq8ye6.cpp:59:24: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   59 |         __m128i cube = _mm_mullo_epi32(square, data);\n      |                        ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_130_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpjh4we9fn.cpp:62:24: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   62 |         __m128i v_sq = _mm_mullo_epi32(v, v);\n      |                        ^\n[REDACTED]/tmpjh4we9fn.cpp:63:26: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   63 |         __m128i v_cube = _mm_mullo_epi32(v, v_sq);\n      |                          ^\n[REDACTED]/tmpjh4we9fn.cpp:64:31: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   64 |         __m128i term_square = _mm_mullo_epi32(mask_square, v_sq);\n      |                               ^\n[REDACTED]/tmpjh4we9fn.cpp:65:29: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   65 |         __m128i term_cube = _mm_mullo_epi32(mask_cube, v_cube);\n      |                             ^\n[REDACTED]/tmpjh4we9fn.cpp:70:30: error: always_inline function '_mm_mullo_epi32' requires target feature 'sse4.1', but would be inlined into function 'sum_squares_simd' that is compiled without support for 'sse4.1'\n   70 |         __m128i term_other = _mm_mullo_epi32(mask_other, v);\n      |                              ^\n5 errors generated.\n"}
+{"task_id": "SimdBench_131_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132_SSE", "passed": false, "result": "no intrinsic in code"}
+{"task_id": "SimdBench_132_SSE", "passed": false, "result": "no intrinsic in code"}
+{"task_id": "SimdBench_132_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmpmzo7myj9.cpp:31:21: error: use of undeclared identifier 'x_or_y_simd'\n   31 |     pass = pass && (x_or_y_simd(7, 34, 12) == 34);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:32:21: error: use of undeclared identifier 'x_or_y_simd'\n   32 |     pass = pass && (x_or_y_simd(15, 8, 5) == 5);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:33:21: error: use of undeclared identifier 'x_or_y_simd'\n   33 |     pass = pass && (x_or_y_simd(3, 33, 5212) == 33);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:34:21: error: use of undeclared identifier 'x_or_y_simd'\n   34 |     pass = pass && (x_or_y_simd(1259, 3, 52) == 3);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:35:21: error: use of undeclared identifier 'x_or_y_simd'\n   35 |     pass = pass && (x_or_y_simd(7919, -1, 12) == -1);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:36:21: error: use of undeclared identifier 'x_or_y_simd'\n   36 |     pass = pass && (x_or_y_simd(3609, 1245, 583) == 583);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:37:21: error: use of undeclared identifier 'x_or_y_simd'\n   37 |     pass = pass && (x_or_y_simd(91, 56, 129) == 129);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:38:21: error: use of undeclared identifier 'x_or_y_simd'\n   38 |     pass = pass && (x_or_y_simd(6, 34, 1234) == 1234);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:39:21: error: use of undeclared identifier 'x_or_y_simd'\n   39 |     pass = pass && (x_or_y_simd(1, 2, 0) == 0);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:40:21: error: use of undeclared identifier 'x_or_y_simd'\n   40 |     pass = pass && (x_or_y_simd(2, 2, 0) == 2);\n      |                     ^\n[REDACTED]/tmpmzo7myj9.cpp:51:28: error: use of undeclared identifier 'x_or_y_simd'\n   51 |         auto result_simd = x_or_y_simd(n,x,y);\n      |                            ^\n11 errors generated.\n"}
+{"task_id": "SimdBench_133_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_134_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_SSE", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_SSE", "passed": false, "result": "compilation failed: [REDACTED]/tmp9if44df7.cpp:73:26: error: no member named 'modff' in namespace 'std'; did you mean simply 'modff'?\n   73 |             float frac = std::modff(x, &int_part);\n      |                          ^~~~~~~~~~\n      |                          modff\n/usr/include/x86_64-linux-gnu/bits/mathcalls.h:110:1: note: 'modff' declared here\n  110 | __MATHCALL (modf,, (_Mdouble_ __x, _Mdouble_ *__iptr)) __nonnull ((2));\n      | ^\n/usr/include/math.h:287:3: note: expanded from macro '__MATHCALL'\n  287 |   __MATHDECL (_Mdouble_,function,suffix, args)\n      |   ^\n/usr/include/math.h:289:3: note: expanded from macro '__MATHDECL'\n  289 |   __MATHDECL_1(type, function,suffix, args); \\\n      |   ^\n/usr/include/math.h:299:3: note: expanded from macro '__MATHDECL_1'\n  299 |   __MATHDECL_1_IMPL(type, function, suffix, args)\n      |   ^\n/usr/include/math.h:297:15: note: expanded from macro '__MATHDECL_1_IMPL'\n  297 |   extern type __MATH_PRECNAME(function,suffix) args __THROW\n      |               ^\n/usr/include/math.h:326:34: note: expanded from macro '__MATH_PRECNAME'\n  326 | # define __MATH_PRECNAME(name,r) name##f##r\n      |                                  ^\n<scratch space>:148:1: note: expanded from here\n  148 | modff\n      | ^\n1 error generated.\n"}
+{"task_id": "SimdBench_135_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_SSE", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_SSE", "passed": true, "result": "passed"}

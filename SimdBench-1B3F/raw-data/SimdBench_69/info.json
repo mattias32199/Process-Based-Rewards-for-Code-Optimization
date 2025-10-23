@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_69",
+    "type": "2",
+    "subtype": "HumanEval/12",
+    "entrypoint_scalar": "longest",
+    "entrypoint_simd": "longest_simd"
+}

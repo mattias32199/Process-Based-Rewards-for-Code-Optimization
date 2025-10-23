@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpkb4ekc2n.cpp:45:57: error: assigning to 'const unsigned long *' from 'const int64_t *' (aka 'const long *') converts between pointers to integer types with different sign\n   45 |                 uint64x2_t src_data = vld1q_u64(src + i + j);\n      |                                                 ~~~~~~~~^~~\n[REDACTED]/arm_neon.h:11705:47: note: expanded from macro 'vld1q_u64'\n 11705 |   __ret = (uint64x2_t) __builtin_neon_vld1q_v(__p0, 51); \\\n       |                                               ^~~~\n[REDACTED]/tmpkb4ekc2n.cpp:46:57: error: assigning to 'const unsigned long *' from 'int64_t *' (aka 'long *') converts between pointers to integer types with different sign\n   46 |                 uint64x2_t dst_data = vld1q_u64(dst + i + j);\n      |                                                 ~~~~~~~~^~~\n[REDACTED]/arm_neon.h:11705:47: note: expanded from macro 'vld1q_u64'\n 11705 |   __ret = (uint64x2_t) __builtin_neon_vld1q_v(__p0, 51); \\\n       |                                               ^~~~\n[REDACTED]/tmpkb4ekc2n.cpp:48:35: error: assigning to 'unsigned long *' from 'int64_t *' (aka 'long *') converts between pointers to integer types with different sign\n   48 |                 vst1q_u64(dst + i + j, dst_data);\n      |                           ~~~~~~~~^~~\n[REDACTED]/arm_neon.h:29797:26: note: expanded from macro 'vst1q_u64'\n 29797 |   __builtin_neon_vst1q_v(__p0, (int8x16_t)__s1, 51); \\\n       |                          ^~~~\n[REDACTED]/tmpkb4ekc2n.cpp:58:61: error: assigning to 'const unsigned long *' from 'const int64_t *' (aka 'const long *') converts between pointers to integer types with different sign\n   58 |                 uint64x2_t src_data = vld1q_u64(src + i + 8 + j);\n      |                                                 ~~~~~~~~~~~~^~~\n[REDACTED]/arm_neon.h:11705:47: note: expanded from macro 'vld1q_u64'\n 11705 |   __ret = (uint64x2_t) __builtin_neon_vld1q_v(__p0, 51); \\\n       |                                               ^~~~\n[REDACTED]/tmpkb4ekc2n.cpp:59:61: error: assigning to 'const unsigned long *' from 'int64_t *' (aka 'long *') converts between pointers to integer types with different sign\n   59 |                 uint64x2_t dst_data = vld1q_u64(dst + i + 8 + j);\n      |                                                 ~~~~~~~~~~~~^~~\n[REDACTED]/arm_neon.h:11705:47: note: expanded from macro 'vld1q_u64'\n 11705 |   __ret = (uint64x2_t) __builtin_neon_vld1q_v(__p0, 51); \\\n       |                                               ^~~~\n[REDACTED]/tmpkb4ekc2n.cpp:61:39: error: assigning to 'unsigned long *' from 'int64_t *' (aka 'long *') converts between pointers to integer types with different sign\n   61 |                 vst1q_u64(dst + i + 8 + j, dst_data);\n      |                           ~~~~~~~~~~~~^~~\n[REDACTED]/arm_neon.h:29797:26: note: expanded from macro 'vst1q_u64'\n 29797 |   __builtin_neon_vst1q_v(__p0, (int8x16_t)__s1, 51); \\\n       |                          ^~~~\n6 errors generated.\n"}
+{"task_id": "SimdBench_0_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_1_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_1_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_1_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_2_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpvjxwtwp9.cpp:34:9: error: unknown type name 'double64x1_t'\n   34 |         double64x1_t d0 = vld1_f64(row0_ptr);\n      |         ^\n[REDACTED]/tmpvjxwtwp9.cpp:35:9: error: unknown type name 'double64x1_t'\n   35 |         double64x1_t d1 = vld1_f64(row1_ptr);\n      |         ^\n[REDACTED]/tmpvjxwtwp9.cpp:36:9: error: unknown type name 'double64x2_t'\n   36 |         double64x2_t combined = vcombine_f64(d0, d1);\n      |         ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_2_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_2_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_2_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp8v5hepff.cpp:34:28: error: use of undeclared identifier 'vld1q_gather_f32'\n   34 |         float32x4_t vals = vld1q_gather_f32(src, idx_vec);\n      |                            ^\n[REDACTED]/tmp8v5hepff.cpp:46:9: error: use of undeclared identifier 'vst1q_scatter_f32'\n   46 |         vst1q_scatter_f32(dst, idx_vec, src_vals);\n      |         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_3_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp5yuq8f3b.cpp:33:27: error: use of undeclared identifier 'vld1q_gather_f32'\n   33 |         float32x4_t res = vld1q_gather_f32(src, byte_offsets);\n      |                           ^\n[REDACTED]/tmp5yuq8f3b.cpp:45:9: error: use of undeclared identifier 'vst1q_scatter_f32'\n   45 |         vst1q_scatter_f32(dst, byte_offsets, vals);\n      |         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_4_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_4_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_4_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_6_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpi4o1jspw.cpp:82:42: error: use of undeclared identifier 'vtrnq_s64'\n   82 |                         int64x2x2_t v0 = vtrnq_s64(vreinterpretq_s64_s32(u0.val[0]), vreinterpretq_s64_s32(u2.val[0]));\n      |                                          ^\n[REDACTED]/tmpi4o1jspw.cpp:83:42: error: use of undeclared identifier 'vtrnq_s64'\n   83 |                         int64x2x2_t v1 = vtrnq_s64(vreinterpretq_s64_s32(u0.val[1]), vreinterpretq_s64_s32(u2.val[1]));\n      |                                          ^\n[REDACTED]/tmpi4o1jspw.cpp:84:42: error: use of undeclared identifier 'vtrnq_s64'\n   84 |                         int64x2x2_t v2 = vtrnq_s64(vreinterpretq_s64_s32(u1.val[0]), vreinterpretq_s64_s32(u3.val[0]));\n      |                                          ^\n[REDACTED]/tmpi4o1jspw.cpp:85:42: error: use of undeclared identifier 'vtrnq_s64'\n   85 |                         int64x2x2_t v3 = vtrnq_s64(vreinterpretq_s64_s32(u1.val[1]), vreinterpretq_s64_s32(u3.val[1]));\n      |                                          ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_6_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpbz36rion.cpp:89:44: error: use of undeclared identifier 'vtrnq_s64'\n   89 |                         int64x2x2_t tr04 = vtrnq_s64(vreinterpretq_s64_s16(row0), vreinterpretq_s64_s16(row4));\n      |                                            ^\n[REDACTED]/tmpbz36rion.cpp:90:44: error: use of undeclared identifier 'vtrnq_s64'\n   90 |                         int64x2x2_t tr15 = vtrnq_s64(vreinterpretq_s64_s16(row1), vreinterpretq_s64_s16(row5));\n      |                                            ^\n[REDACTED]/tmpbz36rion.cpp:91:44: error: use of undeclared identifier 'vtrnq_s64'\n   91 |                         int64x2x2_t tr26 = vtrnq_s64(vreinterpretq_s64_s16(row2), vreinterpretq_s64_s16(row6));\n      |                                            ^\n[REDACTED]/tmpbz36rion.cpp:92:44: error: use of undeclared identifier 'vtrnq_s64'\n   92 |                         int64x2x2_t tr37 = vtrnq_s64(vreinterpretq_s64_s16(row3), vreinterpretq_s64_s16(row7));\n      |                                            ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_6_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp410lt9yj.cpp:88:45: error: use of undeclared identifier 'vtrnq_s64'\n   88 |                         int64x2x2_t temp8 = vtrnq_s64(vreinterpretq_s64_s16(row0), vreinterpretq_s64_s16(row4));\n      |                                             ^\n[REDACTED]/tmp410lt9yj.cpp:89:45: error: use of undeclared identifier 'vtrnq_s64'\n   89 |                         int64x2x2_t temp9 = vtrnq_s64(vreinterpretq_s64_s16(row1), vreinterpretq_s64_s16(row5));\n      |                                             ^\n[REDACTED]/tmp410lt9yj.cpp:90:46: error: use of undeclared identifier 'vtrnq_s64'\n   90 |                         int64x2x2_t temp10 = vtrnq_s64(vreinterpretq_s64_s16(row2), vreinterpretq_s64_s16(row6));\n      |                                              ^\n[REDACTED]/tmp410lt9yj.cpp:91:46: error: use of undeclared identifier 'vtrnq_s64'\n   91 |                         int64x2x2_t temp11 = vtrnq_s64(vreinterpretq_s64_s16(row3), vreinterpretq_s64_s16(row7));\n      |                                              ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_6_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_7_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpa_cfd_y1.cpp:33:33: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer\n   33 |         int32x4_t arith_shift = vshrq_n_s32(data, shift);\n      |                                 ^                 ~~~~~\n[REDACTED]/arm_neon.h:28310:23: note: expanded from macro 'vshrq_n_s32'\n 28310 |   __ret = (int32x4_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 34); \\\n       |                       ^                                         ~~~~\n[REDACTED]/tmpa_cfd_y1.cpp:36:36: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer\n   36 |         uint32x4_t logical_shift = vshrq_n_u32(data_unsigned, shift);\n      |                                    ^                          ~~~~~\n[REDACTED]/arm_neon.h:28238:24: note: expanded from macro 'vshrq_n_u32'\n 28238 |   __ret = (uint32x4_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 50); \\\n       |                        ^                                         ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_13_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_14_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_15_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_18_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_18_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_18_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_18_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_19_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmppbk0j_c4.cpp:42:37: error: use of undeclared identifier 'vtrnq_f64'\n   42 |                 float64x2x2_t mat = vtrnq_f64(v2_k, v2_k1);\n      |                                     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_24_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp2wdgj88s.cpp:41:25: error: use of undeclared identifier 'vmlaq_n_f64'\n   41 |                 accum = vmlaq_n_f64(accum, b0_vec, vgetq_lane_f64(a_vec, 0));\n      |                         ^\n[REDACTED]/tmp2wdgj88s.cpp:42:25: error: use of undeclared identifier 'vmlaq_n_f64'\n   42 |                 accum = vmlaq_n_f64(accum, b1_vec, vgetq_lane_f64(a_vec, 1));\n      |                         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_24_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpv06_9e1z.cpp:39:29: error: use of undeclared identifier 'vmlaq_n_f64'\n   39 |                     accum = vmlaq_n_f64(accum, b, a);\n      |                             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_24_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_25_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_26_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpg7dpnl6s.cpp:41:31: error: use of undeclared identifier 'vrndzq_f32'\n   41 |         float32x4_t rounded = vrndzq_f32(diff);\n      |                               ^\n[REDACTED]/tmpg7dpnl6s.cpp:49:31: error: use of undeclared identifier 'vrndz_f32'\n   49 |         float32x2_t rounded = vrndz_f32(diff);\n      |                               ^\n[REDACTED]/tmpg7dpnl6s.cpp:57:31: error: use of undeclared identifier 'vrndz_f32'\n   57 |         float32x2_t rounded = vrndz_f32(diff);\n      |                               ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_26_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpny083vr8.cpp:38:31: error: use of undeclared identifier 'vrndzq_f32'\n   38 |         float32x4_t rounded = vrndzq_f32(diff);\n      |                               ^\n1 error generated.\n"}
+{"task_id": "SimdBench_26_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_27_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_27_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_28_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_29_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp9v52pxfg.cpp:34:25: error: argument to '__builtin_neon_vgetq_lane_i16' must be a constant integer\n   34 |             int16_t x = vgetq_lane_s16(v_src, j);\n      |                         ^                     ~\n[REDACTED]/arm_neon.h:10822:21: note: expanded from macro 'vgetq_lane_s16'\n 10822 |   __ret = (int16_t) __builtin_neon_vgetq_lane_i16((int16x8_t)__s0, __p1); \\\n       |                     ^                                              ~~~~\n[REDACTED]/tmp9v52pxfg.cpp:38:21: error: argument to '__builtin_neon_vsetq_lane_i16' must be a constant integer\n   38 |             v_dst = vsetq_lane_s16(y, v_dst, j);\n      |                     ^                        ~\n[REDACTED]/arm_neon.h:27335:23: note: expanded from macro 'vsetq_lane_s16'\n 27335 |   __ret = (int16x8_t) __builtin_neon_vsetq_lane_i16(__s0, (int16x8_t)__s1, __p2); \\\n       |                       ^                                                    ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_31_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpjwkkq52b.cpp:31:24: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   31 |         int64x2_t ax = vmulq_s64(a_vec, x_vec);\n      |                        ^~~~~~~~~\n      |                        vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp31v27_k9.cpp:32:29: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   32 |         int64x2_t product = vmulq_s64(a_vec, x_vec);\n      |                             ^~~~~~~~~\n      |                             vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpxxqo0w4m.cpp:33:25: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   33 |         int64x2_t vax = vmulq_s64(vx, va);\n      |                         ^~~~~~~~~\n      |                         vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_34_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpdm38unow.cpp:36:28: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   36 |         int64x2_t ax_vec = vmulq_s64(a_vec, x_vec);\n      |                            ^~~~~~~~~\n      |                            vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmprbxi5cdp.cpp:47:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   47 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmprbxi5cdp.cpp:21:3: note: previous definition is here\n   21 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp9_spef1e.cpp:49:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   49 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmp9_spef1e.cpp:21:3: note: previous definition is here\n   21 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp__8_a0cp.cpp:47:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   47 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmp__8_a0cp.cpp:21:3: note: previous definition is here\n   21 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpmsvels6n.cpp:47:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   47 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmpmsvels6n.cpp:21:3: note: previous definition is here\n   21 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_35_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpjtds7hb1.cpp:47:3: error: typedef redefinition with different types ('struct MinMaxPair' vs 'struct MinMaxPair')\n   47 | } MinMaxPair;\n      |   ^\n[REDACTED]/tmpjtds7hb1.cpp:21:3: note: previous definition is here\n   21 | } MinMaxPair;\n      |   ^\n1 error generated.\n"}
+{"task_id": "SimdBench_36_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_37_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_42_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpyif_ho3h.cpp:32:32: error: use of undeclared identifier 'vmvnq_u64'\n   32 |         uint64x2_t not_b_vec = vmvnq_u64(b_vec);\n      |                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_42_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpma4q8bpa.cpp:33:32: error: use of undeclared identifier 'vmvnq_u64'\n   33 |         uint64x2_t not_b_vec = vmvnq_u64(b_vec);\n      |                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_42_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpoxqu6l5s.cpp:33:32: error: use of undeclared identifier 'vmvnq_u64'\n   33 |         uint64x2_t not_b_vec = vmvnq_u64(b_vec);\n      |                                ^\n1 error generated.\n"}
+{"task_id": "SimdBench_43_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpuurw40fe.cpp:53:41: error: use of undeclared identifier 'vshrq_u32'; did you mean 'vshlq_u32'?\n   53 |         uint32x4_t c1_bytes = vandq_u32(vshrq_u32(c1_vec, shift_vec), vdupq_n_u32(0xFF));\n      |                                         ^~~~~~~~~\n      |                                         vshlq_u32\n[REDACTED]/arm_neon.h:27578:49: note: 'vshlq_u32' declared here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                 ^\n[REDACTED]/tmpuurw40fe.cpp:54:41: error: use of undeclared identifier 'vshrq_u32'; did you mean 'vshlq_u32'?\n   54 |         uint32x4_t c2_bytes = vandq_u32(vshrq_u32(c2_vec, shift_vec), vdupq_n_u32(0xFF));\n      |                                         ^~~~~~~~~\n      |                                         vshlq_u32\n[REDACTED]/arm_neon.h:27578:49: note: 'vshlq_u32' declared here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                 ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_45_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp5g1e0cnz.cpp:45:45: error: no matching function for call to 'vget_low_u8'\n   45 |         int8x8_t c1_s8 = vreinterpret_s8_u8(vget_low_u8(c1_mask_u8));\n      |                                             ^~~~~~~~~~~\n[REDACTED]/arm_neon.h:11047:48: note: candidate function not viable: no known conversion from 'uint8x8_t' (vector of 8 'uint8_t' values) to 'uint8x16_t' (vector of 16 'uint8_t' values) for 1st argument\n 11047 | __ai __attribute__((target(\"neon\"))) uint8x8_t vget_low_u8(uint8x16_t __p0) {\n       |                                                ^           ~~~~~~~~~~~~~~~\n[REDACTED]/tmp5g1e0cnz.cpp:46:19: error: cannot initialize a variable of type 'int16x4_t' (vector of 4 'int16_t' values) with an rvalue of type 'int16x8_t' (vector of 8 'int16_t' values)\n   46 |         int16x4_t c1_s16 = vmovl_s8(c1_s8);\n      |                   ^        ~~~~~~~~~~~~~~~\n[REDACTED]/tmp5g1e0cnz.cpp:50:45: error: no matching function for call to 'vget_low_u8'\n   50 |         int8x8_t c2_s8 = vreinterpret_s8_u8(vget_low_u8(c2_mask_u8));\n      |                                             ^~~~~~~~~~~\n[REDACTED]/arm_neon.h:11047:48: note: candidate function not viable: no known conversion from 'uint8x8_t' (vector of 8 'uint8_t' values) to 'uint8x16_t' (vector of 16 'uint8_t' values) for 1st argument\n 11047 | __ai __attribute__((target(\"neon\"))) uint8x8_t vget_low_u8(uint8x16_t __p0) {\n       |                                                ^           ~~~~~~~~~~~~~~~\n[REDACTED]/tmp5g1e0cnz.cpp:51:19: error: cannot initialize a variable of type 'int16x4_t' (vector of 4 'int16_t' values) with an rvalue of type 'int16x8_t' (vector of 8 'int16_t' values)\n   51 |         int16x4_t c2_s16 = vmovl_s8(c2_s8);\n      |                   ^        ~~~~~~~~~~~~~~~\n4 errors generated.\n"}
+{"task_id": "SimdBench_45_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_45_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_45_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_46_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpjn3gv3oa.cpp:55:9: error: use of undeclared identifier 'tensor_bit_count_simd'; did you mean 'tensor_bit_count'?\n   55 |         tensor_bit_count_simd(A.data(), out_simd.data(), dim1, dim2, dim3);\n      |         ^~~~~~~~~~~~~~~~~~~~~\n      |         tensor_bit_count\n[REDACTED]/tmpjn3gv3oa.cpp:18:6: note: 'tensor_bit_count' declared here\n   18 | void tensor_bit_count(const uint32_t* A, uint8_t* out, size_t dim1, size_t dim2, size_t dim3) {\n      |      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_46_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_47_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_47_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpiie201xa.cpp:38:25: error: use of undeclared identifier 'vshrq_u32'; did you mean 'vshlq_u32'?\n   38 |         uint32x4_t t2 = vshrq_u32(x, 2);\n      |                         ^~~~~~~~~\n      |                         vshlq_u32\n[REDACTED]/arm_neon.h:27578:49: note: 'vshlq_u32' declared here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                 ^\n[REDACTED]/tmpiie201xa.cpp:38:38: error: cannot initialize a parameter of type 'int32x4_t' (vector of 4 'int32_t' values) with an rvalue of type 'int'\n   38 |         uint32x4_t t2 = vshrq_u32(x, 2);\n      |                                      ^\n[REDACTED]/arm_neon.h:27578:86: note: passing argument to parameter '__p1' here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                                                      ^\n[REDACTED]/tmpiie201xa.cpp:42:26: error: use of undeclared identifier 'vshrq_u32'; did you mean 'vshlq_u32'?\n   42 |         x = vaddq_u32(x, vshrq_u32(x, 4));\n      |                          ^~~~~~~~~\n      |                          vshlq_u32\n[REDACTED]/arm_neon.h:27578:49: note: 'vshlq_u32' declared here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                 ^\n[REDACTED]/tmpiie201xa.cpp:42:39: error: cannot initialize a parameter of type 'int32x4_t' (vector of 4 'int32_t' values) with an rvalue of type 'int'\n   42 |         x = vaddq_u32(x, vshrq_u32(x, 4));\n      |                                       ^\n[REDACTED]/arm_neon.h:27578:86: note: passing argument to parameter '__p1' here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                                                      ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_48_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmptsjlrtqb.cpp:22:17: warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^~~~~~~~~~~~\n[REDACTED]/tmptsjlrtqb.cpp:22:17: note: place parentheses around the '==' expression to silence this warning\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^           \n      |                   (         )\n[REDACTED]/tmptsjlrtqb.cpp:22:17: note: place parentheses around the & expression to evaluate it first\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^\n      |             (        )\n[REDACTED]/tmptsjlrtqb.cpp:40:36: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer\n   40 |         uint32x4_t right_shifted = vshrq_n_u32(v, rotate_mod);\n      |                                    ^              ~~~~~~~~~~\n[REDACTED]/arm_neon.h:28238:24: note: expanded from macro 'vshrq_n_u32'\n 28238 |   __ret = (uint32x4_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 50); \\\n       |                        ^                                         ~~~~\n[REDACTED]/tmptsjlrtqb.cpp:41:35: error: argument to '__builtin_neon_vshlq_n_v' must be a constant integer\n   41 |         uint32x4_t left_shifted = vshlq_n_u32(v, left_shift_amt);\n      |                                   ^              ~~~~~~~~~~~~~~\n[REDACTED]/arm_neon.h:27830:24: note: expanded from macro 'vshlq_n_u32'\n 27830 |   __ret = (uint32x4_t) __builtin_neon_vshlq_n_v((int8x16_t)__s0, __p1, 50); \\\n       |                        ^                                         ~~~~\n1 warning and 2 errors generated.\n"}
+{"task_id": "SimdBench_48_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpktgthdej.cpp:22:17: warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^~~~~~~~~~~~\n[REDACTED]/tmpktgthdej.cpp:22:17: note: place parentheses around the '==' expression to silence this warning\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^           \n      |                   (         )\n[REDACTED]/tmpktgthdej.cpp:22:17: note: place parentheses around the & expression to evaluate it first\n   22 |         if (val & 0xf == 0xf) {\n      |                 ^\n      |             (        )\n[REDACTED]/tmpktgthdej.cpp:44:40: error: use of undeclared identifier 'vshrq_u32'; did you mean 'vshlq_u32'?\n   44 |         uint32x4_t rotated = vorrq_u32(vshrq_u32(data, shift_right), vshlq_u32(data, shift_left));\n      |                                        ^~~~~~~~~\n      |                                        vshlq_u32\n[REDACTED]/arm_neon.h:27578:49: note: 'vshlq_u32' declared here\n 27578 | __ai __attribute__((target(\"neon\"))) uint32x4_t vshlq_u32(uint32x4_t __p0, int32x4_t __p1) {\n       |                                                 ^\n1 warning and 1 error generated.\n"}
+{"task_id": "SimdBench_48_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_50_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpxgp48ywc.cpp:21:19: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   21 |         if (val > INT32_MAX) B[i] = INT32_MAX;\n      |                 ~ ^~~~~~~~~\n/usr/lib/gcc-cross/aarch64-linux-gnu/13/../../../../aarch64-linux-gnu/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n[REDACTED]/tmpxgp48ywc.cpp:34:27: error: use of undeclared identifier 'vcvtzq_s32_f32'\n   34 |         int32x4_t b_val = vcvtzq_s32_f32(a_val);\n      |                           ^\n1 warning and 1 error generated.\n"}
+{"task_id": "SimdBench_50_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_50_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_50_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpkkie_yoj.cpp:21:19: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   21 |         if (val > INT32_MAX) B[i] = INT32_MAX;\n      |                 ~ ^~~~~~~~~\n/usr/lib/gcc-cross/aarch64-linux-gnu/13/../../../../aarch64-linux-gnu/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n[REDACTED]/tmpkkie_yoj.cpp:32:24: error: use of undeclared identifier 'vcvtzq_s32_f32'\n   32 |         int32x4_t vb = vcvtzq_s32_f32(va);\n      |                        ^\n[REDACTED]/tmpkkie_yoj.cpp:43:24: error: use of undeclared identifier 'vcvtzq_s32_f32'\n   43 |         int32x4_t vb = vcvtzq_s32_f32(va);\n      |                        ^\n1 warning and 2 errors generated.\n"}
+{"task_id": "SimdBench_51_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_53_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_53_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_53_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_53_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_55_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_55_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_56_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpljqk_8nj.cpp:39:30: error: no matching function for call to 'vsqrt_f32'\n   39 |         float32_t sqrt_val = vsqrt_f32(f_val);\n      |                              ^~~~~~~~~\n[REDACTED]/arm_neon.h:60569:50: note: candidate function not viable: no known conversion from 'float32_t' (aka 'float') to 'float32x2_t' (vector of 2 'float32_t' values) for 1st argument\n 60569 | __ai __attribute__((target(\"neon\"))) float32x2_t vsqrt_f32(float32x2_t __p0) {\n       |                                                  ^         ~~~~~~~~~~~~~~~~\n[REDACTED]/tmpljqk_8nj.cpp:39:19: error: cannot initialize a variable of type 'float32_t' (aka 'float') with an rvalue of type 'float32x2_t' (vector of 2 'float32_t' values)\n   39 |         float32_t sqrt_val = vsqrt_f32(f_val);\n      |                   ^          ~~~~~~~~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_56_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_58_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_58_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_60_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_61_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_61_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_61_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_61_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_61_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_62_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_62_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpt1tcy6k8.cpp:40:46: error: use of undeclared identifier 'vrev64q_f64'\n   40 |         float64x2_t abs_diff = vabdq_f64(v0, vrev64q_f64(v0));\n      |                                              ^\n[REDACTED]/tmpt1tcy6k8.cpp:47:46: error: use of undeclared identifier 'vrev64q_f64'\n   47 |         float64x2_t abs_diff = vabdq_f64(v0, vrev64q_f64(v0));\n      |                                              ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_62_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_63_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_65_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpxsov02ol.cpp:50:17: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   50 |         even0 = vmulq_s64(even0, even1);\n      |                 ^~~~~~~~~\n      |                 vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpxsov02ol.cpp:52:17: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   52 |         even0 = vmulq_s64(even0, even_swap);\n      |                 ^~~~~~~~~\n      |                 vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpxsov02ol.cpp:58:16: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   58 |         odd0 = vmulq_s64(odd0, odd1);\n      |                ^~~~~~~~~\n      |                vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpxsov02ol.cpp:60:16: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   60 |         odd0 = vmulq_s64(odd0, odd_swap);\n      |                ^~~~~~~~~\n      |                vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_66_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpvanu5h7n.cpp:52:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   52 |         prod_acc0 = vmulq_s64(prod_acc0, low64);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpvanu5h7n.cpp:53:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   53 |         prod_acc1 = vmulq_s64(prod_acc1, high64);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_66_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpfx8rsk5h.cpp:64:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   64 |             prod0 = vmulq_s64(prod0, low64_ll);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpfx8rsk5h.cpp:65:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   65 |             prod1 = vmulq_s64(prod1, low64_lh);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpfx8rsk5h.cpp:66:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   66 |             prod2 = vmulq_s64(prod2, high64_hl);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpfx8rsk5h.cpp:67:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   67 |             prod3 = vmulq_s64(prod3, high64_hh);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpfx8rsk5h.cpp:81:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   81 |             prod0 = vmulq_s64(prod0, v64_low);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpfx8rsk5h.cpp:82:21: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   82 |             prod1 = vmulq_s64(prod1, v64_high);\n      |                     ^~~~~~~~~\n      |                     vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n6 errors generated.\n"}
+{"task_id": "SimdBench_66_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_67_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_69_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_69_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_69_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp3r2vucx9.cpp:50:23: error: use of undeclared identifier 'vmaxq_u64'; did you mean 'vmaxq_f64'?\n   50 |             max_vec = vmaxq_u64(max_vec, data);\n      |                       ^~~~~~~~~\n      |                       vmaxq_f64\n[REDACTED]/arm_neon.h:50260:50: note: 'vmaxq_f64' declared here\n 50260 | __ai __attribute__((target(\"neon\"))) float64x2_t vmaxq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpnhrnnp6_.cpp:47:19: error: use of undeclared identifier 'vmaxq_u64'; did you mean 'vmaxq_f64'?\n   47 |         max_vec = vmaxq_u64(max_vec, vec);\n      |                   ^~~~~~~~~\n      |                   vmaxq_f64\n[REDACTED]/arm_neon.h:50260:50: note: 'vmaxq_f64' declared here\n 50260 | __ai __attribute__((target(\"neon\"))) float64x2_t vmaxq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpcetrrhxe.cpp:36:30: error: use of undeclared identifier 'vminq_u64'; did you mean 'vminq_f64'?\n   36 |         uint64x2_t min_val = vminq_u64(vec, swapped);\n      |                              ^~~~~~~~~\n      |                              vminq_f64\n[REDACTED]/arm_neon.h:50552:50: note: 'vminq_f64' declared here\n 50552 | __ai __attribute__((target(\"neon\"))) float64x2_t vminq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpcetrrhxe.cpp:37:30: error: use of undeclared identifier 'vmaxq_u64'; did you mean 'vmaxq_f64'?\n   37 |         uint64x2_t max_val = vmaxq_u64(vec, swapped);\n      |                              ^~~~~~~~~\n      |                              vmaxq_f64\n[REDACTED]/arm_neon.h:50260:50: note: 'vmaxq_f64' declared here\n 50260 | __ai __attribute__((target(\"neon\"))) float64x2_t vmaxq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_70_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp83vye6ai.cpp:37:24: error: use of undeclared identifier 'vclzq_u64'\n   37 |     uint64x2_t v_clz = vclzq_u64(v_lowest);\n      |                        ^\n[REDACTED]/tmp83vye6ai.cpp:48:13: error: use of undeclared identifier 'vclzq_u64'\n   48 |     v_clz = vclzq_u64(v_lowest);\n      |             ^\n[REDACTED]/tmp83vye6ai.cpp:62:20: error: cannot initialize a variable of type 'uint64x2_t' (vector of 2 'uint64_t' values) with an rvalue of type 'uint64x1_t' (vector of 1 'uint64_t' value)\n   62 |         uint64x2_t v_high = vget_high_u64(v);\n      |                    ^        ~~~~~~~~~~~~~~~~\n[REDACTED]/tmp83vye6ai.cpp:63:20: error: cannot initialize a variable of type 'uint64x2_t' (vector of 2 'uint64_t' values) with an rvalue of type 'uint64x1_t' (vector of 1 'uint64_t' value)\n   63 |         uint64x2_t v_low = vget_low_u64(v);\n      |                    ^       ~~~~~~~~~~~~~~~\n[REDACTED]/tmp83vye6ai.cpp:64:28: error: no matching function for call to 'vcombine_u64'\n   64 |         uint64x2_t v_rev = vcombine_u64(v_high, v_low);\n      |                            ^~~~~~~~~~~~\n[REDACTED]/arm_neon.h:8328:49: note: candidate function not viable: no known conversion from 'uint64x2_t' (vector of 2 'uint64_t' values) to 'uint64x1_t' (vector of 1 'uint64_t' value) for 1st argument\n 8328 | __ai __attribute__((target(\"neon\"))) uint64x2_t vcombine_u64(uint64x1_t __p0, uint64x1_t __p1) {\n      |                                                 ^            ~~~~~~~~~~~~~~~\n[REDACTED]/tmp83vye6ai.cpp:71:17: error: use of undeclared identifier 'vclzq_u64'\n   71 |         v_clz = vclzq_u64(v_lowest);\n      |                 ^\n6 errors generated.\n"}
+{"task_id": "SimdBench_70_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_71_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_71_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_71_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_71_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_72_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_72_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_73_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp9y0r4tmv.cpp:53:29: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   53 |         uint64x2_t v_prod = vmulq_u64(v_cand, v_quot);\n      |                             ^~~~~~~~~\n      |                             vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_74_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_74_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmptqqrcfs0.cpp:76:34: error: non-constant-expression cannot be narrowed from type 'int' to 'uint32_t' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                  ^\n[REDACTED]/tmptqqrcfs0.cpp:76:34: note: insert an explicit cast to silence this issue\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                  ^\n      |                                  static_cast<uint32_t>( )\n[REDACTED]/tmptqqrcfs0.cpp:76:37: error: non-constant-expression cannot be narrowed from type 'int' to 'uint32_t' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                     ^~~\n[REDACTED]/tmptqqrcfs0.cpp:76:37: note: insert an explicit cast to silence this issue\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                     ^~~\n      |                                     static_cast<uint32_t>( )\n[REDACTED]/tmptqqrcfs0.cpp:76:42: error: non-constant-expression cannot be narrowed from type 'int' to 'uint32_t' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                          ^~~\n[REDACTED]/tmptqqrcfs0.cpp:76:42: note: insert an explicit cast to silence this issue\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                          ^~~\n      |                                          static_cast<uint32_t>( )\n[REDACTED]/tmptqqrcfs0.cpp:76:47: error: non-constant-expression cannot be narrowed from type 'int' to 'uint32_t' (aka 'unsigned int') in initializer list [-Wc++11-narrowing]\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                               ^~~\n[REDACTED]/tmptqqrcfs0.cpp:76:47: note: insert an explicit cast to silence this issue\n   76 |         uint32_t candidates[] = {d, d+2, d+4, d+6};\n      |                                               ^~~\n      |                                               static_cast<uint32_t>( )\n4 errors generated.\n"}
+{"task_id": "SimdBench_74_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpaat9ib0d.cpp:73:38: error: assigning to 'const unsigned int *' from 'int *' converts between pointers to integer types with different sign\n   73 |         uint32x4_t vquot = vld1q_u32(quotients);\n      |                                      ^~~~~~~~~\n[REDACTED]/arm_neon.h:11690:47: note: expanded from macro 'vld1q_u32'\n 11690 |   __ret = (uint32x4_t) __builtin_neon_vld1q_v(__p0, 50); \\\n       |                                               ^~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_74_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_75_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpc4kkzczs.cpp:68:17: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   68 |             if (vgetq_lane_u32(mask, j)) {\n      |                 ^                    ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n[REDACTED]/tmpc4kkzczs.cpp:69:36: error: argument to '__builtin_neon_vgetq_lane_f32' must be a constant integer\n   69 |                 positive.push_back(vgetq_lane_f32(vec, j));\n      |                                    ^                   ~\n[REDACTED]/arm_neon.h:10753:23: note: expanded from macro 'vgetq_lane_f32'\n 10753 |   __ret = (float32_t) __builtin_neon_vgetq_lane_f32((float32x4_t)__s0, __p1); \\\n       |                       ^                                                ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_75_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp73qpw6cm.cpp:56:31: error: expected ')'\n   56 |         if (vmaxvq_u32(v_cmp) {\n      |                               ^\n[REDACTED]/tmp73qpw6cm.cpp:56:12: note: to match this '('\n   56 |         if (vmaxvq_u32(v_cmp) {\n      |            ^\n1 error generated.\n"}
+{"task_id": "SimdBench_76_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmptx_t4_to.cpp:41:15: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer\n   41 |     mul_low = vshrq_n_u64(mul_low, total_shift);\n      |               ^                    ~~~~~~~~~~~\n[REDACTED]/arm_neon.h:28256:24: note: expanded from macro 'vshrq_n_u64'\n 28256 |   __ret = (uint64x2_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 51); \\\n       |                        ^                                         ~~~~\n[REDACTED]/tmptx_t4_to.cpp:42:16: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer\n   42 |     mul_high = vshrq_n_u64(mul_high, total_shift);\n      |                ^                     ~~~~~~~~~~~\n[REDACTED]/arm_neon.h:28256:24: note: expanded from macro 'vshrq_n_u64'\n 28256 |   __ret = (uint64x2_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 51); \\\n       |                        ^                                         ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_80_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_81_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpmrl3zsdf.cpp:48:31: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   48 |                     int sum = vgetq_lane_s32(sum_vec, step);\n      |                               ^                       ~~~~\n[REDACTED]/arm_neon.h:10776:21: note: expanded from macro 'vgetq_lane_s32'\n 10776 |   __ret = (int32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                     ^                                              ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_82_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_82_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_83_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_84_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_85_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmplyflhnp2.cpp:69:65: error: expected ')'\n   69 |                                 (static_cast<uint64_t>(d3) << 24;\n      |                                                                 ^\n[REDACTED]/tmplyflhnp2.cpp:69:33: note: to match this '('\n   69 |                                 (static_cast<uint64_t>(d3) << 24;\n      |                                 ^\n[REDACTED]/tmplyflhnp2.cpp:69:65: error: expected ')'\n   69 |                                 (static_cast<uint64_t>(d3) << 24;\n      |                                                                 ^\n[REDACTED]/tmplyflhnp2.cpp:68:33: note: to match this '('\n   68 |                                 (static_cast<uint64_t>(d2) << 16 | \n      |                                 ^\n[REDACTED]/tmplyflhnp2.cpp:69:65: error: expected ')'\n   69 |                                 (static_cast<uint64_t>(d3) << 24;\n      |                                                                 ^\n[REDACTED]/tmplyflhnp2.cpp:67:33: note: to match this '('\n   67 |                                 (static_cast<uint64_t>(d1) << 8 | \n      |                                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_85_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_88_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_90_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_90_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp2w74662f.cpp:99:28: error: argument to '__builtin_neon_vgetq_lane_i8' must be a constant integer\n   99 |             total_change = vgetq_lane_s8(prefix, valid_count - 1);\n      |                            ^                     ~~~~~~~~~~~~~~~\n[REDACTED]/arm_neon.h:10730:20: note: expanded from macro 'vgetq_lane_s8'\n 10730 |   __ret = (int8_t) __builtin_neon_vgetq_lane_i8((int8x16_t)__s0, __p1); \\\n       |                    ^                                             ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_91_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_92_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_92_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpht3vpffe.cpp:55:114: error: expected ')'\n   55 |         uint8x16_t any_vowel = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(cmp_a, cmp_e), vorrq_u8(cmp_i, cmp_o)), cmp_u);\n      |                                                                                                                  ^\n[REDACTED]/tmpht3vpffe.cpp:55:40: note: to match this '('\n   55 |         uint8x16_t any_vowel = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(cmp_a, cmp_e), vorrq_u8(cmp_i, cmp_o)), cmp_u);\n      |                                        ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpqbn9h3ww.cpp:103:30: error: expected ')'\n  103 |         if (vmaxvq_u32(mask) {\n      |                              ^\n[REDACTED]/tmpqbn9h3ww.cpp:103:12: note: to match this '('\n  103 |         if (vmaxvq_u32(mask) {\n      |            ^\n[REDACTED]/tmpqbn9h3ww.cpp:118:5: error: expected statement\n  118 |     }\n      |     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_95_Neon", "passed": false, "result": "runtime failed: qemu: uncaught target signal 11 (Segmentation fault) - core dumped\n"}
+{"task_id": "SimdBench_95_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_96_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_98_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpeb_8jzvj.cpp:62:19: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   62 |         v_power = vmulq_u64(v_power, vdupq_n_u64(n2));\n      |                   ^~~~~~~~~\n      |                   vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_99_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpfugxdq84.cpp:50:17: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   50 |         bases = vmulq_u64(bases, n_squared_vec);\n      |                 ^~~~~~~~~\n      |                 vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_101_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpzcwhm239.cpp:75:34: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   75 |             uint64x2_t squares = vmulq_u64(divs, divs);\n      |                                  ^~~~~~~~~\n      |                                  vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_102_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpn7c9zlug.cpp:58:26: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   58 |             uint32_t d = vgetq_lane_u32(v_d_clamped, j);\n      |                          ^                           ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_102_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_103_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmps1m5nhq1.cpp:67:108: error: expected ')'\n   67 |         uint8x16_t is_vowel = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(is_a, is_e), is_i), vorrq_u8(is_o, is_u));\n      |                                                                                                            ^\n[REDACTED]/tmps1m5nhq1.cpp:67:39: note: to match this '('\n   67 |         uint8x16_t is_vowel = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(is_a, is_e), is_i), vorrq_u8(is_o, is_u));\n      |                                       ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmppoa25qwb.cpp:68:44: error: expected ')'\n   68 |             if (vmaxvq_u8(mask_non_letter) {\n      |                                            ^\n[REDACTED]/tmppoa25qwb.cpp:68:16: note: to match this '('\n   68 |             if (vmaxvq_u8(mask_non_letter) {\n      |                ^\n[REDACTED]/tmppoa25qwb.cpp:78:9: error: expected statement\n   78 |         }\n      |         ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_107_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_108_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_108_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpw0gkdzmt.cpp:55:101: error: expected ')'\n   55 |         uint8x16_t vowel_match = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(cA, cE), cI), vorrq_u8(cO, cU));\n      |                                                                                                     ^\n[REDACTED]/tmpw0gkdzmt.cpp:55:42: note: to match this '('\n   55 |         uint8x16_t vowel_match = vorrq_u8(vorrq_u8(vorrq_u8(vorrq_u8(cA, cE), cI), vorrq_u8(cO, cU));\n      |                                          ^\n1 error generated.\n"}
+{"task_id": "SimdBench_110_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpkrbfvlsc.cpp:49:40: error: argument to '__builtin_neon_vget_lane_i8' must be a constant integer\n   49 |         uint8x8_t byte_vec = vdup_n_u8(vget_lane_u8(bytes, i));\n      |                                        ^                   ~\n[REDACTED]/arm_neon.h:10845:21: note: expanded from macro 'vget_lane_u8'\n 10845 |   __ret = (uint8_t) __builtin_neon_vget_lane_i8((int8x8_t)__s0, __p1); \\\n       |                     ^                                           ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_111_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp4m7vb64m.cpp:55:24: error: argument to '__builtin_neon_vget_lane_i8' must be a constant integer\n   55 |         uint8_t byte = vget_lane_u8(v_bytes, i);\n      |                        ^                     ~\n[REDACTED]/arm_neon.h:10845:21: note: expanded from macro 'vget_lane_u8'\n 10845 |   __ret = (uint8_t) __builtin_neon_vget_lane_i8((int8x8_t)__s0, __p1); \\\n       |                     ^                                           ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_111_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_113_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp3j4rkekz.cpp:79:45: error: argument to '__builtin_neon_vsetq_lane_i32' must be a constant integer\n   79 |             if (digit_sums[j] > 0) v_cond = vsetq_lane_u32(1, v_cond, j);\n      |                                             ^                         ~\n[REDACTED]/arm_neon.h:27146:24: note: expanded from macro 'vsetq_lane_u32'\n 27146 |   __ret = (uint32x4_t) __builtin_neon_vsetq_lane_i32(__s0, (int32x4_t)__s1, __p2); \\\n       |                        ^                                                    ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_114_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_117_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_117_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_117_Neon", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_117_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_118_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp4rg5lpfk.cpp:47:26: error: use of undeclared identifier 'vminq_s64'; did you mean 'vminq_f64'?\n   47 |         int64x2_t min0 = vminq_s64(cand0, cand1);\n      |                          ^~~~~~~~~\n      |                          vminq_f64\n[REDACTED]/arm_neon.h:50552:50: note: 'vminq_f64' declared here\n 50552 | __ai __attribute__((target(\"neon\"))) float64x2_t vminq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp4rg5lpfk.cpp:51:28: error: use of undeclared identifier 'vminq_s64'; did you mean 'vminq_f64'?\n   51 |         int64x2_t states = vminq_s64(cand0, cand2);\n      |                            ^~~~~~~~~\n      |                            vminq_f64\n[REDACTED]/arm_neon.h:50552:50: note: 'vminq_f64' declared here\n 50552 | __ai __attribute__((target(\"neon\"))) float64x2_t vminq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp4rg5lpfk.cpp:52:27: error: use of undeclared identifier 'vminq_s64'; did you mean 'vminq_f64'?\n   52 |         overall_min_vec = vminq_s64(overall_min_vec, states);\n      |                           ^~~~~~~~~\n      |                           vminq_f64\n[REDACTED]/arm_neon.h:50552:50: note: 'vminq_f64' declared here\n 50552 | __ai __attribute__((target(\"neon\"))) float64x2_t vminq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp4rg5lpfk.cpp:60:27: error: use of undeclared identifier 'vminq_s64'; did you mean 'vminq_f64'?\n   60 |         overall_min_vec = vminq_s64(overall_min_vec, state_vec);\n      |                           ^~~~~~~~~\n      |                           vminq_f64\n[REDACTED]/arm_neon.h:50552:50: note: 'vminq_f64' declared here\n 50552 | __ai __attribute__((target(\"neon\"))) float64x2_t vminq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_118_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_120_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_123_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpxelncqe4.cpp:70:17: error: argument to '__builtin_neon_vgetq_lane_i8' must be a constant integer\n   70 |         prod *= vgetq_lane_u8(adjusted1, i);\n      |                 ^                        ~\n[REDACTED]/arm_neon.h:10638:21: note: expanded from macro 'vgetq_lane_u8'\n 10638 |   __ret = (uint8_t) __builtin_neon_vgetq_lane_i8((int8x16_t)__s0, __p1); \\\n       |                     ^                                             ~~~~\n[REDACTED]/tmpxelncqe4.cpp:73:17: error: argument to '__builtin_neon_vgetq_lane_i8' must be a constant integer\n   73 |         prod *= vgetq_lane_u8(adjusted2, i);\n      |                 ^                        ~\n[REDACTED]/arm_neon.h:10638:21: note: expanded from macro 'vgetq_lane_u8'\n 10638 |   __ret = (uint8_t) __builtin_neon_vgetq_lane_i8((int8x16_t)__s0, __p1); \\\n       |                     ^                                             ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_126_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmppn37hrk_.cpp:37:36: error: use of undeclared identifier 'vceilq_f32'; did you mean 'vceqzq_f32'?\n   37 |             float32x4_t ceil_vec = vceilq_f32(vec);\n      |                                    ^~~~~~~~~~\n      |                                    vceqzq_f32\n[REDACTED]/arm_neon.h:44210:49: note: 'vceqzq_f32' declared here\n 44210 | __ai __attribute__((target(\"neon\"))) uint32x4_t vceqzq_f32(float32x4_t __p0) {\n       |                                                 ^\n[REDACTED]/tmppn37hrk_.cpp:45:32: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   45 |             int64x2_t low_sq = vmulq_s64(low_long, low_long);\n      |                                ^~~~~~~~~\n      |                                vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmppn37hrk_.cpp:46:33: error: use of undeclared identifier 'vmulq_s64'; did you mean 'vmulq_f64'?\n   46 |             int64x2_t high_sq = vmulq_s64(high_long, high_long);\n      |                                 ^~~~~~~~~\n      |                                 vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmppn37hrk_.cpp:66:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   66 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:66:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   66 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:67:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   67 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:67:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   67 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:68:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   68 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:68:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   68 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:69:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   69 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:69:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   69 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:70:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   70 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:70:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   70 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:71:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   71 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:71:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   71 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:72:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   72 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:72:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   72 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:73:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   73 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:73:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   73 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:74:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   74 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:74:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   74 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:75:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   75 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:75:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   75 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:76:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   76 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:76:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   76 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmppn37hrk_.cpp:77:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   77 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^\n[REDACTED]/tmppn37hrk_.cpp:77:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   77 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^~~~\n12 warnings and 3 errors generated.\n"}
+{"task_id": "SimdBench_126_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpd3ns3dfz.cpp:38:32: error: use of undeclared identifier 'vceilq_f32'; did you mean 'vceqzq_f32'?\n   38 |         float32x4_t ceil_vec = vceilq_f32(vec);\n      |                                ^~~~~~~~~~\n      |                                vceqzq_f32\n[REDACTED]/arm_neon.h:44210:49: note: 'vceqzq_f32' declared here\n 44210 | __ai __attribute__((target(\"neon\"))) uint32x4_t vceqzq_f32(float32x4_t __p0) {\n       |                                                 ^\n[REDACTED]/tmpd3ns3dfz.cpp:70:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   70 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:70:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   70 |     pass = pass && fabs(sum_squares_simd({1,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:71:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   71 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:71:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   71 |     pass = pass && fabs(sum_squares_simd({1.0,2,3}) - 14) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:72:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   72 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:72:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   72 |     pass = pass && fabs(sum_squares_simd({1,3,5,7}) - 84) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:73:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   73 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:73:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   73 |     pass = pass && fabs(sum_squares_simd({1.4,4.2,0}) - 29) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:74:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   74 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:74:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   74 |     pass = pass && fabs(sum_squares_simd({-2.4,1,1}) - 6) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:75:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   75 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:75:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   75 |     pass = pass && fabs(sum_squares_simd({100,1,15,2}) - 10230) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:76:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   76 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:76:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   76 |     pass = pass && fabs(sum_squares_simd({10000,10000}) - 200000000) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:77:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   77 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:77:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   77 |     pass = pass && fabs(sum_squares_simd({-1.4,4.6,6.3}) - 75) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:78:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   78 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:78:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   78 |     pass = pass && fabs(sum_squares_simd({-1.4,17.9,18.9,19.9}) - 1086) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:79:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   79 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:79:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   79 |     pass = pass && fabs(sum_squares_simd({0}) - 0) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:80:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   80 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:80:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   80 |     pass = pass && fabs(sum_squares_simd({-1}) - 1) < 1e-6;\n      |                    ^~~~\n[REDACTED]/tmpd3ns3dfz.cpp:81:20: warning: taking the absolute value of unsigned type 'uint64_t' (aka 'unsigned long') has no effect [-Wabsolute-value]\n   81 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^\n[REDACTED]/tmpd3ns3dfz.cpp:81:20: note: remove the call to 'fabs' since unsigned values cannot be negative\n   81 |     pass = pass && fabs(sum_squares_simd({-1,1,0}) - 2) < 1e-6;\n      |                    ^~~~\n12 warnings and 1 error generated.\n"}
+{"task_id": "SimdBench_126_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpahkpjry_.cpp:42:17: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   42 |             if (vgetq_lane_u32(mask, j)) {\n      |                 ^                    ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n1 error generated.\n"}
+{"task_id": "SimdBench_127_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmplz9bzv4_.cpp:55:53: error: expected ')'\n   55 |     bool any_neg = (vmaxvq_u32(global_neg_mask) != 0;\n      |                                                     ^\n[REDACTED]/tmplz9bzv4_.cpp:55:20: note: to match this '('\n   55 |     bool any_neg = (vmaxvq_u32(global_neg_mask) != 0;\n      |                    ^\n[REDACTED]/tmplz9bzv4_.cpp:56:53: error: expected ')'\n   56 |     bool any_pos = (vmaxvq_u32(global_pos_mask) != 0;\n      |                                                     ^\n[REDACTED]/tmplz9bzv4_.cpp:56:20: note: to match this '('\n   56 |     bool any_pos = (vmaxvq_u32(global_pos_mask) != 0;\n      |                    ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_129_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpfdbf3k_6.cpp:48:15: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   48 |         acc = vmulq_u64(acc, vec);\n      |               ^~~~~~~~~\n      |               vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n1 error generated.\n"}
+{"task_id": "SimdBench_129_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp9gk89kgo.cpp:50:31: error: argument value 35 is outside the valid range [1, 32]\n   50 |         uint32x4_t quotient = vshrq_n_u32(vmulq_u32(u_abs, magic), 35);\n      |                               ^                                    ~~\n[REDACTED]/arm_neon.h:28238:24: note: expanded from macro 'vshrq_n_u32'\n 28238 |   __ret = (uint32x4_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 50); \\\n       |                        ^                                         ~~~~\n[REDACTED]/tmp9gk89kgo.cpp:58:40: error: argument value 35 is outside the valid range [1, 32]\n   58 |             uint32x4_t quotient_step = vshrq_n_u32(vmulq_u32(first, magic), 35);\n      |                                        ^                                    ~~\n[REDACTED]/arm_neon.h:28238:24: note: expanded from macro 'vshrq_n_u32'\n 28238 |   __ret = (uint32x4_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 50); \\\n       |                        ^                                         ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_131_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpywhk5_z5.cpp:72:23: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   72 |     uint64x2_t prod = vmulq_u64(v, v_minus1);\n      |                       ^~~~~~~~~\n      |                       vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmpywhk5_z5.cpp:73:12: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   73 |     prod = vmulq_u64(prod, v_minus2);\n      |            ^~~~~~~~~\n      |            vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_132_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmppsokgj5l.cpp:74:23: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   74 |     uint64x2_t prod = vmulq_u64(v, v_minus1);\n      |                       ^~~~~~~~~\n      |                       vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmppsokgj5l.cpp:75:12: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   75 |     prod = vmulq_u64(prod, v_minus2);\n      |            ^~~~~~~~~\n      |            vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_132_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmp44wyqurh.cpp:73:26: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   73 |     uint64x2_t v_term0 = vmulq_u64(v_count0, v_c0_minus1);\n      |                          ^~~~~~~~~\n      |                          vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp44wyqurh.cpp:74:15: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   74 |     v_term0 = vmulq_u64(v_term0, v_c0_minus2);\n      |               ^~~~~~~~~\n      |               vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp44wyqurh.cpp:78:26: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   78 |     uint64x2_t v_term1 = vmulq_u64(v_count1, v_c1_minus1);\n      |                          ^~~~~~~~~\n      |                          vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n[REDACTED]/tmp44wyqurh.cpp:79:15: error: use of undeclared identifier 'vmulq_u64'; did you mean 'vmulq_f64'?\n   79 |     v_term1 = vmulq_u64(v_term1, v_c1_minus2);\n      |               ^~~~~~~~~\n      |               vmulq_f64\n[REDACTED]/arm_neon.h:52232:50: note: 'vmulq_f64' declared here\n 52232 | __ai __attribute__((target(\"neon\"))) float64x2_t vmulq_f64(float64x2_t __p0, float64x2_t __p1) {\n       |                                                  ^\n4 errors generated.\n"}
+{"task_id": "SimdBench_132_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_133_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpdh11lo2x.cpp:51:17: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   51 |             if (vgetq_lane_u32(v_mask, i)) {\n      |                 ^                      ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n[REDACTED]/tmpdh11lo2x.cpp:52:40: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   52 |                 unsigned int divisor = vgetq_lane_u32(v_div, i);\n      |                                        ^                     ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_133_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_134_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_Neon", "passed": false, "result": "compilation failed: [REDACTED]/tmpcrovzxse.cpp:49:17: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   49 |             if (vgetq_lane_u32(candidate_mask, j)) {\n      |                 ^                              ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n[REDACTED]/tmpcrovzxse.cpp:50:30: error: argument to '__builtin_neon_vgetq_lane_i32' must be a constant integer\n   50 |                 uint32_t x = vgetq_lane_u32(v_uint, j);\n      |                              ^                      ~\n[REDACTED]/arm_neon.h:10661:22: note: expanded from macro 'vgetq_lane_u32'\n 10661 |   __ret = (uint32_t) __builtin_neon_vgetq_lane_i32((int32x4_t)__s0, __p1); \\\n       |                      ^                                              ~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_134_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134_Neon", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_135_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_Neon", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135_Neon", "passed": true, "result": "passed"}

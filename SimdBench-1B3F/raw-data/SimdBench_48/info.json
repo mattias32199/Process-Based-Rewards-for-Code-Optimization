@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_48",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "matrix_conditional_bit_rotate",
+    "entrypoint_simd": "matrix_conditional_bit_rotate_simd"
+}

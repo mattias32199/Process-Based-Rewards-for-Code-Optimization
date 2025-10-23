@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_62",
+    "type": "2",
+    "subtype": "HumanEval/0",
+    "entrypoint_scalar": "has_close_elements",
+    "entrypoint_simd": "has_close_elements_simd"
+}

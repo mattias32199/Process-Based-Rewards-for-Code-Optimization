@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_45",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "tensor_multi_select",
+    "entrypoint_simd": "tensor_multi_select_simd"
+}

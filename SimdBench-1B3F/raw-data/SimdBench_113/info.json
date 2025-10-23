@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_113",
+    "type": "2",
+    "subtype": "HumanEval/107",
+    "entrypoint_scalar": "even_odd_palindrome",
+    "entrypoint_simd": "even_odd_palindrome_simd"
+}

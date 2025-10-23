@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_105",
+    "type": "2",
+    "subtype": "HumanEval/89",
+    "entrypoint_scalar": "encrypt",
+    "entrypoint_simd": "encrypt_simd"
+}

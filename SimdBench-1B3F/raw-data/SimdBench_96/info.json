@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_96",
+    "type": "2",
+    "subtype": "HumanEval/72",
+    "entrypoint_scalar": "will_it_fly",
+    "entrypoint_simd": "will_it_fly_simd"
+}

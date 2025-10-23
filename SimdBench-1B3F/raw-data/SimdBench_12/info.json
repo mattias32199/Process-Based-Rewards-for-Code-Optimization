@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_12",
+    "type": "1",
+    "subtype": "1-6",
+    "entrypoint_scalar": "mixed_right_shift",
+    "entrypoint_simd": "mixed_right_shift_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_44",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "tensor_bit_op",
+    "entrypoint_simd": "tensor_bit_op_simd"
+}

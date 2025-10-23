@@ -7,9 +7,12 @@ from simdbench.task import sys_prompt
 from simdbench.data import read_problems, simdbench_scalar, SIMD_BENCH
 from simdbench.global_var import intrin_list
 
-client = OpenAI(api_key="key", base_url="url")
-iteration = 5 # number per problem
-model = "xxx"
+client = OpenAI(
+    api_key="unused",                
+    base_url="http://localhost:8000/v1"
+)
+iteration = 5
+model = "llama-3-8b-instruct"
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def request_llm_once(task: Dict):
@@ -53,5 +56,7 @@ if __name__ == "__main__":
     # samples("scalar") # one by one
     # for item in ["SSE", "AVX", "SVE", "Neon", "RVV", "scalar"]:
     #     samples(item)
+  
+
     for item in ["AVX"]:
         samples(item)

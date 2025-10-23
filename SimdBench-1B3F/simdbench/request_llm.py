@@ -51,5 +51,7 @@ def samples(intrinsic:str, start_id:int = 0):
 
 if __name__ == "__main__":
     # samples("scalar") # one by one
-    for item in ["SSE", "AVX", "SVE", "Neon", "RVV", "scalar"]:
+    # for item in ["SSE", "AVX", "SVE", "Neon", "RVV", "scalar"]:
+    #     samples(item)
+    for item in ["AVX"]:
         samples(item)

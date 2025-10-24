@@ -27,22 +27,21 @@ BENCHMARK_MAIN();
         src_path = os.path.join(tmpdir, 'test.cpp')
         bin_path = os.path.join(tmpdir, 'test')
 
-        with open(src_path, 'w') as f:
+        with open(src_path, 'w', encoding='utf-8') as f:
             f.write(test_code)
 
         # Compile
         # Get Homebrew prefix for google-benchmark
-        import subprocess as sp
         try:
-            brew_prefix = sp.run(
+            brew_prefix = subprocess.run(
                 ['brew', '--prefix', 'google-benchmark'],
                 capture_output=True,
                 text=True,
                 check=True
             ).stdout.strip()
-        except:
+        except Exception:
             brew_prefix = '/opt/homebrew/opt/google-benchmark'  # fallback
-        
+
         compile_cmd = [
             'g++', '-std=c++17', '-O3',
             f'-I{brew_prefix}/include',

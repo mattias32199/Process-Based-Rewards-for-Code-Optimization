@@ -1,0 +1,43 @@
+// src/templates/array_operation.cpp
+
+#include <benchmark/benchmark.h>
+#include <vector>
+#include <random>
+#include <immintrin.h>
+
+// Scalar implementation
+{{SCALAR_CODE}}
+
+// SIMD implementation
+{{SIMD_CODE}}
+
+// Benchmark harness
+template<void (*Func)(const float*, const float*, float*, size_t)>
+static void BM_ArrayOp(benchmark::State& state) {
+    const size_t n = state.range(0);
+
+    std::vector<float> a(n);
+    std::vector<float> b(n);
+    std::vector<float> result(n);
+
+    std::random_device rd;
+    std::mt19937 gen(42);
+    std::uniform_real_distribution<float> dis(0.0f, 100.0f);
+
+    for (size_t i = 0; i < n; i++) {
+        a[i] = dis(gen);
+        b[i] = dis(gen);
+    }
+
+    for (auto _ : state) {
+        Func(a.data(), b.data(), result.data(), n);
+        benchmark::DoNotOptimize(result.data());
+        benchmark::ClobberMemory();
+    }
+}
+
+// Register benchmarks
+BENCHMARK_TEMPLATE(BM_ArrayOp, scalar_func)->Name("Scalar")->Arg(1024)->Arg(4096)->Arg(16384);
+BENCHMARK_TEMPLATE(BM_ArrayOp, simd_func)->Name("SIMD")->Arg(1024)->Arg(4096)->Arg(16384);
+
+BENCHMARK_MAIN();

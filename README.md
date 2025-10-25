@@ -1,6 +1,6 @@
 # Process-Based-Rewards-for-Code-Optimization
 *Course project for Intro to Deep Learning Fall 2025*
-Contributors: {myhollma,johnzhan,diacl,dharunmn}@andrew.cmu.edu
+## Contributors: {myhollma,johnzhan,diacl,dharunmn}@andrew.cmu.edu
 
 ## Branches
 - Benchmark branch contains extraction and processing of SIMDBench

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_111",
+    "type": "2",
+    "subtype": "HumanEval/103",
+    "entrypoint_scalar": "rounded_avg",
+    "entrypoint_simd": "rounded_avg_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_100",
+    "type": "2",
+    "subtype": "HumanEval/78",
+    "entrypoint_scalar": "hex_key",
+    "entrypoint_simd": "hex_key_simd"
+}

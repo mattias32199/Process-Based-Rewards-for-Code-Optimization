@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_32",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "matrix_has_row",
+    "entrypoint_simd": "matrix_has_row_simd"
+}

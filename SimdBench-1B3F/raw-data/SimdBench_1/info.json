@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_1",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "load_modify_store",
+    "entrypoint_simd": "load_modify_store_simd"
+}

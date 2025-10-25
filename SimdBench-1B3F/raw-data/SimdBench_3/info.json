@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_3",
+    "type": "1",
+    "subtype": "1-1",
+    "entrypoint_scalar": "indexed_access",
+    "entrypoint_simd": "indexed_access_simd"
+}

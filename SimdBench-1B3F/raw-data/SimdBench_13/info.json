@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_13",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "matrix_sum",
+    "entrypoint_simd": "matrix_sum_simd"
+}

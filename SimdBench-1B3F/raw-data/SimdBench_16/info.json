@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_16",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "population_count",
+    "entrypoint_simd": "population_count_simd"
+}

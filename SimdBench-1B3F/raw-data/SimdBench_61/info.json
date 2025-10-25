@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_61",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "simple_conv2d",
+    "entrypoint_simd": "simple_conv2d_simd"
+}

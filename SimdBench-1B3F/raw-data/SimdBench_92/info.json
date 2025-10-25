@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_92",
+    "type": "2",
+    "subtype": "HumanEval/64",
+    "entrypoint_scalar": "vowels_count",
+    "entrypoint_simd": "vowels_count_simd"
+}

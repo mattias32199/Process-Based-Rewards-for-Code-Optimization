@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_31",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "nearest_multiple",
+    "entrypoint_simd": "nearest_multiple_simd"
+}

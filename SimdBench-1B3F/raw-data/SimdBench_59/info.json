@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_59",
+    "type": "1",
+    "subtype": "1-6",
+    "entrypoint_scalar": "widening_uint",
+    "entrypoint_simd": "widening_uint_simd"
+}

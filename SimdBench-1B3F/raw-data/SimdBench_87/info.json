@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_87",
+    "type": "2",
+    "subtype": "HumanEval/50",
+    "entrypoint_scalar": "decode_shift",
+    "entrypoint_simd": "decode_shift_simd"
+}

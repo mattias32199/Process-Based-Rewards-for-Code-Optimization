@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_107",
+    "type": "2",
+    "subtype": "HumanEval/95",
+    "entrypoint_scalar": "check_dict_case",
+    "entrypoint_simd": "check_dict_case_simd"
+}

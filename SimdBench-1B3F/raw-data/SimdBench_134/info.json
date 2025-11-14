@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_134",
+    "type": "2",
+    "subtype": "HumanEval/151",
+    "entrypoint_scalar": "double_the_difference",
+    "entrypoint_simd": "double_the_difference_simd"
+}

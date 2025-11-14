@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_132",
+    "type": "2",
+    "subtype": "HumanEval/147",
+    "entrypoint_scalar": "get_max_triples",
+    "entrypoint_simd": "get_max_triples_simd"
+}

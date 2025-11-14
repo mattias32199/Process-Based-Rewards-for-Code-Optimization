@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_9",
+    "type": "1",
+    "subtype": "1-1",
+    "entrypoint_scalar": "reorder_matrix_rows",
+    "entrypoint_simd": "reorder_matrix_rows_simd"
+}

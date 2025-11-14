@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simdbench"
+version = "0.0.0"
+description = "SimdBench"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["tqdm", "fire", "numpy", "psutil", "tabulate"]
+
+[tool.setuptools.packages.find]
+where = ["."]

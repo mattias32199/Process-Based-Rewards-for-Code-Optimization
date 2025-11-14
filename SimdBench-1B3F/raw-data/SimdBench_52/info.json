@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_52",
+    "type": "1",
+    "subtype": "1-6",
+    "entrypoint_scalar": "float_div_round",
+    "entrypoint_simd": "float_div_round_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_34",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "axm_abs",
+    "entrypoint_simd": "axm_abs_simd"
+}

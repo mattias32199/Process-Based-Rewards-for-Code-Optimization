@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_71",
+    "type": "2",
+    "subtype": "HumanEval/20",
+    "entrypoint_scalar": "find_closest_elements",
+    "entrypoint_simd": "find_closest_elements_simd"
+}

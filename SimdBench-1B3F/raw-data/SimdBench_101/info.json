@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_101",
+    "type": "2",
+    "subtype": "HumanEval/80",
+    "entrypoint_scalar": "is_happy",
+    "entrypoint_simd": "is_happy_simd"
+}

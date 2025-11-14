@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_66",
+    "type": "2",
+    "subtype": "HumanEval/8",
+    "entrypoint_scalar": "sum_product",
+    "entrypoint_simd": "sum_product_simd"
+}

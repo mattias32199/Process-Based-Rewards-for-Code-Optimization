@@ -1,16 +1,28 @@
 # multi-turn RL GSPO trainer
 import numpy as np
+from unsloth import FastLanguageModel
+import torch
 
 class MultiTurnRLTrainer():
-    def __init__(self, model, config, verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn):
+    def __init__(self, config, verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn):
         """
         parameters:
             model: expects vllm model
         """
-        # tokenizer?
         # config yaml
         self.config = config
-        self.model = model
+
+        # initialize model and tokenizer
+        if self.config.model.model_name:
+            model_name = self.config.model.model_name
+        else:
+            model_name = "qwen2.5-coder-1.5b"
+        self.model, self.tokenizer = FastLanguageModel.from_pretrained(
+            model_name,
+            max_seq_length=4096,
+            load_in_4bit=False,
+            dtype=torch.bfloat16,
+        )
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
 
@@ -26,6 +38,8 @@ class MultiTurnRLTrainer():
         for epoch in range(self.config.epochs):
             for batch in dataloader:
                 trajectories = self.rollout(batch) # multi-turn interaction to generate trajectories
+
+                self.update_policy(trajectories)
 
         raise NotImplementedError
 

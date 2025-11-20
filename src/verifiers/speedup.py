@@ -47,7 +47,7 @@ def extract_code(simd_code_raw: str) -> str:
     """
     Extracts code from model solution
     """
-    # Try to extract fenced code (handles cpp, c++, etc.)
+    # try to extract fenced code
     match = re.search(r'```[\w\+\-]*\s*\n(.*?)```', simd_code_raw, re.DOTALL)
     if match:
         code = match.group(1).strip()
@@ -57,7 +57,12 @@ def extract_code(simd_code_raw: str) -> str:
     return code
 
 
-def verify_speedup(task, result, benchmark_template):
+def verify_speedup(
+    task,
+    result,
+    benchmark_template,
+    benchmark_path = '/content/benchmark/build/src/libbenchmark.a' # works for google colab
+):
     scalar_code = task['solution_scalar']
     test_performance = task['test_performance']
     simd_code_raw = result['completion']
@@ -75,7 +80,7 @@ def verify_speedup(task, result, benchmark_template):
         ['g++', '-std=c++17', '-O3', '-mavx2',
             '-I/content/benchmark/include',
             'test.cpp',
-            '/content/benchmark/build/src/libbenchmark.a',
+            benchmark_path,
             '-o', 'test',
             '-lpthread'],
         capture_output=True,

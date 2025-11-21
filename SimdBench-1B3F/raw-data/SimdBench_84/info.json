@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_84",
+    "type": "2",
+    "subtype": "HumanEval/43",
+    "entrypoint_scalar": "pairs_sum_to_zero",
+    "entrypoint_simd": "pairs_sum_to_zero_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_5",
+    "type": "1",
+    "subtype": "1-1",
+    "entrypoint_scalar": "extract_tensor_slice",
+    "entrypoint_simd": "extract_tensor_slice_simd"
+}

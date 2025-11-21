@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_21",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "vector_mul_round_up",
+    "entrypoint_simd": "vector_mul_round_up_simd"
+}

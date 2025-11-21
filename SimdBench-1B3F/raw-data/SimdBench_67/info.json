@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_67",
+    "type": "2",
+    "subtype": "HumanEval/9",
+    "entrypoint_scalar": "rolling_max",
+    "entrypoint_simd": "rolling_max_simd"
+}

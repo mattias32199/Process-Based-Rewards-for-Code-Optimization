@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_21", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_25", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_37", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_37", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50", "passed": false, "result": "compilation failed: [REDACTED]/tmpo9t8h45x.cpp:20:19: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   20 |         if (val > INT32_MAX) B[i] = INT32_MAX;\n      |                 ~ ^~~~~~~~~\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n[REDACTED]/tmpo9t8h45x.cpp:26:19: error: expected unqualified-id\n   26 |     const int32_t INT32_MAX = 2147483647;\n      |                   ^\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmpo9t8h45x.cpp:26:19: error: expected ')'\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmpo9t8h45x.cpp:26:19: note: to match this '('\n/usr/include/stdint.h:112:21: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                 ^\n[REDACTED]/tmpo9t8h45x.cpp:27:19: error: expected unqualified-id\n   27 |     const int32_t INT32_MIN = -2147483648;\n      |                   ^\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmpo9t8h45x.cpp:27:19: error: expected ')'\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmpo9t8h45x.cpp:27:19: note: to match this '('\n/usr/include/stdint.h:107:21: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                 ^\n1 warning and 4 errors generated.\n"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": false, "result": "compilation failed: [REDACTED]/tmph33simh5.cpp:20:19: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   20 |         if (val > INT32_MAX) B[i] = INT32_MAX;\n      |                 ~ ^~~~~~~~~\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n[REDACTED]/tmph33simh5.cpp:26:19: error: expected unqualified-id\n   26 |     const int32_t INT32_MAX = std::numeric_limits<int32_t>::max();\n      |                   ^\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmph33simh5.cpp:26:19: error: expected ')'\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmph33simh5.cpp:26:19: note: to match this '('\n/usr/include/stdint.h:112:21: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                 ^\n[REDACTED]/tmph33simh5.cpp:27:19: error: expected unqualified-id\n   27 |     const int32_t INT32_MIN = std::numeric_limits<int32_t>::min();\n      |                   ^\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmph33simh5.cpp:27:19: error: expected ')'\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmph33simh5.cpp:27:19: note: to match this '('\n/usr/include/stdint.h:107:21: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                 ^\n[REDACTED]/tmph33simh5.cpp:31:21: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   31 |         if (value > INT32_MAX) {\n      |                   ~ ^~~~~~~~~\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n2 warnings and 4 errors generated.\n"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": false, "result": "compilation failed: [REDACTED]/tmpd3c_35st.cpp:20:19: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]\n   20 |         if (val > INT32_MAX) B[i] = INT32_MAX;\n      |                 ~ ^~~~~~~~~\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^~~~~~~~~~\n[REDACTED]/tmpd3c_35st.cpp:26:19: error: expected unqualified-id\n   26 |     const int32_t INT32_MAX = 2147483647;\n      |                   ^\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmpd3c_35st.cpp:26:19: error: expected ')'\n/usr/include/stdint.h:112:22: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                  ^\n[REDACTED]/tmpd3c_35st.cpp:26:19: note: to match this '('\n/usr/include/stdint.h:112:21: note: expanded from macro 'INT32_MAX'\n  112 | # define INT32_MAX              (2147483647)\n      |                                 ^\n[REDACTED]/tmpd3c_35st.cpp:27:19: error: expected unqualified-id\n   27 |     const int32_t INT32_MIN = -2147483648;\n      |                   ^\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmpd3c_35st.cpp:27:19: error: expected ')'\n/usr/include/stdint.h:107:22: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                  ^\n[REDACTED]/tmpd3c_35st.cpp:27:19: note: to match this '('\n/usr/include/stdint.h:107:21: note: expanded from macro 'INT32_MIN'\n  107 | # define INT32_MIN              (-2147483647-1)\n      |                                 ^\n1 warning and 4 errors generated.\n"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": false, "result": "compilation failed: [REDACTED]/tmpxf0ygmcp.cpp:27:22: error: use of undeclared identifier '__int32_to_float'\n   27 |         B[i] = sqrtf(__int32_to_float(high_bits));\n      |                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": false, "result": "compilation failed: [REDACTED]/tmp4ei5_67j.cpp:27:22: error: use of undeclared identifier '__int32_to_float'\n   27 |         B[i] = sqrtf(__int32_to_float(high_bits));\n      |                      ^\n1 error generated.\n"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpw4jzp3zx.cpp:64:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   64 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpw4jzp3zx.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpw4jzp3zx.cpp:48:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   48 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpd13f1i37.cpp:64:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   64 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpd13f1i37.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpd13f1i37.cpp:48:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   48 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmp6pqkt3sw.cpp:64:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   64 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmp6pqkt3sw.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmp6pqkt3sw.cpp:48:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   48 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpku0c5e3_.cpp:64:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   64 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpku0c5e3_.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpku0c5e3_.cpp:48:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   48 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpz_5xeg5q.cpp:64:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   64 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpz_5xeg5q.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpz_5xeg5q.cpp:48:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   48 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": false, "result": "compilation failed: [REDACTED]/tmpp6wsb_h7.cpp:36:17: error: no member named 'bitset' in namespace 'std'\n   36 |     return std::bitset<64>(sum).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpp6wsb_h7.cpp:36:32: error: member reference base type 'int' is not a structure or union\n   36 |     return std::bitset<64>(sum).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_103", "passed": false, "result": "compilation failed: [REDACTED]/tmpgor7sp2x.cpp:36:17: error: no member named 'bitset' in namespace 'std'\n   36 |     return std::bitset<64>(sum).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpgor7sp2x.cpp:36:32: error: member reference base type 'int' is not a structure or union\n   36 |     return std::bitset<64>(sum).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_103", "passed": false, "result": "compilation failed: [REDACTED]/tmpbo5zh7jy.cpp:36:17: error: no member named 'bitset' in namespace 'std'\n   36 |     return std::bitset<64>(sum).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpbo5zh7jy.cpp:36:32: error: member reference base type 'int' is not a structure or union\n   36 |     return std::bitset<64>(sum).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_103", "passed": false, "result": "compilation failed: [REDACTED]/tmpqftroyq5.cpp:36:17: error: no member named 'bitset' in namespace 'std'\n   36 |     return std::bitset<64>(sum).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpqftroyq5.cpp:36:32: error: member reference base type 'int' is not a structure or union\n   36 |     return std::bitset<64>(sum).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_103", "passed": false, "result": "compilation failed: [REDACTED]/tmp9eyoa1au.cpp:36:17: error: no member named 'bitset' in namespace 'std'\n   36 |     return std::bitset<64>(sum).to_string();\n      |            ~~~~~^\n[REDACTED]/tmp9eyoa1au.cpp:36:32: error: member reference base type 'int' is not a structure or union\n   36 |     return std::bitset<64>(sum).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111", "passed": false, "result": "compilation failed: [REDACTED]/tmp5q25ht5v.cpp:42:17: error: no member named 'bitset' in namespace 'std'\n   42 |     return std::bitset<64>(avg).to_string().substr(64 - count_digits(avg));\n      |            ~~~~~^\n[REDACTED]/tmp5q25ht5v.cpp:42:32: error: member reference base type 'long long' is not a structure or union\n   42 |     return std::bitset<64>(avg).to_string().substr(64 - count_digits(avg));\n      |                           ~~~~~^~~~~~~~~~\n[REDACTED]/tmp5q25ht5v.cpp:42:57: error: use of undeclared identifier 'count_digits'\n   42 |     return std::bitset<64>(avg).to_string().substr(64 - count_digits(avg));\n      |                                                         ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_111", "passed": false, "result": "compilation failed: [REDACTED]/tmpv_1ieb1x.cpp:44:17: error: no member named 'bitset' in namespace 'std'\n   44 |     return std::bitset<64>(avg).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpv_1ieb1x.cpp:44:32: error: member reference base type 'long long' is not a structure or union\n   44 |     return std::bitset<64>(avg).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_111", "passed": false, "result": "compilation failed: [REDACTED]/tmpc8hgy_5k.cpp:44:17: error: no member named 'bitset' in namespace 'std'\n   44 |     return std::bitset<64>(avg).to_string();\n      |            ~~~~~^\n[REDACTED]/tmpc8hgy_5k.cpp:44:32: error: member reference base type 'long long' is not a structure or union\n   44 |     return std::bitset<64>(avg).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_111", "passed": false, "result": "compilation failed: [REDACTED]/tmp9icy7l9o.cpp:44:17: error: no member named 'bitset' in namespace 'std'\n   44 |     return std::bitset<64>(avg).to_string();\n      |            ~~~~~^\n[REDACTED]/tmp9icy7l9o.cpp:44:32: error: member reference base type 'int' is not a structure or union\n   44 |     return std::bitset<64>(avg).to_string();\n      |                           ~~~~~^~~~~~~~~~\n2 errors generated.\n"}
+{"task_id": "SimdBench_111", "passed": false, "result": "compilation failed: [REDACTED]/tmpbbfngguw.cpp:44:17: error: no member named 'bitset' in namespace 'std'\n   44 |     return std::bitset<64>(average).to_string().substr(64 - count_digits(average));\n      |            ~~~~~^\n[REDACTED]/tmpbbfngguw.cpp:44:36: error: member reference base type 'long long' is not a structure or union\n   44 |     return std::bitset<64>(average).to_string().substr(64 - count_digits(average));\n      |                           ~~~~~~~~~^~~~~~~~~~\n[REDACTED]/tmpbbfngguw.cpp:44:61: error: use of undeclared identifier 'count_digits'\n   44 |     return std::bitset<64>(average).to_string().substr(64 - count_digits(average));\n      |                                                             ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}

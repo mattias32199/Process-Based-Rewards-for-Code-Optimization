@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_10",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "vector_vector_add",
+    "entrypoint_simd": "vector_vector_add_simd"
+}

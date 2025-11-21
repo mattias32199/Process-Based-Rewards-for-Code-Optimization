@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_18",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "range_matrix_mul",
+    "entrypoint_simd": "range_matrix_mul_simd"
+}

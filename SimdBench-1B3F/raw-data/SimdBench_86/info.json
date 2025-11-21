@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_86",
+    "type": "2",
+    "subtype": "HumanEval/48",
+    "entrypoint_scalar": "is_palindrome",
+    "entrypoint_simd": "is_palindrome_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_49",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "tensor_ternary_compare",
+    "entrypoint_simd": "tensor_ternary_compare_simd"
+}

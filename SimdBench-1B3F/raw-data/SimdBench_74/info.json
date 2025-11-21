@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_74",
+    "type": "2",
+    "subtype": "HumanEval/25",
+    "entrypoint_scalar": "factorize",
+    "entrypoint_simd": "factorize_simd"
+}

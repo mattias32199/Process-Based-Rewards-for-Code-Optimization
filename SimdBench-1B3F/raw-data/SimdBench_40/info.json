@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_40",
+    "type": "1",
+    "subtype": "1-5",
+    "entrypoint_scalar": "tensor_bitwise_or",
+    "entrypoint_simd": "tensor_bitwise_or_simd"
+}

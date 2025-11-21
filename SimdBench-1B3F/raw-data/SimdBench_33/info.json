@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_33",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "tensor_4d_equal_count",
+    "entrypoint_simd": "tensor_4d_equal_count_simd"
+}

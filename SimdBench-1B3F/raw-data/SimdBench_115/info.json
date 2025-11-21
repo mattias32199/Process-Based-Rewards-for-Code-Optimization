@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_115",
+    "type": "2",
+    "subtype": "HumanEval/109",
+    "entrypoint_scalar": "move_one_ball",
+    "entrypoint_simd": "move_one_ball_simd"
+}

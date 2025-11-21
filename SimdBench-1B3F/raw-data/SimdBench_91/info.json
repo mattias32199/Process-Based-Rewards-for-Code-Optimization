@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_91",
+    "type": "2",
+    "subtype": "HumanEval/62",
+    "entrypoint_scalar": "derivative",
+    "entrypoint_simd": "derivative_simd"
+}

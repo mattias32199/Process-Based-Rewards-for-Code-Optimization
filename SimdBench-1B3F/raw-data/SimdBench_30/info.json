@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_30",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "matrix_rows_sorted_verify",
+    "entrypoint_simd": "matrix_rows_sorted_verify_simd"
+}

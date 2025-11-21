@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_94",
+    "type": "2",
+    "subtype": "HumanEval/68",
+    "entrypoint_scalar": "pluck",
+    "entrypoint_simd": "pluck_simd"
+}

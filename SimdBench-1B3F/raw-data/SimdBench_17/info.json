@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_17",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "saturating_add",
+    "entrypoint_simd": "saturating_add_simd"
+}

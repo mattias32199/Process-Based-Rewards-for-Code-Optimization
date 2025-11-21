@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_19",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "tensor_add_3d",
+    "entrypoint_simd": "tensor_add_3d_simd"
+}

@@ -1,7 +1,7 @@
 # rl_utils.py
 import torch
 from typing import Tuple, Dict, Any, Optional
-from config import ActorConfig 
+from src.config import ActorConfig 
 
 class VerlF:
     @staticmethod

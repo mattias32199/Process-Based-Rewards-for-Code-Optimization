@@ -120,7 +120,7 @@ if __name__ == "__main__":
         model_name=model_cfg.model_name,
         max_seq_length=model_cfg.max_seq_length,
         learning_rate=trainer_cfg.lr,
-        fast_inference=True # ENABLE optimization
+        fast_inference=False # ENABLE optimization
     )
 
     # C. Initialize Trainer

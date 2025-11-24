@@ -5,7 +5,7 @@ from unsloth import FastLanguageModel
 from typing import List, Dict, Any, Tuple
 
 # Enable Unsloth optimization for VLLM if installed, or general standby
-os.environ["UNSLOTH_VLLM_STANDBY"] = "1"
+# os.environ["UNSLOTH_VLLM_STANDBY"] = "1"
 
 class UnifiedPolicyEngine:
     def __init__(
@@ -15,6 +15,7 @@ class UnifiedPolicyEngine:
         lora_rank: int = 64,
         learning_rate: float = 2e-5,
         dtype=torch.float16,
+        fast_inference=False
     ):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.max_seq_length = max_seq_length
@@ -27,7 +28,7 @@ class UnifiedPolicyEngine:
             load_in_4bit=False, # Assuming fp16 based on your snippet
             load_in_16bit=True,
             dtype=dtype,
-            fast_inference=True, # Must be false to support training mode toggling
+            fast_inference=fast_inference, # Must be false to support training mode toggling
         )
 
         # Apply LoRA

@@ -1,10 +1,11 @@
-# Wraps model into policy
-# TODO: install unsloth vllm
 import os
-os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
-
 import torch
+import torch.nn as nn
 from unsloth import FastLanguageModel
+from typing import List, Dict, Any, Tuple
+
+# Enable Unsloth optimization for VLLM if installed, or general standby
+os.environ["UNSLOTH_VLLM_STANDBY"] = "1"
 
 class UnifiedPolicyEngine:
     def __init__(
@@ -13,32 +14,29 @@ class UnifiedPolicyEngine:
         max_seq_length: int = 4096,
         lora_rank: int = 64,
         learning_rate: float = 2e-5,
-        dtype=torch.float16 # https://arxiv.org/pdf/2510.26788
+        dtype=torch.float16,
     ):
-        self.device = "cuda"
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.max_seq_length = max_seq_length
+        self.dtype = dtype
 
-        # load model
+        print(f"Loading Unsloth Model: {model_name}...")
         self.model, self.tokenizer = FastLanguageModel.from_pretrained(
             model_name=model_name,
             max_seq_length=max_seq_length,
+            load_in_4bit=False, # Assuming fp16 based on your snippet
             load_in_16bit=True,
-            dtype=dtype, # load and use in fp16
+            dtype=dtype,
+            fast_inference=True, # Must be false to support training mode toggling
         )
 
-        # LoRA adapter
-        # https://thinkingmachines.ai/blog/lora/
-        # https://docs.unsloth.ai/get-started/fine-tuning-llms-guide/lora-hyperparameters-guide
-        """
-        - RL requires low capacity
-        - Target all layers
-        - 10x learning rate of full ft
-        """
+        # Apply LoRA
+        print(f"Applying LoRA (r={lora_rank})...")
         self.model = FastLanguageModel.get_peft_model(
             self.model,
             r=lora_rank,
             target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
-                            "gate_proj", "up_proj", "down_proj"], # target all layers
+                            "gate_proj", "up_proj", "down_proj"],
             lora_alpha=lora_rank,
             lora_dropout=0,
             bias="none",
@@ -46,27 +44,27 @@ class UnifiedPolicyEngine:
             random_state=3407,
         )
 
-        # 3. optimizer
+        # Ensure Pad Token
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        
+        # Optimizer
         self.optimizer = torch.optim.AdamW(
             self.model.parameters(),
             lr=learning_rate,
             weight_decay=0.01
         )
 
-        # ensure pad token
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
-
-    def generate_batched_responses(self, prompts: list[str], **generation_kwargs) -> list[str]:
+    def generate(self, prompts: List[str], **kwargs) -> List[str]:
         """
-        Switches to Inference Mode and generates responses for a batch of prompts.
+        Inference mode generation. 
         """
-        # switch to optimized inference kernels (FlashAttn 2, no gradient tracking)
         FastLanguageModel.for_inference(self.model)
-        # switch to left padding for inference? how come?
+        self.model.eval()
+        
+        # Inference requires LEFT padding
         self.tokenizer.padding_side = "left"
 
-        # prepare batch
         inputs = self.tokenizer(
             prompts,
             return_tensors="pt",
@@ -75,128 +73,132 @@ class UnifiedPolicyEngine:
             max_length=self.max_seq_length
         ).to(self.device)
 
-        # generate responses
-        outputs = self.model.generate(
-            **inputs,
-            max_new_tokens=generation_kwargs.get("max_new_tokens", 512),
-            do_sample=generation_kwargs.get("do_sample", True),
-            temperature=generation_kwargs.get("temperature", 0.7),
-            use_cache=True,
-            pad_token_id=self.tokenizer.pad_token_id,
-            eos_token_id=self.tokenizer.eos_token_id,
-        )
+        with torch.no_grad():
+            outputs = self.model.generate(
+                **inputs,
+                max_new_tokens=kwargs.get("max_new_tokens", 512),
+                do_sample=kwargs.get("do_sample", True),
+                temperature=kwargs.get("temperature", 0.7),
+                top_p=kwargs.get("top_p", 0.9),
+                use_cache=True,
+                pad_token_id=self.tokenizer.pad_token_id,
+            )
 
-        # decode
+        # Decode
         decoded = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
-
-        # extract completions
+        
+        # Simple extraction of generated part
         completions = []
         for prompt, text in zip(prompts, decoded):
-            # sometimes tokenizers add a space or strip a space
-            if text.startswith(prompt):
-                completions.append(text[len(prompt):])
+            # Fallback if the tokenizer modifies the prompt slightly
+            if len(text) > len(prompt):
+                # Heuristic: strip the prompt. 
+                # Ideally, we calculate tokens, but text matching works for simple Instruct templates
+                completions.append(text[len(prompt):]) 
             else:
-                # if prompt reconstruction fails
-                completions.append(text.replace(prompt, "", 1))
+                completions.append("") # Generation failed or was empty
 
         return completions
 
-    def generate_logprobs(self, trajectories):
+    def get_batch_logprobs(
+        self, 
+        prompts: List[str], 
+        responses: List[str]
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
         """
-        Calculates the length-normalized log probabilities of the response (y) given the prompt (x).
-        Matches GSPO Equation 7.
+        Computes log probabilities for the 'responses' given the 'prompts'.
+        Used for both:
+        1. Calculating 'old_log_probs' (no_grad) during Rollout.
+        2. Calculating 'new_log_probs' (grad) during Update.
+        
+        Returns:
+            log_probs: (B, T) - Log probs of the response tokens
+            masks: (B, T) - 1.0 for response tokens, 0.0 for padding/prompt
         """
-        # switch model to training engine
-        FastLanguageModel.for_training(self.model)
-
-        # training engine requires right padding
+        # Training/Forward pass requires RIGHT padding
         self.tokenizer.padding_side = "right"
+        
+        # We need to construct the full text to feed into the model
+        # Note: Ideally you use a chat template here, ensuring strict concatenation
+        full_texts = [p + r for p, r in zip(prompts, responses)]
 
-        prompts = [t['prompt'] for t in trajectories]
-        completions = [t['completion'] for t in trajectories]
-        full_texts = [p + c for p, c in zip(prompts, completions)]
-
-        # Tokenize full sequences
+        # Tokenize everything
         inputs = self.tokenizer(
             full_texts,
             return_tensors="pt",
             padding=True,
             truncation=True,
-            max_length=self.max_seq_length
+            max_length=self.max_seq_length,
         ).to(self.device)
+        
+        input_ids = inputs.input_ids
+        attention_mask = inputs.attention_mask
 
-        # tokenize prompts separately to determine where the completion begins
-        # necessary to mask out prompt logits
+        # Determine where the prompt ends and response begins
+        # We re-tokenize just the prompts to find their length
         prompt_inputs = self.tokenizer(
             prompts,
             return_tensors="pt",
             padding=True,
             truncation=True,
-            max_length=self.max_seq_length,
-            add_special_tokens=False # Ensure we don't double count BOS if present
-        ).to(self.device)
-
-        # lengths to create a specific completion mask
-        # assumes left-padding isn't used or is handled by the tokenizer correctly.
-        prompt_lengths = prompt_inputs.attention_mask.sum(dim=1)
-
-        outputs = self.model(
-            input_ids=inputs.input_ids,
-            attention_mask=inputs.attention_mask
+            add_special_tokens=False, # Crucial: don't add extra BOS
+            max_length=self.max_seq_length
         )
+        # Calculate prompt lengths
+        prompt_lens = prompt_inputs.attention_mask.sum(dim=1).to(self.device)
 
-        logits = outputs.logits[:, :-1]
-        labels = inputs.input_ids[:, 1:]
+        # Forward pass
+        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
+        logits = outputs.logits # (B, Seq, Vocab)
 
-        log_probs = torch.log_softmax(logits, dim=-1)
-        token_logprobs = torch.gather(
-            log_probs, -1, labels.unsqueeze(-1)
-        ).squeeze(-1)
+        # Shift: logits at [:-1] predict tokens at [1:]
+        logits = logits[:, :-1, :]
+        target_ids = input_ids[:, 1:]
+        
+        # Compute Log Softmax
+        log_probs_all = torch.log_softmax(logits, dim=-1)
+        
+        # Gather log prob of the actual target tokens
+        token_log_probs_all = torch.gather(
+            log_probs_all, 
+            dim=-1, 
+            index=target_ids.unsqueeze(-1)
+        ).squeeze(-1) # (B, Seq-1)
 
-        # mask for completion tokens
-        mask = torch.zeros_like(labels, dtype=torch.float)
-        for i, p_len in enumerate(prompt_lengths):
-            mask[i, p_len-1:] = 1.0
+        # Create the Response Mask
+        # We want to mask out:
+        # 1. The Prompt tokens
+        # 2. The Padding tokens
+        mask = torch.zeros_like(token_log_probs_all)
+        
+        seq_len = token_log_probs_all.size(1)
+        for i in range(len(prompts)):
+            p_len = prompt_lens[i].item()
+            # The prompt takes up p_len tokens.
+            # Because of shifting, the prediction for the first response token 
+            # happens at index (p_len - 1). 
+            start_idx = p_len - 1 
+            if start_idx < 0: start_idx = 0
+            
+            mask[i, start_idx:] = 1.0
 
-        # apply padding mask
-        padding_mask = (labels != self.tokenizer.pad_token_id).float()
-        mask = mask * padding_mask
+        # Apply padding mask (original attention mask shifted)
+        # attention_mask is for [0...Seq]. target_ids is [1...Seq]
+        padding_mask = attention_mask[:, 1:] 
+        final_mask = mask * padding_mask
 
-        # calculate number of tokens in the response |y|
-        response_lengths = mask.sum(dim=1).clamp(min=1)
+        # Zero out logprobs for prompt/padding so they don't affect sums
+        token_log_probs = token_log_probs_all * final_mask
 
-        # xum logprobs only for the response y
-        response_sum_logprobs = (token_logprobs * mask).sum(dim=1)
+        return token_log_probs, final_mask
 
-        # apply length normalization for GSPO (Equation 7)
-        # GSPO uses the mean logprob over the sequence length
-        mean_logprobs = response_sum_logprobs / response_lengths
-
-        # check for NaN/inf
-        assert torch.isfinite(mean_logprobs).all(), "Found NaN/Inf in logprobs!"
-
-        return {
-            'seq_len': response_lengths,
-            'seq_logprobs': mean_logprobs # log(s_i(theta))
-        }
-
-    def update_training_engine(self, loss) -> float:
-        """
-        Performs a single gradient update step.
-        Args:
-            loss
-        Returns:
-            loss: float (The training loss for logging)
-        """
-        # backward pass
+    def train_step(self, loss: torch.Tensor):
         self.optimizer.zero_grad()
         loss.backward()
-        # gradient clipping
         torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
         self.optimizer.step()
-
         return loss.item()
 
-    def save_model(self, output_dir: str):
-        self.model.save_pretrained(output_dir)
-        self.tokenizer.save_pretrained(output_dir)
+    def set_train_mode(self):
+        FastLanguageModel.for_training(self.model)
+        self.model.train()

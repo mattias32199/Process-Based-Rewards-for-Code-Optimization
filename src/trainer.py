@@ -2,6 +2,7 @@
 import numpy as np
 import torch
 from engine import UnifiedPolicyEngine
+from reward_util import compute_immediate_reward, compute_advantages
 
 class MultiTurnRLTrainer():
     def __init__(self, config, verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn):
@@ -34,7 +35,7 @@ class MultiTurnRLTrainer():
         for epoch in range(self.config.epochs):
             for batch in dataloader:
                 # reinforcement learning rollout to generate trajectories
-                trajectories = self.rollout(batch) # multi-turn interaction to generate trajectories
+                trajectories = self.rollout(batch['tasks']) # multi-turn interaction to generate trajectories
                 loss, metrics = self.update_policy(trajectories)
 
     def rollout(self, batch):

@@ -1,3 +1,4 @@
+# src/reward_util.py
 import numpy as np
 
 def compute_immediate_reward(feedback: dict) -> float:
@@ -47,7 +48,7 @@ def compute_future_credit(
     return future_credit
 
 
-def get_task_indices(trajectories)
+def get_task_indices(trajectories):
     task_indices = {}
     for i, traj in enumerate(trajectories):
         task_id = traj['task_id']
@@ -68,6 +69,10 @@ def normalize_rewards_per_task(batched_rewards, task_indices, eps=1e-8) -> np.nd
 def compute_advantages(
     trajectories: list[dict]
 ):
+    """
+    Runs full pipeline:
+        (immediate rewards -> future credit assignment -> advantages)
+    """
     batched_rewards = batch_immediate_rewards(trajectories) # batched immediate rewards
     batched_rewards = compute_future_credit(batched_rewards) # batched rewards w/ future credit assignment
 

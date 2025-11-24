@@ -1,7 +1,7 @@
 # multi-turn RL GSPO trainer
 import numpy as np
-from unsloth import FastLanguageModel
 import torch
+from engine import UnifiedPolicyEngine
 
 class MultiTurnRLTrainer():
     def __init__(self, config, verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn):
@@ -12,17 +12,9 @@ class MultiTurnRLTrainer():
         # config yaml
         self.config = config
 
-        # initialize model and tokenizer
-        if self.config.model.model_name:
-            model_name = self.config.model.model_name
-        else:
-            model_name = "qwen2.5-coder-1.5b"
-        self.model, self.tokenizer = FastLanguageModel.from_pretrained(
-            model_name,
-            max_seq_length=4096,
-            load_in_4bit=False,
-            dtype=torch.bfloat16,
-        )
+        # initialize model engine
+        self.engine = UnifiedPolicyEngine(config.model.get("name"))
+
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
 
@@ -35,18 +27,82 @@ class MultiTurnRLTrainer():
 
 
     def train(self, dataloader):
+        """
+        Top-level training loop.
+        Rollout -> Update Policy
+        """
         for epoch in range(self.config.epochs):
             for batch in dataloader:
+                # reinforcement learning rollout to generate trajectories
                 trajectories = self.rollout(batch) # multi-turn interaction to generate trajectories
-
-                self.update_policy(trajectories)
-
-        raise NotImplementedError
+                loss, metrics = self.update_policy(trajectories)
 
     def rollout(self, batch):
         """
         batch -> tasks -> model -> trajectories
         """
+        # initialize trajectories and context manager
+        envs = [] # len(envs) = task x parallel_trajectories
+        for task in batch:
+            for _ in range(self.parallel_trajectories):
+                envs.append(
+                    {
+                        "task_id": task["task_id"],
+                        "context_buffer": {
+                            "task_prompt": task["prompt"],
+                            "solution_scalar": task["solution_scalar"],
+                            "turns": [],
+                        },
+                        "trajectory": {
+                            "task_id": task["task_id"],
+                            "turns": [],
+                        },
+                    }
+                )
+
+        # multi-turn RL
+        for turn in range(self.max_turns):
+            # construct prompts
+            prompts = [
+                self.construct_prompt_fn(env["context_buffer"], turn) for env in envs
+            ]
+            # batched response generation
+            gen_infos = self.engine.generate_batched_responses(prompts)
+
+            for env, prompt, gen_info in zip(envs, prompts, gen_infos):
+                response = gen_info["response_text"]
+                input_ids_full = gen_info["input_ids_full"]
+                token_log_probs_old = gen_info["token_log_probs_old"]
+                prompt_len = gen_info["prompt_len"]
+                response_len = gen_info["response_len"]
+
+                cot, solution_simd = self.parse_response_fn(response)
+                verification, profile = self.evaluate_response(response, turn)
+                reward = self.reward_fn(verification, profile, turn)
+
+                env["context_buffer"]["turns"].append(
+                    {
+                        "turn": turn,
+                        "solution_simd": solution_simd,
+                        "cot": cot,
+                        "verification": verification,
+                        "profile": profile,
+                    }
+                )
+
+                env["trajectory"]["turns"].append(
+                    {
+                        "turn": turn,
+                        "prompt": prompt,
+                        "response": response,
+                        "reward": float(reward),
+                        "token_log_probs_old": token_log_probs_old,
+                        "input_ids_full": input_ids_full,
+                        "prompt_len": prompt_len,
+                        "response_len": response_len,
+                    }
+                )
+
         trajectories = []
         for task_idx, task in enumerate(batch): # loop through each task
             # replace loop with ray later on?

@@ -20,6 +20,7 @@ class UnifiedPolicyEngine:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.max_seq_length = max_seq_length
         self.dtype = dtype
+        self.debug = True
 
         print(f"Loading Unsloth Model: {model_name}...")
         self.model, self.tokenizer = FastLanguageModel.from_pretrained(
@@ -98,7 +99,15 @@ class UnifiedPolicyEngine:
                 completions.append(text[len(prompt):]) 
             else:
                 completions.append("") # Generation failed or was empty
-
+        # 🔍 DEBUG LOGGING HERE
+        if self.debug:
+            print("\n[UnifiedPolicyEngine.generate] Debug samples:")
+            for i, (p, full, c) in enumerate(zip(prompts, decoded, completions)):
+                print(f"\n--- Sample {i} ---")
+                print("PROMPT:\n", p)
+                print("\nFULL MODEL OUTPUT:\n", full)
+                print("\nCOMPLETION (after stripping prompt):\n", c[:500], "...")
+                
         return completions
 
     def get_batch_logprobs(

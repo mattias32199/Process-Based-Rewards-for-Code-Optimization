@@ -1,10 +1,9 @@
 import torch
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple, Optional
 from src.engine import UnifiedPolicyEngine
 from src.config import TrainerConfig, ActorConfig
 from src.rl_utils import compute_policy_loss_gspo
-from typing import Any, Dict, List, Optional, Tuple
-
+from src.rewards_utils import compute_advantages
 
 class MultiTurnRLTrainer:
     def __init__(
@@ -31,6 +30,7 @@ class MultiTurnRLTrainer:
             for batch_idx, batch in enumerate(dataloader):
                 
                 # 1. Rollout (Inference Mode)
+                # Returns trajectories with pre-calculated advantages (future credit assigned)
                 trajectories = self.rollout(batch)
                 
                 # 2. Update (Training Mode)
@@ -43,8 +43,7 @@ class MultiTurnRLTrainer:
 
     def rollout(self, batch: List[Dict]) -> List[Dict]:
         """
-        Generates data. 
-        Calculates 'old_log_probs' immediately while we have the text.
+        Generates data and performs credit assignment.
         """
         envs = self._init_envs(batch)
 
@@ -62,6 +61,8 @@ class MultiTurnRLTrainer:
             for i, (env, response) in enumerate(zip(envs, responses)):
                 cot, sol_simd = self.parse_response_fn(response)
                 verif, profile = self.evaluate_response(response, turn)
+                
+                # NOTE: This is the IMMEDIATE reward (e.g., 0.3 or speedup)
                 reward = self.reward_fn(verif, profile, turn)
                 
                 # Update buffers
@@ -78,9 +79,6 @@ class MultiTurnRLTrainer:
                 })
 
         # C. Compute Old Logprobs (Batch Processing)
-        # We do this after collecting all turns to maximize GPU batch efficiency
-        # or we can do it per turn. Doing it per turn saves memory.
-        
         flat_turns = []
         for env in envs:
             flat_turns.extend(env["trajectory"]["turns"])
@@ -97,8 +95,14 @@ class MultiTurnRLTrainer:
         for i, t in enumerate(flat_turns):
             t["token_log_probs_old"] = old_log_probs[i].cpu()
             t["response_mask"] = masks[i].cpu()
+        
+        trajectories = [e["trajectory"] for e in envs]
 
-        return [e["trajectory"] for e in envs]
+        # D. Future Credit Assignment & Normalization
+        # This injects "advantage" into every turn dict inside trajectories
+        trajectories = compute_advantages(trajectories)
+
+        return trajectories
 
     def update_policy(self, trajectories: List[Dict]):
         """
@@ -111,11 +115,13 @@ class MultiTurnRLTrainer:
         # Prepare batch data
         prompts = [t["prompt"] for t in turns]
         responses = [t["response"] for t in turns]
-        rewards = torch.tensor([t["reward"] for t in turns], device=self.engine.device)
         
+        # Extract the ADVANTAGES calculated by compute_advantages
+        # These already include gamma discounting and normalization
+        advantages_list = [t["advantage"] for t in turns]
+        advantages_tensor = torch.tensor(advantages_list, device=self.engine.device, dtype=torch.float32)
+
         # Retrieve pre-calculated old data
-        # We need to pad these manually or re-calculate. 
-        # Re-calculating in one big batch is often cleaner for tensor shapes.
         old_log_probs_padded = torch.nn.utils.rnn.pad_sequence(
             [t["token_log_probs_old"].to(self.engine.device) for t in turns],
             batch_first=True
@@ -129,22 +135,19 @@ class MultiTurnRLTrainer:
         self.engine.set_train_mode()
         
         # Recalculate everything to ensure graph connectivity and correct padding
-        # (Alternatively, you can carry input_ids from rollout, but this is safer)
         current_log_probs, current_mask = self.engine.get_batch_logprobs(prompts, responses)
         
-        # 2. Align Shapes (If batching caused different padding)
-        # Usually get_batch_logprobs handles this dynamically.
-        # Ensure old and new have same shape
+        # 2. Align Shapes
         min_len = min(current_log_probs.size(1), old_log_probs_padded.size(1))
         current_log_probs = current_log_probs[:, :min_len]
         old_log_probs_padded = old_log_probs_padded[:, :min_len]
         final_mask = current_mask[:, :min_len] * response_mask_padded[:, :min_len]
 
-        # 3. Advantages (Simple broadcast for GSPO)
-        advantages = rewards.unsqueeze(1) * final_mask
+        # 3. Advantages (Broadcast scalar advantage to all tokens in the response)
+        # advantages_tensor is (B,), we want (B, T)
+        advantages = advantages_tensor.unsqueeze(1) * final_mask
 
         # 4. Compute Loss (GSPO)
-        # Using the helper function from previous context
         pg_loss, metrics = compute_policy_loss_gspo(
             old_log_prob=old_log_probs_padded,
             log_prob=current_log_probs,
@@ -172,6 +175,9 @@ class MultiTurnRLTrainer:
             for _ in range(self.config.parallel_trajectories):
                 envs.append({
                     "context_buffer": {"task": task, "turns": []},
-                    "trajectory": {"turns": []}
+                    "trajectory": {
+                        "task_id": task["task_id"], # Ensure task_id exists for normalization
+                        "turns": []
+                    }
                 })
         return envs

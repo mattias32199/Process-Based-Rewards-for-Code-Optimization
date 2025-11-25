@@ -34,12 +34,20 @@ class MultiTurnRLTrainer:
                 trajectories = self.rollout(batch)
                 
                 # 2. Update (Training Mode)
-                loss, metrics = self.update_policy(trajectories)
+                # on-policy
+                loss1, metrics1 = self.update_policy(trajectories)
+                # off-policy
+                loss2, metrics2 = self.update_policy(trajectories)
                 
-                print(f"[Epoch {epoch} Step {batch_idx}] "
-                      f"Loss: {loss:.4f} | "
-                      f"KL: {metrics['actor/ppo_kl']:.4f} | "
-                      f"Clip: {metrics['actor/pg_clipfrac']:.4f}")
+                
+                print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
+                      f"Loss: {loss1:.4f} | "
+                      f"KL: {metrics1['actor/ppo_kl']:.4f} | "
+                      f"Clip: {metrics1['actor/pg_clipfrac']:.4f}")
+                print(f"[Epoch {epoch} Step {batch_idx}] Off-Policy "
+                      f"Loss: {loss2:.4f} | "
+                      f"KL: {metrics2['actor/ppo_kl']:.4f} | "
+                      f"Clip: {metrics2['actor/pg_clipfrac']:.4f}")
 
     def rollout(self, batch: List[Dict]) -> List[Dict]:
         """
@@ -101,7 +109,16 @@ class MultiTurnRLTrainer:
         # D. Future Credit Assignment & Normalization
         # This injects "advantage" into every turn dict inside trajectories
         trajectories = compute_advantages(trajectories)
-
+        
+        print("\n[rollout] Trajectory rewards and advantages:")
+        for traj_i, traj in enumerate(trajectories):
+            print(f"Task ID: {traj['task_id']}")
+            rewards = [t.get("reward") for t in traj["turns"]]
+            advs = [t.get("advantage") for t in traj["turns"]]
+            print(f"  traj {traj_i}:")
+            print("    rewards:    ", rewards)
+            print("    advantages: ", advs)
+        
         return trajectories
 
     def update_policy(self, trajectories: List[Dict]):
@@ -147,6 +164,27 @@ class MultiTurnRLTrainer:
         # advantages_tensor is (B,), we want (B, T)
         advantages = advantages_tensor.unsqueeze(1) * final_mask
 
+        with torch.no_grad():
+            print("\n[update_policy] current_log_probs shape:", tuple(current_log_probs.shape))
+            print("[update_policy] old_log_probs_padded shape:", tuple(old_log_probs_padded.shape))
+            print("[update_policy] current_mask nonzero per sample:",
+                  current_mask[:, :min_len].sum(dim=1).tolist())
+            print("[update_policy] response_mask_padded nonzero per sample:",
+                  response_mask_padded[:, :min_len].sum(dim=1).tolist())
+            print("[update_policy] final_mask nonzero per sample:",
+                  final_mask.sum(dim=1).tolist())
+            print("[update_policy] final_mask total nonzero:",
+                  float(final_mask.sum().item()))
+            print("[update_policy] advantages_tensor (per-turn):",
+                  advantages_tensor.detach().cpu().tolist())
+            print("[update_policy] advantages_tensor sum:",
+                  float(advantages_tensor.detach().sum().item()))
+            if advantages.numel() > 0:
+                print("[update_policy] advantages (token-level) mean:",
+                      float(advantages.detach().mean().item()))
+                print("[update_policy] advantages (token-level) nonzero count:",
+                      int((advantages.detach() != 0).sum().item()))
+                
         # 4. Compute Loss (GSPO)
         pg_loss, metrics = compute_policy_loss_gspo(
             old_log_prob=old_log_probs_padded,
@@ -155,6 +193,11 @@ class MultiTurnRLTrainer:
             response_mask=final_mask,
             config=self.config.actor
         )
+
+        with torch.no_grad():
+            print("[update_policy] pg_loss (tensor):", float(pg_loss.detach().item()))
+            print("[update_policy] metrics:",
+                  {k: float(v) for k, v in metrics.items()})
 
         # 5. Optimizer Step
         loss_val = self.engine.train_step(pg_loss)

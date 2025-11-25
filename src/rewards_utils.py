@@ -66,6 +66,8 @@ def normalize_rewards_per_task(batched_rewards, task_indices, eps=1e-8) -> np.nd
         mean = task_rewards.mean()
         std = task_rewards.std()
         advantages[indices] = (task_rewards - mean) / (std + eps)
+        print(f"[normalize_rewards_per_task] task_id: {task_id} | "
+              f"mean: {mean:.6f} | std: {std:.6f}")
     return advantages
 
 def compute_advantages(

@@ -106,7 +106,7 @@ class UnifiedPolicyEngine:
                 print(f"\n--- Sample {i} ---")
                 print("PROMPT:\n", p)
                 print("\nFULL MODEL OUTPUT:\n", full)
-                print("\nCOMPLETION (after stripping prompt):\n", c[:500], "...")
+                print("\nCOMPLETION (after stripping prompt):\n", c, "...")
                 
         return completions
 
@@ -199,12 +199,31 @@ class UnifiedPolicyEngine:
 
         # Zero out logprobs for prompt/padding so they don't affect sums
         token_log_probs = token_log_probs_all * final_mask
-
+        with torch.no_grad():
+            mask_counts = final_mask.sum(dim=1)
+            print("\n[get_batch_logprobs] batch size:", final_mask.size(0))
+            print("[get_batch_logprobs] seq len:", final_mask.size(1))
+            print("[get_batch_logprobs] nonzero mask per sample:", mask_counts.tolist())
+            print("[get_batch_logprobs] total nonzero mask:", mask_counts.sum().item())
+            print("[get_batch_logprobs] token_log_probs_all mean:",
+                  float(token_log_probs_all.mean().item()))
+            print("[get_batch_logprobs] token_log_probs (after mask) mean:",
+                  float(token_log_probs.mean().item()))
         return token_log_probs, final_mask
 
     def train_step(self, loss: torch.Tensor):
         self.optimizer.zero_grad()
         loss.backward()
+        
+        total_norm = 0.0
+        with torch.no_grad():
+            for name, p in self.model.named_parameters():
+                if p.grad is not None and p.requires_grad:
+                    param_norm = p.grad.data.norm(2).item()
+                    total_norm += param_norm ** 2
+            total_norm = total_norm ** 0.5
+            print(f"[train_step] total grad L2 norm: {total_norm:.6e}")
+            
         torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
         self.optimizer.step()
         return loss.item()

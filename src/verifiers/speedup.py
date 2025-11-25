@@ -58,14 +58,14 @@ def extract_code(simd_code_raw: str) -> str:
 
 
 def verify_speedup(
-    task,
-    result,
+    task: dict,
+    simd_solution: str,
     benchmark_template,
     benchmark_path = '/content/benchmark/build/src/libbenchmark.a' # works for google colab
 ):
     scalar_code = task['solution_scalar']
     test_performance = task['test_performance']
-    simd_code_raw = result['completion']
+    simd_code_raw = simd_solution
     simd_code = extract_code(simd_code_raw)
 
     benchmark_code = benchmark_template.replace('{{SCALAR_CODE}}', scalar_code)

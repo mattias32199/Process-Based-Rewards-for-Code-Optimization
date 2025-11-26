@@ -2,7 +2,7 @@
 import re
 import subprocess
 
-benchmark_template = """
+BENCHMARK_TEMPLATE = """
 #include <benchmark/benchmark.h>
 #include <immintrin.h>
 #include <vector>
@@ -60,7 +60,6 @@ def extract_code(simd_code_raw: str) -> str:
 def verify_speedup(
     task: dict,
     simd_solution: str,
-    benchmark_template,
     benchmark_path = '/content/benchmark/build/src/libbenchmark.a' # works for google colab
 ):
     scalar_code = task['solution_scalar']
@@ -68,7 +67,7 @@ def verify_speedup(
     simd_code_raw = simd_solution
     simd_code = extract_code(simd_code_raw)
 
-    benchmark_code = benchmark_template.replace('{{SCALAR_CODE}}', scalar_code)
+    benchmark_code = BENCHMARK_TEMPLATE.replace('{{SCALAR_CODE}}', scalar_code)
     benchmark_code = benchmark_code.replace('{{SIMD_CODE}}', simd_code)
     benchmark_code = benchmark_code.replace('{{TEST_PERFORMANCE}}', test_performance)
 
@@ -141,5 +140,6 @@ def verify_speedup(
         'speedups': speedups,
         'avg_speedup': avg_speedup,
         'scalar_times': scalar_times,
-        'simd_times': simd_times
+        'simd_times': simd_times,
+        'feedback': "feedback"
     }

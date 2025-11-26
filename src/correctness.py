@@ -136,7 +136,7 @@ def verify_simd_correctness(
         success = False
         compiles = False
         correctness = False
-        feedback= ""
+        feedback = ""
 
         try:
             result = subprocess.run(

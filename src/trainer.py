@@ -1,21 +1,28 @@
 # multi-turn RL GSPO trainer
-import numpy as np
 import torch
 from engine import UnifiedPolicyEngine
+from verifier import verify
+from config import TrainerConfig
 from reward_util import compute_immediate_reward, compute_advantages
+from rl_util import compute_policy_loss_gspo
+from train_util import construct_prompt, parse_response
 
 class MultiTurnRLTrainer():
-    def __init__(self, config, verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn):
+    def __init__(self,
+        config: TrainerConfig,
+        verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn
+    ):
         """
-        parameters:
-            model: expects vllm model
+        Class for MultiTurnRL Trainer
         """
         # config yaml
         self.config = config
 
-        # initialize model engine
-        self.engine = UnifiedPolicyEngine(config.model.get("name"))
+        # initialize training/inference engine
+        self.engine = UnifiedPolicyEngine(config.engine)
+        #
 
+        # retrieve training config
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
 
@@ -32,156 +39,168 @@ class MultiTurnRLTrainer():
         Top-level training loop.
         Rollout -> Update Policy
         """
-        for epoch in range(self.config.epochs):
-            for batch in dataloader:
-                # reinforcement learning rollout to generate trajectories
-                trajectories = self.rollout(batch['tasks']) # multi-turn interaction to generate trajectories
-                loss, metrics = self.update_policy(trajectories)
+        for epoch in range(self.config.epochs): # loop through epochs
+            for batch_idx, batch in enumerate(dataloader): # loop through batches
+                # 1. per-batch rollout
+                trajectories = self.rollout(batch)
 
-    def rollout(self, batch):
+                # 2. calculate policy gradients to update policy
+                # on-policy update
+                on_policy_loss, on_policy_metrics = self.update_policy(trajectories)
+                # off-policy update
+                off_policy_loss, off_policy_metrics = self.update_policy(trajectories)
+
+                # print metrics
+                print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
+                        f"Loss: {on_policy_loss:.4f} | "
+                        f"KL: {on_policy_metrics['actor/ppo_kl']:.4f} | "
+                        f"Clip: {on_policy_metrics['actor/pg_clipfrac']:.4f}")
+                print(f"[Epoch {epoch} Step {batch_idx}] Off-Policy "
+                        f"Loss: {off_policy_loss:.4f} | "
+                        f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
+                        f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
+
+
+    def rollout(self, batch: list[dict]) -> list[dict]:
         """
         batch -> tasks -> model -> trajectories
         """
-        # initialize trajectories and context manager
-        envs = [] # len(envs) = task x parallel_trajectories
-        for task in batch:
-            for _ in range(self.parallel_trajectories):
-                envs.append(
-                    {
-                        "task_id": task["task_id"],
-                        "context_buffer": {
-                            "task_prompt": task["prompt"],
-                            "solution_scalar": task["solution_scalar"],
-                            "turns": [],
-                        },
-                        "trajectory": {
-                            "task_id": task["task_id"],
-                            "turns": [],
-                        },
-                    }
-                )
+        # initialize trajectories and context managers
+        envs = self.init_envs(batch)
 
         # multi-turn RL
         for turn in range(self.max_turns):
-            # construct prompts
+            # A. construct prompts
             prompts = [
-                self.construct_prompt_fn(env["context_buffer"], turn) for env in envs
+                construct_prompt(env["context_buffer"], turn) for env in envs
             ]
-            # batched response generation
-            gen_infos = self.engine.generate_batched_responses(prompts)
+            # B. batched response generation
+            responses = self.engine.generate_responses(
+                prompts,
+                max_new_tokens=self.config.max_new_tokens,
+                temperature=self.config.temperature
+            )
 
-            for env, prompt, gen_info in zip(envs, prompts, gen_infos):
-                response = gen_info["response_text"]
-                input_ids_full = gen_info["input_ids_full"]
-                token_log_probs_old = gen_info["token_log_probs_old"]
-                prompt_len = gen_info["prompt_len"]
-                response_len = gen_info["response_len"]
+            # C. Evaluation and calculating immediate rewards
+            envs = self.evaluate(envs, prompts, responses, turn)
 
-                cot, solution_simd = self.parse_response_fn(response)
-                verification, profile = self.evaluate_response(response, turn)
-                reward = self.reward_fn(verification, profile, turn)
+        # D. Future credit assignment & Advantage calculation
+        # flatten parallel trajectories
+        trajectories = [env["trajectory"] for env in envs]
+        trajectories = compute_advantages(trajectories)
 
-                env["context_buffer"]["turns"].append(
-                    {
-                        "turn": turn,
-                        "solution_simd": solution_simd,
-                        "cot": cot,
-                        "verification": verification,
-                        "profile": profile,
-                    }
-                )
+        # E. Flatten trajectories (all the way)
+        trajectories = [turn for trajectory in trajectories for turn in trajectory['turns']]
 
-                env["trajectory"]["turns"].append(
-                    {
-                        "turn": turn,
-                        "prompt": prompt,
-                        "response": response,
-                        "reward": float(reward),
-                        "token_log_probs_old": token_log_probs_old,
-                        "input_ids_full": input_ids_full,
-                        "prompt_len": prompt_len,
-                        "response_len": response_len,
-                    }
-                )
+        # F. Compute "old" (on-policy) logprobs
+        # extract prompts and responses
+        old_logprobs, masks = self.get_logprobs(trajectories)
+        # repack logprobs and masks
+        for i, t in enumerate(trajectories):
+            t["token_logprobs_old"] = old_logprobs[i].cpu()
+            t["response_mask"] = masks[i].cpu()
 
-        trajectories = []
-        for task_idx, task in enumerate(batch): # loop through each task
-            # replace loop with ray later on?
-            for sample in self.parallel_trajectories: # parallel samples/trajectories
-                trajectory = self.generate_trajectory(task)
-                trajectories.append(trajectory)
-
-                # calculate metrics from trajectories?
         return trajectories
 
-    def generate_trajectory(self, task):
 
-        trajectory = {
-            "task_id": task['task_id'],
-            # "turns": [
-            #     {
-            #         "prompt": str,
-            #         "response": str, # cot + code
-            #         "summary": str,
+    def update_policy(self, trajectories: list[dict]):
+        # A. Calculate current/new log probs
+        current_logprobs, current_mask = self.get_logprobs(trajectories)
 
-            #         "reward": float,
-            #         "return": float, # discounted return
-            #         "log_probs_old": np.array
-            #     }
-            # ]
-        }
+        # B. Process trajectories for policy loss calculation
+        gspo_variables = self.process_trajectories(trajectories, current_logprobs, current_mask)
 
-        context_buffer = {
-            "task_prompt": task['prompt'],  # Base task
-            "solution_scalar": task["solution_scalar"]
-            # "turns": [  # Minimal info for prompt construction
-            #     {
-            #         "turn": int,
-            #         "code": str,
-            #         "cot": str,  # cot or summarized cot
-            #         "verification_feedback": dict,  # feedback
-            #         "profiling_feedback": dict or None  # feedback
-            #     }
-            # ]
-        }
-        for turn in range(self.max_turns):
-            prompt = self.construct_prompt_fn(context_buffer, turn)
-            outputs = self.model.generate([prompt], self.config.sampling_params)
-            outputs = outputs[0].output[0]
-            log_prob_old = outputs.cumulative_logprob
-            response = outputs.text
-            cot, solution_simd = self.parse_respose_fn(response)
-            verification, profile = self.evaluate_response(response, turn)
-            reward = self.reward_fn(verification, profile, turn)
+        # C. Compute policy loss using GSPO
+        pg_loss, metrics = compute_policy_loss_gspo(
+            old_log_prob=gspo_variables['old_log_probs_padded'],
+            log_prob=gspo_variables['current_log_probs'],
+            advantages=gspo_variables['advantages'],
+            response_mask=gspo_variables['final_mask'],
+            config=self.config.gspo
+        )
 
-            context_buffer['turns'].append({
-                'solution_simd': solution_simd,
-                'cot': cot,
-                'verification': verification,
-                'profile': profile
+        # D. Update training engine
+        loss_val = self.engine.update_training_engine(pg_loss)
+
+        return loss_val, metrics
+
+
+    def evaluate(self, envs, prompts, responses, turn):
+        for i, (env, response) in enumerate(zip(envs, responses)):
+            cot, sol_simd = parse_response(response)
+            feedback = verify(
+                env['context_buffer']['task'],
+                sol_simd
+            )
+
+            # immediate reward
+            reward = compute_immediate_reward(feedback)
+
+            # Update buffers
+            env["context_buffer"]["turns"].append({
+                "turn": turn, "cot": cot, "solution": sol_simd,
+                "feedback": feedback["feedback_text"]
             })
 
-            trajectory["turns"].append({
-                'prompt': prompt,
-                'response': response,
-                'reward': reward,
-                'log_prob_old': log_prob_old
+            # Store trajectory data temporarily
+            env["trajectory"]["turns"].append({
+                "turn": turn,
+                "prompt": prompts[i],
+                "response": response,
+                "reward": float(reward)
             })
+        return envs
 
-        return trajectory
-
-    def evaluate_response(self, response, turn):
-        verification = self.verify_fn(response, turn)
-        if verification['all']:
-            profile = self.profile_fn(response, turn)
-        else:
-            profile = None
-        return verification, profile
-
-    def gspo_loss(self, old_log_probs, log_probs, ):
+    def init_envs(self, batch: list[dict]) -> list:
         """
-        Needs:
-            old_log_prob
-            log_prob
-            advantages
+        Util function to initialize trajectories and context buffers.
         """
+        envs = []
+        for task in batch:
+            for _ in range(self.config.parallel_trajectories):
+                envs.append({
+                    "context_buffer": {"task": task, "turns": []},
+                    "trajectory": {
+                        "task_id": task["task_id"], # Ensure task_id exists for normalization
+                        "turns": []
+                    }
+                })
+        return envs
+
+    def get_logprobs(self, trajectories):
+        # unpack prompts and responses
+        prompts = [t["prompt"] for t in trajectories]
+        responses = [t["response"] for t in trajectories]
+        self.engine.set_train_mode()
+        with torch.no_grad():
+            old_logprobs, masks = self.engine.generate_logprobs(prompts, responses)
+        return old_logprobs, masks
+
+    def process_trajectories(self, trajectories, current_logprobs, current_mask):
+        # Extract advantages
+        advantages_list = [t["advantage"] for t in trajectories]
+        advantages_tensor = torch.tensor(advantages_list, device=self.engine.device, dtype=torch.float32)
+
+        # Retrieve pre-calculated old data
+        old_logprobs_padded = torch.nn.utils.rnn.pad_sequence(
+            [t["token_log_probs_old"].to(self.engine.device) for t in trajectories],
+            batch_first=True
+        )
+        response_mask_padded = torch.nn.utils.rnn.pad_sequence(
+            [t["response_mask"].to(self.engine.device) for t in trajectories],
+            batch_first=True
+        )
+
+        min_len = min(current_logprobs.size(1), old_logprobs_padded.size(1))
+        current_logprobs = current_logprobs[:, :min_len]
+        old_logprobs_padded = old_logprobs_padded[:, :min_len]
+        final_mask = current_mask[:, :min_len] * response_mask_padded[:, :min_len]
+
+        advantages = advantages_tensor.unsqueeze(1) * final_mask
+
+        return {
+            'current_logprobs': current_logprobs,
+            'old_logprobs_padded': old_logprobs_padded,
+            'advantages': advantages,
+            'final_mask': final_mask
+        }

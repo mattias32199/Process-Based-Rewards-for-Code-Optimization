@@ -208,3 +208,63 @@ class SimdBenchDataLoader:
                 break
 
         return batches
+
+if __name__ == "__main__":
+    import argparse
+    from pprint import pprint
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--jsonl_path",
+        type=str,
+        default="/ocean/projects/cis250223p/jzhang73/Process-Based-Rewards-for-Code-Optimization/data/raw/simdbench-scalar.jsonl",
+        help="Path to SimdBench JSONL file",
+    )
+    parser.add_argument("--batch_size", type=int, default=4, help="Tasks per batch")
+    parser.add_argument("--num_trajectories", type=int, default=1, help="Trajectories per task")
+    parser.add_argument("--seed", type=int, default=42)
+    args = parser.parse_args()
+
+    print(f"Loading dataset from: {args.jsonl_path}")
+    dataset = SimdBenchDataset(args.jsonl_path)
+
+    print(f"Total tasks: {len(dataset)}")
+    if len(dataset) > 0:
+        print("Example metadata[0]:")
+        pprint(dataset.get_metadata(0))
+
+    loader = SimdBenchDataLoader(
+        dataset=dataset,
+        batch_size=args.batch_size,
+        num_trajectories=args.num_trajectories,
+        stratify_by="kernel_type",
+        shuffle=True,
+        drop_last=False,
+        seed=args.seed,
+    )
+
+    print(f"\nNumber of batches per epoch: {len(loader)}")
+
+    # Show a couple of example batches
+    for b_idx, batch in enumerate(loader):
+        print(f"\n=== Batch {b_idx} ===")
+        print("indices:", batch["indices"].tolist())
+        print("task keys:", batch["tasks"][0].keys())
+        print("tasks:", batch["tasks"][0])
+        print("num_trajectories:", batch["num_trajectories"])
+
+        kernel_types = [t.get("kernel_type") for t in batch["tasks"]]
+        task_ids = [t.get("task_id") for t in batch["tasks"]]
+
+        print("kernel_types:", kernel_types)
+        print("task_ids:", task_ids)
+
+        # print one example task structure (truncated)
+        print("example task (truncated keys):")
+        if batch["tasks"]:
+            example = batch["tasks"][0]
+            # just show top-level keys so you don't spam the terminal
+            print(sorted(example.keys()))
+
+        if b_idx >= 0:  # only show first 3 batches
+            break

@@ -21,14 +21,11 @@ def batch_immediate_rewards(
     Unpacks trajectories and packs rewards into array to
     batch future credit assignment.
     """
-    batch_size = len(trajectories)
     # unpack trajectories and pack rewards
     rewards = np.array([
         [turn["reward"] for turn in traj["turns"]]
         for traj in trajectories
     ], dtype=np.float32)
-
-    assert rewards.shape == (batch_size, num_turns)
     return rewards
 
 def compute_future_credit(
@@ -64,6 +61,8 @@ def normalize_rewards_per_task(batched_rewards, task_indices, eps=1e-8) -> np.nd
         mean = task_rewards.mean()
         std = task_rewards.std()
         advantages[indices] = (task_rewards - mean) / (std + eps)
+        print(f"[normalize_rewards_per_task] task_id: {task_id} | "
+              f"mean: {mean:.6f} | std: {std:.6f}")
     return advantages
 
 def compute_advantages(

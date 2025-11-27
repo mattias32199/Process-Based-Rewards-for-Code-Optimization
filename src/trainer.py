@@ -5,7 +5,7 @@ from verifier import verify
 from config import TrainerConfig
 from reward_util import compute_immediate_reward, compute_advantages
 from rl_util import compute_policy_loss_gspo
-from train_util import construct_prompt, parse_response
+from train_util import construct_user_prompt, get_system_prompt, parse_response
 
 class MultiTurnRLTrainer():
     def __init__(self,
@@ -25,12 +25,11 @@ class MultiTurnRLTrainer():
         # retrieve training config
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
+        self.use_cot = config.use_cot
 
         # functions
         self.verify_fn = verify_fn # verification (correctness tests)
         self.profile_fn = profile_fn # profiling on hardware
-        self.construct_prompt_fn = construct_prompt_fn # construct prompt from context manager
-        self.parse_respose_fn = parse_response_fn
         self.reward_fn = reward_fn # calculate reward from verifyfication and profiling
 
 
@@ -71,9 +70,8 @@ class MultiTurnRLTrainer():
         # multi-turn RL
         for turn in range(self.max_turns):
             # A. construct prompts
-            prompts = [
-                construct_prompt(env["context_buffer"], turn) for env in envs
-            ]
+            prompts = self.construct_prompts(envs, turn)
+
             # B. batched response generation
             responses = self.engine.generate_responses(
                 prompts,
@@ -124,17 +122,40 @@ class MultiTurnRLTrainer():
 
         return loss_val, metrics
 
+    def construct_prompts(self, envs, turn):
+        """
+        Construct prompts and apply tokenizer chat template.
+        """
+        prompts = []
+        system_prompt = get_system_prompt(self.use_cot)
+        for env in envs:
+            user_prompt = construct_user_prompt(env["context_buffer"], turn, self.use_cot)
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user",   "content": user_prompt}
+            ]
+            p = self.engine.tokenizer.apply_chat_template(
+                messages,
+                tokenize=True,
+                add_generation_prompt=True
+            )
+            prompts.append(p)
+        return prompts
+
 
     def evaluate(self, envs, prompts, responses, turn):
         for i, (env, response) in enumerate(zip(envs, responses)):
-            cot, sol_simd = parse_response(response)
-            feedback = verify(
-                env['context_buffer']['task'],
-                sol_simd
-            )
+            simd_entrypoint = env['context_buffer']['task']['simd_entrypoint']
+            parse_out = parse_response(response, simd_entrypoint, self.use_cot)
+
+            if parse_out['correct_format'] and parse_out['parse_solution']:
+                feedback = verify(
+                    env['context_buffer']['task'],
+                    sol_simd
+                )
 
             # immediate reward
-            reward = compute_immediate_reward(feedback)
+            reward = compute_immediate_reward(result)
 
             # Update buffers
             env["context_buffer"]["turns"].append({

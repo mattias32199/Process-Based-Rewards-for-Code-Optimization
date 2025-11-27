@@ -67,3 +67,4 @@ class TrainerConfig:
     top_p: float = 0.9
     max_new_tokens: int = 256
     temperature: float = 0.7
+    use_cot: bool = False

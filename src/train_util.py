@@ -118,12 +118,11 @@ def construct_previous_attempts(context_buffer: dict, turn: int, use_cot:bool=Fa
     return prev_attempts
 
 
-def construct_prompt(context_buffer: dict, turn: int, use_cot: bool) -> tuple[str, str]:
+def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str:
     """
     Top-level function for system and user prompts
     """
     # Get system and base prompt
-    system_prompt = get_system_prompt(use_cot)
     base_prompt = get_base_prompt(use_cot)
 
     # Fill in base prompt
@@ -145,7 +144,7 @@ def construct_prompt(context_buffer: dict, turn: int, use_cot: bool) -> tuple[st
             INTRINSIC=task['intrinsic'],
             PREVIOUS_ATTEMPTS=prev_attempts
         )
-    return user_prompt, system_prompt
+    return user_prompt
 
 def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> dict:
     cot, simd_solution = None, None
@@ -222,7 +221,7 @@ if __name__ == "__main__":
     # Test 2: Turn 0 prompt
     print("Test 2: Turn 0 prompt")
     ctx = {'task': simple_task, 'turns': []}
-    user, system = construct_prompt(ctx, turn=0, use_cot=True)
+    user = construct_user_prompt(ctx, turn=0, use_cot=True)
     assert 'AVX' in user and 'add_scalar' in user
     print("✓ Turn 0 prompt works\n")
 
@@ -239,7 +238,7 @@ if __name__ == "__main__":
         'cot': 'My plan',
         'feedback': {'result': 'compilation_error'}
     })
-    user, system = construct_prompt(ctx, turn=1, use_cot=True)
+    user = construct_user_prompt(ctx, turn=1, use_cot=True)
     assert '<attempt_1>' in user and 'failed to compile' in user
     print("✓ Turn 1 with history works\n")
 

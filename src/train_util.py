@@ -148,69 +148,58 @@ def construct_prompt(context_buffer: dict, turn: int, use_cot: bool) -> tuple[st
     return user_prompt, system_prompt
 
 def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> dict:
-    if simd_entrypoint not in response:
-        return {
-            "simd_solution": None,
-            "cot": None,
-            "correct_format": False,   # or leave as True if you only penalize missing code
-            "parse_solution": False,
-            "parse_cot": False,
-            "feedback": "simd_entrypoint not found inside response"
-        }
+    cot, simd_solution = None, None
+    parse_solution, parse_cot = False, False
+    correct_format = True
+    feedback = []
 
-    else:
-        cot, simd_solution = None, None
-        parse_solution, parse_cot = False, False
-        correct_format = True
-        feedback = []
-
-        # parse for simd_code tags
-        code_tag_pattern = re.compile(r'<simd_code>\s*(.*?)\s*</simd_code>', re.DOTALL | re.IGNORECASE)
-        code_tag_match = code_tag_pattern.search(response)
-        if code_tag_match:
-            extracted = code_tag_match.group(1).strip()
-            if extracted:
-                simd_solution = extracted
-                parse_solution = simd_entrypoint in extracted or simd_entrypoint == ""  # allow empty entrypoint check if caller passes ""
-                if not parse_solution:
-                    feedback.append("simd_entrypoint not found inside <simd_code> block")
-                    correct_format = False
-            else:
-                feedback.append("<simd_code> block present but empty")
+    # parse for simd_code tags
+    code_tag_pattern = re.compile(r'<simd_code>\s*(.*?)\s*</simd_code>', re.DOTALL | re.IGNORECASE)
+    code_tag_match = code_tag_pattern.search(response)
+    if code_tag_match:
+        extracted = code_tag_match.group(1).strip()
+        if extracted:
+            simd_solution = extracted
+            parse_solution = simd_entrypoint in extracted or simd_entrypoint == ""  # allow empty entrypoint check if caller passes ""
+            if not parse_solution:
+                feedback.append("simd_entrypoint not found inside <simd_code> block")
                 correct_format = False
         else:
-            feedback.append("Missing required <simd_code> block")
+            feedback.append("<simd_code> block present but empty")
+            correct_format = False
+    else:
+        feedback.append("Missing required <simd_code> block")
+        correct_format = False
+
+    # parse for think tags
+    if use_cot:
+        think_pattern = re.compile(r'<think>\s*(.*?)\s*</think>', re.DOTALL | re.IGNORECASE)
+        think_match = think_pattern.search(response)
+        if think_match:
+            cot = think_match.group(1).strip()
+            parse_cot = bool(cot)
+            if not parse_cot:
+                feedback.append("<think> block present but empty")
+                correct_format = False
+        else:
+            feedback.append("Missing required <think> block")
             correct_format = False
 
-        # parse for think tags
-        if use_cot:
-            think_pattern = re.compile(r'<think>\s*(.*?)\s*</think>', re.DOTALL | re.IGNORECASE)
-            think_match = think_pattern.search(response)
-            if think_match:
-                cot = think_match.group(1).strip()
-                parse_cot = bool(cot)
-                if not parse_cot:
-                    feedback.append("<think> block present but empty")
-                    correct_format = False
-            else:
-                feedback.append("Missing required <think> block")
-                correct_format = False
-
-        # check if solution is empty or whitespace
-        if simd_solution:
-            if not simd_solution.strip():
-                parse_solution = False
-                correct_format = False
-                simd_solution = None
-
-        return {
-            'simd_solution': simd_solution,
-            'cot': cot,
-            'correct_format': correct_format,
-            'parse_solution': parse_solution,
-            'parse_cot': parse_cot,
-            'feedback': feedback
-        }
+    # check if solution is empty or whitespace
+    if simd_solution is not None:
+        simd_solution = simd_solution.strip()
+        if not simd_solution:
+            parse_solution = False
+            correct_format = False
+            simd_solution = None
+    return {
+        'simd_solution': simd_solution,
+        'cot': cot,
+        'correct_format': correct_format,
+        'parse_solution': parse_solution,
+        'parse_cot': parse_cot,
+        'feedback': feedback
+    }
 
 
 if __name__ == "__main__":

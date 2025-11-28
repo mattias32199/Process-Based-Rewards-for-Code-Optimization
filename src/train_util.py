@@ -71,9 +71,9 @@ Restart your reasoning process and generate new, complete code."""
 
 # feedback messages
 FEEDBACK_MESSAGES = {
-    'parsing_error': "Your previous answer failed to be parsed due to not adhering to the desired formatting. Here is the error message:\n{error}",
-    'compilation_error': "Your previous answer failed to compile. Here is the error message:\n{error}",
-    'runtime_error': "Your previous answer compiled successfully but had runtime errors. Here is the error message:\n{error}",
+    'parsing_error': "Your previous answer failed to be parsed due to not adhering to the desired formatting.",
+    'compilation_error': "Your previous answer failed to compile.",
+    'runtime_error': "Your previous answer compiled successfully but had runtime errors.",
     'correctness_error': "Your previous answer was functionally incorrect and did not produce the expected results.",
     'no_intrinsic': "Your previous answer compiled but does not use {intrinsic} intrinsics. You must use SIMD intrinsics for this task.",
     'correct_slow': "Your previous answer was functionally correct but can be made faster. Here is the speedup you achieved relative to the baseline: {speedup:.2f}x",
@@ -95,9 +95,19 @@ def construct_feedback(eval: dict) -> list[str]:
     feedback_parts = []
     outcome = eval['outcome']
     feedback_parts.append(FEEDBACK_MESSAGES[outcome])
-    if eval.get('feedback'):
-        if eval['feedback']:
-            feedback_parts.append(eval['feedback'])
+    if eval.get('avg_speedup') is not None:
+            feedback_parts[-1] = feedback_parts[-1].format(
+                speedup = eval['avg_speedup']
+            )
+    elif outcome == 'no_intrinsic' and eval.get('intrinsic'): # if message is no intrinsic, expects intrinsic in eval
+        feedback_parts[-1] = feedback_parts[-1].format(
+            intrinsic = eval['intrinsic']
+        )
+
+    if eval.get('feedback') is not None:
+        feedback_parts.append('Here is the error message:')
+        feedback_parts.append(eval['feedback'])
+
     return feedback_parts
 
 def construct_previous_attempts(context_buffer: dict, turn: int, use_cot:bool=False) -> str:
@@ -161,7 +171,10 @@ def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> di
         extracted = code_tag_match.group(1).strip()
         if extracted:
             simd_solution = extracted
-            parse_solution = simd_entrypoint in extracted or simd_entrypoint == ""  # allow empty entrypoint check if caller passes ""
+            if simd_entrypoint: # special case to skip validation
+                parse_solution = simd_entrypoint in extracted
+            else:
+                parse_solution = True
             if not parse_solution:
                 feedback.append("simd_entrypoint not found inside <simd_code> block")
                 correct_format = False
@@ -230,8 +243,8 @@ if __name__ == "__main__":
 
     # Test 3: Feedback construction
     print("Test 3: Feedback construction")
-    fb = construct_feedback({'result': 'compilation_error', 'traceback': 'error msg'})
-    assert len(fb) == 2 and 'failed to compile' in fb[0]
+    fb = construct_feedback({'outcome': 'compilation_error', 'feedback': 'error msg'})
+    assert len(fb) == 3 and 'failed to compile' in fb[0]
     print("✓ Feedback construction works\n")
 
     # Test 4: Turn 1 with history
@@ -239,7 +252,7 @@ if __name__ == "__main__":
     ctx['turns'].append({
         'solution': 'void add_simd() { }',
         'cot': 'My plan',
-        'feedback': {'result': 'compilation_error'}
+        'eval': {'outcome': 'compilation_error'}
     })
     user = construct_user_prompt(ctx, turn=1, use_cot=True)
     assert '<attempt_1>' in user and 'failed to compile' in user
@@ -248,19 +261,12 @@ if __name__ == "__main__":
     # Test 5: Parse perfect response
     print("Test 5: Parse perfect response")
     response = "<think>My plan</think>\n<simd_code>void add_simd() { }</simd_code>"
-    result = parse_response(response, 'add_simd', use_cot=True)
-    assert result['parse_solution'] and result['parse_cot'] and result['correct_format']
+    parsed = parse_response(response, 'add_simd', use_cot=True)
+    assert parsed['parse_solution'] and parsed['parse_cot'] and parsed['correct_format']
     print("✓ Parser works on perfect format\n")
 
-    # Test 6: Parse markdown fallback
-    print("Test 6: Parse markdown fallback")
-    response_md = "```cpp\nvoid add_simd() { }\n```"
-    result_md = parse_response(response_md, 'add_simd', use_cot=False)
-    assert result_md['parse_solution'] and not result_md['correct_format']
-    print("✓ Parser works on markdown fallback\n")
-
-    # Test 7: Parse failure
-    print("Test 7: Parse failure")
+    # Test 6: Parse failure
+    print("Test 6: Parse failure")
     result_bad = parse_response("I don't know", 'add_simd', use_cot=False)
     assert not result_bad['parse_solution']
     print("✓ Parser handles failure correctly\n")

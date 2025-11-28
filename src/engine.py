@@ -91,16 +91,31 @@ class UnifiedPolicyEngine:
         # decode
         decoded = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
-        # Simple extraction of generated part
+        # # Simple extraction of generated part
+        # completions = []
+        # for prompt, text in zip(prompts, decoded):
+        #     # Fallback if the tokenizer modifies the prompt slightly
+        #     if len(text) > len(prompt):
+        #         # Heuristic: strip the prompt.
+        #         # Ideally, we calculate tokens, but text matching works for simple Instruct templates
+        #         completions.append(text[len(prompt):])
+        #     else:
+        #         completions.append("") # Generation failed or was empty
+
+        # tokenize prompt and generated text
         completions = []
         for prompt, text in zip(prompts, decoded):
-            # Fallback if the tokenizer modifies the prompt slightly
-            if len(text) > len(prompt):
-                # Heuristic: strip the prompt.
-                # Ideally, we calculate tokens, but text matching works for simple Instruct templates
-                completions.append(text[len(prompt):])
-            else:
-                completions.append("") # Generation failed or was empty
+            prompt_ids = self.tokenizer(prompt, add_special_tokens=False).input_ids
+            output_ids = self.tokenizer(text, add_special_tokens=False).input_ids
+
+            # extract only the generated part
+            generated_ids = output_ids[len(prompt_ids):]
+
+            # decode safely
+            completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+            completions.append(completion)
+
+
         # 🔍 DEBUG LOGGING HERE
         if self.debug:
             print("\n[UnifiedPolicyEngine.generate] Debug samples:")
@@ -112,7 +127,7 @@ class UnifiedPolicyEngine:
 
         return completions
 
-    def generate_logprobs(
+    def generate_log_probs(
         self,
         prompts: list[str],
         responses: list[str]
@@ -120,11 +135,11 @@ class UnifiedPolicyEngine:
         """
         Computes log probabilities for the 'responses' given the 'prompts'.
         Used for both:
-        1. Calculating 'old_logprobs' (no_grad) during Rollout.
-        2. Calculating 'new_logprobs' (grad) during Update.
+        1. Calculating 'old_log_probs' (no_grad) during Rollout.
+        2. Calculating 'new_log_probs' (grad) during Update.
 
         Returns:
-            logprobs: (B, T) - Log probs of the response tokens
+            log_probs: (B, T) - Log probs of the response tokens
             masks: (B, T) - 1.0 for response tokens, 0.0 for padding/prompt
         """
         # Training/Forward pass requires RIGHT padding
@@ -137,6 +152,7 @@ class UnifiedPolicyEngine:
         # Tokenize everything
         inputs = self.tokenizer(
             full_texts,
+            add_special_tokens=True,
             return_tensors="pt",
             padding=True,
             truncation=True,
@@ -150,10 +166,10 @@ class UnifiedPolicyEngine:
         # We re-tokenize just the prompts to find their length
         prompt_inputs = self.tokenizer(
             prompts,
+            add_special_tokens=True,
             return_tensors="pt",
             padding=True,
             truncation=True,
-            add_special_tokens=False, # Crucial: don't add extra BOS
             max_length=self.max_seq_length
         )
         # Calculate prompt lengths
@@ -168,30 +184,22 @@ class UnifiedPolicyEngine:
         target_ids = input_ids[:, 1:]
 
         # Compute Log Softmax
-        logprobs_all = torch.log_softmax(logits, dim=-1)
+        log_probs_all = torch.log_softmax(logits, dim=-1)
 
         # Gather log prob of the actual target tokens
-        token_logprobs_all = torch.gather(
-            logprobs_all,
+        token_log_probs_all = torch.gather(
+            log_probs_all,
             dim=-1,
             index=target_ids.unsqueeze(-1)
         ).squeeze(-1) # (B, Seq-1)
 
-        # Create the Response Mask
-        # We want to mask out:
-        # 1. The Prompt tokens
-        # 2. The Padding tokens
-        mask = torch.zeros_like(token_logprobs_all)
-
-        seq_len = token_logprobs_all.size(1)
-        for i in range(len(prompts)):
-            p_len = prompt_lens[i].item()
-            # The prompt takes up p_len tokens.
-            # Because of shifting, the prediction for the first response token
-            # happens at index (p_len - 1).
-            start_idx = p_len - 1
-            if start_idx < 0: start_idx = 0
-
+        # bos agnostic
+        bos_offset = 1 if self.tokenizer.bos_token_id is not None else 0
+        # Adjust start index to skip prompt + optional BOS
+        mask = torch.zeros_like(token_log_probs_all)
+        for i, p_len in enumerate(prompt_lens):
+            start_idx = p_len + bos_offset - 1  # minus 1 because of shift
+            start_idx = max(start_idx, 0)
             mask[i, start_idx:] = 1.0
 
         # Apply padding mask (original attention mask shifted)
@@ -200,21 +208,21 @@ class UnifiedPolicyEngine:
         final_mask = mask * padding_mask
 
         # Zero out logprobs for prompt/padding so they don't affect sums
-        token_logprobs = token_logprobs_all * final_mask
+        token_log_probs = token_log_probs_all * final_mask
 
         if self.debug:
             with torch.no_grad():
                 mask_counts = final_mask.sum(dim=1)
-                print("\n[get_batch_logprobs] batch size:", final_mask.size(0))
-                print("[get_batch_logprobs] seq len:", final_mask.size(1))
-                print("[get_batch_logprobs] nonzero mask per sample:", mask_counts.tolist())
-                print("[get_batch_logprobs] total nonzero mask:", mask_counts.sum().item())
-                print("[get_batch_logprobs] token_logprobs_all mean:",
-                    float(token_logprobs_all.mean().item()))
-                print("[get_batch_logprobs] token_log_probs (after mask) mean:",
-                    float(token_logprobs.mean().item()))
+                print("\n[get_batch_log_probs] batch size:", final_mask.size(0))
+                print("[get_batch_log_probs] seq len:", final_mask.size(1))
+                print("[get_batch_log_probs] nonzero mask per sample:", mask_counts.tolist())
+                print("[get_batch_log_probs] total nonzero mask:", mask_counts.sum().item())
+                print("[get_batch_log_probs] token_logprobs_all mean:",
+                    float(token_log_probs_all.mean().item()))
+                print("[get_batch_log_probs] token_log_probs (after mask) mean:",
+                    float(token_log_probs.mean().item()))
 
-        return token_logprobs, final_mask
+        return token_log_probs, final_mask
 
     def update_training_engine(self, loss) -> float:
         """

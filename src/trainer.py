@@ -59,6 +59,8 @@ class MultiTurnRLTrainer():
                         f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
                         f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
 
+                del trajectories
+
 
     def rollout(self, batch: list[dict]) -> list[dict]:
         """
@@ -92,21 +94,21 @@ class MultiTurnRLTrainer():
 
         # F. Compute "old" (on-policy) logprobs
         # extract prompts and responses
-        old_logprobs, masks = self.get_logprobs(trajectories)
+        old_log_probs, masks = self.get_log_probs(trajectories, requires_grad=False)
         # repack logprobs and masks
         for i, t in enumerate(trajectories):
-            t["token_logprobs_old"] = old_logprobs[i].cpu()
-            t["response_mask"] = masks[i].cpu()
+            t["token_logprobs_old"] = old_log_probs[i].detach().cpu()
+            t["response_mask"] = masks[i].detach().cpu()
 
         return trajectories
 
 
     def update_policy(self, trajectories: list[dict]):
         # A. Calculate current/new log probs
-        current_logprobs, current_mask = self.get_logprobs(trajectories)
+        current_log_probs, current_mask = self.get_log_probs(trajectories, requires_grad=True)
 
         # B. Process trajectories for policy loss calculation
-        gspo_variables = self.process_trajectories(trajectories, current_logprobs, current_mask)
+        gspo_variables = self.process_trajectories(trajectories, current_log_probs, current_mask)
 
         # C. Compute policy loss using GSPO
         pg_loss, metrics = compute_policy_loss_gspo(
@@ -195,22 +197,29 @@ class MultiTurnRLTrainer():
                 })
         return envs
 
-    def get_logprobs(self, trajectories):
+    def get_log_probs(self, trajectories, requires_grad):
+        """
+        current/new logprobs require grad
+        """
         # unpack prompts and responses
         prompts = [t["prompt"] for t in trajectories]
         responses = [t["response"] for t in trajectories]
         self.engine.set_train_mode()
-        with torch.no_grad():
-            old_logprobs, masks = self.engine.generate_logprobs(prompts, responses)
-        return old_logprobs, masks
+        if requires_grad:
+            self.engine.model.requires_grad_(True)
+            old_log_probs, masks = self.engine.generate_log_probs(prompts, responses)
+        else:
+            with torch.no_grad():
+                old_log_probs, masks = self.engine.generate_log_probs(prompts, responses)
+        return old_log_probs, masks
 
-    def process_trajectories(self, trajectories, current_logprobs, current_mask):
+    def process_trajectories(self, trajectories, current_log_probs, current_mask):
         # Extract advantages
         advantages_list = [t["advantage"] for t in trajectories]
         advantages_tensor = torch.tensor(advantages_list, device=self.engine.device, dtype=torch.float32)
 
         # Retrieve pre-calculated old data
-        old_logprobs_padded = torch.nn.utils.rnn.pad_sequence(
+        old_log_probs_padded = torch.nn.utils.rnn.pad_sequence(
             [t["token_log_probs_old"].to(self.engine.device) for t in trajectories],
             batch_first=True
         )
@@ -219,16 +228,16 @@ class MultiTurnRLTrainer():
             batch_first=True
         )
 
-        min_len = min(current_logprobs.size(1), old_logprobs_padded.size(1))
-        current_logprobs = current_logprobs[:, :min_len]
-        old_logprobs_padded = old_logprobs_padded[:, :min_len]
+        min_len = min(current_log_probs.size(1), old_log_probs_padded.size(1))
+        current_log_probs = current_log_probs[:, :min_len]
+        old_log_probs_padded = old_log_probs_padded[:, :min_len]
         final_mask = current_mask[:, :min_len] * response_mask_padded[:, :min_len]
 
         advantages = advantages_tensor.unsqueeze(1) * final_mask
 
         return {
-            'current_logprobs': current_logprobs,
-            'old_logprobs_padded': old_logprobs_padded,
+            'current_log_probs': current_log_probs,
+            'old_log_probs_padded': old_log_probs_padded,
             'advantages': advantages,
             'final_mask': final_mask
         }

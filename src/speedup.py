@@ -64,7 +64,6 @@ def verify_speedup(
 ):
     scalar_code = task['solution_scalar']
     test_performance = task['test_performance']
-    simd_code_raw = simd_solution
     # simd_code = extract_code(simd_code_raw)
 
     # output variables
@@ -77,7 +76,7 @@ def verify_speedup(
     simd_times = None
 
     benchmark_code = BENCHMARK_TEMPLATE.replace('{{SCALAR_CODE}}', scalar_code)
-    benchmark_code = benchmark_code.replace('{{SIMD_CODE}}', simd_code)
+    benchmark_code = benchmark_code.replace('{{SIMD_CODE}}', simd_solution)
     benchmark_code = benchmark_code.replace('{{TEST_PERFORMANCE}}', test_performance)
 
     with open('test.cpp', 'w') as f:

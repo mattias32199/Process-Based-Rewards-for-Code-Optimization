@@ -91,12 +91,13 @@ def get_system_prompt(use_cot: bool=False) -> str:
 def get_base_prompt(use_cot: bool=False) -> str:
     return BASE_PROMPT_WITH_COT if use_cot else BASE_PROMPT_NO_COT
 
-def construct_feedback(feedback_buffer: dict) -> list[str]:
+def construct_feedback(eval: dict) -> list[str]:
     feedback_parts = []
-    result = feedback_buffer['result']
-    feedback_parts.append(FEEDBACK_MESSAGES[result])
-    if feedback_buffer.get('traceback'):
-        feedback_parts.append(feedback_buffer['traceback'])
+    outcome = eval['outcome']
+    feedback_parts.append(FEEDBACK_MESSAGES[outcome])
+    if eval.get('feedback'):
+        if eval['feedback']:
+            feedback_parts.append(eval['feedback'])
     return feedback_parts
 
 def construct_previous_attempts(context_buffer: dict, turn: int, use_cot:bool=False) -> str:
@@ -107,7 +108,7 @@ def construct_previous_attempts(context_buffer: dict, turn: int, use_cot:bool=Fa
         if use_cot and turn_context.get('cot'):
             prev_attempts_parts.append(f"<think>\n{turn_context['cot']}\n</think>") # cot
         prev_attempts_parts.append(f"<simd_code>\n{turn_context['solution']}\n</simd_code>") # simd solution
-        feedback_parts = construct_feedback(turn_context['feedback'])
+        feedback_parts = construct_feedback(turn_context['eval'])
         prev_attempts_parts.extend(feedback_parts)
         prev_attempts_parts.append(f"</attempt_{t + 1}>\n")
 
@@ -150,6 +151,7 @@ def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> di
     cot, simd_solution = None, None
     parse_solution, parse_cot = False, False
     correct_format = True
+    outcome = 'parsing_error'
     feedback = []
 
     # parse for simd_code tags
@@ -197,7 +199,8 @@ def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> di
         'correct_format': correct_format,
         'parse_solution': parse_solution,
         'parse_cot': parse_cot,
-        'feedback': feedback
+        'feedback': feedback,
+        'outcome': outcome
     }
 
 

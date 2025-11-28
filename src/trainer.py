@@ -145,22 +145,29 @@ class MultiTurnRLTrainer():
 
     def evaluate(self, envs, prompts, responses, turn):
         for i, (env, response) in enumerate(zip(envs, responses)):
+            """
+            eval should contain 'outcome' and 'feedback'
+            """
             simd_entrypoint = env['context_buffer']['task']['simd_entrypoint']
-            parse_out = parse_response(response, simd_entrypoint, self.use_cot)
+            # parse model response
+            eval = parse_response(response, simd_entrypoint, self.use_cot)
+            sol_simd = eval['simd_solution']
+            cot = eval['cot']
 
-            if parse_out['correct_format'] and parse_out['parse_solution']:
-                feedback = verify(
+            # only perform verification if format is correct
+            if eval['correct_format'] and eval['parse_solution']:
+                eval = verify(
                     env['context_buffer']['task'],
                     sol_simd
                 )
 
             # immediate reward
-            reward = compute_immediate_reward(result)
+            reward = compute_immediate_reward(eval)
 
             # Update buffers
             env["context_buffer"]["turns"].append({
                 "turn": turn, "cot": cot, "solution": sol_simd,
-                "feedback": feedback["feedback_text"]
+                "eval": eval
             })
 
             # Store trajectory data temporarily

@@ -1,15 +1,18 @@
 # src/reward_util.py
 import numpy as np
 
-def compute_immediate_reward(feedback: dict) -> float:
+def compute_immediate_reward(eval: dict) -> float:
     """
     Computes immediate reward
     0.3*correctness + 1*speedup
     """
-    reward = 0
-    if feedback['success']:
-        reward += 0.3
-        reward += feedback['avg_speedup']
+    if not eval['correct_format']:
+        reward = -0.1
+    else:
+        reward = 0.0
+        if eval['correct']: # both speedup and correctness shoudl return success
+            reward += 0.3
+            reward += eval['avg_speedup']
     return reward
 
 

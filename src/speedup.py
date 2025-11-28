@@ -65,7 +65,16 @@ def verify_speedup(
     scalar_code = task['solution_scalar']
     test_performance = task['test_performance']
     simd_code_raw = simd_solution
-    simd_code = extract_code(simd_code_raw)
+    # simd_code = extract_code(simd_code_raw)
+
+    # output variables
+    success = False
+    outcome = 'compilation_error'
+    feedback = None # error msg
+    speedups = {}
+    avg_speedup = None
+    scalar_times = None
+    simd_times = None
 
     benchmark_code = BENCHMARK_TEMPLATE.replace('{{SCALAR_CODE}}', scalar_code)
     benchmark_code = benchmark_code.replace('{{SIMD_CODE}}', simd_code)
@@ -88,58 +97,62 @@ def verify_speedup(
     )
 
     if compile_result.returncode != 0:
-        return {
-            'success': False,
-            'error': 'compilation_failed',
-            'error_msg': compile_result.stderr,
-            'speedups': {},
-            'avg_speedup': 0.0
-        }
+        success = False
+        outcome = 'compilation_failed'
+        feedback = compile_result.stderr,
+        speedups = None
+        avg_speedup = None
 
-    # run benchmark
-    benchmark_result = subprocess.run(['./test'], capture_output=True, text=True)
+    else:
+        # run benchmark
+        benchmark_result = subprocess.run(['./test'], capture_output=True, text=True)
 
-    if benchmark_result.returncode != 0:
-        return {
-            'success': False,
-            'error': 'execution_failed',
-            'error_msg': benchmark_result.stderr,
-            'speedups': {},
-            'avg_speedup': 0.0
-        }
+        if benchmark_result.returncode != 0:
+            success = False
+            outcome = 'runtime_error'
+            feedback = benchmark_result.stderr,
+            speedups = None
+            avg_speedup = None
 
-    scalar_times = {}
-    simd_times = {}
+        else:
+            scalar_times = {}
+            simd_times = {}
 
-    pattern = r'(\w+)/(\d+)\s+(\d+)\s+ns'
+            pattern = r'(\w+)/(\d+)\s+(\d+)\s+ns'
 
-    for line in benchmark_result.stdout.split('\n'):
-        match = re.search(pattern, line)
-        if match:
-            name = match.group(1)
-            size = int(match.group(2))
-            time_ns = float(match.group(3))
+            for line in benchmark_result.stdout.split('\n'):
+                match = re.search(pattern, line)
+                if match:
+                    name = match.group(1)
+                    size = int(match.group(2))
+                    time_ns = float(match.group(3))
 
-            if name == 'Scalar':
-                scalar_times[size] = time_ns
-            elif name == 'SIMD':
-                simd_times[size] = time_ns
+                    if name == 'Scalar':
+                        scalar_times[size] = time_ns
+                    elif name == 'SIMD':
+                        simd_times[size] = time_ns
 
-    # Calculate speedups
-    speedups = {}
-    for size in scalar_times:
-        if size in simd_times and simd_times[size] > 0:
-            speedup = scalar_times[size] / simd_times[size]
-            speedups[size] = speedup
+            # Calculate speedups
+            speedups = {}
+            for size in scalar_times:
+                if size in simd_times and simd_times[size] > 0:
+                    speedup = scalar_times[size] / simd_times[size]
+                    speedups[size] = speedup
 
-    # Calculate average
-    avg_speedup = sum(speedups.values()) / len(speedups) if speedups else 0.0
+            # Calculate average
+            avg_speedup = sum(speedups.values()) / len(speedups) if speedups else 0.0
+
+            success = True
+            outcome = "correct_fast" if avg_speedup > 1 else "correct_slow"
+            feedback = None
+
 
     return {
-        'success': True,
+        'success': success,
         'speedups': speedups,
         'avg_speedup': avg_speedup,
         'scalar_times': scalar_times,
         'simd_times': simd_times,
-        'feedback': "feedback"
+        'outcome': outcome,
+        'feedback': feedback
     }

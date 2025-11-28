@@ -3,7 +3,6 @@ import tempfile
 import json
 import re
 from pathlib import Path
-from typing import Dict, Optional, Tuple
 
 TEMPLATE = """
 #include <immintrin.h>
@@ -96,11 +95,11 @@ bool allclose(const std::vector<T>& a, const std::vector<T>& b,
 """
 
 def verify_simd_correctness(
-    task_data: Dict,
+    task_data: dict,
     simd_solution: str,
     timeout: int = 30,
     iterations: int = 100
-) -> Dict[str, bool | str]:
+) -> dict:
     """
     Verify SIMD solution correctness against scalar baseline using SimdBench harness.
     """
@@ -116,6 +115,12 @@ def verify_simd_correctness(
         test_harness=task_data["test_correctness"],
         iterations=iterations
     )
+
+    # intialize output variables
+    compiles = False
+    correct = False
+    outcome = None
+    feedback = None
 
     # Compile and run
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -133,32 +138,26 @@ def verify_simd_correctness(
             str(cpp_file), "-o", str(exe_file)
         ]
 
-        success = False
-        compiles = False
-        correctness = False
-        feedback = ""
-
         try:
-            result = subprocess.run(
+            compile_result = subprocess.run(
                 compile_cmd,
                 capture_output=True,
                 text=True,
                 timeout=timeout
             )
 
-            if result.returncode != 0:
-                compiles = False
-                feedback += f"Compilation error:\n{result.stderr}"
+            if compile_result.returncode != 0:
+                outcome = "compilation_error"
+                feedback = str(compile_result.stderr)
             else:
                 compiles = True
-                feedback += "Code successfully compiles."
 
         except subprocess.TimeoutExpired:
-            compiles = False
-            feedback += "Compilation error: (timed out)."
+            outcome = "compilation_error"
+            feedback = "Compilation timed out"
         except Exception as e:
-            compiles = False
-            feedback += f"Compilation error:\n{str(e)}"
+            outcome = "compilation_error"
+            feedback = f"Compilation error:\n{str(e)}"
 
         # Run correctness test
         if compiles:
@@ -171,8 +170,8 @@ def verify_simd_correctness(
                 )
 
                 if result.returncode != 0:
-                    correctness = False
-                    feedback += f"\nRuntime error:\n{result.stderr}"
+                    outcome = 'runtime_error'
+                    feedback = str(result.stderr)
                 else:
                     # Parse JSON output
                     output = result.stdout.strip()
@@ -180,26 +179,25 @@ def verify_simd_correctness(
 
                     if not match:
                         print(f"Could not parse output:\n{output}")
-                        raise NotImplementedError
+                        raise NotImplementedError # something is wrong
 
                     passed = match.group(1) == "1"
                     if passed:
-                        feedback += "\nCorrectness test passed."
-                        correctness = True
-                        success = True
+                        correct = True
                     else:
-                        feedback += "\nCorrectness test failed"
+                        outcome = "correctness_error"
+                        feedback = "Your solution did not produce the expected outputs."
 
             except subprocess.TimeoutExpired:
-                correctness = False
-                feedback += "\nExecution error: (timed out)"
+                outcome = 'runtime_error'
+                feedback = "Execution error: (timed out)"
             except Exception as e:
-                correctness = False
-                feedback += f"\nExecution error:\n{str(e)}"
+                outcome = 'runtime_error'
+                feedback = str(e)
     return {
-        'success': success,
         'compiles': compiles,
-        'correctness': correctness,
+        'correct': correct,
+        'outcome': outcome,
         'feedback': feedback
     }
 

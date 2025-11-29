@@ -204,6 +204,8 @@ def parse_response(response:str, entrypoint_simd:str, use_cot: bool=False) -> di
             feedback.append("Missing required <think> block")
             correct_format = False
 
+    feedback = "\n".join(feedback)
+
     # check if solution is empty or whitespace
     if simd_solution is not None:
         simd_solution = simd_solution.strip()

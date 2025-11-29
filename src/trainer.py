@@ -1,11 +1,11 @@
 # multi-turn RL GSPO trainer
 import torch
-from engine import UnifiedPolicyEngine
-from verifier import verify
-from config import TrainerConfig
-from reward_util import compute_immediate_reward, compute_advantages
-from rl_util import compute_policy_loss_gspo
-from train_util import construct_user_prompt, get_system_prompt, parse_response
+from src.engine import UnifiedPolicyEngine
+from src.verifier import verify
+from src.config import TrainerConfig
+from src.reward_util import compute_immediate_reward, compute_advantages
+from src.rl_util import compute_policy_loss_gspo
+from src.train_util import construct_user_prompt, get_system_prompt, parse_response
 
 class MultiTurnRLTrainer():
     def __init__(self,

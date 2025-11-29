@@ -1,7 +1,7 @@
 # rl_utils.py
 import torch
 from typing import Tuple, Dict, Any, Optional
-from src.config import ActorConfig
+from src.config import GSPOConfig
 
 class VerlF:
     @staticmethod
@@ -34,7 +34,7 @@ def compute_policy_loss_gspo(
     advantages: torch.Tensor,
     response_mask: torch.Tensor,
     loss_agg_mode: str = "seq-mean-token-mean",
-    config: Optional[ActorConfig] = None,
+    config: Optional[GSPOConfig] = None,
     rollout_is_weights: torch.Tensor | None = None,
 ) -> Tuple[torch.Tensor, Dict[str, Any]]:
     assert config is not None

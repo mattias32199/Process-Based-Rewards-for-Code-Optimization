@@ -5,7 +5,7 @@ os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
 
 import torch
 from unsloth import FastLanguageModel
-from config import EngineConfig
+from src.config import EngineConfig
 
 class UnifiedPolicyEngine:
     def __init__(

@@ -1,6 +1,6 @@
 # src/verifier.py
-from correctness import verify_simd_correctness
-from speedup import verify_speedup
+from src.correctness import verify_simd_correctness
+from src.speedup import verify_speedup
 
 def verify(task: dict, sol_simd: str) -> dict:
     """

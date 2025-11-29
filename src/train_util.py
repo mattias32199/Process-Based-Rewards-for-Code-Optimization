@@ -24,7 +24,7 @@ Your complete SIMD implementation here.
 # base prompt is the same w/ and w/o cot
 BASE_PROMPT_WITH_COT = """You are given the following scalar baseline:
 
-{SCALAR_SOLUTION}
+{SOLUTION_SCALAR}
 
 Your task:
 {INITIAL_PROMPT}
@@ -47,7 +47,7 @@ void example_simd(float *a, const float *b, size_t n) {{
 # base prompt is the same w/ and w/o cot
 BASE_PROMPT_NO_COT = """You are given the following scalar baseline:
 
-{SCALAR_SOLUTION}
+{SOLUTION_SCALAR}
 
 Your task:
 {INITIAL_PROMPT}
@@ -140,7 +140,7 @@ def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str
     task = context_buffer['task']
     if turn == 0:
         user_prompt = base_prompt.format(
-            SCALAR_SOLUTION=task['scalar_solution'],
+            SOLUTION_SCALAR=task['solution_scalar'],
             INITIAL_PROMPT=task['prompt'],
             INTRINSIC=task['intrinsic'],
             # ENTRYPOINT=task['simd_entrypoint'],
@@ -150,7 +150,7 @@ def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str
         prev_attempts = construct_previous_attempts(context_buffer, turn, use_cot)
 
         user_prompt = base_prompt.format(
-            SCALAR_SOLUTION=context_buffer['task']['scalar_solution'],
+            SOLUTION_SCALAR=context_buffer['task']['solution_scalar'],
             INITIAL_PROMPT=context_buffer['task']['prompt'],
             INTRINSIC=task['intrinsic'],
             PREVIOUS_ATTEMPTS=prev_attempts
@@ -222,7 +222,7 @@ if __name__ == "__main__":
 
     # Simple test data
     simple_task = {
-        'scalar_solution': 'void add_scalar(float *a, float *b, int n) { }',
+        'solution_scalar': 'void add_scalar(float *a, float *b, int n) { }',
         'prompt': 'Implement: void add_simd(float *a, float *b, int n) { }',
         'intrinsic': 'AVX',
     }

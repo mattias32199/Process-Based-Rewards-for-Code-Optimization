@@ -200,7 +200,6 @@ class MultiTurnRLTrainer():
         responses = [t["response"] for t in trajectories]
         self.engine.set_train_mode()
         if requires_grad:
-            self.engine.model.requires_grad_(True)
             old_log_probs, masks = self.engine.generate_log_probs(prompts, responses)
         else:
             with torch.no_grad():

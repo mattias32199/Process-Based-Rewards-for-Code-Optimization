@@ -10,9 +10,15 @@ def compute_immediate_reward(eval: dict) -> float:
         reward = -0.1
     else:
         reward = 0.0
-        if eval['correct']: # both speedup and correctness shoudl return success
-            reward += 0.3
-            reward += eval['avg_speedup']
+        if eval['correct']:
+            try:
+                reward += 0.3
+                reward += eval['avg_speedup']
+            except Exception as e:
+                print('PINEAPPLE')
+                print(eval)
+                print(e)
+                raise NotImplementedError
     return reward
 
 

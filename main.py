@@ -1,8 +1,4 @@
-import torch
-from typing import Dict, Any
-
-# Import your modules
-# (Assuming files are in the same directory. If in 'src', use 'from src.config import ...')
+# imports
 from src.config import ModelConfig, LoraConfig, GSPOConfig, EngineConfig, TrainerConfig
 from src.dataloader import SimdBenchDataset, SimdBenchDataLoader
 # from src.engine import UnifiedPolicyEngine
@@ -24,6 +20,7 @@ if __name__ == "__main__":
         model = model_cfg,
         lora = lora_cfg,
         debug = True,
+        lr=5e-5
     )
 
     gspo_cfg = GSPOConfig(
@@ -38,7 +35,6 @@ if __name__ == "__main__":
         parallel_trajectories=2, # Batch size of 2
         max_new_tokens=64,       # Short generation
         temperature=0.8,
-        lr=5e-5
     )
 
     # B. Initialize Engine (GPU)

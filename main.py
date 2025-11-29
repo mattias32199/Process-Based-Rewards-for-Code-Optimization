@@ -3,9 +3,14 @@ from src.config import ModelConfig, LoraConfig, GSPOConfig, EngineConfig, Traine
 from src.dataloader import SimdBenchDataset, SimdBenchDataLoader
 # from src.engine import UnifiedPolicyEngine
 from src.trainer import MultiTurnRLTrainer
+from src.init_util import check_google_benchmark
 
 
 if __name__ == "__main__":
+    # check environment for dependencies
+    # check for google benchmark
+    check_google_benchmark() # throws error if google benchmark not installed
+
     # A. Configuration
     # Use a small model and short sequence for quick testing
     model_cfg = ModelConfig(

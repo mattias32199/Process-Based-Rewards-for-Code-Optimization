@@ -13,6 +13,9 @@ TEMPLATE = """
 #include <cmath>
 #include <iostream>
 #include <random>
+#include <algorithm>   // For std::swap
+#include <limits>      // For std::numeric_limits
+#include <type_traits>
 
 // Constants
 #define ITERATIONS {ITERATIONS}
@@ -31,6 +34,19 @@ public:
                int_dist(std::numeric_limits<int64_t>::min(),
                        std::numeric_limits<int64_t>::max()),
                real_dist(0.0, 1.0) {{}}
+
+    template<typename T>
+        T randint(T min, T max) {{
+            if constexpr (std::is_integral_v<T>) {{
+                if(min > max) std::swap(min, max);
+                std::uniform_int_distribution<T> dis(min, max);
+                return dis(gen);
+            }} else {{
+                if(min > max) std::swap(min, max);
+                std::uniform_real_distribution<T> dis(min, max);
+                return dis(gen);
+            }}
+        }}
 
     template<typename T>
     void initialize_vector_with_random_values(std::vector<T>& vec, bool binary = false) {{

@@ -132,7 +132,7 @@ class MultiTurnRLTrainer():
             ]
             p = self.engine.tokenizer.apply_chat_template(
                 messages,
-                tokenize=True,
+                tokenize=False,
                 add_generation_prompt=True
             )
             prompts.append(p)

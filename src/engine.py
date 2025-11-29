@@ -129,8 +129,7 @@ class UnifiedPolicyEngine:
         # 🔍 DEBUG LOGGING HERE
         if self.debug:
             print("\n[UnifiedPolicyEngine.generate] Debug samples:")
-            full_decoded = self.tokenizer.batch_decode(outputs, skip_special_tokens=False)
-            for i, (p, full, c) in enumerate(zip(prompts, full_decoded, completions)):
+            for i, (p, full, c) in enumerate(zip(prompts, outputs, completions)):
                 print(f"\n--- Sample {i} ---")
                 print("PROMPT:\n", p)
                 print("\nFULL MODEL OUTPUT:\n", full)

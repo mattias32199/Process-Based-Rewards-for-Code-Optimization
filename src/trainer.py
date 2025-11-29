@@ -10,7 +10,6 @@ from train_util import construct_user_prompt, get_system_prompt, parse_response
 class MultiTurnRLTrainer():
     def __init__(self,
         config: TrainerConfig,
-        verify_fn, profile_fn, reward_fn, construct_prompt_fn, parse_response_fn
     ):
         """
         Class for MultiTurnRL Trainer
@@ -26,11 +25,6 @@ class MultiTurnRLTrainer():
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
         self.use_cot = config.use_cot
-
-        # functions
-        self.verify_fn = verify_fn # verification (correctness tests)
-        self.profile_fn = profile_fn # profiling on hardware
-        self.reward_fn = reward_fn # calculate reward from verifyfication and profiling
 
 
     def train(self, dataloader):

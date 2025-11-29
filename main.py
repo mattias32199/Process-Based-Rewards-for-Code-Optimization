@@ -1,0 +1,90 @@
+import torch
+from typing import Dict, Any
+
+# Import your modules
+# (Assuming files are in the same directory. If in 'src', use 'from src.config import ...')
+from src.config import ModelConfig, LoraConfig, GSPOConfig, EngineConfig, TrainerConfig
+from src.dataloader import SimdBenchDataset, SimdBenchDataLoader
+# from src.engine import UnifiedPolicyEngine
+from src.trainer import MultiTurnRLTrainer
+
+
+if __name__ == "__main__":
+    # A. Configuration
+    # Use a small model and short sequence for quick testing
+    model_cfg = ModelConfig(
+        model_name="Qwen/Qwen2.5-Coder-1.5B-Instruct",
+        max_seq_length=1024
+    )
+
+    lora_cfg = LoraConfig(
+    )
+
+    engine_cfg = EngineConfig(
+        model = model_cfg,
+        lora = lora_cfg,
+        debug = True,
+    )
+
+    gspo_cfg = GSPOConfig(
+        clip_ratio=0.2
+    )
+
+    trainer_cfg = TrainerConfig(
+        engine=engine_cfg,
+        gspo=gspo_cfg,
+        epochs=1,                # 1 Epoch for testing
+        max_turns=1,             # Single turn per math problem
+        parallel_trajectories=2, # Batch size of 2
+        max_new_tokens=64,       # Short generation
+        temperature=0.8,
+        lr=5e-5
+    )
+
+    # B. Initialize Engine (GPU)
+    # print(">>> Initializing Engine...")
+    # engine = UnifiedPolicyEngine(
+    #     model_name=model_cfg.model_name,
+    #     max_seq_length=model_cfg.max_seq_length,
+    #     learning_rate=trainer_cfg.lr,
+    #     fast_inference=False # ENABLE optimization
+    # )
+
+    # C. Initialize Trainer
+    # We need to curry/partial the functions if they need extra data (like ground truth)
+    # But for this simple test, we will assume the environment handles it or use simple closures.
+
+    # Creating a closure for verify_fn to handle ground truth is tricky in a batch list.
+    # Instead, we will look at how your Trainer 'evaluate_response' works.
+    # It passes (response, turn).
+    # We will assume a simple "Length Reward" for this pure pipeline test
+    # to avoid complex prompt/answer matching logic in the main file.
+
+    print(">>> Initializing Trainer...")
+    trainer = MultiTurnRLTrainer(
+        config=trainer_cfg,
+    )
+
+    # D. Dummy Data
+    # List of tasks. The Trainer iterates over this list.
+    dummy_dataloader = [
+        [
+            {"task_id": 1, "prompt": "What is 20 + 22?", "solution_scalar": "42"},
+            {"task_id": 2, "prompt": "What is 50 - 8?", "solution_scalar": "42"},
+        ],
+        [
+            {"task_id": 3, "prompt": "What is 6 * 7?", "solution_scalar": "42"},
+            {"task_id": 4, "prompt": "What is 84 / 2?", "solution_scalar": "42"},
+        ]
+    ]
+    dataset = SimdBenchDataset('data/processed/simd-all-avx.jsonl')
+    dataloader = SimdBenchDataLoader(dataset)
+
+    # E. Run
+    print(">>> Starting Training Loop...")
+    trainer.train(dataloader)
+
+    print(">>> Test Complete. Saving Adapter...")
+    # engine.model.save_pretrained("debug_output_lora")
+    # engine.tokenizer.save_pretrained("debug_output_lora")
+    print(">>> Saved to 'debug_output_lora'")

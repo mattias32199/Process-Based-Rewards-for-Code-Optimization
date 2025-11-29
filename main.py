@@ -10,7 +10,7 @@ if __name__ == "__main__":
     # Use a small model and short sequence for quick testing
     model_cfg = ModelConfig(
         model_name="Qwen/Qwen2.5-Coder-1.5B-Instruct",
-        max_seq_length=1024
+        max_seq_length=4096
     )
 
     lora_cfg = LoraConfig(
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         epochs=1,                # 1 Epoch for testing
         max_turns=1,             # Single turn per math problem
         parallel_trajectories=2, # Batch size of 2
-        max_new_tokens=64,       # Short generation
+        max_new_tokens=512,       # Short generation
         temperature=0.8,
     )
 

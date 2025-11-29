@@ -16,6 +16,7 @@ TEMPLATE = """
 #include <algorithm>   // For std::swap
 #include <limits>      // For std::numeric_limits
 #include <type_traits>
+#include <cstring>
 
 // Constants
 #define ITERATIONS {ITERATIONS}

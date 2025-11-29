@@ -3,11 +3,21 @@ import re
 import subprocess
 
 BENCHMARK_TEMPLATE = """
-#include <benchmark/benchmark.h>
 #include <immintrin.h>
-#include <vector>
-#include <random>
+#include <x86intrin.h>
 #include <cstdint>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <cmath>
+#include <iostream>
+#include <random>
+#include <algorithm>   // For std::swap
+#include <limits>      // For std::numeric_limits
+#include <type_traits>
+#include <cstring>
+
+#include <benchmark/benchmark.h>
 
 class Random {
 public:

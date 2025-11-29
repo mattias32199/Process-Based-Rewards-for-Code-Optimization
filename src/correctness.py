@@ -100,6 +100,23 @@ bool allclose(const std::vector<T>& a, const std::vector<T>& b,
     return true;
 }}
 
+template<typename T>
+bool allclose(const T& a, const T& b, double rtol = 1e-5, double atol = 1e-8) {{
+    // 1. Handle Floating Point logic (fuzzy comparison)
+    if constexpr (std::is_floating_point_v<T>) {{
+        if (std::isnan(a) && std::isnan(b)) return true; // NaN == NaN here
+        if (std::isnan(a) || std::isnan(b)) return false;
+
+        double diff = std::abs(static_cast<double>(a) - static_cast<double>(b));
+        double threshold = atol + rtol * std::abs(static_cast<double>(b));
+        return diff <= threshold;
+    }}
+    // 2. Handle Integer/Bool logic (exact comparison)
+    else {{
+        return a == b;
+    }}
+}}
+
 // Scalar solution
 {SCALAR_SOLUTION}
 

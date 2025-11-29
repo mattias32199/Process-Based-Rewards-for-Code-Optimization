@@ -51,6 +51,7 @@ class UnifiedPolicyEngine:
             bias="none",
             use_gradient_checkpointing="unsloth",
             random_state=config.lora.random_state,
+            gpu_memory_utilization = 0.95
         )
 
         # 3. optimizer

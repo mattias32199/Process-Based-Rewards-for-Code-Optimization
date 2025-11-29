@@ -91,7 +91,7 @@ class MultiTurnRLTrainer():
         old_log_probs, masks = self.get_log_probs(trajectories, requires_grad=False)
         # repack logprobs and masks
         for i, t in enumerate(trajectories):
-            t["token_logprobs_old"] = old_log_probs[i].detach().cpu()
+            t["token_log_probs_old"] = old_log_probs[i].detach().cpu()
             t["response_mask"] = masks[i].detach().cpu()
 
         return trajectories

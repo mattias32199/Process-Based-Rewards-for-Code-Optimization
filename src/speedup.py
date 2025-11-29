@@ -1,4 +1,6 @@
 # /src/speedup.py
+import re
+import subprocess
 
 BENCHMARK_TEMPLATE = """
 #include <immintrin.h>

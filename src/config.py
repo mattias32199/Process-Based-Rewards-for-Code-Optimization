@@ -68,3 +68,4 @@ class TrainerConfig:
     max_new_tokens: int = 256
     temperature: float = 0.7
     use_cot: bool = False
+    debug: bool = False

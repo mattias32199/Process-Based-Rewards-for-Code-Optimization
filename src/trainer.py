@@ -25,6 +25,7 @@ class MultiTurnRLTrainer():
         self.max_turns = config.max_turns
         self.parallel_trajectories = config.parallel_trajectories
         self.use_cot = config.use_cot
+        self.debug = config.debug
 
 
     def train(self, dataloader):
@@ -35,6 +36,8 @@ class MultiTurnRLTrainer():
         for epoch in range(self.config.epochs): # loop through epochs
             for batch_idx, batch in enumerate(dataloader): # loop through batches
                 # 1. per-batch rollout
+                if self.debug:
+                    print('batch size (num tasks in batch): ', len(batch['tasks']))
                 trajectories = self.rollout(batch['tasks'])
 
                 # 2. calculate policy gradients to update policy

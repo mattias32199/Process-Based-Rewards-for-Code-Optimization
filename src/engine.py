@@ -2,8 +2,8 @@
 # TODO: install unsloth vllm
 import os
 os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
-
 import torch
+from vllm import SamplingParams
 from unsloth import FastLanguageModel
 from src.config import EngineConfig
 
@@ -66,6 +66,7 @@ class UnifiedPolicyEngine:
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
+
     def generate_responses(self, prompts: list[str], **kwargs) -> list[str]:
         """
         Switches to Inference Mode and generates responses for a batch of prompts.
@@ -77,39 +78,53 @@ class UnifiedPolicyEngine:
         self.tokenizer.padding_side = "left"
         torch.cuda.empty_cache() # clear cache
 
+        sampling_params = SamplingParams(
+            temperature=kwargs.get("temperature", 0.7),
+            max_tokens=kwargs.get("max_new_tokens", 512),
+        )
+
         # prepare batch
-        inputs = self.tokenizer(
-            prompts,
-            return_tensors="pt",
-            padding=True,
-            truncation=True,
-            max_length=self.max_seq_length
-        ).to(self.device)
+        # inputs = self.tokenizer(
+        #     prompts,
+        #     return_tensors="pt",
+        #     padding=True,
+        #     truncation=True,
+        #     max_length=self.max_seq_length
+        # ).to(self.device)
 
         # generate responses
         # with torch.no_grad():
         with torch.inference_mode():
-            outputs = self.model.generate(
-                **inputs,
-                max_new_tokens=kwargs.get("max_new_tokens", 512),
-                do_sample=kwargs.get("do_sample", True),
-                temperature=kwargs.get("temperature", 0.7),
-                use_cache=True,
-                pad_token_id=self.tokenizer.pad_token_id,
-                eos_token_id=self.tokenizer.eos_token_id,
+            # outputs = self.model.generate(
+            #     **inputs,
+            #     max_new_tokens=kwargs.get("max_new_tokens", 512),
+            #     do_sample=kwargs.get("do_sample", True),
+            #     temperature=kwargs.get("temperature", 0.7),
+            #     use_cache=True,
+            #     pad_token_id=self.tokenizer.pad_token_id,
+            #     eos_token_id=self.tokenizer.eos_token_id,
+            # )
+            outputs = self.model.fast_generate(
+                prompts,
+                sampling_params=sampling_params
             )
 
-        input_tensor_width = inputs.input_ids.shape[1]
+        # old
+        # input_tensor_width = inputs.input_ids.shape[1]
+        # completions = []
+        # for i, output_ids in enumerate(outputs):
+        #     # Slice using the full width
+        #     generated_ids = output_ids[input_tensor_width:]
 
+        #     completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+        #     completions.append(completion)
+
+        # new
         completions = []
-        for i, output_ids in enumerate(outputs):
-            # Slice using the full width
-            generated_ids = output_ids[input_tensor_width:]
+        for request_output in outputs:
+            generated_text = request_output.outputs[0].text
+            completions.append(generated_text)
 
-            completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
-            completions.append(completion)
-        del outputs, inputs
-        torch.cuda.empty_cache()
 
         # 🔍 DEBUG LOGGING HERE
         if self.debug:
@@ -121,6 +136,7 @@ class UnifiedPolicyEngine:
                 print("\nFULL MODEL OUTPUT:\n", full)
                 print("\nCOMPLETION (after stripping prompt):\n", c, "...")
 
+        torch.cuda.empty_cache()
         return completions
 
     def generate_log_probs(
@@ -140,6 +156,9 @@ class UnifiedPolicyEngine:
         """
         # Training/Forward pass requires RIGHT padding
         self.tokenizer.padding_side = "right"
+
+        # append EOS
+        responses = [r + self.tokenizer.eos_token for r in responses]
 
         # We need to construct the full text to feed into the model
         # Note: Ideally you use a chat template here, ensuring strict concatenation

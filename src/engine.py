@@ -26,6 +26,13 @@ class UnifiedPolicyEngine:
             dtype=config.model.dtype, # load and use in fp16
         )
 
+        if self.debug:
+            print(f"[DEBUG] EOS token: {self.tokenizer.eos_token}")
+            print(f"[DEBUG] PAD token: {self.tokenizer.pad_token}")
+            print(f"[DEBUG] Special tokens: {self.tokenizer.special_tokens_map}")
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+
         # LoRA adapter
         # https://thinkingmachines.ai/blog/lora/
         # https://docs.unsloth.ai/get-started/fine-tuning-llms-guide/lora-hyperparameters-guide
@@ -88,30 +95,13 @@ class UnifiedPolicyEngine:
                 eos_token_id=self.tokenizer.eos_token_id,
             )
 
-        # decode
-        decoded = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
+        input_tensor_width = inputs.input_ids.shape[1]
 
-        # # Simple extraction of generated part
-        # completions = []
-        # for prompt, text in zip(prompts, decoded):
-        #     # Fallback if the tokenizer modifies the prompt slightly
-        #     if len(text) > len(prompt):
-        #         # Heuristic: strip the prompt.
-        #         # Ideally, we calculate tokens, but text matching works for simple Instruct templates
-        #         completions.append(text[len(prompt):])
-        #     else:
-        #         completions.append("") # Generation failed or was empty
-
-        # tokenize prompt and generated text
         completions = []
-        for prompt, text in zip(prompts, decoded):
-            prompt_ids = self.tokenizer(prompt, add_special_tokens=False).input_ids
-            output_ids = self.tokenizer(text, add_special_tokens=False).input_ids
+        for i, output_ids in enumerate(outputs):
+            # Slice using the full width
+            generated_ids = output_ids[input_tensor_width:]
 
-            # extract only the generated part
-            generated_ids = output_ids[len(prompt_ids):]
-
-            # decode safely
             completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
             completions.append(completion)
 
@@ -119,7 +109,8 @@ class UnifiedPolicyEngine:
         # 🔍 DEBUG LOGGING HERE
         if self.debug:
             print("\n[UnifiedPolicyEngine.generate] Debug samples:")
-            for i, (p, full, c) in enumerate(zip(prompts, decoded, completions)):
+            full_decoded = self.tokenizer.batch_decode(outputs, skip_special_tokens=False)
+            for i, (p, full, c) in enumerate(zip(prompts, full_decoded, completions)):
                 print(f"\n--- Sample {i} ---")
                 print("PROMPT:\n", p)
                 print("\nFULL MODEL OUTPUT:\n", full)
@@ -152,7 +143,7 @@ class UnifiedPolicyEngine:
         # Tokenize everything
         inputs = self.tokenizer(
             full_texts,
-            add_special_tokens=True,
+            add_special_tokens=False,
             return_tensors="pt",
             padding=True,
             truncation=True,
@@ -166,7 +157,7 @@ class UnifiedPolicyEngine:
         # We re-tokenize just the prompts to find their length
         prompt_inputs = self.tokenizer(
             prompts,
-            add_special_tokens=True,
+            add_special_tokens=False,
             return_tensors="pt",
             padding=True,
             truncation=True,
@@ -194,11 +185,9 @@ class UnifiedPolicyEngine:
         ).squeeze(-1) # (B, Seq-1)
 
         # bos agnostic
-        bos_offset = 1 if self.tokenizer.bos_token_id is not None else 0
-        # Adjust start index to skip prompt + optional BOS
         mask = torch.zeros_like(token_log_probs_all)
         for i, p_len in enumerate(prompt_lens):
-            start_idx = p_len + bos_offset - 1  # minus 1 because of shift
+            start_idx = p_len - 1
             start_idx = max(start_idx, 0)
             mask[i, start_idx:] = 1.0
 

@@ -61,18 +61,7 @@ if __name__ == "__main__":
         config=trainer_cfg,
     )
 
-    # D. Dummy Data
-    # List of tasks. The Trainer iterates over this list.
-    dummy_dataloader = [
-        [
-            {"task_id": 1, "prompt": "What is 20 + 22?", "solution_scalar": "42"},
-            {"task_id": 2, "prompt": "What is 50 - 8?", "solution_scalar": "42"},
-        ],
-        [
-            {"task_id": 3, "prompt": "What is 6 * 7?", "solution_scalar": "42"},
-            {"task_id": 4, "prompt": "What is 84 / 2?", "solution_scalar": "42"},
-        ]
-    ]
+    # D. Data
     dataset = SimdBenchDataset('data/processed/simd-all-avx.jsonl')
     dataloader = SimdBenchDataLoader(dataset)
 

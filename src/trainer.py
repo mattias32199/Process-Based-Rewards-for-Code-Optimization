@@ -35,7 +35,7 @@ class MultiTurnRLTrainer():
         for epoch in range(self.config.epochs): # loop through epochs
             for batch_idx, batch in enumerate(dataloader): # loop through batches
                 # 1. per-batch rollout
-                trajectories = self.rollout(batch)
+                trajectories = self.rollout(batch['tasks'])
 
                 # 2. calculate policy gradients to update policy
                 # on-policy update

@@ -144,9 +144,9 @@ class MultiTurnRLTrainer():
             """
             eval should contain 'outcome' and 'feedback'
             """
-            simd_entrypoint = env['context_buffer']['task']['simd_entrypoint']
+            entrypoint_simd = env['context_buffer']['task']['entrypoint_simd']
             # parse model response
-            eval = parse_response(response, simd_entrypoint, self.use_cot)
+            eval = parse_response(response, entrypoint_simd, self.use_cot)
             sol_simd = eval['simd_solution']
             cot = eval['cot']
 

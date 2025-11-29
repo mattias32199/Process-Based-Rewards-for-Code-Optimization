@@ -143,7 +143,7 @@ def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str
             SOLUTION_SCALAR=task['solution_scalar'],
             INITIAL_PROMPT=task['prompt'],
             INTRINSIC=task['intrinsic'],
-            # ENTRYPOINT=task['simd_entrypoint'],
+            # ENTRYPOINT=task['entrypoint_simd'],
             PREVIOUS_ATTEMPTS=""
         )
     else: # if not first turn -> inject feedback from previous attempts
@@ -157,7 +157,7 @@ def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str
         )
     return user_prompt
 
-def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> dict:
+def parse_response(response:str, entrypoint_simd:str, use_cot: bool=False) -> dict:
     cot, simd_solution = None, None
     parse_solution, parse_cot = False, False
     correct_format = True
@@ -171,12 +171,12 @@ def parse_response(response:str, simd_entrypoint:str, use_cot: bool=False) -> di
         extracted = code_tag_match.group(1).strip()
         if extracted:
             simd_solution = extracted
-            if simd_entrypoint: # special case to skip validation
-                parse_solution = simd_entrypoint in extracted
+            if entrypoint_simd: # special case to skip validation
+                parse_solution = entrypoint_simd in extracted
             else:
                 parse_solution = True
             if not parse_solution:
-                feedback.append("simd_entrypoint not found inside <simd_code> block")
+                feedback.append("entrypoint_simd not found inside <simd_code> block")
                 correct_format = False
         else:
             feedback.append("<simd_code> block present but empty")

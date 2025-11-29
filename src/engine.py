@@ -2,6 +2,7 @@
 # TODO: install unsloth vllm
 import os
 os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
+import unsloth
 import torch
 from vllm import SamplingParams
 from unsloth import FastLanguageModel

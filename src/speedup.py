@@ -1,6 +1,4 @@
-# /src/verifiers
-import re
-import subprocess
+# /src/speedup.py
 
 BENCHMARK_TEMPLATE = """
 #include <immintrin.h>
@@ -33,18 +31,39 @@ BENCHMARK_TEMPLATE = """
 
 class Random {
 public:
-    std::mt19937 gen{42};  // fixed seed
+    std::mt19937 gen;
 
+    // 1. Default Constructor (Fixed seed)
+    Random() : gen(42) {}
+
+    // 2. Seed Constructor (The FIX for your specific error)
+    Random(int seed) : gen(seed) {}
+
+    // 3. randint Helper (Needed by many SimdBench/TSVC tasks)
+    template<typename T>
+    T randint(T min, T max) {
+        if constexpr (std::is_integral_v<T>) {
+            if (min > max) std::swap(min, max);
+            std::uniform_int_distribution<T> dis(min, max);
+            return dis(gen);
+        } else {
+            if (min > max) std::swap(min, max);
+            std::uniform_real_distribution<T> dis(min, max);
+            return dis(gen);
+        }
+    }
+
+    // 4. Vector Initializer
     template<typename T>
     void initialize_vector_with_random_values(std::vector<T>& vec, bool binary = false) {
         if (binary) {
-            // Binary values: 0 or 1
             std::uniform_int_distribution<int> dis(0, 1);
             for (auto& v : vec) {
                 v = static_cast<T>(dis(gen));
             }
         } else {
-            // Regular values: -100 to 100
+            // Using a broader range often helps catch edge cases better than -100..100
+            // but sticking to your logic for consistency:
             std::uniform_int_distribution<int> dis(-100, 100);
             for (auto& v : vec) {
                 v = static_cast<T>(dis(gen));

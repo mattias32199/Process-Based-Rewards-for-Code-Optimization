@@ -17,6 +17,18 @@ BENCHMARK_TEMPLATE = """
 #include <type_traits>
 #include <cstring>
 
+#ifndef DEFAULT_SEED
+#define DEFAULT_SEED 12345
+#endif
+
+#ifndef Small_Arg_1D
+#define Small_Arg_1D 128
+#endif
+
+#ifndef ERROR_PRINT
+#define ERROR_PRINT true
+#endif
+
 #include <benchmark/benchmark.h>
 
 class Random {

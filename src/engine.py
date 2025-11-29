@@ -25,7 +25,6 @@ class UnifiedPolicyEngine:
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
             gpu_memory_utilization = 0.95
-
         )
 
         if self.debug:

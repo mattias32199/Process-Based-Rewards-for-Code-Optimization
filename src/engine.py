@@ -24,7 +24,8 @@ class UnifiedPolicyEngine:
             max_seq_length=self.max_seq_length,
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
-            gpu_memory_utilization = 0.95
+            gpu_memory_utilization = 0.95,
+            fast_inference=True
         )
 
         if self.debug:
@@ -74,6 +75,7 @@ class UnifiedPolicyEngine:
         self.model.eval()
         # Inference requires left padding
         self.tokenizer.padding_side = "left"
+        torch.cuda.empty_cache() # clear cache
 
         # prepare batch
         inputs = self.tokenizer(
@@ -85,7 +87,8 @@ class UnifiedPolicyEngine:
         ).to(self.device)
 
         # generate responses
-        with torch.no_grad():
+        # with torch.no_grad():
+        with torch.inference_mode():
             outputs = self.model.generate(
                 **inputs,
                 max_new_tokens=kwargs.get("max_new_tokens", 512),
@@ -105,7 +108,8 @@ class UnifiedPolicyEngine:
 
             completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
             completions.append(completion)
-
+        del outputs, inputs
+        torch.cuda.empty_cache()
 
         # 🔍 DEBUG LOGGING HERE
         if self.debug:

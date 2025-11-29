@@ -40,6 +40,7 @@ if __name__ == "__main__":
         parallel_trajectories=2, # Batch size of 2
         max_new_tokens=512,       # Short generation
         temperature=0.8,
+        debug=True
     )
 
     # B. Initialize Engine (GPU)

@@ -16,12 +16,6 @@
 #include <type_traits>
 #include <cstring>
 #include <numeric> // Required for std::iota
-
-// file: utils.hpp
-#ifndef UTILS_HPP
-#define UTILS_HPP
-
-#include <iostream>
 #include <random>
 #include <vector>
 #include <algorithm>

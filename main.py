@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Use a small model and short sequence for quick testing
     model_cfg = ModelConfig(
         model_name="Qwen/Qwen2.5-Coder-1.5B-Instruct",
-        max_seq_length=4096
+        max_seq_length=2048
     )
 
     lora_cfg = LoraConfig(
@@ -25,7 +25,8 @@ if __name__ == "__main__":
         model = model_cfg,
         lora = lora_cfg,
         debug = True,
-        lr=5e-5
+        lr=5e-5,
+        gpu_memory_utilization = 0.3
     )
 
     gspo_cfg = GSPOConfig(
@@ -36,11 +37,12 @@ if __name__ == "__main__":
         engine=engine_cfg,
         gspo=gspo_cfg,
         epochs=1,                # 1 Epoch for testing
-        max_turns=1,             # Single turn per math problem
+        max_turns=4,             # Single turn per math problem
         parallel_trajectories=2, # Batch size of 2
         max_new_tokens=512,       # Short generation
         temperature=0.8,
-        debug=True
+        debug=True,
+        vram_verbose = True
     )
 
     # B. Initialize Engine (GPU)
@@ -69,7 +71,7 @@ if __name__ == "__main__":
 
     # D. Data
     dataset = SimdBenchDataset('data/processed/simd-all-avx.jsonl')
-    dataloader = SimdBenchDataLoader(dataset)
+    dataloader = SimdBenchDataLoader(dataset, batch_size = 2)
 
     # E. Run
     print(">>> Starting Training Loop...")

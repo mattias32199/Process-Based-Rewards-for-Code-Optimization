@@ -93,7 +93,7 @@ class SimdBenchDataLoader:
     def __init__(
         self,
         dataset,
-        batch_size: int = 8,  # num_tasks per batch
+        batch_size: int = 1,  # num_tasks per batch
         num_trajectories: int = 1,  # trajectories per task
         stratify_by: str = 'kernel_type',
         shuffle: bool = True,

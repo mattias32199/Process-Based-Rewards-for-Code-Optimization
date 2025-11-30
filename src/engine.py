@@ -1,7 +1,7 @@
 # Wraps model into policy
 # TODO: install unsloth vllm
 import os
-os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
+# os.environ["UNSLOTH_VLLM_STANDBY"] = "1" # unsloth optimization
 import unsloth
 import torch
 from vllm import SamplingParams
@@ -20,13 +20,15 @@ class UnifiedPolicyEngine:
         self.debug = config.debug
 
         # load model
+        print("GPU Memroy utilization",config.gpu_memory_utilization)
         self.model, self.tokenizer = FastLanguageModel.from_pretrained(
             model_name=self.config.model.model_name,
             max_seq_length=self.max_seq_length,
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
-            gpu_memory_utilization = 0.95,
-            fast_inference=True
+            gpu_memory_utilization = config.gpu_memory_utilization,
+            fast_inference=False
+            # conservativeness=0.25
         )
 
         if self.debug:
@@ -85,46 +87,46 @@ class UnifiedPolicyEngine:
         )
 
         # prepare batch
-        # inputs = self.tokenizer(
-        #     prompts,
-        #     return_tensors="pt",
-        #     padding=True,
-        #     truncation=True,
-        #     max_length=self.max_seq_length
-        # ).to(self.device)
+        inputs = self.tokenizer(
+            prompts,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=self.max_seq_length
+        ).to(self.device)
 
         # generate responses
         # with torch.no_grad():
         with torch.inference_mode():
-            # outputs = self.model.generate(
-            #     **inputs,
-            #     max_new_tokens=kwargs.get("max_new_tokens", 512),
-            #     do_sample=kwargs.get("do_sample", True),
-            #     temperature=kwargs.get("temperature", 0.7),
-            #     use_cache=True,
-            #     pad_token_id=self.tokenizer.pad_token_id,
-            #     eos_token_id=self.tokenizer.eos_token_id,
-            # )
-            outputs = self.model.fast_generate(
-                prompts,
-                sampling_params=sampling_params
+            outputs = self.model.generate(
+                **inputs,
+                max_new_tokens=kwargs.get("max_new_tokens", 512),
+                do_sample=kwargs.get("do_sample", True),
+                temperature=kwargs.get("temperature", 0.7),
+                use_cache=True,
+                pad_token_id=self.tokenizer.pad_token_id,
+                eos_token_id=self.tokenizer.eos_token_id,
             )
+            # outputs = self.model.fast_generate(
+            #     prompts,
+            #     sampling_params=sampling_params
+            # )
 
         # old
-        # input_tensor_width = inputs.input_ids.shape[1]
-        # completions = []
-        # for i, output_ids in enumerate(outputs):
-        #     # Slice using the full width
-        #     generated_ids = output_ids[input_tensor_width:]
+        input_tensor_width = inputs.input_ids.shape[1]
+        completions = []
+        for i, output_ids in enumerate(outputs):
+            # Slice using the full width
+            generated_ids = output_ids[input_tensor_width:]
 
-        #     completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
-        #     completions.append(completion)
+            completion = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+            completions.append(completion)
 
         # new
-        completions = []
-        for request_output in outputs:
-            generated_text = request_output.outputs[0].text
-            completions.append(generated_text)
+        # completions = []
+        # for request_output in outputs:
+        #     generated_text = request_output.outputs[0].text
+        #     completions.append(generated_text)
 
 
         # 🔍 DEBUG LOGGING HERE
@@ -133,7 +135,6 @@ class UnifiedPolicyEngine:
             for i, (p, full, c) in enumerate(zip(prompts, outputs, completions)):
                 print(f"\n--- Sample {i} ---")
                 print("PROMPT:\n", p)
-                print("\nFULL MODEL OUTPUT:\n", full)
                 print("\nCOMPLETION (after stripping prompt):\n", c, "...")
 
         torch.cuda.empty_cache()

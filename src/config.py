@@ -49,6 +49,7 @@ class EngineConfig:
     lr: float = 1e-5
     weight_decay: float = 0.01
     debug: bool = False
+    gpu_memory_utilization: float = 0.9
 
 
 @dataclass
@@ -69,3 +70,4 @@ class TrainerConfig:
     temperature: float = 0.7
     use_cot: bool = False
     debug: bool = False
+    vram_verbose: bool = False

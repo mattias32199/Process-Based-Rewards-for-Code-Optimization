@@ -1,8 +1,8 @@
 import os
 
 # Default paths (can be moved to config later)
-DEFAULT_INCLUDE_PATH = '/content/benchmark/include'
-DEFAULT_LIB_PATH = '/content/benchmark/build/src/libbenchmark.a'
+DEFAULT_INCLUDE_PATH = 'src/benchmark/include'
+DEFAULT_LIB_PATH = 'src/benchmark/build/src/libbenchmark.a'
 
 def check_google_benchmark(include_path=DEFAULT_INCLUDE_PATH, lib_path=DEFAULT_LIB_PATH):
     """

@@ -162,7 +162,7 @@ def construct_user_prompt(context_buffer: dict, turn: int, use_cot: bool) -> str
         )
     return user_prompt
 
-def parse_response(response:str, entrypoint_simd:str, use_cot: bool=False) -> dict:
+def parse_response(response:str, entrypoint_simd:str, task_id: str, use_cot: bool=False) -> dict:
     cot, simd_solution = None, None
     parse_solution, parse_cot = False, False
     correct_format = True

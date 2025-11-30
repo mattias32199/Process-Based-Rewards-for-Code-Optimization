@@ -26,6 +26,7 @@ class MultiTurnRLTrainer():
         self.parallel_trajectories = config.parallel_trajectories
         self.use_cot = config.use_cot
         self.debug = config.debug
+        self.vram_verbose = getattr(config, "vram_verbose", False)
 
 
     def train(self, dataloader):
@@ -38,23 +39,30 @@ class MultiTurnRLTrainer():
                 # 1. per-batch rollout
                 if self.debug:
                     print('batch size (num tasks in batch): ', len(batch['tasks']))
+                
+                self.log_vram(f"epoch={epoch} batch={batch_idx} BEFORE rollout")
                 trajectories = self.rollout(batch['tasks'])
+                self.log_vram(f"epoch={epoch} batch={batch_idx} AFTER rollout")
 
                 # 2. calculate policy gradients to update policy
                 # on-policy update
                 on_policy_loss, on_policy_metrics = self.update_policy(trajectories)
+                self.log_vram(f"epoch={epoch} batch={batch_idx} AFTER on-policy update")
                 # off-policy update
                 off_policy_loss, off_policy_metrics = self.update_policy(trajectories)
+                self.log_vram(f"epoch={epoch} batch={batch_idx} AFTER off-policy update")
+
 
                 # print metrics
-                print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
-                        f"Loss: {on_policy_loss:.4f} | "
-                        f"KL: {on_policy_metrics['actor/ppo_kl']:.4f} | "
-                        f"Clip: {on_policy_metrics['actor/pg_clipfrac']:.4f}")
-                print(f"[Epoch {epoch} Step {batch_idx}] Off-Policy "
-                        f"Loss: {off_policy_loss:.4f} | "
-                        f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
-                        f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
+                if self.debug:
+                    print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
+                            f"Loss: {on_policy_loss:.4f} | "
+                            f"KL: {on_policy_metrics['actor/ppo_kl']:.4f} | "
+                            f"Clip: {on_policy_metrics['actor/pg_clipfrac']:.4f}")
+                    print(f"[Epoch {epoch} Step {batch_idx}] Off-Policy "
+                            f"Loss: {off_policy_loss:.4f} | "
+                            f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
+                            f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
 
                 del trajectories
 
@@ -70,6 +78,12 @@ class MultiTurnRLTrainer():
         for turn in range(self.max_turns):
             # A. construct prompts
             prompts = self.construct_prompts(envs, turn)
+
+            if self.debug:
+                print(f"turn {turn}")
+                print("***********************")
+                print(len(prompts),len(prompts[0]))
+                print("***********************")
 
             # B. batched response generation
             responses = self.engine.generate_responses(
@@ -149,7 +163,8 @@ class MultiTurnRLTrainer():
             """
             entrypoint_simd = env['context_buffer']['task']['entrypoint_simd']
             # parse model response
-            eval = parse_response(response, entrypoint_simd, self.use_cot)
+            task_id = env['context_buffer']['task']['task_id']
+            eval = parse_response(response, entrypoint_simd, task_id , self.use_cot)
             sol_simd = eval['simd_solution']
             cot = eval['cot']
 
@@ -237,3 +252,21 @@ class MultiTurnRLTrainer():
             'advantages': advantages,
             'final_mask': final_mask
         }
+    
+    # --- Helper ----
+
+    def log_vram(self, tag: str):
+        if not (self.vram_verbose and torch.cuda.is_available()):
+            return
+
+        device = self.engine.device if hasattr(self.engine, "device") else torch.device("cuda")
+        allocated = torch.cuda.memory_allocated(device) / (1024 ** 3)
+        reserved  = torch.cuda.memory_reserved(device) / (1024 ** 3)
+        max_alloc = torch.cuda.max_memory_allocated(device) / (1024 ** 3)
+
+        print(
+            f"[VRAM][{tag}] "
+            f"allocated={allocated:.2f} GB, "
+            f"reserved={reserved:.2f} GB, "
+            f"max_alloc={max_alloc:.2f} GB"
+        )

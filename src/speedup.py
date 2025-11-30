@@ -1,80 +1,10 @@
 # /src/speedup.py
 import re
 import subprocess
+from pathlib import Path
 
 BENCHMARK_TEMPLATE = """
-#include <immintrin.h>
-#include <x86intrin.h>
-#include <cstdint>
-#include <cstdlib>
-#include <cstdio>
-#include <vector>
-#include <cmath>
-#include <iostream>
-#include <random>
-#include <algorithm>   // For std::swap
-#include <limits>      // For std::numeric_limits
-#include <type_traits>
-#include <cstring>
-
-#ifndef DEFAULT_SEED
-#define DEFAULT_SEED 12345
-#endif
-
-#ifndef Small_Arg_1D
-#define Small_Arg_1D 128
-#endif
-
-#ifndef ERROR_PRINT
-#define ERROR_PRINT true
-#endif
-
 #include <benchmark/benchmark.h>
-
-class Random {
-public:
-    std::mt19937 gen;
-
-    // 1. Default Constructor (Fixed seed)
-    Random() : gen(42) {}
-
-    // 2. Seed Constructor (The FIX for your specific error)
-    Random(int seed) : gen(seed) {}
-
-    // 3. randint Helper (Needed by many SimdBench/TSVC tasks)
-    template<typename T>
-    T randint(T min, T max) {
-        if constexpr (std::is_integral_v<T>) {
-            if (min > max) std::swap(min, max);
-            std::uniform_int_distribution<T> dis(min, max);
-            return dis(gen);
-        } else {
-            if (min > max) std::swap(min, max);
-            std::uniform_real_distribution<T> dis(min, max);
-            return dis(gen);
-        }
-    }
-
-    // 4. Vector Initializer
-    template<typename T>
-    void initialize_vector_with_random_values(std::vector<T>& vec, bool binary = false) {
-        if (binary) {
-            std::uniform_int_distribution<int> dis(0, 1);
-            for (auto& v : vec) {
-                v = static_cast<T>(dis(gen));
-            }
-        } else {
-            // Using a broader range often helps catch edge cases better than -100..100
-            // but sticking to your logic for consistency:
-            std::uniform_int_distribution<int> dis(-100, 100);
-            for (auto& v : vec) {
-                v = static_cast<T>(dis(gen));
-            }
-        }
-    }
-};
-
-#define Large_Args_1D Arg(1024)->Arg(16384)
 
 // scalar function
 {{SCALAR_CODE}}
@@ -125,11 +55,14 @@ def verify_speedup(
     with open('test.cpp', 'w') as f:
         f.write(benchmark_code)
 
+    header_path = Path(__file__).parent / "utils.hpp"
+
     # Compile with local benchmark
     compile_result = subprocess.run(
         ['g++', '-std=c++17', '-O3', '-mavx2',
             '-I/content/benchmark/include',
             'test.cpp',
+            f"-include", str(header_path),
             benchmark_path,
             '-o', 'test',
             '-lpthread'],

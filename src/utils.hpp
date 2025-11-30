@@ -21,6 +21,7 @@
 #include <algorithm>
 #include <cassert>
 #include <cfloat>
+#include <map>
 
 #ifndef ITERATIONS
 #define ITERATIONS 1000

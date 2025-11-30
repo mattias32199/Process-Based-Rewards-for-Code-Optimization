@@ -20,6 +20,7 @@
 #include <vector>
 #include <algorithm>
 #include <cassert>
+#include <cfloat>
 
 #ifndef ITERATIONS
 #define ITERATIONS 1000

@@ -4,8 +4,8 @@ arch_list = ["x86", "arm", "riscv"]
 intrin_list = ["SSE", "AVX", "SVE", "Neon", "RVV"]
 cpp_compilers = {
     "scalar": "/usr/bin/clang++",
-    "SSE": "/usr/bin/clang++",
-    "AVX": "/usr/bin/clang++",
+    "SSE": "/usr/bin/g++",
+    "AVX": "/usr/bin/g++",
     "SVE": "/home/llvm-19.1.7/arm/bin/clang++",
     "Neon": "/home/llvm-19.1.7/arm/bin/clang++",
     "RVV": "/home/llvm-19.1.7/riscv64/bin/clang++"

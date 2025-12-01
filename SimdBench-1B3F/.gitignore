@@ -33,3 +33,12 @@ results.json
 *.so[0-9.]*
 output/
 *.out
+
+# Python virtual environments
+venv/
+env/
+.venv/
+ENV/
+*.venv/
+__pycache__/
+*.egg-info/

@@ -1,3 +1,4 @@
+import os
 import json
 import tqdm
 from typing import Dict
@@ -8,11 +9,12 @@ from simdbench.data import read_problems, simdbench_scalar, SIMD_BENCH
 from simdbench.global_var import intrin_list
 
 client = OpenAI(
-    api_key="unused",                
-    base_url="http://localhost:8000/v1"
+    base_url="https://router.huggingface.co/v1",
+    api_key=os.environ.get("HF_API_KEY"),
 )
+
 iteration = 5
-model = "llama-3-8b-instruct"
+model = "Qwen2.5-1.5B-Instruct"
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def request_llm_once(task: Dict):

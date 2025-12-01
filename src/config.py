@@ -69,3 +69,4 @@ class TrainerConfig:
     temperature: float = 0.7
     use_cot: bool = False
     debug: bool = False
+    micro_batch_size: int = 8

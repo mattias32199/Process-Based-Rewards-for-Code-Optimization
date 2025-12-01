@@ -1,3 +1,4 @@
+# src/engine.py
 # Wraps model into policy
 # TODO: install unsloth vllm
 import os
@@ -198,15 +199,13 @@ class UnifiedPolicyEngine:
         logits = logits[:, :-1, :]
         target_ids = input_ids[:, 1:]
 
-        # Compute Log Softmax
-        log_probs_all = torch.log_softmax(logits, dim=-1)
 
-        # Gather log prob of the actual target tokens
-        token_log_probs_all = torch.gather(
-            log_probs_all,
-            dim=-1,
-            index=target_ids.unsqueeze(-1)
-        ).squeeze(-1) # (B, Seq-1)
+
+        loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
+        token_log_probs_all = -loss_fct(
+            logits.view(-1, logits.size(-1)),
+            target_ids.view(-1)
+        ).view(target_ids.shape)
 
         # bos agnostic
         mask = torch.zeros_like(token_log_probs_all)

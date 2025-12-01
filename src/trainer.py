@@ -6,6 +6,7 @@ from src.config import TrainerConfig
 from src.reward_util import compute_immediate_reward, compute_advantages
 from src.rl_util import compute_policy_loss_gspo
 from src.train_util import construct_user_prompt, get_system_prompt, parse_response
+from src.metrics_util import compute_rollout_entropy, compute_reward_variance, compute_average_reward, print_collapse_metrics
 
 class MultiTurnRLTrainer():
     def __init__(self,
@@ -38,16 +39,48 @@ class MultiTurnRLTrainer():
                 # 1. per-batch rollout
                 if self.debug:
                     print('batch size (num tasks in batch): ', len(batch['tasks']))
-                trajectories = self.rollout(batch['tasks'])
+                trajectories, rollout_log_probs, rollout_mask = self.rollout(batch['tasks'])
 
                 # 2. calculate policy gradients to update policy
                 # on-policy update
-                on_policy_loss, on_policy_metrics = self.update_policy(trajectories)
+                on_policy_loss, on_policy_metrics, on_policy_grad_norm = self.update_policy(trajectories)
                 # off-policy update
-                off_policy_loss, off_policy_metrics = self.update_policy(trajectories)
+                off_policy_loss, off_policy_metrics, off_policy_grad_norm = self.update_policy(trajectories)
 
-                # print metrics
-                print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
+                # 3. Compute model collapse detection metrics
+                # Compute rollout entropy
+                rollout_entropy = compute_rollout_entropy(rollout_log_probs, rollout_mask)
+                
+                # Compute reward variance and average reward
+                reward_variance = compute_reward_variance(trajectories, group_by='task_id')
+                avg_reward_stats = compute_average_reward(trajectories)
+                
+                # Organize metrics for on-policy
+                on_policy_collapse_metrics = {
+                    'gradient_norm': on_policy_grad_norm,
+                    'rollout_entropy': rollout_entropy,
+                    'reward_variance': reward_variance['overall_std'],
+                    'num_groups': reward_variance['group_count'],
+                    'avg_reward': avg_reward_stats['mean'],
+                    'reward_std': avg_reward_stats['std'],
+                    'reward_min': avg_reward_stats['min'],
+                    'reward_max': avg_reward_stats['max']
+                }
+                
+                # Organize metrics for off-policy
+                off_policy_collapse_metrics = {
+                    'gradient_norm': off_policy_grad_norm,
+                    'rollout_entropy': rollout_entropy,
+                    'reward_variance': reward_variance['overall_std'],
+                    'num_groups': reward_variance['group_count'],
+                    'avg_reward': avg_reward_stats['mean'],
+                    'reward_std': avg_reward_stats['std'],
+                    'reward_min': avg_reward_stats['min'],
+                    'reward_max': avg_reward_stats['max']
+                }
+
+                # 4. Print traditional metrics
+                print(f"[Epoch {epoch} Step {batch_idx}] On-Policy "
                         f"Loss: {on_policy_loss:.4f} | "
                         f"KL: {on_policy_metrics['actor/ppo_kl']:.4f} | "
                         f"Clip: {on_policy_metrics['actor/pg_clipfrac']:.4f}")
@@ -55,11 +88,15 @@ class MultiTurnRLTrainer():
                         f"Loss: {off_policy_loss:.4f} | "
                         f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
                         f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
+                
+                # 5. Print collapse detection metrics
+                print_collapse_metrics(on_policy_collapse_metrics, epoch, batch_idx, prefix="On-Policy")
+                print_collapse_metrics(off_policy_collapse_metrics, epoch, batch_idx, prefix="Off-Policy")
 
                 del trajectories
 
 
-    def rollout(self, batch: list[dict]) -> list[dict]:
+    def rollout(self, batch: list[dict]) -> tuple[list[dict], torch.Tensor, torch.Tensor]:
         """
         batch -> tasks -> model -> trajectories
         """
@@ -97,7 +134,8 @@ class MultiTurnRLTrainer():
             t["token_log_probs_old"] = old_log_probs[i].detach().cpu()
             t["response_mask"] = masks[i].detach().cpu()
 
-        return trajectories
+        # Return trajectories along with log probs and masks for entropy calculation
+        return trajectories, old_log_probs, masks
 
 
     def update_policy(self, trajectories: list[dict]):
@@ -116,10 +154,10 @@ class MultiTurnRLTrainer():
             config=self.config.gspo
         )
 
-        # D. Update training engine
-        loss_val = self.engine.update_training_engine(pg_loss)
+        # D. Update training engine and get gradient norm
+        loss_val, grad_norm = self.engine.update_training_engine(pg_loss)
 
-        return loss_val, metrics
+        return loss_val, metrics, grad_norm
 
     def construct_prompts(self, envs, turn):
         """

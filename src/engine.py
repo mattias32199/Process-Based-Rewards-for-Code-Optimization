@@ -237,22 +237,33 @@ class UnifiedPolicyEngine:
 
         return token_log_probs, final_mask
 
-    def update_training_engine(self, loss) -> float:
+    def update_training_engine(self, loss) -> tuple[float, float]:
         """
         Performs a single gradient update step.
         Args:
             loss
         Returns:
             loss: float (The training loss for logging)
+            grad_norm: float (Gradient norm for stability tracking)
         """
         # backward pass
         self.optimizer.zero_grad()
         loss.backward()
+        
+        # Capture gradient norm BEFORE clipping (for collapse detection)
+        grad_norm = 0.0
+        for p in self.model.parameters():
+            if p.grad is not None:
+                param_norm = p.grad.data.norm(2)
+                grad_norm += param_norm.item() ** 2
+        grad_norm = grad_norm ** 0.5
+        
         # gradient clipping
         torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
         self.optimizer.step()
 
-        return loss.item()
+        return loss.item(), grad_norm
+
 
     def set_train_mode(self):
         FastLanguageModel.for_training(self.model)

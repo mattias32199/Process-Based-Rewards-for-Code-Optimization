@@ -1,6 +1,28 @@
+# Core dependencies from Colab setup
+torch>=2.4.0
+torchvision
+torchaudio
+numpy
+pillow
+bitsandbytes
+xformers
+triton
+
+# Unsloth and vLLM (install separately - see SETUP_GUIDE.md)
+# unsloth - install via: pip install "unsloth[cu118-torch240] @ git+https://github.com/unslothai/unsloth.git"
+# vllm==0.10.2 - install separately
+
+# Transformers and TRL
+transformers==4.56.2
+# trl==0.22.2 - install with --no-deps flag
+
+# Project dependencies
 tqdm
 fire
-numpy
 psutil
-futures
 tabulate
+
+# Additional utilities
+accelerate
+peft
+datasets

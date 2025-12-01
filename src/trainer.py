@@ -27,6 +27,7 @@ class MultiTurnRLTrainer():
         self.parallel_trajectories = config.parallel_trajectories
         self.use_cot = config.use_cot
         self.debug = config.debug
+        self.mini_batch_size = config.mini_batch_size
 
 
     def train(self, dataloader):
@@ -92,7 +93,9 @@ class MultiTurnRLTrainer():
 
         # F. Compute "old" (on-policy) logprobs
         # extract prompts and responses
-        old_log_probs, masks = self.get_log_probs(trajectories, requires_grad=False)
+        old_log_probs, masks = self.get_log_probs(
+            trajectories, requires_grad=False, mini_batch_size=self.mini_batch_size
+        )
         # repack logprobs and masks
         for i, t in enumerate(trajectories):
             t["token_log_probs_old"] = old_log_probs[i].detach().cpu()
@@ -103,7 +106,9 @@ class MultiTurnRLTrainer():
 
     def update_policy(self, trajectories: list[dict]):
         # A. Calculate current/new log probs
-        current_log_probs, current_mask = self.get_log_probs(trajectories, requires_grad=True)
+        current_log_probs, current_mask = self.get_log_probs(
+            trajectories, requires_grad=True, mini_batch_size=self.mini_batch_size
+        )
 
         # B. Process trajectories for policy loss calculation
         gspo_variables = self.process_trajectories(trajectories, current_log_probs, current_mask)
@@ -195,7 +200,7 @@ class MultiTurnRLTrainer():
                 })
         return envs
 
-    def get_log_probs(self, trajectories, requires_grad, mini_batch_size=4):
+    def get_log_probs(self, trajectories, requires_grad, mini_batch_size=8):
         """
         Batched wrapper for engine.generate_log_probs to prevent OOM.
         Direct replacement for the original method.

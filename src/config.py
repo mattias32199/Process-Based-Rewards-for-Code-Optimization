@@ -71,3 +71,4 @@ class TrainerConfig:
     use_cot: bool = False
     debug: bool = False
     vram_verbose: bool = False
+    save_dir: str | None = None

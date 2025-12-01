@@ -65,6 +65,8 @@ class MultiTurnRLTrainer():
                             f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
 
                 del trajectories
+        if getattr(self.config, "save_dir", None) is not None:
+            self.engine.save_model(self.config.save_dir)
 
 
     def rollout(self, batch: list[dict]) -> list[dict]:
@@ -112,6 +114,7 @@ class MultiTurnRLTrainer():
             t["response_mask"] = masks[i].detach().cpu()
 
         return trajectories
+
 
 
     def update_policy(self, trajectories: list[dict]):
@@ -252,7 +255,7 @@ class MultiTurnRLTrainer():
             'advantages': advantages,
             'final_mask': final_mask
         }
-    
+
     # --- Helper ----
 
     def log_vram(self, tag: str):

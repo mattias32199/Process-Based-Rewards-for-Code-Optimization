@@ -36,13 +36,14 @@ if __name__ == "__main__":
     trainer_cfg = TrainerConfig(
         engine=engine_cfg,
         gspo=gspo_cfg,
-        epochs=1,                # 1 Epoch for testing
-        max_turns=4,             # Single turn per math problem
+        epochs=3,                # 1 Epoch for testing
+        max_turns=3,             # Single turn per math problem
         parallel_trajectories=2, # Batch size of 2
         max_new_tokens=512,       # Short generation
         temperature=0.8,
         debug=True,
-        vram_verbose = True
+        vram_verbose = True,
+        save_dir="lora"
     )
 
     # B. Initialize Engine (GPU)

@@ -2,6 +2,7 @@
 import re
 import subprocess
 from pathlib import Path
+import json
 
 BENCHMARK_TEMPLATE = """
 #include <benchmark/benchmark.h>
@@ -80,7 +81,11 @@ def verify_speedup(
 
     else:
         # run benchmark
-        benchmark_result = subprocess.run(['./test'], capture_output=True, text=True)
+        benchmark_result = subprocess.run(
+                ['./test', '--benchmark_format=json'], # Add this flag
+                capture_output=True,
+                text=True
+            )
 
         if benchmark_result.returncode != 0:
             success = False
@@ -90,22 +95,28 @@ def verify_speedup(
             avg_speedup = None
 
         else:
+            bench_data = json.loads(benchmark_result.stdout)
+
             scalar_times = {}
             simd_times = {}
 
-            pattern = r'(\w+)/(\d+)\s+(\d+)\s+ns'
+            # 3. Iterate over the 'benchmarks' list in the JSON
+            for item in bench_data['benchmarks']:
+                # name comes out like "Scalar/1024"
+                name_full = item['name']
 
-            for line in benchmark_result.stdout.split('\n'):
-                match = re.search(pattern, line)
-                if match:
-                    name = match.group(1)
-                    size = int(match.group(2))
-                    time_ns = float(match.group(3))
+                # Split "Scalar/1024" -> ["Scalar", "1024"]
+                parts = name_full.split('/')
+                func_name = parts[0]
+                size = int(parts[1])
 
-                    if name == 'Scalar':
-                        scalar_times[size] = time_ns
-                    elif name == 'SIMD':
-                        simd_times[size] = time_ns
+                # Google benchmark provides 'real_time' (wall clock) or 'cpu_time'
+                time_ns = float(item['cpu_time'])
+
+                if func_name == 'Scalar':
+                    scalar_times[size] = time_ns
+                elif func_name == 'SIMD':
+                    simd_times[size] = time_ns
 
             # Calculate speedups
             speedups = {}

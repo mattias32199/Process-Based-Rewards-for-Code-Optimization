@@ -126,7 +126,7 @@ def verify_speedup(
                     speedups[size] = speedup
 
             # Calculate average
-            if speedup:
+            if speedups:
                 avg_speedup = sum(speedups.values()) / len(speedups)
             else:
                 avg_speedup = 0.0

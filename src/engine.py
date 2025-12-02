@@ -25,7 +25,7 @@ class UnifiedPolicyEngine:
             max_seq_length=self.max_seq_length,
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
-            gpu_memory_utilization = 0.95,
+            gpu_memory_utilization = 0.6,
             fast_inference=True
         )
 
@@ -240,30 +240,21 @@ class UnifiedPolicyEngine:
     def update_training_engine(self, loss) -> tuple[float, float]:
         """
         Performs a single gradient update step.
-        Args:
-            loss
-        Returns:
-            loss: float (The training loss for logging)
-            grad_norm: float (Gradient norm for stability tracking)
         """
-        # backward pass
+        # 1. Backward pass
         self.optimizer.zero_grad()
         loss.backward()
         
-        # Capture gradient norm BEFORE clipping (for collapse detection)
-        grad_norm = 0.0
-        for p in self.model.parameters():
-            if p.grad is not None:
-                param_norm = p.grad.data.norm(2)
-                grad_norm += param_norm.item() ** 2
-        grad_norm = grad_norm ** 0.5
-        
-        # gradient clipping
-        torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
+        # 2. Gradient clipping & Norm tracking
+        # clip_grad_norm_ returns the total norm of the parameters (tensor)
+        # We capture this for your "collapse detection" metric
+        grad_norm_tensor = torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
+        grad_norm = grad_norm_tensor.item()
+
+        # 3. Optimizer step
         self.optimizer.step()
 
         return loss.item(), grad_norm
-
 
     def set_train_mode(self):
         FastLanguageModel.for_training(self.model)

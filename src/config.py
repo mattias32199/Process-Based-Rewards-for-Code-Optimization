@@ -14,6 +14,16 @@ TrainerConfig
 """
 
 @dataclass
+class PrintConfig:
+    """
+    Config for controlling what gets printed out
+    """
+    prompts_and_completions: bool = False
+    log_probs: bool = False
+    reward_and_speedup : bool = False
+
+
+@dataclass
 class ModelConfig:
     """
     Config for initalizing FastLanguageModel (pretrained model)
@@ -63,6 +73,7 @@ class GSPOConfig: # ?
 class TrainerConfig:
     engine: EngineConfig
     gspo: GSPOConfig
+    print_config: PrintConfig
     epochs: int = 1
     max_turns: int = 4
     parallel_trajectories: int = 2

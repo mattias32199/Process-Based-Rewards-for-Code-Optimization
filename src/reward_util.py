@@ -1,7 +1,7 @@
 # src/reward_util.py
 import numpy as np
 
-def compute_immediate_reward(eval: dict) -> float:
+def compute_immediate_reward(eval: dict, print_rewards=False) -> float:
     """
     Computes immediate reward
     0.3*correctness + 1*speedup
@@ -23,6 +23,8 @@ def compute_immediate_reward(eval: dict) -> float:
                 print(e)
                 raise NotImplementedError
     print(f"{eval['task_id']}\t{reward}\tavg_speedup: {avg_speedup}")
+    if reward == 0.3:
+        print(eval)
     return reward
 
 

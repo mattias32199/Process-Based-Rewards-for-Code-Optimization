@@ -17,10 +17,11 @@ class MultiTurnRLTrainer():
         """
         # config yaml
         self.config = config
+        self.print_config = config.print_config
 
         # initialize training/inference engine
         self.config.engine.debug = self.config.debug
-        self.engine = UnifiedPolicyEngine(config.engine)
+        self.engine = UnifiedPolicyEngine(config.engine, config.print_config)
         #
 
         # retrieve training config
@@ -166,7 +167,7 @@ class MultiTurnRLTrainer():
                 )
             eval['task_id'] = entrypoint_simd = env['context_buffer']['task']['task_id']
             # immediate reward
-            reward = compute_immediate_reward(eval)
+            reward = compute_immediate_reward(eval, self.print_config.reward_and_speedup)
 
             # Update buffers
             env["context_buffer"]["turns"].append({

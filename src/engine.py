@@ -7,14 +7,16 @@ import unsloth
 import torch
 from vllm import SamplingParams
 from unsloth import FastLanguageModel
-from src.config import EngineConfig
+from src.config import EngineConfig, PrintConfig
 
 class UnifiedPolicyEngine:
     def __init__(
         self,
-        config: EngineConfig
+        config: EngineConfig,
+        print_config: PrintConfig
     ):
         self.config = config
+        self.print_config = print_config
         self.device = "cuda"
         self.learning_rate = self.config.lr
         self.max_seq_length = config.model.max_seq_length
@@ -130,7 +132,7 @@ class UnifiedPolicyEngine:
 
 
         # 🔍 DEBUG LOGGING HERE
-        if self.debug:
+        if self.print_config.prompts_and_completions:
             print("\n[UnifiedPolicyEngine.generate] Debug samples:")
             for i, (p, full, c) in enumerate(zip(prompts, outputs, completions)):
                 print(f"\n--- Sample {i} ---")
@@ -219,7 +221,7 @@ class UnifiedPolicyEngine:
         # Zero out logprobs for prompt/padding so they don't affect sums
         token_log_probs = token_log_probs_all * final_mask
 
-        if self.debug:
+        if self.print_config.log_probs:
             with torch.no_grad():
                 mask_counts = final_mask.sum(dim=1)
                 print("\n[get_batch_log_probs] batch size:", final_mask.size(0))

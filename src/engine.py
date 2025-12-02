@@ -26,8 +26,8 @@ class UnifiedPolicyEngine:
             max_seq_length=self.max_seq_length,
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
-            gpu_memory_utilization = config.gpu_memory_utilization, # 0.95
-            enable_sleep_mode=config.vllm_sleep,
+            gpu_memory_utilization = config.gpu_memory_utilization, # 0.95, 0.6
+            # enable_sleep_mode=config.vllm_sleep,
             fast_inference=True
         )
 

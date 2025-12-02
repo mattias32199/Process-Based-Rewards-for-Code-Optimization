@@ -1,3 +1,4 @@
+# src/engine.py
 # Wraps model into policy
 # TODO: install unsloth vllm
 import os
@@ -200,17 +201,15 @@ class UnifiedPolicyEngine:
         logits = logits[:, :-1, :]      # (B, L-1, V)
         target_ids = input_ids[:, 1:]   # (B, L-1)
 
-        B, T, V = logits.shape
+        # Compute Log Softmax
+        log_probs_all = torch.log_softmax(logits, dim=-1)
 
-        # ---- MEMORY-SAFE LOG PROBS ----
-        # CrossEntropyLoss = -log_softmax + gather, fused & without storing full log_probs_all
-        loss_flat = F.cross_entropy(
-            logits.reshape(-1, V),         # (B*T, V)
-            target_ids.reshape(-1),        # (B*T,)
-            reduction="none",
-        )                                  # (B*T,)
-        # negative loss = log p(y | x)
-        token_log_probs_all = -loss_flat.view(B, T)  # (B, T)
+        # Gather log prob of the actual target tokens
+        token_log_probs_all = torch.gather(
+            log_probs_all,
+            dim=-1,
+            index=target_ids.unsqueeze(-1)
+        ).squeeze(-1) # (B, Seq-1)
 
         # ---- Build mask for response tokens only ----
         # mask: 1 where we care about response tokens, 0 elsewhere

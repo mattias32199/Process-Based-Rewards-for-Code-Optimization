@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Use a small model and short sequence for quick testing
     model_cfg = ModelConfig(
         model_name="Qwen/Qwen2.5-Coder-1.5B-Instruct",
-        max_seq_length=2048
+        max_seq_length=4096
     )
 
     lora_cfg = LoraConfig(
@@ -82,3 +82,4 @@ if __name__ == "__main__":
     # engine.model.save_pretrained("debug_output_lora")
     # engine.tokenizer.save_pretrained("debug_output_lora")
     print(">>> Saved to 'debug_output_lora'")
+

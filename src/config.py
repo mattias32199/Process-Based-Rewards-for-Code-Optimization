@@ -72,3 +72,4 @@ class TrainerConfig:
     debug: bool = False
     vram_verbose: bool = False
     save_dir: str | None = None
+    mini_batch_size: int = 8

@@ -5,119 +5,6 @@ import re
 from pathlib import Path
 
 TEMPLATE = """
-#include <immintrin.h>
-#include <x86intrin.h>
-#include <cstdint>
-#include <cstdlib>
-#include <cstdio>
-#include <vector>
-#include <cmath>
-#include <iostream>
-#include <random>
-#include <algorithm>   // For std::swap
-#include <limits>      // For std::numeric_limits
-#include <type_traits>
-#include <cstring>
-
-// Constants
-#define ITERATIONS {ITERATIONS}
-#define Small_Arg_1D 128
-#define ERROR_PRINT true
-
-// Random number generator utility
-class Random {{
-private:
-    std::mt19937_64 gen;
-    std::uniform_int_distribution<int64_t> int_dist;
-    std::uniform_real_distribution<double> real_dist;
-
-public:
-    Random() : gen(std::random_device{{}}()),
-               int_dist(std::numeric_limits<int64_t>::min(),
-                       std::numeric_limits<int64_t>::max()),
-               real_dist(0.0, 1.0) {{}}
-
-    template<typename T>
-        T randint(T min, T max) {{
-            if constexpr (std::is_integral_v<T>) {{
-                if(min > max) std::swap(min, max);
-                std::uniform_int_distribution<T> dis(min, max);
-                return dis(gen);
-            }} else {{
-                if(min > max) std::swap(min, max);
-                std::uniform_real_distribution<T> dis(min, max);
-                return dis(gen);
-            }}
-        }}
-
-    template<typename T>
-    void initialize_vector_with_random_values(std::vector<T>& vec, bool binary = false) {{
-        if constexpr (std::is_integral_v<T>) {{
-            if (binary) {{
-                for (auto& val : vec) {{
-                    val = static_cast<T>(gen() % 2);
-                }}
-            }} else {{
-                for (auto& val : vec) {{
-                    val = static_cast<T>(int_dist(gen));
-                }}
-            }}
-        }} else {{
-            for (auto& val : vec) {{
-                val = static_cast<T>(real_dist(gen));
-            }}
-        }}
-    }}
-}};
-
-// Comparison utility
-template<typename T>
-bool allclose(const std::vector<T>& a, const std::vector<T>& b,
-              double rtol = 1e-5, double atol = 1e-8) {{
-    if (a.size() != b.size()) return false;
-
-    for (size_t i = 0; i < a.size(); i++) {{
-        if constexpr (std::is_floating_point_v<T>) {{
-            double diff = std::abs(static_cast<double>(a[i]) - static_cast<double>(b[i]));
-            double threshold = atol + rtol * std::abs(static_cast<double>(b[i]));
-            if (diff > threshold) {{
-                if (ERROR_PRINT) {{
-                    std::cerr << "Mismatch at index " << i
-                             << ": " << a[i] << " vs " << b[i]
-                             << " (diff=" << diff << ")" << std::endl;
-                }}
-                return false;
-            }}
-        }} else {{
-            if (a[i] != b[i]) {{
-                if (ERROR_PRINT) {{
-                    std::cerr << "Mismatch at index " << i
-                             << ": " << a[i] << " vs " << b[i] << std::endl;
-                }}
-                return false;
-            }}
-        }}
-    }}
-    return true;
-}}
-
-template<typename T>
-bool allclose(const T& a, const T& b, double rtol = 1e-5, double atol = 1e-8) {{
-    // 1. Handle Floating Point logic (fuzzy comparison)
-    if constexpr (std::is_floating_point_v<T>) {{
-        if (std::isnan(a) && std::isnan(b)) return true; // NaN == NaN here
-        if (std::isnan(a) || std::isnan(b)) return false;
-
-        double diff = std::abs(static_cast<double>(a) - static_cast<double>(b));
-        double threshold = atol + rtol * std::abs(static_cast<double>(b));
-        return diff <= threshold;
-    }}
-    // 2. Handle Integer/Bool logic (exact comparison)
-    else {{
-        return a == b;
-    }}
-}}
-
 // Scalar solution
 {SCALAR_SOLUTION}
 
@@ -164,10 +51,11 @@ def verify_simd_correctness(
 
         # Write C++ file
         cpp_file.write_text(cpp_code)
-
+        header_path = Path(__file__).parent / "utils.hpp"
         # Compile (test)
         compile_cmd = [
             "g++", "-std=c++17", "-O3",
+            f"-include", str(header_path),
             *arch_flags.split(),
             str(cpp_file), "-o", str(exe_file)
         ]

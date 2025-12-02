@@ -1,4 +1,3 @@
-# src/reward_util.py
 import numpy as np
 
 def compute_immediate_reward(eval: dict) -> float:
@@ -10,15 +9,23 @@ def compute_immediate_reward(eval: dict) -> float:
         reward = -0.1
     else:
         reward = 0.0
-        if eval['correct']:
-            try:
-                reward += 0.3
-                reward += eval['avg_speedup']
-            except Exception as e:
-                print('PINEAPPLE')
-                print(eval)
-                print(e)
-                raise NotImplementedError
+        # If the model produced valid C++ that passed static checks ('correct': True)
+        if eval.get('correct', False):
+            reward += 0.3
+            
+            # FIX: Check if speedup exists before adding.
+            # If compilation failed, avg_speedup will be None.
+            speedup = eval.get('avg_speedup')
+            if speedup is not None:
+                reward += speedup
+            else:
+                # Penalty for compilation failure or runtime error
+                # (e.g., segfault during benchmark)
+                reward += -0.5 
+        else:
+            # Logic for incorrect answers (optional, currently 0.0)
+            pass
+            
     return reward
 
 
@@ -70,6 +77,7 @@ def normalize_rewards_per_task(batched_rewards, task_indices, eps=1e-8) -> np.nd
         mean = task_rewards.mean()
         std = task_rewards.std()
         advantages[indices] = (task_rewards - mean) / (std + eps)
+        # Optional: Only print this occasionally to reduce log spam
         print(f"[normalize_rewards_per_task] task_id: {task_id} | "
               f"mean: {mean:.6f} | std: {std:.6f}")
     return advantages

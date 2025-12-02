@@ -6,6 +6,7 @@ def compute_immediate_reward(eval: dict) -> float:
     Computes immediate reward
     0.3*correctness + 1*speedup
     """
+    avg_speedup = 0
     if not eval['correct_format']:
         reward = -0.1
     else:
@@ -14,12 +15,14 @@ def compute_immediate_reward(eval: dict) -> float:
             try:
                 reward += 0.3
                 reward += eval['avg_speedup']
+                avg_speedup = eval['avg_speedup']
             except Exception as e:
                 print('PINEAPPLE')
                 print(eval['task_id'])
                 print(eval)
                 print(e)
                 raise NotImplementedError
+    print(f"{eval['task_id']}\t{reward}\tavg_speedup: {avg_speedup}")
     return reward
 
 

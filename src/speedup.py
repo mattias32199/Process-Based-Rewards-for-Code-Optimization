@@ -128,13 +128,13 @@ def verify_speedup(
             # Calculate average
             if speedups:
                 avg_speedup = sum(speedups.values()) / len(speedups)
+                feedback = None
             else:
                 avg_speedup = 0.0
                 feedback = bench_data
 
             success = True
             outcome = "correct_fast" if avg_speedup > 1 else "correct_slow"
-            feedback = None
 
 
     return {

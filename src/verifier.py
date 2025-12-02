@@ -16,5 +16,4 @@ def verify(task: dict, sol_simd: str) -> dict:
         verif['correct'] = True
 
     verif['correct_format'] = True
-    verif['task_id'] = task['task_id']
     return verif

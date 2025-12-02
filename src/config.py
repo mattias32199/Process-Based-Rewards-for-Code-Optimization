@@ -50,6 +50,7 @@ class EngineConfig:
     weight_decay: float = 0.01
     debug: bool = False
     gpu_memory_utilization: float = 0.6
+    vllm_sleep: bool = False
 
 
 @dataclass

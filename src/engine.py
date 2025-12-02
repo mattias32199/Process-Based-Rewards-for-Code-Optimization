@@ -142,100 +142,102 @@ class UnifiedPolicyEngine:
     def generate_log_probs(
         self,
         prompts: list[str],
-        responses: list[str]
+        responses: list[str],
+        micro_batch_size: int = 2 # Default to small batch
     ) -> tuple[torch.Tensor, torch.Tensor]:
         """
-        Computes log probabilities for the 'responses' given the 'prompts'.
-        Used for both:
-        1. Calculating 'old_log_probs' (no_grad) during Rollout.
-        2. Calculating 'new_log_probs' (grad) during Update.
-
-        Returns:
-            log_probs: (B, T) - Log probs of the response tokens
-            masks: (B, T) - 1.0 for response tokens, 0.0 for padding/prompt
+        Computes log probabilities in micro-batches to prevent OOM.
         """
         # Training/Forward pass requires RIGHT padding
         self.tokenizer.padding_side = "right"
 
-        # append EOS
-        responses = [r + self.tokenizer.eos_token for r in responses]
+        # 1. Prepare full texts
+        full_responses = [r + self.tokenizer.eos_token for r in responses]
+        full_texts = [p + r for p, r in zip(prompts, full_responses)]
+        
+        # Lists to store results from each micro-batch
+        all_log_probs = []
+        all_masks = []
 
-        # We need to construct the full text to feed into the model
-        # Note: Ideally you use a chat template here, ensuring strict concatenation
-        full_texts = [p + r for p, r in zip(prompts, responses)]
+        # 2. Iterate in chunks (Micro-Batching)
+        total_len = len(full_texts)
+        for i in range(0, total_len, micro_batch_size):
+            # Slice the batch
+            batch_texts = full_texts[i : i + micro_batch_size]
+            batch_prompts = prompts[i : i + micro_batch_size]
 
-        # Tokenize everything
-        inputs = self.tokenizer(
-            full_texts,
-            add_special_tokens=False,
-            return_tensors="pt",
-            padding=True,
-            truncation=True,
-            max_length=self.max_seq_length,
-        ).to(self.device)
+            # Tokenize ONLY this small chunk
+            inputs = self.tokenizer(
+                batch_texts,
+                add_special_tokens=False,
+                return_tensors="pt",
+                padding=True,
+                truncation=True,
+                max_length=self.max_seq_length,
+            ).to(self.device)
 
-        input_ids = inputs.input_ids
-        attention_mask = inputs.attention_mask
+            input_ids = inputs.input_ids
+            attention_mask = inputs.attention_mask
 
-        # Determine where the prompt ends and response begins
-        # We re-tokenize just the prompts to find their length
-        prompt_inputs = self.tokenizer(
-            prompts,
-            add_special_tokens=False,
-            return_tensors="pt",
-            padding=True,
-            truncation=True,
-            max_length=self.max_seq_length
-        )
-        # Calculate prompt lengths
-        prompt_lens = prompt_inputs.attention_mask.sum(dim=1).to(self.device)
+            # Get prompt lengths for this chunk
+            prompt_inputs = self.tokenizer(
+                batch_prompts,
+                add_special_tokens=False,
+                return_tensors="pt",
+                padding=True,
+                truncation=True,
+                max_length=self.max_seq_length
+            )
+            prompt_lens = prompt_inputs.attention_mask.sum(dim=1).to(self.device)
 
-        # Forward pass
-        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
-        logits = outputs.logits # (B, Seq, Vocab)
+            # --- Forward pass (Activations generated here) ---
+            outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
+            logits = outputs.logits[:, :-1, :]
+            target_ids = input_ids[:, 1:]
 
-        # Shift: logits at [:-1] predict tokens at [1:]
-        logits = logits[:, :-1, :]
-        target_ids = input_ids[:, 1:]
+            # Calculate Loss (Log Probs)
+            loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
+            token_log_probs = -loss_fct(
+                logits.reshape(-1, logits.size(-1)),
+                target_ids.reshape(-1)
+            ).view(target_ids.shape)
 
-        # Compute Log Softmax
-        log_probs_all = torch.log_softmax(logits, dim=-1)
+            # Create Mask
+            mask = torch.zeros_like(token_log_probs)
+            for j, p_len in enumerate(prompt_lens):
+                start_idx = max(p_len - 1, 0)
+                mask[j, start_idx:] = 1.0
+            
+            padding_mask = attention_mask[:, 1:]
+            final_mask = mask * padding_mask
+            
+            # Apply mask
+            token_log_probs = token_log_probs * final_mask
 
-        # Gather log prob of the actual target tokens
-        token_log_probs_all = torch.gather(
-            log_probs_all,
-            dim=-1,
-            index=target_ids.unsqueeze(-1)
-        ).squeeze(-1) # (B, Seq-1)
+            # Store results
+            all_log_probs.append(token_log_probs)
+            all_masks.append(final_mask)
 
-        # bos agnostic
-        mask = torch.zeros_like(token_log_probs_all)
-        for i, p_len in enumerate(prompt_lens):
-            start_idx = p_len - 1
-            start_idx = max(start_idx, 0)
-            mask[i, start_idx:] = 1.0
+            # --- CRITICAL: Clean up memory immediately ---
+            del inputs, outputs, logits, token_log_probs, final_mask
+            torch.cuda.empty_cache()
 
-        # Apply padding mask (original attention mask shifted)
-        # attention_mask is for [0...Seq]. target_ids is [1...Seq]
-        padding_mask = attention_mask[:, 1:]
-        final_mask = mask * padding_mask
+        # 3. Concatenate all micro-batches
+        # We must pad them to the same width (sequence length) before stacking
+        max_seq_len = max(t.size(1) for t in all_log_probs)
+        
+        padded_log_probs = []
+        padded_masks = []
+        
+        for lp, m in zip(all_log_probs, all_masks):
+            pad_len = max_seq_len - lp.size(1)
+            if pad_len > 0:
+                lp = torch.nn.functional.pad(lp, (0, pad_len), value=0.0)
+                m = torch.nn.functional.pad(m, (0, pad_len), value=0.0)
+            padded_log_probs.append(lp)
+            padded_masks.append(m)
 
-        # Zero out logprobs for prompt/padding so they don't affect sums
-        token_log_probs = token_log_probs_all * final_mask
-
-        if self.debug:
-            with torch.no_grad():
-                mask_counts = final_mask.sum(dim=1)
-                print("\n[get_batch_log_probs] batch size:", final_mask.size(0))
-                print("[get_batch_log_probs] seq len:", final_mask.size(1))
-                print("[get_batch_log_probs] nonzero mask per sample:", mask_counts.tolist())
-                print("[get_batch_log_probs] total nonzero mask:", mask_counts.sum().item())
-                print("[get_batch_log_probs] token_logprobs_all mean:",
-                    float(token_log_probs_all.mean().item()))
-                print("[get_batch_log_probs] token_log_probs (after mask) mean:",
-                    float(token_log_probs.mean().item()))
-
-        return token_log_probs, final_mask
+        return torch.cat(padded_log_probs, dim=0), torch.cat(padded_masks, dim=0)
 
     def update_training_engine(self, loss) -> tuple[float, float]:
         """

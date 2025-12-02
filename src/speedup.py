@@ -75,7 +75,7 @@ def verify_speedup(
     if compile_result.returncode != 0:
         success = False
         outcome = 'compilation_failed'
-        feedback = compile_result.stderr,
+        feedback = str(compile_result.stderr)
         speedups = None
         avg_speedup = None
 
@@ -106,17 +106,17 @@ def verify_speedup(
                 name_full = item['name']
 
                 # Split "Scalar/1024" -> ["Scalar", "1024"]
-                parts = name_full.split('/')
-                func_name = parts[0]
-                size = int(parts[1])
+                if '/' in name_full:
+                    parts = name_full.split('/')
+                    func_name_raw = parts[0].lower() # Normalize to lowercase
+                    size = int(parts[1])
+                    time_ns = float(item['cpu_time'])
 
-                # Google benchmark provides 'real_time' (wall clock) or 'cpu_time'
-                time_ns = float(item['cpu_time'])
-
-                if func_name == 'Scalar':
-                    scalar_times[size] = time_ns
-                elif func_name == 'SIMD':
-                    simd_times[size] = time_ns
+                    # MATCHING LOGIC: Look for substring
+                    if 'scalar' in func_name_raw:
+                        scalar_times[size] = time_ns
+                    elif 'simd' in func_name_raw or 'vector' in func_name_raw:
+                        simd_times[size] = time_ns
 
             # Calculate speedups
             speedups = {}

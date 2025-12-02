@@ -122,11 +122,6 @@ def construct_previous_attempts(context_buffer: dict, turn: int, use_cot:bool=Fa
         prev_attempts_parts.extend(feedback_parts)
         prev_attempts_parts.append(f"</attempt_{t + 1}>\n")
 
-    # debug
-    for o in prev_attempts_parts:
-        if type(o) is not type(str):
-            print(o)
-
     prev_attempts = FEEDBACK_TEMPLATE.format(
         FEEDBACK="\n".join(prev_attempts_parts)
     )

@@ -141,11 +141,7 @@ class UnifiedPolicyEngine:
         torch.cuda.empty_cache()
         return completions
 
-    def generate_log_probs(
-        self,
-        prompts: list[str],
-        responses: list[str]
-    ) -> tuple[torch.Tensor, torch.Tensor]:
+    def generate_log_probs(self,prompts: list[str], responses: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
         """
         Computes log probabilities for the 'responses' given the 'prompts'.
         Used for both:
@@ -201,11 +197,11 @@ class UnifiedPolicyEngine:
         target_ids = input_ids[:, 1:]
 
 
-
+        # fix
         loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
         token_log_probs_all = -loss_fct(
-            logits.view(-1, logits.size(-1)),
-            target_ids.view(-1)
+            logits.reshape(-1, logits.size(-1)),
+            target_ids.reshape(-1)
         ).view(target_ids.shape)
 
         # bos agnostic

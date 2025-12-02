@@ -3,3 +3,4 @@ results/
 output/
 src/benchmark
 *.pyc
+unsloth_compiled_cache

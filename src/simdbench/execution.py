@@ -12,7 +12,7 @@ import re
 import subprocess
 import json
 import psutil
-from simdbench.global_var import *
+from src.simdbench.global_var import *
 
 def clean_generated_code(output_str: str, entry_point: str) -> str:
     # Regular expression to match Markdown code blocks with optional language tag

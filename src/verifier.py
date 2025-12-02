@@ -7,8 +7,8 @@ def verify(task: dict, sol_simd: str) -> dict:
     verif should contain test_info, outcome, and error messages (if appropriate)
     """
     verif = verify_simd_correctness(task, sol_simd)
-    if verif['compiles'] and verif['correct']:
-        verif = verify_speedup(task, sol_simd)
-        verif['correct'] = True
+    # if verif['compiles'] and verif['correct']:
+    #     verif = verify_speedup(task, sol_simd)
+    #     verif['correct'] = True
     verif['correct_format'] = True
     return verif

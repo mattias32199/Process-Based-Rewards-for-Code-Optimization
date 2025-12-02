@@ -2,9 +2,9 @@ import tqdm
 import json
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from simdbench.execution import exec_cpp
-from simdbench.data import SIMD_BENCH, simdbench_scalar, read_problems
-from simdbench.global_var import get_header
+from src.simdbench.execution import exec_cpp
+from src.simdbench.data import SIMD_BENCH, simdbench_scalar, read_problems
+from src.simdbench.global_var import get_header
 
 tasks = read_problems(simdbench_scalar, "scalar")
 

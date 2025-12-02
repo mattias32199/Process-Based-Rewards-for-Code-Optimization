@@ -2,7 +2,7 @@ import json
 import os
 import argparse
 import subprocess
-from simdbench.global_var import *
+from src.simdbench.global_var import *
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

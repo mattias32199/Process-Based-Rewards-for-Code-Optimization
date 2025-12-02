@@ -10,8 +10,8 @@ import sys
 import os
 import shutil
 
-from simdbench.data import SIMD_BENCH, read_problems, stream_jsonl, write_jsonl
-from simdbench.execution import check_correctness, check_perfomance
+from src.simdbench.data import SIMD_BENCH, read_problems, stream_jsonl, write_jsonl
+from src.simdbench.execution import check_correctness, check_perfomance
 
 def estimate_pass_at_k(
     num_samples: Union[int, List[int], np.ndarray],

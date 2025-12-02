@@ -3,9 +3,9 @@ import tqdm
 from typing import Dict
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential, retry_if_exception_type
-from simdbench.task import sys_prompt
-from simdbench.data import read_problems, simdbench_scalar, SIMD_BENCH
-from simdbench.global_var import intrin_list
+from src.simdbench.task import sys_prompt
+from src.simdbench.data import read_problems, simdbench_scalar, SIMD_BENCH
+from src.simdbench.global_var import intrin_list
 
 client = OpenAI(api_key="key", base_url="url")
 iteration = 5 # number per problem

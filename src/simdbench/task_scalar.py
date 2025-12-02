@@ -2,8 +2,8 @@ import os
 import json
 import re
 from typing import Dict
-from simdbench.global_var import intrin2fullname, get_header
-from simdbench.data import SIMD_BENCH, simdbench_scalar
+from src.simdbench.global_var import intrin2fullname, get_header
+from src.simdbench.data import SIMD_BENCH, simdbench_scalar
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def remove_blank_lines(text):

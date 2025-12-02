@@ -4,7 +4,7 @@ import random
 import argparse
 import json
 from collections import OrderedDict
-from simdbench.global_var import *
+from src.simdbench.global_var import *
 
 """
 This script generates the prompt for SimdBench.

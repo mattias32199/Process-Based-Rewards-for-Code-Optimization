@@ -1,8 +1,8 @@
 import fire
 import sys
 import os
-from simdbench.data import SIMD_BENCH,simdbench_scalar
-from simdbench.evaluation import evaluate_functional_correctness
+from src.simdbench.data import SIMD_BENCH,simdbench_scalar
+from src.simdbench.evaluation import evaluate_functional_correctness
 
 def entry_point(
     sample_file: str,

@@ -31,10 +31,10 @@ class UnifiedPolicyEngine:
             fast_inference=True
         )
 
-        if self.debug:
-            print(f"[DEBUG] EOS token: {self.tokenizer.eos_token}")
-            print(f"[DEBUG] PAD token: {self.tokenizer.pad_token}")
-            print(f"[DEBUG] Special tokens: {self.tokenizer.special_tokens_map}")
+        # if self.debug:
+        #     print(f"[DEBUG] EOS token: {self.tokenizer.eos_token}")
+        #     print(f"[DEBUG] PAD token: {self.tokenizer.pad_token}")
+        #     print(f"[DEBUG] Special tokens: {self.tokenizer.special_tokens_map}")
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 

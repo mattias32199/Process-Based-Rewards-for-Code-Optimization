@@ -9,6 +9,12 @@ def verify(task: dict, sol_simd: str) -> dict:
     verif = verify_simd_correctness(task, sol_simd)
     if verif['compiles'] and verif['correct']:
         verif = verify_speedup(task, sol_simd)
+
+
+        # if verif['success']:
+        #     verif['correct'] = True
         verif['correct'] = True
+
     verif['correct_format'] = True
+    verif['task_id'] = task['task_id']
     return verif

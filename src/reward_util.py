@@ -16,6 +16,7 @@ def compute_immediate_reward(eval: dict) -> float:
                 reward += eval['avg_speedup']
             except Exception as e:
                 print('PINEAPPLE')
+                print(eval['task_id'])
                 print(eval)
                 print(e)
                 raise NotImplementedError

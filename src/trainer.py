@@ -19,6 +19,7 @@ class MultiTurnRLTrainer():
         self.config = config
 
         # initialize training/inference engine
+        self.config.engine.debug = self.config.debug
         self.engine = UnifiedPolicyEngine(config.engine)
         #
 
@@ -38,8 +39,6 @@ class MultiTurnRLTrainer():
         for epoch in range(self.config.epochs): # loop through epochs
             for batch_idx, batch in enumerate(dataloader): # loop through batches
                 # 1. per-batch rollout
-                if self.debug:
-                    print('batch size (num tasks in batch): ', len(batch['tasks']))
                 trajectories = self.rollout(batch['tasks'])
 
                 # 2. calculate policy gradients to update policy

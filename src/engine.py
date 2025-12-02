@@ -19,6 +19,7 @@ class UnifiedPolicyEngine:
         self.learning_rate = self.config.lr
         self.max_seq_length = config.model.max_seq_length
         self.debug = config.debug
+        self.
 
         # load model
         self.model, self.tokenizer = FastLanguageModel.from_pretrained(
@@ -26,7 +27,7 @@ class UnifiedPolicyEngine:
             max_seq_length=self.max_seq_length,
             load_in_16bit=True,
             dtype=config.model.dtype, # load and use in fp16
-            gpu_memory_utilization = 0.95,
+            gpu_memory_utilization = config.gpu_memory_utilization, # 0.95
             fast_inference=True
         )
 

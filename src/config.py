@@ -49,6 +49,7 @@ class EngineConfig:
     lr: float = 1e-5
     weight_decay: float = 0.01
     debug: bool = False
+    gpu_memory_utilization = 0.6
 
 
 @dataclass

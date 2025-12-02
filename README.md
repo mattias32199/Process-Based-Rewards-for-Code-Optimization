@@ -14,7 +14,6 @@
 ## Run
 
 ```
-cd src
 git clone https://github.com/google/benchmark.git
 cd benchmark
 cmake -E make_directory "build"

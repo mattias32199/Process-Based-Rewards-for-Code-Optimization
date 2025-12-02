@@ -2,7 +2,7 @@ from typing import Iterable, Dict
 import gzip
 import json
 import os
-from simdbench.global_var import *
+from src.simdbench.global_var import *
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 #SIMD_BENCH = os.path.join(ROOT, "..", "data", "SimdBench.jsonl.gz")

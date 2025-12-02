@@ -13,6 +13,11 @@
 
 ## Run
 
+### PSC
+```
+interact -p GPU-shared --gres=gpu:v100-32:1 -t 8:00:00 -A cis250223p
+```
+
 ```
 cd src
 git clone https://github.com/google/benchmark.git

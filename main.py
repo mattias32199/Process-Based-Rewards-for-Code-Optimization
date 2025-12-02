@@ -71,7 +71,7 @@ if __name__ == "__main__":
     )
 
     # D. Data
-    dataset = SimdBenchDataset('data/processed/simd-all-avx.jsonl')
+    dataset = SimdBenchDataset('/jet/home/jzhang73/Process-Based-Rewards-for-Code-Optimization/data/simd-all-fixed-avx.jsonl')
     dataloader = SimdBenchDataLoader(dataset, batch_size = 2)
 
     # E. Run

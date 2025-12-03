@@ -78,7 +78,7 @@ def verify_speedup(
                 source_file,
                 "-include", str(header_path),
                 benchmark_path,
-                '-o', 'test',
+                '-o', binary_file,
                 '-lpthread'],
             capture_output=True,
             text=True,

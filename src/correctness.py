@@ -24,6 +24,19 @@ def clean_generated_code(output_str: str, entry_point: str) -> str:
         if entry_point in code:
             res =  code.strip()
             break 
+    
+    # Clean Unicode quotes and special characters
+    replacements = {
+        '\u2018': "'",  # ' -> '
+        '\u2019': "'",  # ' -> '
+        '\u201C': '"',  # " -> "
+        '\u201D': '"',  # " -> "
+        '\u2013': '-',  # – -> -
+        '\u2014': '-',  # — -> -
+    }
+    for unicode_char, ascii_char in replacements.items():
+        res = res.replace(unicode_char, ascii_char)
+    
     return res
 
 def clean_error_message(error_msg):
@@ -65,10 +78,11 @@ def clean_error_message(error_msg):
     return '\n'.join(error_lines)
 
 
-def exec_cpp(cpp_code: str, intrinsic: str, timeout: float, googlebench: bool=False, optimization = "-O0") -> tuple:
+def exec_cpp(cpp_code: str, intrinsic: str, timeout: float, googlebench: bool=False, optimization = "-O0", debug_file: str = None) -> tuple:
     '''
     0: something failed
     1: compilation and execution success
+    debug_file: optional path to write code and error messages
     '''
     with tempfile.TemporaryDirectory(prefix='simdbench_', dir=ROOT) as tmp_dir:
         # These system calls are needed when cleaning up tempdir.
@@ -106,11 +120,21 @@ def exec_cpp(cpp_code: str, intrinsic: str, timeout: float, googlebench: bool=Fa
         compilation_cmd = compilation_cmd + ["-o", os.path.join(tmp_dir, f'{dt}.out')]
         compilation_res = subprocess.run(compilation_cmd, shell=False, capture_output=True, text=True, timeout=timeout*0.25)
         if compilation_res.returncode != 0: # compilation failed
+            error_msg = clean_error_message(compilation_res.stderr)
+            if debug_file:
+                with open(debug_file, 'a', encoding='utf-8') as f:
+                    f.write("=" * 80 + "\n")
+                    f.write("COMPILATION ERROR\n")
+                    f.write("=" * 80 + "\n")
+                    f.write("CODE:\n")
+                    f.write(cpp_code + "\n\n")
+                    f.write("ERROR:\n")
+                    f.write(error_msg + "\n\n")
             return {
                 'compiles': False, 
                 'correct': False,
                 'outcome': 'compilation_error',
-                'feedback': f"compilation failed: {clean_error_message(compilation_res.stderr)}"
+                'feedback': f"compilation failed: {error_msg}"
             }
         
         # execution
@@ -121,11 +145,21 @@ def exec_cpp(cpp_code: str, intrinsic: str, timeout: float, googlebench: bool=Fa
         if(googlebench): execution_cmd += ["--benchmark_format=json"]
         execution_res = subprocess.run(execution_cmd, shell=False, capture_output=True, text=True, timeout=timeout*0.7)
         if execution_res.returncode != 0: # runtime failed
+            error_msg = clean_error_message(execution_res.stderr)
+            if debug_file:
+                with open(debug_file, 'a', encoding='utf-8') as f:
+                    f.write("=" * 80 + "\n")
+                    f.write("RUNTIME ERROR\n")
+                    f.write("=" * 80 + "\n")
+                    f.write("CODE:\n")
+                    f.write(cpp_code + "\n\n")
+                    f.write("ERROR:\n")
+                    f.write(error_msg + "\n\n")
             return {
                 'compiles': True, 
                 'correct': False,
                 'outcome': 'runtime_error',
-                'feedback': f"runtime failed: {clean_error_message(execution_res.stderr)}"
+                'feedback': f"runtime failed: {error_msg}"
             }
         
         # Needed for cleaning up.
@@ -143,7 +177,8 @@ def exec_cpp(cpp_code: str, intrinsic: str, timeout: float, googlebench: bool=Fa
 def verify_simd_correctness(
     task_data: dict, 
     simd_solution: str,
-    timeout: int = 30
+    timeout: int = 30,
+    debug_file: str = None
 ) -> dict: 
     code = (
         get_header() + '\n' + \
@@ -151,4 +186,4 @@ def verify_simd_correctness(
         simd_solution + '\n' + \
         task_data["test_correctness"]
     )
-    return exec_cpp(code, intrinsic=task_data.get("intrinsic", "AVX"), timeout=timeout)
+    return exec_cpp(code, intrinsic=task_data.get("intrinsic", "AVX"), timeout=timeout, debug_file=debug_file)

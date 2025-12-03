@@ -33,7 +33,7 @@ def extract_code(simd_code_raw: str) -> str:
 def verify_speedup(
     task: dict,
     simd_solution: str,
-    benchmark_path = '/content/benchmark/build/src/libbenchmark.a' # works for google colab
+    benchmark_path = './benchmark/build/src/libbenchmark.a' # works for google colab
 ):
     scalar_code = task['solution_scalar']
     test_performance = task['test_performance']
@@ -73,7 +73,7 @@ def verify_speedup(
 
     if compile_result.returncode != 0:
         success = False
-        outcome = 'compilation_failed'
+        outcome = 'compilation_error'
         feedback = compile_result.stderr,
         speedups = None
         avg_speedup = None

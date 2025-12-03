@@ -183,7 +183,6 @@ class MultiTurnRLTrainer():
                     env['context_buffer']['task'],
                     sol_simd
                 )
-
             # immediate reward
             reward = compute_immediate_reward(eval)
 

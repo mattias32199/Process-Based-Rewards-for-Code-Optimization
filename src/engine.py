@@ -197,12 +197,18 @@ class UnifiedPolicyEngine:
         target_ids = input_ids[:, 1:]
 
 
-        # fix
-        loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
-        token_log_probs_all = -loss_fct(
-            logits.reshape(-1, logits.size(-1)),
-            target_ids.reshape(-1)
-        ).view(target_ids.shape)
+        # fix 1
+        # loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
+        # token_log_probs_all = -loss_fct(
+        #     logits.reshape(-1, logits.size(-1)),
+        #     target_ids.reshape(-1)
+        # ).view(target_ids.shape)
+
+        # fix 2
+        log_probs = torch.nn.functional.log_softmax(logits, dim=-1)
+        token_log_probs_all = torch.gather(
+            log_probs, dim=-1, index=target_ids.unsqueeze(-1)
+        ).squeeze(-1)
 
         # bos agnostic
         mask = torch.zeros_like(token_log_probs_all)

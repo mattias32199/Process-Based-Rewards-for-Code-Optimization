@@ -1,8 +1,10 @@
 # /src/speedup.py
 import re
+import os
 import subprocess
 from pathlib import Path
 import json
+from src.train_util import parse_error_json
 
 BENCHMARK_TEMPLATE = """
 #include <benchmark/benchmark.h>
@@ -49,93 +51,109 @@ def verify_speedup(
     scalar_times = None
     simd_times = None
 
+    # line offset where line normalization in json error parsing
+    template_prefix = BENCHMARK_TEMPLATE.replace('{{SCALAR_CODE}}', scalar_code).split('{{SIMD_CODE}}')[0]
+    line_offset = template_prefix.count('\n')
+
+    # fill in template
     benchmark_code = BENCHMARK_TEMPLATE.replace('{{SCALAR_CODE}}', scalar_code)
     benchmark_code = benchmark_code.replace('{{SIMD_CODE}}', simd_solution)
     benchmark_code = benchmark_code.replace('{{TEST_PERFORMANCE}}', test_performance)
 
-    with open('test.cpp', 'w') as f:
-        f.write(benchmark_code)
+    source_file = 'test_speedup.cpp'
+    binary_file = "./test_speedup"
 
-    header_path = Path(__file__).parent / "utils.hpp"
 
-    # Compile with local benchmark
-    compile_result = subprocess.run(
-        ['g++', '-std=c++17', '-O3', '-mavx2',
-            '-I/content/benchmark/include',
-            'test.cpp',
-            f"-include", str(header_path),
-            benchmark_path,
-            '-o', 'test',
-            '-lpthread'],
-        capture_output=True,
-        text=True,
-        timeout=20
-    )
+    try:
+        with open(source_file, 'w') as f:
+            f.write(benchmark_code)
 
-    if compile_result.returncode != 0:
-        success = False
-        outcome = 'compilation_failed'
-        feedback = str(compile_result.stderr)
-        speedups = None
-        avg_speedup = None
+        header_path = Path(__file__).parent / "utils.hpp"
 
-    else:
-        # run benchmark
-        benchmark_result = subprocess.run(
-                ['./test', '--benchmark_format=json'], # Add this flag
-                capture_output=True,
-                text=True
-            )
+        # Compile with local benchmark
+        compile_result = subprocess.run(
+            ['g++', '-std=c++17', '-O3', '-mavx2',
+                "-fdiagnostics-format=json",
+                '-I/content/benchmark/include',
+                source_file,
+                "-include", str(header_path),
+                benchmark_path,
+                '-o', 'test',
+                '-lpthread'],
+            capture_output=True,
+            text=True,
+            timeout=20
+        )
 
-        if benchmark_result.returncode != 0:
+        if compile_result.returncode != 0:
             success = False
-            outcome = 'runtime_error'
-            feedback = benchmark_result.stderr,
+            outcome = 'compilation_failed'
             speedups = None
             avg_speedup = None
+            feedback = parse_error_json(compile_result.stderr, source_file, line_offset)
+
 
         else:
-            bench_data = json.loads(benchmark_result.stdout)
+            # run benchmark
+            benchmark_result = subprocess.run(
+                    [binary_file, '--benchmark_format=json'], # Add this flag
+                    capture_output=True,
+                    text=True
+                )
 
-            scalar_times = {}
-            simd_times = {}
+            if benchmark_result.returncode != 0:
+                success = False
+                outcome = 'runtime_error'
+                feedback = str(benchmark_result.stderr)
+                speedups = None
+                avg_speedup = None
 
-            # 3. Iterate over the 'benchmarks' list in the JSON
-            for item in bench_data['benchmarks']:
-                # name comes out like "Scalar/1024"
-                name_full = item['name']
-
-                # Split "Scalar/1024" -> ["Scalar", "1024"]
-                if '/' in name_full:
-                    parts = name_full.split('/')
-                    func_name_raw = parts[0].lower() # Normalize to lowercase
-                    size = int(parts[1])
-                    time_ns = float(item['cpu_time'])
-
-                    # MATCHING LOGIC: Look for substring
-                    if 'scalar' in func_name_raw:
-                        scalar_times[size] = time_ns
-                    elif 'simd' in func_name_raw or 'vector' in func_name_raw:
-                        simd_times[size] = time_ns
-
-            # Calculate speedups
-            speedups = {}
-            for size in scalar_times:
-                if size in simd_times and simd_times[size] > 0:
-                    speedup = scalar_times[size] / simd_times[size]
-                    speedups[size] = speedup
-
-            # Calculate average
-            if speedups:
-                avg_speedup = sum(speedups.values()) / len(speedups)
-                feedback = None
             else:
-                avg_speedup = 0.0
-                feedback = bench_data
+                bench_data = json.loads(benchmark_result.stdout)
 
-            success = True
-            outcome = "correct_fast" if avg_speedup > 1 else "correct_slow"
+                scalar_times = {}
+                simd_times = {}
 
+                # 3. Iterate over the 'benchmarks' list in the JSON
+                for item in bench_data['benchmarks']:
+                    # name comes out like "Scalar/1024"
+                    name_full = item['name']
+
+                    # Split "Scalar/1024" -> ["Scalar", "1024"]
+                    if '/' in name_full:
+                        parts = name_full.split('/')
+                        func_name_raw = parts[0].lower() # Normalize to lowercase
+                        size = int(parts[1])
+                        time_ns = float(item['cpu_time'])
+
+                        # MATCHING LOGIC: Look for substring
+                        if 'scalar' in func_name_raw:
+                            scalar_times[size] = time_ns
+                        elif 'simd' in func_name_raw or 'vector' in func_name_raw:
+                            simd_times[size] = time_ns
+
+                # Calculate speedups
+                speedups = {}
+                for size in scalar_times:
+                    if size in simd_times and simd_times[size] > 0:
+                        speedup = scalar_times[size] / simd_times[size]
+                        speedups[size] = speedup
+
+                # Calculate average
+                if speedups:
+                    avg_speedup = sum(speedups.values()) / len(speedups)
+                    feedback = None
+                else:
+                    avg_speedup = 0.0
+                    feedback = bench_data
+
+                success = True
+                outcome = "correct_fast" if avg_speedup > 1 else "correct_slow"
+    finally:
+        if os.path.exists(source_file):
+            os.remove(source_file)
+        if os.path.exists(binary_file):
+            os.remove(binary_file)
 
     return {
         'success': success,

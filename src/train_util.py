@@ -1,5 +1,7 @@
 # src/train_util.py
 import re
+import json
+import os
 
 # PROMPT TEMPLATES
 
@@ -217,6 +219,67 @@ def parse_response(response:str, entrypoint_simd:str, use_cot: bool=False) -> di
         'feedback': feedback,
         'outcome': outcome
     }
+
+
+
+def parse_error_json(stderr_output: str, source_file: str = 'test.cpp', line_offset: int = 0) -> str:
+    if not stderr_output or not stderr_output.strip():
+        return ""
+
+    try:
+        diagnostics = json.loads(stderr_output)
+        feedback_lines = []
+
+        for item in diagnostics:
+            kind = item.get('kind', 'unknown')
+            msg = item.get('message', 'Unknown message')
+
+            # 1. SKIP WARNINGS (Too noisy for RL)
+            if kind == 'warning':
+                continue
+
+            # 2. CAPTURE ERRORS AND NOTES
+            # We treat 'note' as valuable only if it suggests a fix
+            is_useful_note = kind == 'note' and ("did you mean" in msg or "suggested" in msg or "defined in" in msg)
+
+            if kind != 'error' and not is_useful_note:
+                continue
+
+            # Location Logic (Same as before)
+            prefix = ""
+            locs = item.get('locations', [])
+            if locs:
+                caret = locs[0].get('caret', {})
+                file_name = caret.get('file', 'unknown')
+                abs_line = caret.get('line', 0)
+
+                if source_file and source_file in file_name:
+                    rel_line = abs_line - line_offset
+                    if rel_line > 0:
+                        prefix = f"Line {rel_line}"
+                    else:
+                        prefix = f"Template Error (Line {abs_line})"
+                else:
+                    clean_file = os.path.basename(file_name)
+                    prefix = f"{clean_file}:{abs_line}"
+            else:
+                prefix = "General"
+
+            # Format the output
+            if kind == 'error':
+                feedback_lines.append(f"{prefix}: {msg}")
+            elif is_useful_note:
+                # Indent notes so the LLM knows they belong to the previous error
+                feedback_lines.append(f"  -> Note: {msg}")
+
+        if not feedback_lines:
+            return ""
+
+        return "\n".join(dict.fromkeys(feedback_lines))
+
+    except json.JSONDecodeError:
+        return f"Linker/Runtime Error:\n{stderr_output[:1000]}"
+
 
 
 if __name__ == "__main__":

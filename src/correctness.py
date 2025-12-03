@@ -3,6 +3,7 @@ import subprocess
 import tempfile
 import re
 from pathlib import Path
+from src.train_util import parse_error_json
 
 TEMPLATE = """
 // Scalar solution
@@ -28,12 +29,20 @@ def verify_simd_correctness(
     # Extract intrinsic type for compiler flags
     intrinsic = task_data.get("intrinsic", "AVX")
     arch_flags = get_arch_flags(intrinsic)
+    scalar_solution=task_data['solution_scalar']
+    test_correctness = task_data['test_correctness']
+
+    prefix_part = TEMPLATE.split('{SIMD_SOLUTION}')[0].format(
+        SCALAR_SOLUTION=task_data["solution_scalar"],
+        ITERATIONS=iterations
+    )
+    line_offset = prefix_part.count('\n')
 
     # Generate complete C++ test file
     cpp_code = generate_correctness_test(
-        scalar_solution=task_data["solution_scalar"],
+        scalar_solution=scalar_solution,
         simd_solution=simd_solution,
-        test_harness=task_data["test_correctness"],
+        test_harness=test_correctness,
         iterations=iterations
     )
 
@@ -55,7 +64,8 @@ def verify_simd_correctness(
         # Compile (test)
         compile_cmd = [
             "g++", "-std=c++17", "-O3",
-            f"-include", str(header_path),
+            "-fdiagnostics-format=json",
+            "-include", str(header_path),
             *arch_flags.split(),
             str(cpp_file), "-o", str(exe_file)
         ]
@@ -70,7 +80,7 @@ def verify_simd_correctness(
 
             if compile_result.returncode != 0:
                 outcome = "compilation_error"
-                feedback = str(compile_result.stderr)
+                feedback = parse_error_json(compile_result.stderr, str(cpp_file), line_offset)
             else:
                 compiles = True
 
@@ -94,6 +104,7 @@ def verify_simd_correctness(
                 if result.returncode != 0:
                     outcome = 'runtime_error'
                     feedback = str(result.stderr)
+
                 else:
                     # Parse JSON output
                     output = result.stdout.strip()
@@ -116,6 +127,13 @@ def verify_simd_correctness(
             except Exception as e:
                 outcome = 'runtime_error'
                 feedback = str(e)
+    # if not compiles:
+    #     print('DEBUG ########')
+    #     print('unfiltered feedback\n')
+    #     print('feedback')
+
+    #     print('\n\nfiltered feedback\n')
+
     return {
         'compiles': compiles,
         'correct': correct,

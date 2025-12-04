@@ -11,6 +11,8 @@ def verify(task: dict, sol_simd: str) -> dict:
         verif = verify_speedup(task, sol_simd)
         if verif['success']:
             verif['correct'] = True
+        else:
+            verif['correct'] = False
         # verif['correct'] = True
 
     verif['correct_format'] = True

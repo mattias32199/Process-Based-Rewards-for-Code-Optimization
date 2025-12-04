@@ -13,6 +13,7 @@ def verify(task: dict, sol_simd: str) -> dict:
             verif['correct'] = True
         else:
             verif['correct'] = False
+            verif['correctness_compile'] = True
         # verif['correct'] = True
 
     verif['correct_format'] = True

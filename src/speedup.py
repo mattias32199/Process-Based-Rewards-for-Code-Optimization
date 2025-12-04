@@ -87,7 +87,7 @@ def verify_speedup(
 
         if compile_result.returncode != 0:
             success = False
-            outcome = 'compilation_failed'
+            outcome = 'compilation_error'
             speedups = None
             avg_speedup = None
             feedback = parse_error_json(compile_result.stderr, source_file, line_offset)

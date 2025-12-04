@@ -22,9 +22,17 @@ def compute_immediate_reward(eval: dict, print_rewards=False) -> float:
                 print(eval)
                 print(e)
                 raise NotImplementedError
+
     print(f"{eval['task_id']}\t{reward}\tavg_speedup: {avg_speedup}")
     if reward == 0.3:
         print(eval)
+
+    if eval.get('correctness_compile'):
+        if eval['correctness_compile']:
+            print('PINEAPPLE')
+            print(eval['task_id'])
+            print(eval)
+            print('Strange behavior!!!')
     return reward
 
 

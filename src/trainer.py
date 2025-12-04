@@ -147,7 +147,7 @@ class MultiTurnRLTrainer():
             for k in keys:
                 avg_metrics[k] = sum(d[k] for d in all_metrics) / len(all_metrics)
 
-        return total_epoch_loss, all_metrics
+        return total_epoch_loss, avg_metrics
 
     def construct_prompts(self, envs, turn):
         """

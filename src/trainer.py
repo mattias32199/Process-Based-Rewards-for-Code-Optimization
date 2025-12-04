@@ -104,28 +104,50 @@ class MultiTurnRLTrainer():
         return trajectories
 
 
-    def update_policy(self, trajectories: list[dict]):
-        # A. Calculate current/new log probs
-        current_log_probs, current_mask = self.get_log_probs(
-            trajectories, requires_grad=True
-        )
+    def update_policy(self, trajectories: list[dict], pg_mini_batch: int = 4):
+        self.engine.optimizer.zero_grad()
+        n_trajectories = len(trajectories)
+        total_epoch_loss = 0
+        all_metrics = []
 
-        # B. Process trajectories for policy loss calculation
-        gspo_variables = self.process_trajectories(trajectories, current_log_probs, current_mask)
+        # gradient accumulation
+        for i in range(0, n_trajectories, pg_mini_batch):
+            batch_trajectories = trajectories[i : i + pg_mini_batch] # slice trajectories for batch
+            # A. Calculate current/new log probs
+            current_log_probs, current_mask = self.get_log_probs(
+                batch_trajectories, requires_grad=True
+            )
+            # B. Process trajectories for policy loss calculation
+            gspo_variables = self.process_trajectories(
+                batch_trajectories, current_log_probs, current_mask
+            )
+            # C. Compute policy loss using GSPO
+            pg_loss, metrics = compute_policy_loss_gspo(
+                old_log_prob=gspo_variables['old_log_probs_padded'],
+                log_prob=gspo_variables['current_log_probs'],
+                advantages=gspo_variables['advantages'],
+                response_mask=gspo_variables['final_mask'],
+                config=self.config.gspo
+            )
+            # D. Scale loss to chunk size
+            loss_scaling_factor = len(batch_trajectories) / n_trajectories
+            chunk_loss = pg_loss * loss_scaling_factor
+            # E. Accumlate
+            chunk_loss.backward()
+            total_epoch_loss += chunk_loss.item()
+            # logging
+            all_metrics.append(metrics)
 
-        # C. Compute policy loss using GSPO
-        pg_loss, metrics = compute_policy_loss_gspo(
-            old_log_prob=gspo_variables['old_log_probs_padded'],
-            log_prob=gspo_variables['current_log_probs'],
-            advantages=gspo_variables['advantages'],
-            response_mask=gspo_variables['final_mask'],
-            config=self.config.gspo
-        )
+        # F. Step/update training engine
+        self.engine.step_training_engine()
 
-        # D. Update training engine
-        loss_val = self.engine.update_training_engine(pg_loss)
+        avg_metrics = {}
+        if all_metrics:
+            keys = all_metrics[0].keys()
+            for k in keys:
+                avg_metrics[k] = sum(d[k] for d in all_metrics) / len(all_metrics)
 
-        return loss_val, metrics
+        return total_epoch_loss, all_metrics
 
     def construct_prompts(self, envs, turn):
         """
@@ -204,7 +226,6 @@ class MultiTurnRLTrainer():
         """
         current/new logprobs require grad
         """
-
         # unpack prompts and responses
         prompts = [t["prompt"] for t in trajectories]
         responses = [t["response"] for t in trajectories]

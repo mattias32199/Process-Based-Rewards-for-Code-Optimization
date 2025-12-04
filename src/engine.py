@@ -244,7 +244,7 @@ class UnifiedPolicyEngine:
 
         return token_log_probs, final_mask
 
-    def update_training_engine(self, loss) -> float:
+    def step_training_engine(self):
         """
         Performs a single gradient update step.
         Args:
@@ -252,14 +252,10 @@ class UnifiedPolicyEngine:
         Returns:
             loss: float (The training loss for logging)
         """
-        # backward pass
-        self.optimizer.zero_grad()
-        loss.backward()
         # gradient clipping
         torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
         self.optimizer.step()
-
-        return loss.item()
+        # return loss.item()
 
     def set_train_mode(self):
         FastLanguageModel.for_training(self.model)

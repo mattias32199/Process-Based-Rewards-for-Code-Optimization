@@ -142,7 +142,7 @@ class UnifiedPolicyEngine:
         torch.cuda.empty_cache()
         return completions
 
-    def generate_log_probs(self,prompts: list[str], responses: list[str]) -> tuple[torch.Tensor, torch.Tensor]:
+    def generate_log_probs(self,prompts: list[str], responses: list[str], micro_batch_size:int=8) -> tuple[torch.Tensor, torch.Tensor]:
         """
         Computes log probabilities for the 'responses' given the 'prompts'.
         Used for both:
@@ -153,15 +153,10 @@ class UnifiedPolicyEngine:
             log_probs: (B, T) - Log probs of the response tokens
             masks: (B, T) - 1.0 for response tokens, 0.0 for padding/prompt
         """
-        # Training/Forward pass requires RIGHT padding
-        self.tokenizer.padding_side = "right"
-
-        # append EOS
-        responses = [r + self.tokenizer.eos_token for r in responses]
-
-        # We need to construct the full text to feed into the model
-        # Note: Ideally you use a chat template here, ensuring strict concatenation
-        full_texts = [p + r for p, r in zip(prompts, responses)]
+        # Setup
+        self.tokenizer.padding_side = "right" # training/forward pass requires RIGHT padding
+        responses = [r + self.tokenizer.eos_token for r in responses] # append EOS
+        full_texts = [p + r for p, r in zip(prompts, responses)] # construct full texts
 
         # Tokenize everything
         inputs = self.tokenizer(
@@ -172,12 +167,9 @@ class UnifiedPolicyEngine:
             truncation=True,
             max_length=self.max_seq_length,
         ).to(self.device)
-
         input_ids = inputs.input_ids
         attention_mask = inputs.attention_mask
-
         # Determine where the prompt ends and response begins
-        # We re-tokenize just the prompts to find their length
         prompt_inputs = self.tokenizer(
             prompts,
             add_special_tokens=False,
@@ -186,45 +178,57 @@ class UnifiedPolicyEngine:
             truncation=True,
             max_length=self.max_seq_length
         )
-        # Calculate prompt lengths
-        prompt_lens = prompt_inputs.attention_mask.sum(dim=1).to(self.device)
+        prompt_lens = prompt_inputs.attention_mask.sum(dim=1).to(self.device) # calculate prompt lengths
 
-        # Forward pass
-        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
-        logits = outputs.logits # (B, Seq, Vocab)
+        all_log_probs = []
+        all_masks = []
+        num_samples = input_ids.size(0)
+        for i in range(0, num_samples, micro_batch_size):
+            # Define slice
+            end = min(i + micro_batch_size, num_samples)
+            batch_slice = slice(i, end)
 
-        # Shift: logits at [:-1] predict tokens at [1:]
-        logits = logits[:, :-1, :]
-        target_ids = input_ids[:, 1:]
+            curr_input_ids = input_ids[batch_slice]
+            curr_attn_mask = attention_mask[batch_slice]
+            curr_prompt_lens = prompt_lens[batch_slice]
 
+            outputs = self.model(
+                input_ids=curr_input_ids,
+                attention_mask=curr_attn_mask,
+                use_cache=False
+            )
+            logits = outputs.logits
 
-        # fix 1
-        # loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
-        # token_log_probs_all = -loss_fct(
-        #     logits.reshape(-1, logits.size(-1)),
-        #     target_ids.reshape(-1)
-        # ).view(target_ids.shape)
+            shift_logits = logits[..., :-1, :].contiguous()
+            shift_labels = curr_input_ids[..., 1:].contiguous()
 
-        # fix 2
-        log_probs = torch.nn.functional.log_softmax(logits, dim=-1)
-        token_log_probs_all = torch.gather(
-            log_probs, dim=-1, index=target_ids.unsqueeze(-1)
-        ).squeeze(-1)
+            # loss
+            loss_fct = torch.nn.CrossEntropyLoss(reduction='none')
+            log_probs = -loss_fct(
+                shift_logits.view(-1, shift_logits.size(-1)),
+                shift_labels.view(-1)
+            )
 
-        # bos agnostic
-        mask = torch.zeros_like(token_log_probs_all)
-        for i, p_len in enumerate(prompt_lens):
-            start_idx = p_len - 1
-            start_idx = max(start_idx, 0)
-            mask[i, start_idx:] = 1.0
+            log_probs = log_probs.view(shift_labels.shape) # Reshape back to [MicroBatch, SeqLen]
 
-        # Apply padding mask (original attention mask shifted)
-        # attention_mask is for [0...Seq]. target_ids is [1...Seq]
-        padding_mask = attention_mask[:, 1:]
-        final_mask = mask * padding_mask
+            # immediate cleanup
+            del logits, shift_logits, outputs
+            torch.cuda.empty_cache()
 
-        # Zero out logprobs for prompt/padding so they don't affect sums
-        token_log_probs = token_log_probs_all * final_mask
+            # masking logic
+            mask = torch.zeros_like(log_probs)
+            for j, p_len in enumerate(curr_prompt_lens):
+                start_idx = max(p_len - 1, 0)
+                mask[j, start_idx:] = 1.0
+            padding_mask = curr_attn_mask[:, 1:]
+            final_mask = mask * padding_mask
+            log_probs = log_probs * final_mask
+            all_log_probs.append(log_probs)
+            all_masks.append(final_mask)
+
+        # re-assembly
+        token_log_probs = torch.cat(all_log_probs, dim=0)
+        final_mask = torch.cat(all_masks, dim=0)
 
         if self.print_config.log_probs:
             with torch.no_grad():
@@ -234,7 +238,7 @@ class UnifiedPolicyEngine:
                 print("[get_batch_log_probs] nonzero mask per sample:", mask_counts.tolist())
                 print("[get_batch_log_probs] total nonzero mask:", mask_counts.sum().item())
                 print("[get_batch_log_probs] token_logprobs_all mean:",
-                    float(token_log_probs_all.mean().item()))
+                    float(token_log_probs.mean().item()))
                 print("[get_batch_log_probs] token_log_probs (after mask) mean:",
                     float(token_log_probs.mean().item()))
 

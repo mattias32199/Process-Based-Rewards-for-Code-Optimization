@@ -94,7 +94,7 @@ class MultiTurnRLTrainer():
         # F. Compute "old" (on-policy) logprobs
         # extract prompts and responses
         old_log_probs, masks = self.get_log_probs(
-            trajectories, requires_grad=False, mini_batch_size=self.mini_batch_size
+            trajectories, requires_grad=False
         )
         # repack logprobs and masks
         for i, t in enumerate(trajectories):
@@ -107,7 +107,7 @@ class MultiTurnRLTrainer():
     def update_policy(self, trajectories: list[dict]):
         # A. Calculate current/new log probs
         current_log_probs, current_mask = self.get_log_probs(
-            trajectories, requires_grad=True, mini_batch_size=self.mini_batch_size
+            trajectories, requires_grad=True
         )
 
         # B. Process trajectories for policy loss calculation
@@ -200,54 +200,21 @@ class MultiTurnRLTrainer():
                 })
         return envs
 
-    def get_log_probs(self, trajectories, requires_grad, mini_batch_size=8):
+    def get_log_probs(self, trajectories, requires_grad):
         """
-        Batched wrapper for engine.generate_log_probs to prevent OOM.
-        Direct replacement for the original method.
+        current/new logprobs require grad
         """
+
+        # unpack prompts and responses
         prompts = [t["prompt"] for t in trajectories]
         responses = [t["response"] for t in trajectories]
-
-        # Guard against empty updates
-        if not prompts:
-            return torch.tensor([]).to(self.engine.device), torch.tensor([]).to(self.engine.device)
-
         self.engine.set_train_mode()
-
-        # 1. Process in Mini-Batches
-        batches_lp, batches_mask = [], []
-
-        for i in range(0, len(prompts), mini_batch_size):
-            p_chunk = prompts[i : i + mini_batch_size]
-            r_chunk = responses[i : i + mini_batch_size]
-
-            # Control gradients based on phase
-            with torch.set_grad_enabled(requires_grad):
-                lp, mask = self.engine.generate_log_probs(p_chunk, r_chunk)
-
-            # If Rollout (no grad), offload to CPU to save VRAM immediately
-            if not requires_grad:
-                lp, mask = lp.cpu(), mask.cpu()
-                # aggressive cleanup
-                del p_chunk, r_chunk
-                torch.cuda.empty_cache()
-
-            batches_lp.append(lp)
-            batches_mask.append(mask)
-
-        # 2. Dynamic Re-assembly
-        # Find global max length among all batches to align dimensions
-        max_len = max(b.size(1) for b in batches_lp)
-
-        # Helper to pad (0, pad_right) with value 0
-        def pad_tensor(t, target_len):
-            return torch.nn.functional.pad(t, (0, target_len - t.size(1)), value=0)
-
-        # Concatenate all batches
-        full_lp = torch.cat([pad_tensor(b, max_len) for b in batches_lp], dim=0)
-        full_mask = torch.cat([pad_tensor(b, max_len) for b in batches_mask], dim=0)
-
-        return full_lp, full_mask
+        if requires_grad:
+            old_log_probs, masks = self.engine.generate_log_probs(prompts, responses, self.mini_batch_size)
+        else:
+            with torch.no_grad():
+                old_log_probs, masks = self.engine.generate_log_probs(prompts, responses, self.mini_batch_size)
+        return old_log_probs, masks
 
     def process_trajectories(self, trajectories, current_log_probs, current_mask):
         # Extract advantages

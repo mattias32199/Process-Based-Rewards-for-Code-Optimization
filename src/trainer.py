@@ -66,7 +66,7 @@ class MultiTurnRLTrainer():
                 print("Model Collapse Metrics: ")
                 print(f"Reward AVG: {reward_avg:.6f}\t\tReward STD: {reward_std:.6f}")
                 print(f"Correct Format%: {perf_metrics['correct_format']:.4f}")
-                print(f"Correct%: {perf_metrics['correct']:.4f]}")
+                print(f"Correct%: {perf_metrics['correct']:.4f}")
                 print(f"YesSpeedup%: {perf_metrics['speedup']:.4f}")
 
                 del trajectories

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_128",
+    "type": "2",
+    "subtype": "HumanEval/136",
+    "entrypoint_scalar": "largest_smallest_integers",
+    "entrypoint_simd": "largest_smallest_integers_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_76",
+    "type": "2",
+    "subtype": "HumanEval/31",
+    "entrypoint_scalar": "is_prime",
+    "entrypoint_simd": "is_prime_simd"
+}

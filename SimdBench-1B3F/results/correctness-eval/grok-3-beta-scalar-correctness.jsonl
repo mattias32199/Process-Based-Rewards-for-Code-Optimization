@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": false, "result": "runtime failed: "}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_69", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_71", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_71", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_79", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_93", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_106", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_107", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_113", "passed": false, "result": "compilation failed: [REDACTED]/tmp6ol1haer.cpp:34:13: error: use of undeclared identifier 'isPalindrome'\n   34 |         if (isPalindrome(i)) {\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113", "passed": false, "result": "compilation failed: [REDACTED]/tmpbuoxif1b.cpp:34:13: error: use of undeclared identifier 'isPalindrome'\n   34 |         if (isPalindrome(i)) {\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113", "passed": false, "result": "compilation failed: [REDACTED]/tmpm6mcbpgw.cpp:34:13: error: use of undeclared identifier 'isPalindrome'\n   34 |         if (isPalindrome(i)) {\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113", "passed": false, "result": "compilation failed: [REDACTED]/tmpvysr94z6.cpp:34:13: error: use of undeclared identifier 'isPalindrome'\n   34 |         if (isPalindrome(i)) {\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_113", "passed": false, "result": "compilation failed: [REDACTED]/tmp8nvobvq3.cpp:34:13: error: use of undeclared identifier 'isPalindrome'\n   34 |         if (isPalindrome(i)) {\n      |             ^\n1 error generated.\n"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_124", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_125", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_130", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": false, "result": "compilation failed: [REDACTED]/tmpew77g79s.cpp:61:21: error: expected ';' after expression\n   61 |     vector<uint64_t> a(n);\n      |                     ^\n      |                     ;\n[REDACTED]/tmpew77g79s.cpp:61:5: error: use of undeclared identifier 'vector'\n   61 |     vector<uint64_t> a(n);\n      |     ^\n[REDACTED]/tmpew77g79s.cpp:61:22: error: use of undeclared identifier 'a'\n   61 |     vector<uint64_t> a(n);\n      |                      ^\n[REDACTED]/tmpew77g79s.cpp:63:9: error: use of undeclared identifier 'a'\n   63 |         a[i] = (i + 1) * (i + 1) - (i + 1) + 1;\n      |         ^\n[REDACTED]/tmpew77g79s.cpp:67:21: error: expected ';' after expression\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |                     ^\n      |                     ;\n[REDACTED]/tmpew77g79s.cpp:67:5: error: use of undeclared identifier 'vector'\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |     ^\n[REDACTED]/tmpew77g79s.cpp:67:22: error: use of undeclared identifier 'mod_count'\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |                      ^\n[REDACTED]/tmpew77g79s.cpp:70:9: error: use of undeclared identifier 'mod_count'\n   70 |         mod_count[a[i] % 3]++;\n      |         ^\n[REDACTED]/tmpew77g79s.cpp:70:19: error: use of undeclared identifier 'a'\n   70 |         mod_count[a[i] % 3]++;\n      |                   ^\n[REDACTED]/tmpew77g79s.cpp:79:27: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                           ^\n[REDACTED]/tmpew77g79s.cpp:79:43: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                                           ^\n[REDACTED]/tmpew77g79s.cpp:79:64: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                                                                ^\n[REDACTED]/tmpew77g79s.cpp:81:27: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                           ^\n[REDACTED]/tmpew77g79s.cpp:81:43: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                                           ^\n[REDACTED]/tmpew77g79s.cpp:81:68: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                                                                    ^\n[REDACTED]/tmpew77g79s.cpp:83:27: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                           ^\n[REDACTED]/tmpew77g79s.cpp:83:43: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                                           ^\n[REDACTED]/tmpew77g79s.cpp:83:68: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                                                                    ^\n[REDACTED]/tmpew77g79s.cpp:85:26: error: use of undeclared identifier 'mod_count'\n   85 |                 count += mod_count[i] * mod_count[j] * mod_count[k];\n      |                          ^\nfatal error: too many errors emitted, stopping now [-ferror-limit=]\n20 errors generated.\n"}
+{"task_id": "SimdBench_132", "passed": false, "result": "compilation failed: [REDACTED]/tmpdl0a1o0v.cpp:61:21: error: expected ';' after expression\n   61 |     vector<uint64_t> a(n);\n      |                     ^\n      |                     ;\n[REDACTED]/tmpdl0a1o0v.cpp:61:5: error: use of undeclared identifier 'vector'\n   61 |     vector<uint64_t> a(n);\n      |     ^\n[REDACTED]/tmpdl0a1o0v.cpp:61:22: error: use of undeclared identifier 'a'\n   61 |     vector<uint64_t> a(n);\n      |                      ^\n[REDACTED]/tmpdl0a1o0v.cpp:63:9: error: use of undeclared identifier 'a'\n   63 |         a[i] = (i + 1) * (i + 1) - (i + 1) + 1;\n      |         ^\n[REDACTED]/tmpdl0a1o0v.cpp:67:16: error: expected ';' after expression\n   67 |     vector<int> mod_count(3, 0);\n      |                ^\n      |                ;\n[REDACTED]/tmpdl0a1o0v.cpp:67:5: error: use of undeclared identifier 'vector'\n   67 |     vector<int> mod_count(3, 0);\n      |     ^\n[REDACTED]/tmpdl0a1o0v.cpp:67:17: error: use of undeclared identifier 'mod_count'\n   67 |     vector<int> mod_count(3, 0);\n      |                 ^\n[REDACTED]/tmpdl0a1o0v.cpp:70:9: error: use of undeclared identifier 'mod_count'\n   70 |         mod_count[a[i] % 3]++;\n      |         ^\n[REDACTED]/tmpdl0a1o0v.cpp:70:19: error: use of undeclared identifier 'a'\n   70 |         mod_count[a[i] % 3]++;\n      |                   ^\n[REDACTED]/tmpdl0a1o0v.cpp:74:9: error: use of undeclared identifier 'mod_count'\n   74 |         mod_count[a[i] % 3]--;\n      |         ^\n[REDACTED]/tmpdl0a1o0v.cpp:74:19: error: use of undeclared identifier 'a'\n   74 |         mod_count[a[i] % 3]--;\n      |                   ^\n[REDACTED]/tmpdl0a1o0v.cpp:76:13: error: use of undeclared identifier 'mod_count'\n   76 |             mod_count[a[j] % 3]--;\n      |             ^\n[REDACTED]/tmpdl0a1o0v.cpp:76:23: error: use of undeclared identifier 'a'\n   76 |             mod_count[a[j] % 3]--;\n      |                       ^\n[REDACTED]/tmpdl0a1o0v.cpp:77:28: error: use of undeclared identifier 'a'\n   77 |             uint64_t sum = a[i] + a[j];\n      |                            ^\n[REDACTED]/tmpdl0a1o0v.cpp:77:35: error: use of undeclared identifier 'a'\n   77 |             uint64_t sum = a[i] + a[j];\n      |                                   ^\n[REDACTED]/tmpdl0a1o0v.cpp:81:21: error: use of undeclared identifier 'a'\n   81 |                 if (a[k] % 3 == needed) {\n      |                     ^\n[REDACTED]/tmpdl0a1o0v.cpp:85:13: error: use of undeclared identifier 'mod_count'\n   85 |             mod_count[a[j] % 3]++;\n      |             ^\n[REDACTED]/tmpdl0a1o0v.cpp:85:23: error: use of undeclared identifier 'a'\n   85 |             mod_count[a[j] % 3]++;\n      |                       ^\n[REDACTED]/tmpdl0a1o0v.cpp:87:9: error: use of undeclared identifier 'mod_count'\n   87 |         mod_count[a[i] % 3]++;\n      |         ^\nfatal error: too many errors emitted, stopping now [-ferror-limit=]\n20 errors generated.\n"}
+{"task_id": "SimdBench_132", "passed": false, "result": "compilation failed: [REDACTED]/tmprc3khshp.cpp:61:21: error: expected ';' after expression\n   61 |     vector<uint64_t> a(n);\n      |                     ^\n      |                     ;\n[REDACTED]/tmprc3khshp.cpp:61:5: error: use of undeclared identifier 'vector'\n   61 |     vector<uint64_t> a(n);\n      |     ^\n[REDACTED]/tmprc3khshp.cpp:61:22: error: use of undeclared identifier 'a'\n   61 |     vector<uint64_t> a(n);\n      |                      ^\n[REDACTED]/tmprc3khshp.cpp:63:9: error: use of undeclared identifier 'a'\n   63 |         a[i] = (i + 1) * (i + 1) - (i + 1) + 1;\n      |         ^\n[REDACTED]/tmprc3khshp.cpp:67:21: error: expected ';' after expression\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |                     ^\n      |                     ;\n[REDACTED]/tmprc3khshp.cpp:67:5: error: use of undeclared identifier 'vector'\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |     ^\n[REDACTED]/tmprc3khshp.cpp:67:22: error: use of undeclared identifier 'mod_count'\n   67 |     vector<uint64_t> mod_count(3, 0);\n      |                      ^\n[REDACTED]/tmprc3khshp.cpp:70:9: error: use of undeclared identifier 'mod_count'\n   70 |         mod_count[a[i] % 3]++;\n      |         ^\n[REDACTED]/tmprc3khshp.cpp:70:19: error: use of undeclared identifier 'a'\n   70 |         mod_count[a[i] % 3]++;\n      |                   ^\n[REDACTED]/tmprc3khshp.cpp:79:27: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                           ^\n[REDACTED]/tmprc3khshp.cpp:79:43: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                                           ^\n[REDACTED]/tmprc3khshp.cpp:79:64: error: use of undeclared identifier 'mod_count'\n   79 |                 count += (mod_count[i] * (mod_count[i] - 1) * (mod_count[i] - 2)) / 6;\n      |                                                                ^\n[REDACTED]/tmprc3khshp.cpp:81:27: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                           ^\n[REDACTED]/tmprc3khshp.cpp:81:43: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                                           ^\n[REDACTED]/tmprc3khshp.cpp:81:68: error: use of undeclared identifier 'mod_count'\n   81 |                 count += (mod_count[i] * (mod_count[i] - 1) / 2) * mod_count[k];\n      |                                                                    ^\n[REDACTED]/tmprc3khshp.cpp:83:27: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                           ^\n[REDACTED]/tmprc3khshp.cpp:83:43: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                                           ^\n[REDACTED]/tmprc3khshp.cpp:83:68: error: use of undeclared identifier 'mod_count'\n   83 |                 count += (mod_count[j] * (mod_count[j] - 1) / 2) * mod_count[i];\n      |                                                                    ^\n[REDACTED]/tmprc3khshp.cpp:85:26: error: use of undeclared identifier 'mod_count'\n   85 |                 count += mod_count[i] * mod_count[j] * mod_count[k];\n      |                          ^\nfatal error: too many errors emitted, stopping now [-ferror-limit=]\n20 errors generated.\n"}
+{"task_id": "SimdBench_132", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": false, "result": "compilation failed: [REDACTED]/tmptp1k3gnn.cpp:63:21: error: expected ';' after expression\n   63 |     vector<uint64_t> remainder_count(3, 0);\n      |                     ^\n      |                     ;\n[REDACTED]/tmptp1k3gnn.cpp:63:5: error: use of undeclared identifier 'vector'\n   63 |     vector<uint64_t> remainder_count(3, 0);\n      |     ^\n[REDACTED]/tmptp1k3gnn.cpp:63:22: error: use of undeclared identifier 'remainder_count'\n   63 |     vector<uint64_t> remainder_count(3, 0);\n      |                      ^\n[REDACTED]/tmptp1k3gnn.cpp:66:9: error: use of undeclared identifier 'remainder_count'\n   66 |         remainder_count[val % 3]++;\n      |         ^\n[REDACTED]/tmptp1k3gnn.cpp:70:19: error: use of undeclared identifier 'remainder_count'\n   70 |     uint64_t r0 = remainder_count[0];\n      |                   ^\n[REDACTED]/tmptp1k3gnn.cpp:71:19: error: use of undeclared identifier 'remainder_count'\n   71 |     uint64_t r1 = remainder_count[1];\n      |                   ^\n[REDACTED]/tmptp1k3gnn.cpp:72:19: error: use of undeclared identifier 'remainder_count'\n   72 |     uint64_t r2 = remainder_count[2];\n      |                   ^\n7 errors generated.\n"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}

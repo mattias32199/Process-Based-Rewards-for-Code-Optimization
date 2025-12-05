@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_37",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "matrix_blocks_equal",
+    "entrypoint_simd": "matrix_blocks_equal_simd"
+}

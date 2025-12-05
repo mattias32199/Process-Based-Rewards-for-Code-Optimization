@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_64",
+    "type": "2",
+    "subtype": "HumanEval/4",
+    "entrypoint_scalar": "mean_absolute_deviation",
+    "entrypoint_simd": "mean_absolute_deviation_simd"
+}

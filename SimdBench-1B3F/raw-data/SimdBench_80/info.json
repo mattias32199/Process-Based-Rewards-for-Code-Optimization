@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_80",
+    "type": "2",
+    "subtype": "HumanEval/36",
+    "entrypoint_scalar": "fizz_buzz",
+    "entrypoint_simd": "fizz_buzz_simd"
+}

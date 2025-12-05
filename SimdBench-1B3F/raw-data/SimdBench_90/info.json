@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_90",
+    "type": "2",
+    "subtype": "HumanEval/61",
+    "entrypoint_scalar": "correct_bracketing",
+    "entrypoint_simd": "correct_bracketing_simd"
+}

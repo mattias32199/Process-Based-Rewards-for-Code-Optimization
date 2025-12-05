@@ -1,0 +1,680 @@
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_0", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_1", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_2", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_3", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_3", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_3", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_3", "passed": false, "result": "compilation failed: [REDACTED]/tmpd7yzs4tv.cpp:32:25: error: read-only variable is not assignable\n   32 |         src[indices[i]] = dst[i]; // Scatter operation\n      |         ~~~~~~~~~~~~~~~ ^\n1 error generated.\n"}
+{"task_id": "SimdBench_3", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_4", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_5", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_6", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_7", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_8", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_9", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_10", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_11", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_12", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_13", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_14", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_15", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_16", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_17", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_18", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_19", "passed": false, "result": "compilation failed: [REDACTED]/tmp2lfsytma.cpp:27:1: error: expected unqualified-id\n   27 | ```c\n      | ^\n[REDACTED]/tmp2lfsytma.cpp:35:1: error: expected unqualified-id\n   35 | ```\n      | ^\n[REDACTED]/tmp2lfsytma.cpp:60:17: error: use of undeclared identifier 'correctness_check'\n   60 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_19", "passed": false, "result": "compilation failed: [REDACTED]/tmph5hvswkx.cpp:27:1: error: expected unqualified-id\n   27 | ```c\n      | ^\n[REDACTED]/tmph5hvswkx.cpp:35:1: error: expected unqualified-id\n   35 | ```\n      | ^\n[REDACTED]/tmph5hvswkx.cpp:60:17: error: use of undeclared identifier 'correctness_check'\n   60 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_19", "passed": false, "result": "compilation failed: [REDACTED]/tmpjq_gotyv.cpp:27:1: error: expected unqualified-id\n   27 | ```c\n      | ^\n[REDACTED]/tmpjq_gotyv.cpp:35:1: error: expected unqualified-id\n   35 | ```\n      | ^\n[REDACTED]/tmpjq_gotyv.cpp:60:17: error: use of undeclared identifier 'correctness_check'\n   60 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_19", "passed": false, "result": "compilation failed: [REDACTED]/tmpwolz4d4d.cpp:27:1: error: expected unqualified-id\n   27 | ```c\n      | ^\n[REDACTED]/tmpwolz4d4d.cpp:35:1: error: expected unqualified-id\n   35 | ```\n      | ^\n[REDACTED]/tmpwolz4d4d.cpp:60:17: error: use of undeclared identifier 'correctness_check'\n   60 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_19", "passed": false, "result": "compilation failed: [REDACTED]/tmp43j2c2cl.cpp:27:1: error: expected unqualified-id\n   27 | ```c\n      | ^\n[REDACTED]/tmp43j2c2cl.cpp:35:1: error: expected unqualified-id\n   35 | ```\n      | ^\n[REDACTED]/tmp43j2c2cl.cpp:60:17: error: use of undeclared identifier 'correctness_check'\n   60 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_20", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_21", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_22", "passed": false, "result": "compilation failed: [REDACTED]/tmpdk1wn48n.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpdk1wn48n.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpdk1wn48n.cpp:51:17: error: use of undeclared identifier 'correctness_check'\n   51 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_22", "passed": false, "result": "compilation failed: [REDACTED]/tmp56f_yjxu.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmp56f_yjxu.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmp56f_yjxu.cpp:51:17: error: use of undeclared identifier 'correctness_check'\n   51 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_22", "passed": false, "result": "compilation failed: [REDACTED]/tmpftql3km3.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpftql3km3.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpftql3km3.cpp:51:17: error: use of undeclared identifier 'correctness_check'\n   51 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_22", "passed": false, "result": "compilation failed: [REDACTED]/tmpqwt1szax.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpqwt1szax.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpqwt1szax.cpp:51:17: error: use of undeclared identifier 'correctness_check'\n   51 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_22", "passed": false, "result": "compilation failed: [REDACTED]/tmpmk0wfsds.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpmk0wfsds.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpmk0wfsds.cpp:51:17: error: use of undeclared identifier 'correctness_check'\n   51 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_23", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_24", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_25", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_26", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_27", "passed": false, "result": "compilation failed: [REDACTED]/tmpzv6nzyec.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpzv6nzyec.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpzv6nzyec.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_27", "passed": false, "result": "compilation failed: [REDACTED]/tmp9qrgxhc9.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmp9qrgxhc9.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmp9qrgxhc9.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_27", "passed": false, "result": "compilation failed: [REDACTED]/tmpce27_a3h.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmpce27_a3h.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmpce27_a3h.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_27", "passed": false, "result": "compilation failed: [REDACTED]/tmplkvxo8sm.cpp:24:1: error: expected unqualified-id\n   24 | ```c\n      | ^\n[REDACTED]/tmplkvxo8sm.cpp:28:1: error: expected unqualified-id\n   28 | ```\n      | ^\n[REDACTED]/tmplkvxo8sm.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_28", "passed": false, "result": "compilation failed: [REDACTED]/tmp88bzutir.cpp:26:1: error: expected unqualified-id\n   26 | ```c\n      | ^\n[REDACTED]/tmp88bzutir.cpp:34:1: error: expected unqualified-id\n   34 | ```\n      | ^\n[REDACTED]/tmp88bzutir.cpp:58:17: error: use of undeclared identifier 'correctness_check'\n   58 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_28", "passed": false, "result": "compilation failed: [REDACTED]/tmpq_r8njg0.cpp:26:1: error: expected unqualified-id\n   26 | ```c\n      | ^\n[REDACTED]/tmpq_r8njg0.cpp:34:1: error: expected unqualified-id\n   34 | ```\n      | ^\n[REDACTED]/tmpq_r8njg0.cpp:58:17: error: use of undeclared identifier 'correctness_check'\n   58 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_28", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_28", "passed": false, "result": "compilation failed: [REDACTED]/tmpjkdh523s.cpp:26:1: error: expected unqualified-id\n   26 | ```c\n      | ^\n[REDACTED]/tmpjkdh523s.cpp:34:1: error: expected unqualified-id\n   34 | ```\n      | ^\n[REDACTED]/tmpjkdh523s.cpp:58:17: error: use of undeclared identifier 'correctness_check'\n   58 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_28", "passed": false, "result": "compilation failed: [REDACTED]/tmpdrjhtnbz.cpp:26:1: error: expected unqualified-id\n   26 | ```c\n      | ^\n[REDACTED]/tmpdrjhtnbz.cpp:34:1: error: expected unqualified-id\n   34 | ```\n      | ^\n[REDACTED]/tmpdrjhtnbz.cpp:58:17: error: use of undeclared identifier 'correctness_check'\n   58 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_29", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_30", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_31", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_32", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_33", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_34", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_35", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_36", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_37", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_38", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_38", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_39", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_40", "passed": false, "result": "compilation failed: [REDACTED]/tmp4d96vp1k.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmp4d96vp1k.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmp4d96vp1k.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_40", "passed": false, "result": "compilation failed: [REDACTED]/tmpafhkkzur.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmpafhkkzur.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmpafhkkzur.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_40", "passed": false, "result": "compilation failed: [REDACTED]/tmpqjkbry1k.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmpqjkbry1k.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmpqjkbry1k.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_40", "passed": false, "result": "compilation failed: [REDACTED]/tmpeg5kx753.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmpeg5kx753.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmpeg5kx753.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_40", "passed": false, "result": "compilation failed: [REDACTED]/tmpqdn5m1aj.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmpqdn5m1aj.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmpqdn5m1aj.cpp:52:17: error: use of undeclared identifier 'correctness_check'\n   52 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_41", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_42", "passed": false, "result": "compilation failed: [REDACTED]/tmp3yzrde6a.cpp:22:1: error: expected unqualified-id\n   22 | ```c\n      | ^\n[REDACTED]/tmp3yzrde6a.cpp:26:1: error: expected unqualified-id\n   26 | ```\n      | ^\n[REDACTED]/tmp3yzrde6a.cpp:50:17: error: use of undeclared identifier 'correctness_check'\n   50 |     bool pass = correctness_check(ITERATIONS);\n      |                 ^\n3 errors generated.\n"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_42", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_43", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_44", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_45", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_46", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_47", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_48", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_49", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_50", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_51", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_52", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_53", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_54", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_55", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_56", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_57", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_58", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_59", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_59", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_60", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_61", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_62", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_63", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_64", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_65", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_66", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_66", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_67", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_68", "passed": false, "result": "compilation failed: [REDACTED]/tmp4ak_llbd.cpp:86:5: error: redefinition of 'main'\n   86 | int main() {\n      |     ^\n[REDACTED]/tmp4ak_llbd.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_68", "passed": false, "result": "compilation failed: [REDACTED]/tmpyd8_lc5z.cpp:86:5: error: redefinition of 'main'\n   86 | int main() {\n      |     ^\n[REDACTED]/tmpyd8_lc5z.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_68", "passed": false, "result": "compilation failed: [REDACTED]/tmpcb613u1m.cpp:86:5: error: redefinition of 'main'\n   86 | int main() {\n      |     ^\n[REDACTED]/tmpcb613u1m.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_68", "passed": false, "result": "compilation failed: [REDACTED]/tmp2u7tbky0.cpp:86:5: error: redefinition of 'main'\n   86 | int main() {\n      |     ^\n[REDACTED]/tmp2u7tbky0.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_68", "passed": false, "result": "compilation failed: [REDACTED]/tmpvaoqk8v7.cpp:86:5: error: redefinition of 'main'\n   86 | int main() {\n      |     ^\n[REDACTED]/tmpvaoqk8v7.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69", "passed": false, "result": "compilation failed: [REDACTED]/tmp5asz3bge.cpp:62:21: error: no viable conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')\n   62 |         std::string res_simd = longest_simd(strings);\n      |                     ^          ~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:547:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const basic_string<char> &' for 1st argument\n  547 |       basic_string(const basic_string& __str)\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:641:7: note: candidate constructor template not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const char *' for 1st argument\n  641 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:677:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'basic_string<char> &&' for 1st argument\n  677 |       basic_string(basic_string&& __str) noexcept\n      |       ^            ~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:706:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'initializer_list<char>' for 1st argument\n  706 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:535:7: note: explicit constructor is not a candidate\n  535 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:795:2: note: explicit constructor is not a candidate\n  795 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69", "passed": false, "result": "compilation failed: [REDACTED]/tmp5ztxjjjc.cpp:58:21: error: no viable conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')\n   58 |         std::string res_simd = longest_simd(strings);\n      |                     ^          ~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:547:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const basic_string<char> &' for 1st argument\n  547 |       basic_string(const basic_string& __str)\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:641:7: note: candidate constructor template not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const char *' for 1st argument\n  641 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:677:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'basic_string<char> &&' for 1st argument\n  677 |       basic_string(basic_string&& __str) noexcept\n      |       ^            ~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:706:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'initializer_list<char>' for 1st argument\n  706 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:535:7: note: explicit constructor is not a candidate\n  535 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:795:2: note: explicit constructor is not a candidate\n  795 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69", "passed": false, "result": "compilation failed: [REDACTED]/tmp2jmsaypb.cpp:61:21: error: no viable conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')\n   61 |         std::string res_simd = longest_simd(strings);\n      |                     ^          ~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:547:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const basic_string<char> &' for 1st argument\n  547 |       basic_string(const basic_string& __str)\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:641:7: note: candidate constructor template not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const char *' for 1st argument\n  641 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:677:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'basic_string<char> &&' for 1st argument\n  677 |       basic_string(basic_string&& __str) noexcept\n      |       ^            ~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:706:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'initializer_list<char>' for 1st argument\n  706 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:535:7: note: explicit constructor is not a candidate\n  535 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:795:2: note: explicit constructor is not a candidate\n  795 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69", "passed": false, "result": "compilation failed: [REDACTED]/tmpjv5oygza.cpp:61:21: error: no viable conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')\n   61 |         std::string res_simd = longest_simd(strings);\n      |                     ^          ~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:547:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const basic_string<char> &' for 1st argument\n  547 |       basic_string(const basic_string& __str)\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:641:7: note: candidate constructor template not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const char *' for 1st argument\n  641 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:677:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'basic_string<char> &&' for 1st argument\n  677 |       basic_string(basic_string&& __str) noexcept\n      |       ^            ~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:706:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'initializer_list<char>' for 1st argument\n  706 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:535:7: note: explicit constructor is not a candidate\n  535 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:795:2: note: explicit constructor is not a candidate\n  795 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_69", "passed": false, "result": "compilation failed: [REDACTED]/tmp8kefymzg.cpp:61:21: error: no viable conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')\n   61 |         std::string res_simd = longest_simd(strings);\n      |                     ^          ~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:547:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const basic_string<char> &' for 1st argument\n  547 |       basic_string(const basic_string& __str)\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:641:7: note: candidate constructor template not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'const char *' for 1st argument\n  641 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:677:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'basic_string<char> &&' for 1st argument\n  677 |       basic_string(basic_string&& __str) noexcept\n      |       ^            ~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:706:7: note: candidate constructor not viable: no known conversion from 'std::optional<std::string>' (aka 'optional<basic_string<char>>') to 'initializer_list<char>' for 1st argument\n  706 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())\n      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:535:7: note: explicit constructor is not a candidate\n  535 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:795:2: note: explicit constructor is not a candidate\n  795 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())\n      |         ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": false, "result": "compilation failed: [REDACTED]/tmp50t7cjj6.cpp:70:5: error: redefinition of 'main'\n   70 | int main() {\n      |     ^\n[REDACTED]/tmp50t7cjj6.cpp:39:5: note: previous definition is here\n   39 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_70", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmplqsspykc.cpp:70:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   70 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmplqsspykc.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmplqsspykc.cpp:54:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   54 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpn__90qvs.cpp:70:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   70 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpn__90qvs.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpn__90qvs.cpp:54:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   54 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpdyoq7uo4.cpp:70:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   70 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpdyoq7uo4.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpdyoq7uo4.cpp:54:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   54 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpjcv6q9gf.cpp:70:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   70 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpjcv6q9gf.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpjcv6q9gf.cpp:54:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   54 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_71", "passed": false, "result": "compilation failed: [REDACTED]/tmpbrrc5d91.cpp:70:28: error: no viable conversion from 'std::pair<float, float>' to 'std::vector<float>'\n   70 |         std::vector<float> result_simd = find_closest_elements_simd(numbers);\n      |                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:601:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'const vector<float> &' for 1st argument\n  601 |       vector(const vector& __x)\n      |       ^      ~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:620:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'vector<float> &&' for 1st argument\n  620 |       vector(vector&&) noexcept = default;\n      |       ^      ~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:678:7: note: candidate constructor not viable: no known conversion from 'std::pair<float, float>' to 'initializer_list<value_type>' (aka 'initializer_list<float>') for 1st argument\n  678 |       vector(initializer_list<value_type> __l,\n      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:542:7: note: explicit constructor is not a candidate\n  542 |       vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT\n      |       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:556:7: note: explicit constructor is not a candidate\n  556 |       vector(size_type __n, const allocator_type& __a = allocator_type())\n      |       ^\nIn file included from [REDACTED]/tmpbrrc5d91.cpp:14:\n[REDACTED]/utils.hpp:258:23: error: static assertion failed due to requirement 'std::is_arithmetic<std::pair<float, float>>::value': Unsupported type\n  258 |         static_assert(std::is_arithmetic<T>::value, \"Unsupported type\");\n      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n[REDACTED]/tmpbrrc5d91.cpp:54:21: note: in instantiation of function template specialization 'allclose<std::pair<float, float>>' requested here\n   54 |     pass = pass && (allclose(find_closest_elements_simd({1.0, 2.0, 3.9, 4.0, 5.0, 2.2}) , {3.9, 4.0}));\n      |                     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_72", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_73", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_74", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_75", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_76", "passed": false, "result": "compilation failed: [REDACTED]/tmpj88gm38a.cpp:83:5: error: redefinition of 'main'\n   83 | int main() {\n      |     ^\n[REDACTED]/tmpj88gm38a.cpp:36:5: note: previous definition is here\n   36 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_77", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_78", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_78", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_79", "passed": false, "result": "compilation failed: [REDACTED]/tmpjzlly0hi.cpp:25:18: error: no member named 'max_element_simd' in namespace 'std'; did you mean 'max_element'?\n   25 |     return *std::max_element_simd(l.begin(), l.end());\n      |             ~~~~~^~~~~~~~~~~~~~~~\n      |                  max_element\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:5730:5: note: 'max_element' declared here\n 5730 |     max_element(_ForwardIterator __first, _ForwardIterator __last)\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_79", "passed": false, "result": "compilation failed: [REDACTED]/tmpjb7b0snf.cpp:28:18: error: no member named 'max_element_simd' in namespace 'std'; did you mean 'max_element'?\n   28 |     return *std::max_element_simd(l.begin(), l.end());\n      |             ~~~~~^~~~~~~~~~~~~~~~\n      |                  max_element\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:5730:5: note: 'max_element' declared here\n 5730 |     max_element(_ForwardIterator __first, _ForwardIterator __last)\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_79", "passed": false, "result": "compilation failed: [REDACTED]/tmpol_d9eh8.cpp:28:18: error: no member named 'max_element_simd' in namespace 'std'; did you mean 'max_element'?\n   28 |     return *std::max_element_simd(l.begin(), l.end());\n      |             ~~~~~^~~~~~~~~~~~~~~~\n      |                  max_element\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:5730:5: note: 'max_element' declared here\n 5730 |     max_element(_ForwardIterator __first, _ForwardIterator __last)\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_79", "passed": false, "result": "compilation failed: [REDACTED]/tmpcvjc270r.cpp:27:18: error: no member named 'max_element_simd' in namespace 'std'; did you mean 'max_element'?\n   27 |     return *std::max_element_simd(l.begin(), l.end());\n      |             ~~~~~^~~~~~~~~~~~~~~~\n      |                  max_element\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:5730:5: note: 'max_element' declared here\n 5730 |     max_element(_ForwardIterator __first, _ForwardIterator __last)\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_79", "passed": false, "result": "compilation failed: [REDACTED]/tmpxncz_829.cpp:25:18: error: no member named 'max_element_simd' in namespace 'std'; did you mean 'max_element'?\n   25 |     return *std::max_element_simd(l.begin(), l.end());\n      |             ~~~~~^~~~~~~~~~~~~~~~\n      |                  max_element\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algo.h:5730:5: note: 'max_element' declared here\n 5730 |     max_element(_ForwardIterator __first, _ForwardIterator __last)\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_80", "passed": false, "result": "compilation failed: [REDACTED]/tmpaltpa5be.cpp:84:5: error: redefinition of 'main'\n   84 | int main(){\n      |     ^\n[REDACTED]/tmpaltpa5be.cpp:49:5: note: previous definition is here\n   49 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_80", "passed": false, "result": "compilation failed: [REDACTED]/tmp4j6akgk2.cpp:84:5: error: redefinition of 'main'\n   84 | int main(){\n      |     ^\n[REDACTED]/tmp4j6akgk2.cpp:49:5: note: previous definition is here\n   49 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_80", "passed": false, "result": "compilation failed: [REDACTED]/tmpcercjnli.cpp:84:5: error: redefinition of 'main'\n   84 | int main(){\n      |     ^\n[REDACTED]/tmpcercjnli.cpp:49:5: note: previous definition is here\n   49 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_80", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_80", "passed": false, "result": "compilation failed: [REDACTED]/tmp3bjip9ak.cpp:84:5: error: redefinition of 'main'\n   84 | int main(){\n      |     ^\n[REDACTED]/tmp3bjip9ak.cpp:49:5: note: previous definition is here\n   49 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_81", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_82", "passed": false, "result": "compilation failed: [REDACTED]/tmp83zyfx62.cpp:90:5: error: redefinition of 'main'\n   90 | int main() {\n      |     ^\n[REDACTED]/tmp83zyfx62.cpp:47:5: note: previous definition is here\n   47 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_82", "passed": false, "result": "compilation failed: [REDACTED]/tmp14_zwaz4.cpp:90:5: error: redefinition of 'main'\n   90 | int main() {\n      |     ^\n[REDACTED]/tmp14_zwaz4.cpp:47:5: note: previous definition is here\n   47 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_82", "passed": false, "result": "timed out"}
+{"task_id": "SimdBench_82", "passed": false, "result": "compilation failed: [REDACTED]/tmpa93s6kzq.cpp:90:5: error: redefinition of 'main'\n   90 | int main() {\n      |     ^\n[REDACTED]/tmpa93s6kzq.cpp:47:5: note: previous definition is here\n   47 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_82", "passed": false, "result": "compilation failed: [REDACTED]/tmphdbsbkra.cpp:90:5: error: redefinition of 'main'\n   90 | int main() {\n      |     ^\n[REDACTED]/tmphdbsbkra.cpp:47:5: note: previous definition is here\n   47 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_83", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_84", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_85", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": false, "result": "compilation failed: [REDACTED]/tmptp_rq76r.cpp:87:5: error: redefinition of 'main'\n   87 | int main(){\n      |     ^\n[REDACTED]/tmptp_rq76r.cpp:41:5: note: previous definition is here\n   41 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_86", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": false, "result": "compilation failed: [REDACTED]/tmpie4cwveu.cpp:61:13: error: redefinition of 'encode_shift'\n   61 | std::string encode_shift(std::string s){\n      |             ^\n[REDACTED]/tmpie4cwveu.cpp:30:13: note: previous definition is here\n   30 | std::string encode_shift(std::string s){\n      |             ^\n[REDACTED]/tmpie4cwveu.cpp:112:5: error: redefinition of 'main'\n  112 | int main(){\n      |     ^\n[REDACTED]/tmpie4cwveu.cpp:50:5: note: previous definition is here\n   50 | int main() {\n      |     ^\n2 errors generated.\n"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_87", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_88", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_89", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_90", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_91", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_92", "passed": false, "result": "compilation failed: [REDACTED]/tmp3us7f1k6.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmp3us7f1k6.cpp:42:5: note: previous definition is here\n   42 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_92", "passed": false, "result": "compilation failed: [REDACTED]/tmpeche44ls.cpp:78:5: error: redefinition of 'main'\n   78 | int main() {\n      |     ^\n[REDACTED]/tmpeche44ls.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_92", "passed": false, "result": "compilation failed: [REDACTED]/tmpzvsgqbq9.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmpzvsgqbq9.cpp:42:5: note: previous definition is here\n   42 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_92", "passed": false, "result": "compilation failed: [REDACTED]/tmpdam4wlly.cpp:78:5: error: redefinition of 'main'\n   78 | int main() {\n      |     ^\n[REDACTED]/tmpdam4wlly.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_92", "passed": false, "result": "compilation failed: [REDACTED]/tmpgiaqq7i3.cpp:78:5: error: redefinition of 'main'\n   78 | int main() {\n      |     ^\n[REDACTED]/tmpgiaqq7i3.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93", "passed": false, "result": "compilation failed: [REDACTED]/tmpc7oa_0vw.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmpc7oa_0vw.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93", "passed": false, "result": "compilation failed: [REDACTED]/tmpffa0cnz0.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmpffa0cnz0.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93", "passed": false, "result": "compilation failed: [REDACTED]/tmp6di5fxue.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmp6di5fxue.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93", "passed": false, "result": "compilation failed: [REDACTED]/tmpf1opyq26.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmpf1opyq26.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_93", "passed": false, "result": "compilation failed: [REDACTED]/tmpx9ws449j.cpp:77:5: error: redefinition of 'main'\n   77 | int main() {\n      |     ^\n[REDACTED]/tmpx9ws449j.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_94", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_95", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_95", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_96", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_97", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_98", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_99", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_100", "passed": false, "result": "compilation failed: [REDACTED]/tmputcwwf4f.cpp:76:5: error: redefinition of 'main'\n   76 | int main() {\n      |     ^\n[REDACTED]/tmputcwwf4f.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100", "passed": false, "result": "compilation failed: [REDACTED]/tmpnn7t_fho.cpp:76:5: error: redefinition of 'main'\n   76 | int main() {\n      |     ^\n[REDACTED]/tmpnn7t_fho.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100", "passed": false, "result": "compilation failed: [REDACTED]/tmpyiwgugoh.cpp:76:5: error: redefinition of 'main'\n   76 | int main() {\n      |     ^\n[REDACTED]/tmpyiwgugoh.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100", "passed": false, "result": "compilation failed: [REDACTED]/tmp7gb0wt2e.cpp:76:5: error: redefinition of 'main'\n   76 | int main() {\n      |     ^\n[REDACTED]/tmp7gb0wt2e.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_100", "passed": false, "result": "compilation failed: [REDACTED]/tmptplvepa4.cpp:76:5: error: redefinition of 'main'\n   76 | int main() {\n      |     ^\n[REDACTED]/tmptplvepa4.cpp:37:5: note: previous definition is here\n   37 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_101", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_102", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_103", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_103", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_103", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_104", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_105", "passed": false, "result": "compilation failed: [REDACTED]/tmpw1n35tiu.cpp:81:5: error: redefinition of 'main'\n   81 | int main() {\n      |     ^\n[REDACTED]/tmpw1n35tiu.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_105", "passed": false, "result": "compilation failed: [REDACTED]/tmpqziyl198.cpp:81:5: error: redefinition of 'main'\n   81 | int main() {\n      |     ^\n[REDACTED]/tmpqziyl198.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_105", "passed": false, "result": "compilation failed: [REDACTED]/tmp6ub_6n6z.cpp:82:5: error: redefinition of 'main'\n   82 | int main() {\n      |     ^\n[REDACTED]/tmp6ub_6n6z.cpp:44:5: note: previous definition is here\n   44 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_105", "passed": false, "result": "compilation failed: [REDACTED]/tmpfus7n9pa.cpp:82:5: error: redefinition of 'main'\n   82 | int main() {\n      |     ^\n[REDACTED]/tmpfus7n9pa.cpp:44:5: note: previous definition is here\n   44 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_105", "passed": false, "result": "compilation failed: [REDACTED]/tmpl_jub0z4.cpp:81:5: error: redefinition of 'main'\n   81 | int main() {\n      |     ^\n[REDACTED]/tmpl_jub0z4.cpp:43:5: note: previous definition is here\n   43 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106", "passed": false, "result": "compilation failed: [REDACTED]/tmprpw_if13.cpp:88:5: error: redefinition of 'main'\n   88 | int main() {\n      |     ^\n[REDACTED]/tmprpw_if13.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106", "passed": false, "result": "compilation failed: [REDACTED]/tmp8d04jlsf.cpp:88:5: error: redefinition of 'main'\n   88 | int main() {\n      |     ^\n[REDACTED]/tmp8d04jlsf.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106", "passed": false, "result": "compilation failed: [REDACTED]/tmpzpzx6j8v.cpp:93:5: error: redefinition of 'main'\n   93 | int main() {\n      |     ^\n[REDACTED]/tmpzpzx6j8v.cpp:60:5: note: previous definition is here\n   60 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106", "passed": false, "result": "compilation failed: [REDACTED]/tmp6cu1yn7n.cpp:94:5: error: redefinition of 'main'\n   94 | int main() {\n      |     ^\n[REDACTED]/tmp6cu1yn7n.cpp:61:5: note: previous definition is here\n   61 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_106", "passed": false, "result": "compilation failed: [REDACTED]/tmpuz75lp6u.cpp:88:5: error: redefinition of 'main'\n   88 | int main() {\n      |     ^\n[REDACTED]/tmpuz75lp6u.cpp:55:5: note: previous definition is here\n   55 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_107", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_108", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_109", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_110", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_111", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_112", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_113", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_114", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_115", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_116", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_117", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_118", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_119", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_120", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_121", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_122", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_123", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_124", "passed": false, "result": "compilation failed: In file included from [REDACTED]/tmpj0xtg7f9.cpp:1:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/iostream:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ostream:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ios:44:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/ios_base.h:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_classes.h:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:49:\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:398:20: error: invalid operands to binary expression ('const Cell' and 'const Cell')\n  398 |       { return __x > __y; }\n      |                ~~~ ^ ~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:196:16: note: in instantiation of member function 'std::greater<Cell>::operator()' requested here\n  196 |         { return bool(_M_comp(*__it, __val)); }\n      |                       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:140:42: note: in instantiation of function template specialization '__gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>::operator()<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, Cell>' requested here\n  140 |       while (__holeIndex > __topIndex && __comp(__first + __parent, __value))\n      |                                          ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:216:12: note: in instantiation of function template specialization 'std::__push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, long, Cell, __gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>>' requested here\n  216 |       std::__push_heap(__first, _DistanceType((__last - __first) - 1),\n      |            ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_queue.h:749:7: note: in instantiation of function template specialization 'std::push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, std::greater<Cell>>' requested here\n  749 |         std::push_heap(c.begin(), c.end(), comp);\n      |              ^\n[REDACTED]/tmpj0xtg7f9.cpp:82:16: note: in instantiation of member function 'std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>>::push' requested here\n   82 |             pq.push(Cell(i, j, 1, {grid[i][j]}));\n      |                ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:469:5: note: candidate template ignored: could not match 'const reverse_iterator<_Iterator>' against 'const Cell'\n  469 |     operator>(const reverse_iterator<_Iterator>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:514:5: note: candidate template ignored: could not match 'const reverse_iterator<_IteratorL>' against 'const Cell'\n  514 |     operator>(const reverse_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1725:5: note: candidate template ignored: could not match 'const move_iterator<_IteratorL>' against 'const Cell'\n 1725 |     operator>(const move_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1784:5: note: candidate template ignored: could not match 'const move_iterator<_Iterator>' against 'const Cell'\n 1784 |     operator>(const move_iterator<_Iterator>& __x,\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_124", "passed": false, "result": "compilation failed: In file included from [REDACTED]/tmpu9ecxqwj.cpp:1:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/iostream:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ostream:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ios:44:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/ios_base.h:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_classes.h:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:49:\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:398:20: error: invalid operands to binary expression ('const Cell' and 'const Cell')\n  398 |       { return __x > __y; }\n      |                ~~~ ^ ~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:196:16: note: in instantiation of member function 'std::greater<Cell>::operator()' requested here\n  196 |         { return bool(_M_comp(*__it, __val)); }\n      |                       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:140:42: note: in instantiation of function template specialization '__gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>::operator()<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, Cell>' requested here\n  140 |       while (__holeIndex > __topIndex && __comp(__first + __parent, __value))\n      |                                          ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:216:12: note: in instantiation of function template specialization 'std::__push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, long, Cell, __gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>>' requested here\n  216 |       std::__push_heap(__first, _DistanceType((__last - __first) - 1),\n      |            ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_queue.h:749:7: note: in instantiation of function template specialization 'std::push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, std::greater<Cell>>' requested here\n  749 |         std::push_heap(c.begin(), c.end(), comp);\n      |              ^\n[REDACTED]/tmpu9ecxqwj.cpp:82:16: note: in instantiation of member function 'std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>>::push' requested here\n   82 |             pq.push(Cell(i, j, 1, {grid[i][j]}));\n      |                ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:469:5: note: candidate template ignored: could not match 'const reverse_iterator<_Iterator>' against 'const Cell'\n  469 |     operator>(const reverse_iterator<_Iterator>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:514:5: note: candidate template ignored: could not match 'const reverse_iterator<_IteratorL>' against 'const Cell'\n  514 |     operator>(const reverse_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1725:5: note: candidate template ignored: could not match 'const move_iterator<_IteratorL>' against 'const Cell'\n 1725 |     operator>(const move_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1784:5: note: candidate template ignored: could not match 'const move_iterator<_Iterator>' against 'const Cell'\n 1784 |     operator>(const move_iterator<_Iterator>& __x,\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_124", "passed": false, "result": "compilation failed: In file included from [REDACTED]/tmp_51bl9rf.cpp:1:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/iostream:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ostream:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ios:44:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/ios_base.h:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_classes.h:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:49:\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:398:20: error: invalid operands to binary expression ('const Cell' and 'const Cell')\n  398 |       { return __x > __y; }\n      |                ~~~ ^ ~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:196:16: note: in instantiation of member function 'std::greater<Cell>::operator()' requested here\n  196 |         { return bool(_M_comp(*__it, __val)); }\n      |                       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:140:42: note: in instantiation of function template specialization '__gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>::operator()<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, Cell>' requested here\n  140 |       while (__holeIndex > __topIndex && __comp(__first + __parent, __value))\n      |                                          ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:216:12: note: in instantiation of function template specialization 'std::__push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, long, Cell, __gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>>' requested here\n  216 |       std::__push_heap(__first, _DistanceType((__last - __first) - 1),\n      |            ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_queue.h:749:7: note: in instantiation of function template specialization 'std::push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, std::greater<Cell>>' requested here\n  749 |         std::push_heap(c.begin(), c.end(), comp);\n      |              ^\n[REDACTED]/tmp_51bl9rf.cpp:82:16: note: in instantiation of member function 'std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>>::push' requested here\n   82 |             pq.push(Cell(i, j, 1, {grid[i][j]}));\n      |                ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:469:5: note: candidate template ignored: could not match 'const reverse_iterator<_Iterator>' against 'const Cell'\n  469 |     operator>(const reverse_iterator<_Iterator>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:514:5: note: candidate template ignored: could not match 'const reverse_iterator<_IteratorL>' against 'const Cell'\n  514 |     operator>(const reverse_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1725:5: note: candidate template ignored: could not match 'const move_iterator<_IteratorL>' against 'const Cell'\n 1725 |     operator>(const move_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1784:5: note: candidate template ignored: could not match 'const move_iterator<_Iterator>' against 'const Cell'\n 1784 |     operator>(const move_iterator<_Iterator>& __x,\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_124", "passed": false, "result": "compilation failed: In file included from [REDACTED]/tmpqoponrur.cpp:1:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/iostream:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ostream:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ios:44:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/ios_base.h:41:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/locale_classes.h:40:\nIn file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string:49:\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_function.h:398:20: error: invalid operands to binary expression ('const Cell' and 'const Cell')\n  398 |       { return __x > __y; }\n      |                ~~~ ^ ~~~\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/predefined_ops.h:196:16: note: in instantiation of member function 'std::greater<Cell>::operator()' requested here\n  196 |         { return bool(_M_comp(*__it, __val)); }\n      |                       ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:140:42: note: in instantiation of function template specialization '__gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>::operator()<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, Cell>' requested here\n  140 |       while (__holeIndex > __topIndex && __comp(__first + __parent, __value))\n      |                                          ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_heap.h:216:12: note: in instantiation of function template specialization 'std::__push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, long, Cell, __gnu_cxx::__ops::_Iter_comp_val<std::greater<Cell>>>' requested here\n  216 |       std::__push_heap(__first, _DistanceType((__last - __first) - 1),\n      |            ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_queue.h:749:7: note: in instantiation of function template specialization 'std::push_heap<__gnu_cxx::__normal_iterator<Cell *, std::vector<Cell>>, std::greater<Cell>>' requested here\n  749 |         std::push_heap(c.begin(), c.end(), comp);\n      |              ^\n[REDACTED]/tmpqoponrur.cpp:83:16: note: in instantiation of member function 'std::priority_queue<Cell, std::vector<Cell>, std::greater<Cell>>::push' requested here\n   83 |             pq.push(Cell(i, j, 1, {grid[i][j]}));\n      |                ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:469:5: note: candidate template ignored: could not match 'const reverse_iterator<_Iterator>' against 'const Cell'\n  469 |     operator>(const reverse_iterator<_Iterator>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:514:5: note: candidate template ignored: could not match 'const reverse_iterator<_IteratorL>' against 'const Cell'\n  514 |     operator>(const reverse_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1725:5: note: candidate template ignored: could not match 'const move_iterator<_IteratorL>' against 'const Cell'\n 1725 |     operator>(const move_iterator<_IteratorL>& __x,\n      |     ^\n/usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_iterator.h:1784:5: note: candidate template ignored: could not match 'const move_iterator<_Iterator>' against 'const Cell'\n 1784 |     operator>(const move_iterator<_Iterator>& __x,\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_124", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_125", "passed": false, "result": "compilation failed: [REDACTED]/tmpkvojelzk.cpp:79:5: error: redefinition of 'main'\n   79 | int main() {\n      |     ^\n[REDACTED]/tmpkvojelzk.cpp:45:5: note: previous definition is here\n   45 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_125", "passed": false, "result": "compilation failed: [REDACTED]/tmpfi9s552f.cpp:79:5: error: redefinition of 'main'\n   79 | int main() {\n      |     ^\n[REDACTED]/tmpfi9s552f.cpp:45:5: note: previous definition is here\n   45 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_125", "passed": false, "result": "compilation failed: [REDACTED]/tmpshe4lxdx.cpp:79:5: error: redefinition of 'main'\n   79 | int main() {\n      |     ^\n[REDACTED]/tmpshe4lxdx.cpp:45:5: note: previous definition is here\n   45 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_125", "passed": false, "result": "compilation failed: [REDACTED]/tmpwrac0og2.cpp:81:5: error: redefinition of 'main'\n   81 | int main() {\n      |     ^\n[REDACTED]/tmpwrac0og2.cpp:47:5: note: previous definition is here\n   47 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_125", "passed": false, "result": "compilation failed: [REDACTED]/tmpobpv8c11.cpp:79:5: error: redefinition of 'main'\n   79 | int main() {\n      |     ^\n[REDACTED]/tmpobpv8c11.cpp:45:5: note: previous definition is here\n   45 | int main() {\n      |     ^\n1 error generated.\n"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_126", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_127", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_128", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_129", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_130", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_131", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_132", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_133", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_134", "passed": false, "result": "logical bug"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}
+{"task_id": "SimdBench_135", "passed": true, "result": "passed"}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_65",
+    "type": "2",
+    "subtype": "HumanEval/5",
+    "entrypoint_scalar": "intersperse",
+    "entrypoint_simd": "intersperse_simd"
+}

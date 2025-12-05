@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_110",
+    "type": "2",
+    "subtype": "HumanEval/100",
+    "entrypoint_scalar": "make_a_pile",
+    "entrypoint_simd": "make_a_pile_simd"
+}

@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_14",
+    "type": "1",
+    "subtype": "1-2",
+    "entrypoint_scalar": "argmax",
+    "entrypoint_simd": "argmax_simd"
+}

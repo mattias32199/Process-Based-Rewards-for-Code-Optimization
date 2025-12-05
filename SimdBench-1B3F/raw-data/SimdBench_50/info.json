@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_50",
+    "type": "1",
+    "subtype": "1-6",
+    "entrypoint_scalar": "float_to_int_saturate",
+    "entrypoint_simd": "float_to_int_saturate_simd"
+}

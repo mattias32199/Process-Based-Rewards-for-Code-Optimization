@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_118",
+    "type": "2",
+    "subtype": "HumanEval/114",
+    "entrypoint_scalar": "minSubArraySum",
+    "entrypoint_simd": "minSubArraySum_simd"
+}

@@ -1,0 +1,35 @@
+.vscode/
+.cache/
+*.pyc
+**/.DS_Store
+raw-data/*/main.cpp
+
+# CMake-related files
+build/
+build*/
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+results.json
+
+# Files made by compilation.
+.deps/
+.libs/
+*.a
+*.la
+*.lo
+*.o
+*.obj
+*.so
+*.so[0-9.]*
+output/
+*.out

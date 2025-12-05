@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_39",
+    "type": "1",
+    "subtype": "1-4",
+    "entrypoint_scalar": "matrix_row_norm_compare",
+    "entrypoint_simd": "matrix_row_norm_compare_simd"
+}

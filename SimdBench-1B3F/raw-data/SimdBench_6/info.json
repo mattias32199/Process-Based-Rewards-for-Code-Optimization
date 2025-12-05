@@ -1,0 +1,7 @@
+{
+    "task_id": "SimdBench_6",
+    "type": "1",
+    "subtype": "1-1",
+    "entrypoint_scalar": "blocked_matrix_transpose",
+    "entrypoint_simd": "blocked_matrix_transpose_simd"
+}

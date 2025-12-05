@@ -84,8 +84,8 @@ def normalize_rewards_per_task(batched_rewards, task_indices, eps=1e-8) -> np.nd
         mean = task_rewards.mean()
         std = task_rewards.std()
         advantages[indices] = (task_rewards - mean) / (std + eps)
-        print(f"[normalize_rewards_per_task] task_id: {task_id} | "
-              f"mean: {mean:.6f} | std: {std:.6f}")
+        # print(f"[normalize_rewards_per_task] task_id: {task_id} | "
+        #       f"mean: {mean:.6f} | std: {std:.6f}")
     return advantages
 
 def compute_advantages(
@@ -96,13 +96,15 @@ def compute_advantages(
         (immediate rewards -> future credit assignment -> advantages)
     """
     batched_rewards = batch_immediate_rewards(trajectories) # batched immediate rewards
-    batched_rewards = compute_future_credit(batched_rewards) # batched rewards w/ future credit assignment
+    fca_rewards = compute_future_credit(batched_rewards) # batched rewards w/ future credit assignment
 
     task_indices = get_task_indices(trajectories) # group indices by task
-    advantages = normalize_rewards_per_task(batched_rewards, task_indices) # batched advantage calculation
+    advantages = normalize_rewards_per_task(fca_rewards, task_indices) # batched advantage calculation
 
     for i, traj in enumerate(trajectories): # repack advantages into trajectories
         for t, turn in enumerate(traj["turns"]):
+            turn['immediate_reward'] = float(batched_rewards[i, t])
+            turn['fca_reward'] = float(fca_rewards[i, t])
             turn["advantage"] = float(advantages[i, t])
 
     return trajectories

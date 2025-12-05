@@ -7,6 +7,7 @@ from src.config import TrainerConfig
 from src.reward_util import compute_immediate_reward, compute_advantages
 from src.rl_util import compute_policy_loss_gspo
 from src.train_util import construct_user_prompt, get_system_prompt, parse_response
+from src.metrics_util import compute_gradient_norm, compute_reward_distribution, compute_performance_metrics
 
 class MultiTurnRLTrainer():
     def __init__(self,
@@ -37,6 +38,7 @@ class MultiTurnRLTrainer():
         Top-level training loop.
         Rollout -> Update Policy
         """
+        print("Number of batches: ", len(dataloader))
         for epoch in range(self.config.epochs): # loop through epochs
             for batch_idx, batch in enumerate(dataloader): # loop through batches
                 # 1. per-batch rollout
@@ -48,6 +50,10 @@ class MultiTurnRLTrainer():
                 # off-policy update
                 off_policy_loss, off_policy_metrics = self.update_policy(trajectories)
 
+                # model collapse metrics
+                reward_avg, reward_std = compute_reward_distribution(trajectories)
+                perf_metrics = compute_performance_metrics(trajectories)
+
                 # print metrics
                 print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"
                         f"Loss: {on_policy_loss:.4f} | "
@@ -57,6 +63,11 @@ class MultiTurnRLTrainer():
                         f"Loss: {off_policy_loss:.4f} | "
                         f"KL: {off_policy_metrics['actor/ppo_kl']:.4f} | "
                         f"Clip: {off_policy_metrics['actor/pg_clipfrac']:.4f}")
+                print("Model Collapse Metrics: ")
+                print(f"Reward AVG: {reward_avg:.6f}\t\tReward STD: {reward_std:.6f}")
+                print(f"Correct Format%: {perf_metrics['correct_format']:.4f}")
+                print(f"Correct%: {perf_metrics['correct']:.4f]}")
+                print(f"YesSpeedup%: {perf_metrics['speedup']:.4f}")
 
                 del trajectories
 

@@ -210,6 +210,7 @@ class MultiTurnRLTrainer():
 
             # Store trajectory data temporarily
             env["trajectory"]["turns"].append({
+                "task_id": eval['task_id'],
                 "turn": turn,
                 "prompt": prompts[i],
                 "response": response,

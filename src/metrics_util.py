@@ -33,7 +33,7 @@ def compute_reward_distribution(trajectories) -> tuple[float, float]:
     average_reward = float(np.mean(fca_rewards))
     return average_reward, average_reward_std
 
-def compute_performance_metrics(trajectories, save_path=False) -> dict:
+def compute_performance_metrics(trajectories, save_path:str="") -> dict:
     total = len(trajectories)
     correct_format = 0
     correct = 0

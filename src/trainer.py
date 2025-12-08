@@ -52,7 +52,9 @@ class MultiTurnRLTrainer():
 
                 # model collapse metrics
                 reward_avg, reward_std = compute_reward_distribution(trajectories)
-                perf_metrics = compute_performance_metrics(trajectories)
+
+                save_path = self.config.print_config.sol_save_path
+                perf_metrics = compute_performance_metrics(trajectories, save_path)
 
                 # print metrics
                 print(f"[Epoch {epoch} Step {batch_idx}] On-Policy"

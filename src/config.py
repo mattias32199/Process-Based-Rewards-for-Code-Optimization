@@ -21,7 +21,7 @@ class PrintConfig:
     prompts_and_completions: bool = False
     log_probs: bool = False
     reward_and_speedup : bool = False
-
+    sol_save_path: str = ""
 
 @dataclass
 class ModelConfig:

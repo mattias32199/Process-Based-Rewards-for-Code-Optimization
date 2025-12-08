@@ -66,7 +66,7 @@ def save_solution(trajectory, save_path) -> None:
     task_id = trajectory['task_id']
     file_name= f"{task_id}-{reward_str}-{uuid}.txt"
     file_path = os.path.join(save_path, file_name)
-
+    print(f'Saving... {file_name}')
     with open(file_path, 'w') as f:
         f.write(f"speedup: {speedup:.4f}\n")
         f.write("response:\n")

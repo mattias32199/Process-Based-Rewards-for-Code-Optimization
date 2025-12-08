@@ -1,3 +1,6 @@
+import string
+import secrets
+import os
 import torch
 import numpy as np
 from src.reward_util import get_task_indices
@@ -30,7 +33,7 @@ def compute_reward_distribution(trajectories) -> tuple[float, float]:
     average_reward = float(np.mean(fca_rewards))
     return average_reward, average_reward_std
 
-def compute_performance_metrics(trajectories) -> dict:
+def compute_performance_metrics(trajectories, save_path=False) -> dict:
     total = len(trajectories)
     correct_format = 0
     correct = 0
@@ -42,6 +45,7 @@ def compute_performance_metrics(trajectories) -> dict:
         if immediate_reward > 0.3:
             correct += 1
         if immediate_reward > 1.5:
+            save_solution(trajectory, save_path)
             speedup += 1
 
     perf_metrics = {
@@ -51,3 +55,19 @@ def compute_performance_metrics(trajectories) -> dict:
     }
 
     return perf_metrics
+
+
+def save_solution(trajectory, save_path) -> None:
+    alphabet = string.ascii_letters + string.digits
+    uuid = ''.join(secrets.choice(alphabet) for _ in range(8))   # 8-char
+    imm_reward = trajectory['immediate_reward']
+    speedup = imm_reward - 0.3
+    reward_str = '_'.join(str(speedup).split('.'))
+    task_id = trajectory['task_id']
+    file_name= f"{task_id}-{reward_str}-{uuid}.txt"
+    file_path = os.path.join(save_path, file_name)
+
+    with open(file_path, 'w') as f:
+        f.write(f"speedup: {speedup:.4f}\n")
+        f.write("response:\n")
+        f.write(trajectory['response'])

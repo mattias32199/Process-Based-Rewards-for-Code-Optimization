@@ -14,7 +14,7 @@ def compute_immediate_reward(eval: dict, print_rewards=False) -> float:
         if eval['correct']:
             try:
                 reward += 0.3
-                reward += eval['avg_speedup']
+                reward += min(eval['avg_speedup'], 10)
                 avg_speedup = eval['avg_speedup']
             except Exception as e:
                 print('PINEAPPLE')

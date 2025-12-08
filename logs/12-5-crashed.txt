@@ -1,0 +1,632 @@
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+2025-12-05 07:19:14.610445: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-05 07:19:14.629420: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764919154.652228   19153 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1764919154.659749   19153 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1764919154.679598   19153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764919154.679639   19153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764919154.679642   19153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1764919154.679645   19153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-12-05 07:19:14.684662: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO 12-05 07:19:29 [__init__.py:216] Automatically detected platform cuda.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+[Verifier] Google Benchmark found at: /content/benchmark/build/src/libbenchmark.a
+>>> Initializing Trainer...
+INFO 12-05 07:19:39 [vllm_utils.py:702] Unsloth: Patching vLLM v1 graph capture
+INFO 12-05 07:19:39 [vllm_utils.py:732] Unsloth: Patching vLLM v0 graph capture
+==((====))==  Unsloth 2025.11.6: Fast Qwen2 patching. Transformers: 4.56.2. vLLM: 0.10.2.
+   \\   /|    NVIDIA A100-SXM4-80GB. Num GPUs = 1. Max memory: 79.318 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.8.0+cu128. CUDA: 8.0. CUDA Toolkit: 12.8. Triton: 3.4.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post1. FA2 = False]
+ "-____-"     Free license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Unsloth: vLLM loading unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit with actual GPU utilization = 39.77%
+Unsloth: Your GPU has CUDA compute capability 8.0 with VRAM = 79.32 GB.
+Unsloth: Using conservativeness = 1.0. Chunked prefill tokens = 5120. Num Sequences = 96.
+Unsloth: vLLM's KV Cache can use up to 30.21 GB. Also swap space = 6 GB.
+Unsloth: Disabling `disable_cascade_attn` in vLLM to allow for better on policy RL!
+Unsloth: Not an error, but `device` is not supported in vLLM. Skipping.
+INFO 12-05 07:19:48 [utils.py:328] non-default args: {'load_format': 'bitsandbytes', 'dtype': torch.float16, 'seed': 0, 'max_model_len': 5120, 'enable_prefix_caching': True, 'disable_cascade_attn': True, 'swap_space': 6, 'gpu_memory_utilization': 0.3977152073527047, 'max_num_batched_tokens': 8192, 'max_num_seqs': 96, 'max_logprobs': 0, 'disable_log_stats': True, 'quantization': 'bitsandbytes', 'enable_lora': True, 'max_lora_rank': 64, 'enable_chunked_prefill': True, 'compilation_config': {"level":3,"debug_dump_path":"","cache_dir":"","backend":"inductor","custom_ops":[],"splitting_ops":null,"use_inductor":true,"compile_sizes":null,"inductor_compile_config":{"epilogue_fusion":true,"max_autotune":false,"shape_padding":true,"trace.enabled":false,"triton.cudagraphs":true,"debug":false,"dce":true,"memory_planning":true,"coordinate_descent_tuning":false,"trace.graph_diagram":false,"compile_threads":12,"group_fusion":true,"disable_progress":false,"verbose_progress":true,"triton.multi_kernel":0,"triton.use_block_ptr":true,"triton.enable_persistent_tma_matmul":true,"triton.autotune_at_compile_time":false,"triton.cooperative_reductions":false,"cuda.compile_opt_level":"-O2","cuda.enable_cuda_lto":true,"combo_kernels":false,"benchmark_combo_kernel":true,"combo_kernel_foreach_dynamic_shapes":true,"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":null,"cudagraph_copy_inputs":false,"full_cuda_graph":false,"pass_config":{},"max_capture_size":null,"local_cache_dir":null}, 'model': 'unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit'}
+INFO 12-05 07:20:06 [__init__.py:742] Resolved architecture: Qwen2ForCausalLM
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING 12-05 07:20:06 [__init__.py:2767] Casting torch.bfloat16 to torch.float16.
+INFO 12-05 07:20:06 [__init__.py:1815] Using max model len 5120
+WARNING 12-05 07:20:06 [_ipex_ops.py:16] Import error msg: No module named 'intel_extension_for_pytorch'
+INFO 12-05 07:20:12 [scheduler.py:222] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 12-05 07:20:12 [lora.py:92] `lora_extra_vocab_size` is deprecated and will be removed in v0.12.0. Additional vocabulary support for LoRA adapters is being phased out.
+Unsloth: vLLM Bitsandbytes config using kwargs = {'load_in_8bit': False, 'load_in_4bit': True, 'bnb_4bit_compute_dtype': 'float16', 'bnb_4bit_quant_storage': 'uint8', 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_use_double_quant': True, 'llm_int8_enable_fp32_cpu_offload': False, 'llm_int8_has_fp16_weight': False, 'llm_int8_skip_modules': [], 'llm_int8_threshold': 6.0}
+INFO 12-05 07:20:14 [core.py:76] Initializing a V1 LLM engine (v0.10.2) with config: model='unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit', speculative_config=None, tokenizer='unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=5120, download_dir=None, load_format=bitsandbytes, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=bitsandbytes, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"inductor","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"epilogue_fusion":true,"max_autotune":false,"shape_padding":true,"trace.enabled":false,"triton.cudagraphs":true,"debug":false,"dce":true,"memory_planning":true,"coordinate_descent_tuning":false,"trace.graph_diagram":false,"compile_threads":12,"group_fusion":true,"disable_progress":false,"verbose_progress":true,"triton.multi_kernel":0,"triton.use_block_ptr":true,"triton.enable_persistent_tma_matmul":true,"triton.autotune_at_compile_time":false,"triton.cooperative_reductions":false,"cuda.compile_opt_level":"-O2","cuda.enable_cuda_lto":true,"combo_kernels":false,"benchmark_combo_kernel":true,"combo_kernel_foreach_dynamic_shapes":true,"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"pass_config":{},"max_capture_size":192,"local_cache_dir":null}
+[W1205 07:20:14.828482874 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+INFO 12-05 07:20:14 [parallel_state.py:1165] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+WARNING 12-05 07:20:14 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+INFO 12-05 07:20:14 [gpu_model_runner.py:2338] Starting to load model unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit...
+INFO 12-05 07:20:15 [gpu_model_runner.py:2370] Loading model from scratch...
+INFO 12-05 07:20:15 [cuda.py:362] Using Flash Attention backend on V1 engine.
+INFO 12-05 07:20:15 [bitsandbytes_loader.py:758] Loading weights with BitsAndBytes quantization. May take a while ...
+INFO 12-05 07:20:17 [weight_utils.py:348] Using model weights format ['*.safetensors']
+INFO 12-05 07:20:18 [weight_utils.py:406] No model.safetensors.index.json found in remote.
+Loading safetensors checkpoint shards: 100% 1/1 [00:00<00:00, 25.21it/s]
+Loading safetensors checkpoint shards: 100% 1/1 [00:00<00:00,  1.80it/s]
+INFO 12-05 07:20:18 [punica_selector.py:19] Using PunicaWrapperGPU.
+INFO 12-05 07:20:20 [gpu_model_runner.py:2392] Model loading took 1.2107 GiB and 3.234587 seconds
+INFO 12-05 07:20:31 [backends.py:539] Using cache directory: /root/.cache/vllm/torch_compile_cache/44c9b8c5a2/rank_0_0/backbone for vLLM's torch.compile
+INFO 12-05 07:20:31 [backends.py:550] Dynamo bytecode transform time: 10.15 s
+INFO 12-05 07:20:35 [backends.py:161] Directly load the compiled graph(s) for dynamic shape from the cache, took 3.153 s
+INFO 12-05 07:20:37 [monitor.py:34] torch.compile takes 10.15 s in total
+INFO 12-05 07:20:39 [gpu_worker.py:298] Available KV cache memory: 29.60 GiB
+INFO 12-05 07:20:40 [kv_cache_utils.py:864] GPU KV cache size: 1,108,560 tokens
+INFO 12-05 07:20:40 [kv_cache_utils.py:868] Maximum concurrency for 5,120 tokens per request: 216.52x
+INFO 12-05 07:20:40 [vllm_utils.py:707] Unsloth: Running patched vLLM v1 `capture_model`.
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100% 27/27 [00:07<00:00,  3.85it/s]
+Capturing CUDA graphs (decode, FULL): 100% 15/15 [00:03<00:00,  3.85it/s]
+INFO 12-05 07:20:51 [gpu_model_runner.py:3118] Graph capturing finished in 11 secs, took 0.76 GiB
+INFO 12-05 07:20:51 [vllm_utils.py:714] Unsloth: Patched vLLM v1 graph capture finished in 11 secs.
+INFO 12-05 07:20:52 [gpu_worker.py:391] Free memory on device (78.79/79.32 GiB) on startup. Desired GPU memory utilization is (0.3977152073527047, 31.55 GiB). Actual usage is 1.21 GiB for weight, 0.72 GiB for peak activation, 0.02 GiB for non-torch memory, and 0.76 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=30807571046` to fit into requested memory, or `--kv-cache-memory=81536340992` to fully utilize gpu memory. Current kv cache memory in use is 31784843878 bytes.
+INFO 12-05 07:20:52 [core.py:218] init engine (profile, create kv cache, warmup model) took 32.78 seconds
+INFO 12-05 07:20:54 [llm.py:295] Supported_tasks: ('generate',)
+INFO 12-05 07:20:54 [__init__.py:36] No IOProcessor plugins requested by the model
+Unsloth: Just some info: will skip parsing ['q_norm', 'attention_norm', 'k_norm', 'layer_norm2', 'input_layernorm', 'layer_norm1', 'ffn_norm', 'pre_feedforward_layernorm', 'post_layernorm', 'norm2', 'post_feedforward_layernorm', 'norm', 'norm1', 'post_attention_layernorm']
+Some weights of Qwen2ForCausalLM were not initialized from the model checkpoint at unsloth/qwen2.5-coder-1.5b-instruct-bnb-4bit and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Performing substitution for additional_keys=set()
+Unsloth: Just some info: will skip parsing ['q_norm', 'attention_norm', 'cross_attn_input_layernorm', 'k_norm', 'layer_norm2', 'input_layernorm', 'layer_norm1', 'ffn_norm', 'pre_feedforward_layernorm', 'post_layernorm', 'norm2', 'post_feedforward_layernorm', 'norm', 'norm1', 'cross_attn_post_attention_layernorm', 'post_attention_layernorm']
+Unsloth 2025.11.6 patched 28 layers with 28 QKV layers, 28 O layers and 28 MLP layers.
+>>> Starting Training Loop...
+Number of batches:  36
+Adding requests: 100% 48/48 [00:00<00:00, 776.76it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.25it/s, est. speed input: 1622.72 toks/s, output: 2017.07 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 469.58it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 2885.64 toks/s, output: 2502.88 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 403.40it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.96it/s, est. speed input: 3504.99 toks/s, output: 2354.21 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 335.62it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.88it/s, est. speed input: 4172.43 toks/s, output: 2325.79 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 300.69it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.81it/s, est. speed input: 4789.09 toks/s, output: 2391.17 toks/s]
+Unsloth: Will smartly offload gradients to save VRAM!
+[Epoch 0 Step 0] On-PolicyLoss: 0.0000 | KL: 0.0000 | Clip: 0.0000
+[Epoch 0 Step 0] Off-Policy Loss: -0.0055 | KL: 0.0011 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.039732		Reward STD: 0.154897
+Correct Format%: 35.4167
+Correct%: 3.3333
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 828.06it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.26it/s, est. speed input: 1425.43 toks/s, output: 1786.90 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 486.87it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.99it/s, est. speed input: 2667.78 toks/s, output: 2166.60 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 377.43it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.90it/s, est. speed input: 3434.50 toks/s, output: 2166.17 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 301.13it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 4504.89 toks/s, output: 2154.76 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 266.60it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.83it/s, est. speed input: 5213.92 toks/s, output: 2054.96 toks/s]
+[Epoch 0 Step 1] On-PolicyLoss: -0.0000 | KL: -0.0000 | Clip: 0.0000
+[Epoch 0 Step 1] Off-Policy Loss: -0.0039 | KL: 0.0044 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.085084		Reward STD: 0.051199
+Correct Format%: 42.5000
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 678.93it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.47it/s, est. speed input: 1739.57 toks/s, output: 1813.12 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 382.23it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.94it/s, est. speed input: 3061.36 toks/s, output: 2117.58 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 311.54it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 4082.10 toks/s, output: 2233.35 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 273.69it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.80it/s, est. speed input: 4706.82 toks/s, output: 2223.29 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 225.17it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.74it/s, est. speed input: 5442.89 toks/s, output: 2193.51 toks/s]
+[Epoch 0 Step 2] On-PolicyLoss: -0.0000 | KL: 0.0000 | Clip: 0.0000
+[Epoch 0 Step 2] Off-Policy Loss: -0.0082 | KL: 0.0125 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.054362		Reward STD: 0.160173
+Correct Format%: 42.9167
+Correct%: 0.4167
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 723.68it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1495.02 toks/s, output: 1719.90 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 387.14it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.75it/s, est. speed input: 2955.71 toks/s, output: 2406.83 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 317.12it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3576.78 toks/s, output: 2066.62 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 280.75it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 4505.47 toks/s, output: 2158.38 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 219.84it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.75it/s, est. speed input: 5378.29 toks/s, output: 2299.34 toks/s]
+[Epoch 0 Step 3] On-PolicyLoss: 0.0000 | KL: 0.0000 | Clip: 0.0000
+[Epoch 0 Step 3] Off-Policy Loss: -0.0143 | KL: 0.0241 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.083492		Reward STD: 0.050686
+Correct Format%: 44.1667
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 617.77it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1663.26 toks/s, output: 1885.61 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 387.57it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 2946.07 toks/s, output: 2459.87 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 279.96it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 3876.94 toks/s, output: 2304.92 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 263.19it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 4692.33 toks/s, output: 2184.40 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 211.70it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.63it/s, est. speed input: 5542.88 toks/s, output: 2518.06 toks/s]
+[Epoch 0 Step 4] On-PolicyLoss: -0.0000 | KL: 0.0000 | Clip: 0.0000
+[Epoch 0 Step 4] Off-Policy Loss: -0.0183 | KL: 0.0374 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.064080		Reward STD: 0.121718
+Correct Format%: 38.7500
+Correct%: 1.6667
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 703.00it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1520.17 toks/s, output: 1877.68 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 382.55it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3030.21 toks/s, output: 2185.85 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 291.27it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 3965.74 toks/s, output: 2317.69 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 246.34it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 4683.14 toks/s, output: 2237.50 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 232.65it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.82it/s, est. speed input: 5490.97 toks/s, output: 2085.04 toks/s]
+[Epoch 0 Step 5] On-PolicyLoss: -0.0000 | KL: 0.0000 | Clip: 0.0000
+[Epoch 0 Step 5] Off-Policy Loss: -0.0223 | KL: 0.0583 | Clip: 0.0000
+Model Collapse Metrics:
+Reward AVG: -0.066206		Reward STD: 0.117727
+Correct Format%: 42.0833
+Correct%: 2.0833
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 692.66it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1561.59 toks/s, output: 1943.86 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 410.24it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.96it/s, est. speed input: 2770.71 toks/s, output: 2213.96 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 320.38it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.99it/s, est. speed input: 3727.63 toks/s, output: 2176.63 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 281.52it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.96it/s, est. speed input: 4484.26 toks/s, output: 2123.58 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 221.90it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 5192.46 toks/s, output: 2237.98 toks/s]
+[Epoch 0 Step 6] On-PolicyLoss: 0.0000 | KL: -0.0001 | Clip: 0.0000
+[Epoch 0 Step 6] Off-Policy Loss: -0.0503 | KL: 0.0995 | Clip: 0.0336
+Model Collapse Metrics:
+Reward AVG: -0.090855		Reward STD: 0.050305
+Correct Format%: 38.3333
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 735.03it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.30it/s, est. speed input: 1387.62 toks/s, output: 1644.26 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 414.19it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.97it/s, est. speed input: 2746.70 toks/s, output: 2202.35 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 349.89it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.99it/s, est. speed input: 3526.72 toks/s, output: 2113.43 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 294.70it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.03it/s, est. speed input: 4276.84 toks/s, output: 2041.21 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 263.77it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 4969.33 toks/s, output: 1922.46 toks/s]
+[Epoch 0 Step 7] On-PolicyLoss: 0.0000 | KL: 0.0002 | Clip: 0.0000
+[Epoch 0 Step 7] Off-Policy Loss: -0.0338 | KL: 0.3480 | Clip: 0.5825
+Model Collapse Metrics:
+Reward AVG: 0.109812		Reward STD: 0.649371
+Correct Format%: 50.0000
+Correct%: 4.1667
+YesSpeedup%: 2.0833
+Adding requests: 100% 48/48 [00:00<00:00, 761.61it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.32it/s, est. speed input: 1351.40 toks/s, output: 1570.60 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 439.82it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.96it/s, est. speed input: 2572.56 toks/s, output: 2370.80 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 376.47it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.97it/s, est. speed input: 3078.87 toks/s, output: 2427.92 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 313.14it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.97it/s, est. speed input: 3601.08 toks/s, output: 2237.44 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 291.49it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.88it/s, est. speed input: 4201.24 toks/s, output: 2215.33 toks/s]
+[Epoch 0 Step 8] On-PolicyLoss: -0.0000 | KL: 0.0002 | Clip: 0.0000
+[Epoch 0 Step 8] Off-Policy Loss: -0.0367 | KL: 0.5659 | Clip: 0.5728
+Model Collapse Metrics:
+Reward AVG: -0.087806		Reward STD: 0.074576
+Correct Format%: 37.5000
+Correct%: 0.4167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 702.82it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.73it/s, est. speed input: 1729.34 toks/s, output: 1883.02 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 388.51it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 2875.68 toks/s, output: 2431.52 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 341.07it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.93it/s, est. speed input: 3517.17 toks/s, output: 2213.80 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 281.34it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 4276.31 toks/s, output: 2157.06 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 211.84it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.96it/s, est. speed input: 5217.55 toks/s, output: 2055.07 toks/s]
+[Epoch 0 Step 9] On-PolicyLoss: -0.0006 | KL: 0.0011 | Clip: 0.0000
+[Epoch 0 Step 9] Off-Policy Loss: -0.0702 | KL: 0.6099 | Clip: 0.6447
+Model Collapse Metrics:
+Reward AVG: -0.085647		Reward STD: 0.051034
+Correct Format%: 42.9167
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 660.12it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.22it/s, est. speed input: 1529.69 toks/s, output: 1771.88 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 409.42it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.86it/s, est. speed input: 2726.83 toks/s, output: 2349.79 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 334.85it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 3475.80 toks/s, output: 2465.63 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 293.36it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 4103.30 toks/s, output: 2324.99 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 259.81it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.69it/s, est. speed input: 4584.25 toks/s, output: 2436.40 toks/s]
+[Epoch 0 Step 10] On-PolicyLoss: 0.0003 | KL: -0.0009 | Clip: 0.0000
+[Epoch 0 Step 10] Off-Policy Loss: -0.0283 | KL: 1.0819 | Clip: 0.5984
+Model Collapse Metrics:
+Reward AVG: -0.064434		Reward STD: 0.130854
+Correct Format%: 37.0833
+Correct%: 1.6667
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 714.89it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1456.62 toks/s, output: 2124.03 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 384.71it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.86it/s, est. speed input: 2769.66 toks/s, output: 2441.61 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 324.52it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.94it/s, est. speed input: 3654.40 toks/s, output: 2197.83 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 261.07it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.74it/s, est. speed input: 4634.77 toks/s, output: 2492.46 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 209.52it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.78it/s, est. speed input: 5355.16 toks/s, output: 2228.19 toks/s]
+[Epoch 0 Step 11] On-PolicyLoss: 0.0001 | KL: 0.0001 | Clip: 0.0000
+[Epoch 0 Step 11] Off-Policy Loss: -0.0577 | KL: 1.3072 | Clip: 0.6051
+Model Collapse Metrics:
+Reward AVG: -0.091389		Reward STD: 0.046650
+Correct Format%: 39.1667
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 696.60it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.61it/s, est. speed input: 1606.61 toks/s, output: 1841.89 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 397.85it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.88it/s, est. speed input: 2971.04 toks/s, output: 2356.50 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 327.84it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3779.49 toks/s, output: 2267.38 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 267.24it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.88it/s, est. speed input: 4530.53 toks/s, output: 2105.11 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 245.34it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.83it/s, est. speed input: 5183.39 toks/s, output: 2146.74 toks/s]
+[Epoch 0 Step 12] On-PolicyLoss: -0.0005 | KL: 0.0010 | Clip: 0.0000
+[Epoch 0 Step 12] Off-Policy Loss: -0.0665 | KL: 1.7691 | Clip: 0.6328
+Model Collapse Metrics:
+Reward AVG: -0.055585		Reward STD: 0.126379
+Correct Format%: 45.0000
+Correct%: 1.2500
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 751.63it/s]
+Processed prompts: 100% 48/48 [00:08<00:00,  5.40it/s, est. speed input: 1735.42 toks/s, output: 1912.71 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 406.17it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 2903.57 toks/s, output: 2167.16 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 341.88it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.16it/s, est. speed input: 3717.13 toks/s, output: 1983.81 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 270.58it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.89it/s, est. speed input: 4580.01 toks/s, output: 1991.28 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 227.25it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 5461.03 toks/s, output: 1890.14 toks/s]
+[Epoch 0 Step 13] On-PolicyLoss: 0.0015 | KL: -0.0024 | Clip: 0.0000
+[Epoch 0 Step 13] Off-Policy Loss: -0.0519 | KL: 2.7032 | Clip: 0.5414
+Model Collapse Metrics:
+Reward AVG: -0.076672		Reward STD: 0.051308
+Correct Format%: 48.3333
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 672.07it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1594.51 toks/s, output: 2020.89 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 425.69it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.00it/s, est. speed input: 2682.93 toks/s, output: 2188.66 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 351.18it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.97it/s, est. speed input: 3404.37 toks/s, output: 2226.24 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 280.23it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.76it/s, est. speed input: 4146.84 toks/s, output: 2324.35 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 227.32it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.76it/s, est. speed input: 4777.81 toks/s, output: 2289.96 toks/s]
+[Epoch 0 Step 14] On-PolicyLoss: 0.0017 | KL: -0.0041 | Clip: 0.0000
+[Epoch 0 Step 14] Off-Policy Loss: -0.0291 | KL: 4.0712 | Clip: 0.6189
+Model Collapse Metrics:
+Reward AVG: 355.475077		Reward STD: 1455.417173
+Correct Format%: 36.2500
+Correct%: 2.5000
+YesSpeedup%: 1.6667
+Adding requests: 100% 48/48 [00:00<00:00, 735.62it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.31it/s, est. speed input: 1444.30 toks/s, output: 1815.83 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 364.08it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.83it/s, est. speed input: 3041.35 toks/s, output: 2133.68 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 321.48it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.90it/s, est. speed input: 3726.31 toks/s, output: 2317.67 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 275.43it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 4455.30 toks/s, output: 2182.61 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 221.02it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.80it/s, est. speed input: 5125.32 toks/s, output: 2238.80 toks/s]
+[Epoch 0 Step 15] On-PolicyLoss: -0.0031 | KL: 0.0066 | Clip: 0.0000
+[Epoch 0 Step 15] Off-Policy Loss: -0.0362 | KL: 4.7793 | Clip: 0.6002
+Model Collapse Metrics:
+Reward AVG: -0.052841		Reward STD: 0.143433
+Correct Format%: 38.7500
+Correct%: 1.2500
+YesSpeedup%: 1.2500
+Adding requests: 100% 48/48 [00:00<00:00, 705.91it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.51it/s, est. speed input: 1648.72 toks/s, output: 2067.57 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 328.44it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.72it/s, est. speed input: 3351.80 toks/s, output: 2560.81 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 286.59it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 4300.03 toks/s, output: 2351.35 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 225.02it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.62it/s, est. speed input: 5157.18 toks/s, output: 2630.61 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 205.11it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.65it/s, est. speed input: 6100.48 toks/s, output: 2337.15 toks/s]
+[Epoch 0 Step 16] On-PolicyLoss: 0.0022 | KL: -0.0041 | Clip: 0.0000
+[Epoch 0 Step 16] Off-Policy Loss: -0.0401 | KL: 3.8773 | Clip: 0.5551
+Model Collapse Metrics:
+Reward AVG: -0.083446		Reward STD: 0.071946
+Correct Format%: 40.8333
+Correct%: 0.4167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 663.00it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.32it/s, est. speed input: 1620.68 toks/s, output: 1799.17 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 372.59it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 3046.89 toks/s, output: 2514.65 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 326.98it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.92it/s, est. speed input: 3508.58 toks/s, output: 2474.12 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 273.43it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.79it/s, est. speed input: 4368.22 toks/s, output: 2541.63 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 242.03it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.73it/s, est. speed input: 4900.90 toks/s, output: 2400.19 toks/s]
+[Epoch 0 Step 17] On-PolicyLoss: 0.0023 | KL: -0.0046 | Clip: 0.0000
+[Epoch 0 Step 17] Off-Policy Loss: -0.0204 | KL: 4.4796 | Clip: 0.5924
+Model Collapse Metrics:
+Reward AVG: -0.098580		Reward STD: 0.052740
+Correct Format%: 33.7500
+Correct%: 0.4167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 743.40it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.36it/s, est. speed input: 1418.38 toks/s, output: 1620.11 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 419.54it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.38it/s, est. speed input: 3020.42 toks/s, output: 2351.99 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 313.82it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3718.59 toks/s, output: 2306.73 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 273.71it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 4508.24 toks/s, output: 2110.63 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 209.94it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 5876.90 toks/s, output: 1978.05 toks/s]
+[Epoch 0 Step 18] On-PolicyLoss: 0.0009 | KL: -0.0013 | Clip: 0.0000
+[Epoch 0 Step 18] Off-Policy Loss: -0.0418 | KL: 1.7650 | Clip: 0.5438
+Model Collapse Metrics:
+Reward AVG: 0.174056		Reward STD: 0.904159
+Correct Format%: 50.4167
+Correct%: 2.0833
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 726.16it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.42it/s, est. speed input: 1456.61 toks/s, output: 1706.28 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 397.30it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.93it/s, est. speed input: 2892.76 toks/s, output: 2222.81 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 326.03it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 3767.00 toks/s, output: 2085.63 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 250.08it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.80it/s, est. speed input: 4741.27 toks/s, output: 2179.87 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 226.66it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.88it/s, est. speed input: 5659.52 toks/s, output: 1938.71 toks/s]
+[Epoch 0 Step 19] On-PolicyLoss: -0.0007 | KL: 0.0006 | Clip: 0.0000
+[Epoch 0 Step 19] Off-Policy Loss: -0.0811 | KL: 1.0804 | Clip: 0.5394
+Model Collapse Metrics:
+Reward AVG: -0.025325		Reward STD: 0.127436
+Correct Format%: 49.1667
+Correct%: 2.9167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 670.53it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.30it/s, est. speed input: 1670.98 toks/s, output: 1693.57 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 379.03it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 2963.54 toks/s, output: 2207.29 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 329.57it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.98it/s, est. speed input: 3633.82 toks/s, output: 2025.01 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 273.41it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.87it/s, est. speed input: 4410.74 toks/s, output: 2135.91 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 226.52it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.83it/s, est. speed input: 5211.57 toks/s, output: 2061.96 toks/s]
+[Epoch 0 Step 20] On-PolicyLoss: 0.0005 | KL: -0.0008 | Clip: 0.0000
+[Epoch 0 Step 20] Off-Policy Loss: 0.0950 | KL: 1.2907 | Clip: 0.5522
+Model Collapse Metrics:
+Reward AVG: -0.070473		Reward STD: 0.086841
+Correct Format%: 45.4167
+Correct%: 0.8333
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 624.41it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.21it/s, est. speed input: 1674.68 toks/s, output: 2057.00 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 351.50it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.87it/s, est. speed input: 3209.28 toks/s, output: 2261.73 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 276.01it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.78it/s, est. speed input: 4071.95 toks/s, output: 2409.74 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 224.45it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 4996.44 toks/s, output: 2115.72 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 207.21it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.73it/s, est. speed input: 5645.92 toks/s, output: 2216.45 toks/s]
+[Epoch 0 Step 21] On-PolicyLoss: 0.0007 | KL: -0.0009 | Clip: 0.0000
+[Epoch 0 Step 21] Off-Policy Loss: -0.0484 | KL: 1.4742 | Clip: 0.5921
+Model Collapse Metrics:
+Reward AVG: -0.063391		Reward STD: 0.111470
+Correct Format%: 44.5833
+Correct%: 1.2500
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 725.20it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.54it/s, est. speed input: 1486.25 toks/s, output: 1690.21 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 374.44it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.77it/s, est. speed input: 2700.72 toks/s, output: 2151.08 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 336.07it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.92it/s, est. speed input: 3302.14 toks/s, output: 2027.66 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 273.25it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.02it/s, est. speed input: 4503.09 toks/s, output: 2050.04 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 236.65it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.81it/s, est. speed input: 5060.32 toks/s, output: 2097.94 toks/s]
+[Epoch 0 Step 22] On-PolicyLoss: -0.0004 | KL: 0.0007 | Clip: 0.0000
+[Epoch 0 Step 22] Off-Policy Loss: -0.0771 | KL: 1.3194 | Clip: 0.6374
+Model Collapse Metrics:
+Reward AVG: -0.089100		Reward STD: 0.047112
+Correct Format%: 40.8333
+Correct%: 0.0000
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 676.96it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.49it/s, est. speed input: 1641.83 toks/s, output: 1822.57 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 430.71it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.03it/s, est. speed input: 2617.98 toks/s, output: 2201.41 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 314.70it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.90it/s, est. speed input: 3268.97 toks/s, output: 2430.49 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 301.48it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.95it/s, est. speed input: 3897.13 toks/s, output: 2270.57 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 241.26it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 4811.85 toks/s, output: 2151.55 toks/s]
+[Epoch 0 Step 23] On-PolicyLoss: 0.0001 | KL: 0.0003 | Clip: 0.0000
+[Epoch 0 Step 23] Off-Policy Loss: -0.0550 | KL: 1.1370 | Clip: 0.5643
+Model Collapse Metrics:
+Reward AVG: -0.061524		Reward STD: 0.146571
+Correct Format%: 40.8333
+Correct%: 1.6667
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 651.20it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.25it/s, est. speed input: 1625.61 toks/s, output: 2162.26 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 363.17it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.76it/s, est. speed input: 2875.30 toks/s, output: 2407.39 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 314.14it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.84it/s, est. speed input: 3494.56 toks/s, output: 2384.73 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 259.23it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.80it/s, est. speed input: 4165.05 toks/s, output: 2173.74 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 204.85it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.73it/s, est. speed input: 5157.59 toks/s, output: 2348.29 toks/s]
+[Epoch 0 Step 24] On-PolicyLoss: -0.0015 | KL: 0.0033 | Clip: 0.0000
+[Epoch 0 Step 24] Off-Policy Loss: -0.0648 | KL: 1.1463 | Clip: 0.5911
+Model Collapse Metrics:
+Reward AVG: -0.090968		Reward STD: 0.075984
+Correct Format%: 34.5833
+Correct%: 0.4167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 801.37it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.31it/s, est. speed input: 1290.56 toks/s, output: 1684.23 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 464.03it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.07it/s, est. speed input: 2379.98 toks/s, output: 2086.14 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 364.53it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.05it/s, est. speed input: 3124.09 toks/s, output: 1926.50 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 309.96it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.03it/s, est. speed input: 3980.29 toks/s, output: 1842.65 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 267.18it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.94it/s, est. speed input: 4710.84 toks/s, output: 2048.51 toks/s]
+[Epoch 0 Step 25] On-PolicyLoss: 0.0001 | KL: -0.0003 | Clip: 0.0000
+[Epoch 0 Step 25] Off-Policy Loss: -0.0466 | KL: 1.4146 | Clip: 0.5498
+Model Collapse Metrics:
+Reward AVG: -0.007038		Reward STD: 0.270223
+Correct Format%: 47.0833
+Correct%: 2.0833
+YesSpeedup%: 1.6667
+Adding requests: 100% 48/48 [00:00<00:00, 676.57it/s]
+Processed prompts: 100% 48/48 [00:09<00:00,  4.88it/s, est. speed input: 1786.71 toks/s, output: 1960.87 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 359.63it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.94it/s, est. speed input: 3093.17 toks/s, output: 2183.28 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 292.01it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3809.68 toks/s, output: 2249.69 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 257.19it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 4491.46 toks/s, output: 2152.81 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 217.73it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.74it/s, est. speed input: 5143.43 toks/s, output: 2314.55 toks/s]
+[Epoch 0 Step 26] On-PolicyLoss: -0.0005 | KL: 0.0012 | Clip: 0.0000
+[Epoch 0 Step 26] Off-Policy Loss: -0.0502 | KL: 1.3884 | Clip: 0.6269
+Model Collapse Metrics:
+Reward AVG: -0.083397		Reward STD: 0.073411
+Correct Format%: 41.2500
+Correct%: 0.4167
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 734.34it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.29it/s, est. speed input: 1451.86 toks/s, output: 2092.22 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 321.72it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.86it/s, est. speed input: 2989.46 toks/s, output: 2151.47 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 306.08it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.73it/s, est. speed input: 3662.70 toks/s, output: 2157.36 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 220.03it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.72it/s, est. speed input: 4664.32 toks/s, output: 1985.35 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 179.13it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.61it/s, est. speed input: 5854.02 toks/s, output: 2093.77 toks/s]
+[Epoch 0 Step 27] On-PolicyLoss: -0.0007 | KL: 0.0010 | Clip: 0.0000
+[Epoch 0 Step 27] Off-Policy Loss: -0.0594 | KL: 1.0777 | Clip: 0.5544
+Model Collapse Metrics:
+Reward AVG: -0.063704		Reward STD: 0.084709
+Correct Format%: 47.5000
+Correct%: 0.8333
+YesSpeedup%: 0.0000
+Adding requests: 100% 48/48 [00:00<00:00, 648.25it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.14it/s, est. speed input: 1535.65 toks/s, output: 1795.74 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 367.35it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.87it/s, est. speed input: 2986.09 toks/s, output: 2205.97 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 304.16it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.91it/s, est. speed input: 3795.46 toks/s, output: 2198.73 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 243.82it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.82it/s, est. speed input: 4635.87 toks/s, output: 2199.22 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 206.90it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.70it/s, est. speed input: 5482.67 toks/s, output: 2341.01 toks/s]
+[Epoch 0 Step 28] On-PolicyLoss: -0.0001 | KL: -0.0001 | Clip: 0.0000
+[Epoch 0 Step 28] Off-Policy Loss: -0.0549 | KL: 0.7806 | Clip: 0.5803
+Model Collapse Metrics:
+Reward AVG: -0.035161		Reward STD: 0.175467
+Correct Format%: 44.5833
+Correct%: 2.9167
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 622.49it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.24it/s, est. speed input: 1561.24 toks/s, output: 1984.59 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 393.53it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.85it/s, est. speed input: 2678.04 toks/s, output: 2517.13 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 298.76it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.70it/s, est. speed input: 3494.35 toks/s, output: 2386.80 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 228.15it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.68it/s, est. speed input: 4415.66 toks/s, output: 2204.27 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 175.56it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.56it/s, est. speed input: 5258.81 toks/s, output: 2294.93 toks/s]
+[Epoch 0 Step 29] On-PolicyLoss: -0.0014 | KL: 0.0027 | Clip: 0.0000
+[Epoch 0 Step 29] Off-Policy Loss: -0.0526 | KL: 1.3034 | Clip: 0.5962
+Model Collapse Metrics:
+Reward AVG: -0.064268		Reward STD: 0.132267
+Correct Format%: 40.0000
+Correct%: 0.4167
+YesSpeedup%: 0.4167
+Adding requests: 100% 48/48 [00:00<00:00, 758.10it/s]
+Processed prompts: 100% 48/48 [00:10<00:00,  4.41it/s, est. speed input: 1380.81 toks/s, output: 1626.38 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 422.67it/s]
+Processed prompts: 100% 48/48 [00:11<00:00,  4.03it/s, est. speed input: 2506.62 toks/s, output: 2015.96 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 320.81it/s]
+Processed prompts: 100% 48/48 [00:13<00:00,  3.68it/s, est. speed input: 2970.33 toks/s, output: 2156.03 toks/s]
+Adding requests: 100% 48/48 [00:00<00:00, 248.26it/s]
+Processed prompts: 100% 48/48 [00:12<00:00,  3.72it/s, est. speed input: 3705.42 toks/s, output: 1940.87 toks/s]
+Adding requests:  94% 45/48 [00:00<00:00, 239.19it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/content/Process-Based-Rewards-for-Code-Optimization/main_colab.py", line 70, in <module>
+[rank0]:     trainer.train(dataloader)
+[rank0]:   File "/content/Process-Based-Rewards-for-Code-Optimization/src/trainer.py", line 45, in train
+[rank0]:     trajectories = self.rollout(batch['tasks'])
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/content/Process-Based-Rewards-for-Code-Optimization/src/trainer.py", line 88, in rollout
+[rank0]:     responses = self.engine.generate_responses(
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/content/Process-Based-Rewards-for-Code-Optimization/src/engine.py", line 111, in generate_responses
+[rank0]:     outputs = self.model.fast_generate(
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/llm.py", line 388, in generate
+[rank0]:     self._validate_and_add_requests(
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/llm.py", line 1501, in _validate_and_add_requests
+[rank0]:     self._add_request(
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/llm.py", line 1519, in _add_request
+[rank0]:     self.llm_engine.add_request(
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/llm_engine.py", line 213, in add_request
+[rank0]:     prompt_str, request = self.processor.process_inputs(
+[rank0]:                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/processor.py", line 380, in process_inputs
+[rank0]:     self._validate_model_inputs(processed_inputs, lora_request)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/processor.py", line 449, in _validate_model_inputs
+[rank0]:     self._validate_model_input(decoder_inputs,
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/processor.py", line 514, in _validate_model_input
+[rank0]:     raise ValueError(
+[rank0]: ValueError: The decoder prompt (length 5145) is longer than the maximum model length of 5120. Make sure that `max_model_len` is no smaller than the number of text tokens.
+[rank0]:[W1205 11:19:53.725749616 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

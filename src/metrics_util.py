@@ -62,7 +62,7 @@ def save_solution(trajectory, save_path) -> None:
     uuid = ''.join(secrets.choice(alphabet) for _ in range(8))   # 8-char
     imm_reward = trajectory['immediate_reward']
     speedup = imm_reward - 0.3
-    reward_str = '_'.join(str(speedup).split('.'))
+    reward_str = '_'.join(str(round(speedup, 4)).split('.'))
     task_id = trajectory['task_id']
     file_name= f"{task_id}-{reward_str}-{uuid}.txt"
     file_path = os.path.join(save_path, file_name)

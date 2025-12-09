@@ -71,3 +71,13 @@ def save_solution(trajectory, save_path) -> None:
         f.write(f"speedup: {speedup:.4f}\n")
         f.write("response:\n")
         f.write(trajectory['response'])
+
+def write_metrics_csv(
+    epoch: int, step: int,
+    avg_reward: float, std_reward: float,
+    per_format: float, per_correct: float, per_speedup: float,
+    csv_path:str
+) -> None:
+    with open(csv_path, 'a') as f:
+        row = f"{epoch}, {step}, {avg_reward}, {std_reward}, {per_format}, {per_correct}, {per_speedup}\n"
+        f.write(row)

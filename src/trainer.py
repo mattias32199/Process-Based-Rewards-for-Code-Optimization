@@ -39,6 +39,12 @@ class MultiTurnRLTrainer():
         Rollout -> Update Policy
         """
         print("Number of batches: ", len(dataloader))
+
+        if self.print_config.metrics_save_path != "":
+            with open(self.print_config.metrics_save_path, "w") as f:
+                f.write("epoch, step, avg_rwd, std_rwd, per_format, per_corr, per_speed\n")
+
+
         for epoch in range(self.config.epochs): # loop through epochs
             for batch_idx, batch in enumerate(dataloader): # loop through batches
                 # 1. per-batch rollout
@@ -53,7 +59,7 @@ class MultiTurnRLTrainer():
                 # model collapse metrics
                 reward_avg, reward_std = compute_reward_distribution(trajectories)
 
-                save_path = self.config.print_config.sol_save_path
+                save_path = self.print_config.sol_save_path
                 perf_metrics = compute_performance_metrics(trajectories, save_path)
 
                 # print metrics

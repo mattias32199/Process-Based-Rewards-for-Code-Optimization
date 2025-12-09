@@ -42,7 +42,9 @@ class MultiTurnRLTrainer():
 
         if self.print_config.metrics_save_path != "":
             with open(self.print_config.metrics_save_path, "w") as f:
-                f.write("epoch, step, avg_rwd, std_rwd, per_format, per_corr, per_speed\n")
+                f.write(
+                    "epoch, step, avg_rwd, std_rwd, per_format, per_corr, per_speed, off_loss, off_KL, off_clip\n"
+                )
 
 
         for epoch in range(self.config.epochs): # loop through epochs
@@ -85,6 +87,9 @@ class MultiTurnRLTrainer():
                     per_format=perf_metrics['correct_format'],
                     per_correct=perf_metrics['correct'],
                     per_speedup=perf_metrics['speedup'],
+                    loss=off_policy_loss,
+                    kl=off_policy_metrics['actor/ppo_kl'],
+                    clip=off_policy_metrics['actor/pg_clipfrac'],
                     csv_path=self.print_config.metrics_save_path
                 )
 

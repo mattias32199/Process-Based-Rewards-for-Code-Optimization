@@ -76,8 +76,9 @@ def write_metrics_csv(
     epoch: int, step: int,
     avg_reward: float, std_reward: float,
     per_format: float, per_correct: float, per_speedup: float,
+    loss: float, kl: float, clip: float,
     csv_path:str
 ) -> None:
     with open(csv_path, 'a') as f:
-        row = f"{epoch}, {step}, {avg_reward}, {std_reward}, {per_format}, {per_correct}, {per_speedup}\n"
+        row = f"{epoch}, {step}, {avg_reward}, {std_reward}, {per_format}, {per_correct}, {per_speedup}, {loss}, {kl}, {clip}\n"
         f.write(row)

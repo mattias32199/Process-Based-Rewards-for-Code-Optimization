@@ -7,7 +7,7 @@ from src.config import TrainerConfig
 from src.reward_util import compute_immediate_reward, compute_advantages
 from src.rl_util import compute_policy_loss_gspo
 from src.train_util import construct_user_prompt, get_system_prompt, parse_response
-from src.metrics_util import compute_gradient_norm, compute_reward_distribution, compute_performance_metrics
+from src.metrics_util import compute_reward_distribution, compute_performance_metrics, write_metrics_csv
 
 class MultiTurnRLTrainer():
     def __init__(self,
@@ -76,6 +76,17 @@ class MultiTurnRLTrainer():
                 print(f"Correct Format%: {perf_metrics['correct_format']:.4f}")
                 print(f"Correct%: {perf_metrics['correct']:.4f}")
                 print(f"YesSpeedup%: {perf_metrics['speedup']:.4f}")
+
+                write_metrics_csv(
+                    epoch=epoch,
+                    step=batch_idx,
+                    avg_reward=reward_avg,
+                    std_reward=reward_std,
+                    per_format=perf_metrics['correct_format'],
+                    per_correct=perf_metrics['correct'],
+                    per_speedup=perf_metrics['speedup'],
+                    csv_path=self.print_config.metrics_save_path
+                )
 
                 del trajectories
 
